@@ -4,15 +4,24 @@ title: "quarto tabset"
 
 # create tabset panel
 
-```yaml
+```` markdown
 ::: {.panel-tabset}
 
 ## code block A
+```{.python}
+import polars as pl
+print('polars version:', pl.__version__)
+```
 
 ## code block B 
-
-:::
+```{.python}
+import pandas as pd
+print('pandas version:', pd.__version__)
 ```
+:::
+````
+
+---
 
 ::: {.panel-tabset}
 
