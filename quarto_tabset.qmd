@@ -67,6 +67,7 @@ fig = px.scatter(
 )
 
 fig.show()
+```
 
 :::
 
