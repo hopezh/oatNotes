@@ -11,6 +11,20 @@
     "href": "index.html",
     "title": "OatNotes",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "This is oat’s notebook."
+  },
+  {
+    "objectID": "quarto_tabset.html",
+    "href": "quarto_tabset.html",
+    "title": "quarto tabset",
+    "section": "",
+    "text": "create tabset panel\n::: {.panel-tabset}\n\n## code block A\n\n## code block B \n\n:::\n\nuse polars df in plotlyuse pandas df in plotly\n\n\n\nimport polars as pl\nimport plotly.express as px\n\nwide_df = pl.DataFrame(\n    {\n        \"nation\": [\"South Korea\", \"China\", \"Canada\"],\n        \"gold\": [24, 10, 9],\n        \"silver\": [13, 15, 12],\n        \"bronze\": [9, 12, 12],\n    }\n)\n\nfig = px.bar(\n    wide_df,\n    x=\"nation\",\n    y=[\"gold\", \"silver\", \"bronze\"],\n    title=\"Wide-Form Input\"\n)\n\nfig.show()\n\n\n                                                \n\n\n\n\n\nimport plotly.express as px\n\ndf = px.data.iris()\n\n# Use directly Columns as argument. You can use tab completion for this!\nfig = px.scatter(\n    df,\n    x=df.sepal_length,\n    y=df.sepal_width,\n    color=df.species,\n    size=df.petal_length\n)\n\nfig.show()\n\n\n                                                \n\n\n\n\n\n\n\nexpand code block and its output to full screen width\n\nprint('polars version:', pl.__version__)\n\npolars version: 0.20.2"
+  },
+  {
+    "objectID": "quarto_tabset.html#code-block-b",
+    "href": "quarto_tabset.html#code-block-b",
+    "title": "quarto tabset",
+    "section": "",
+    "text": "::::\n\nuse polars df in plotlyuse pandas df in plotly\n\n\n\nimport polars as pl\nimport plotly.express as px\n\nwide_df = pl.DataFrame(\n    {\n        \"nation\": [\"South Korea\", \"China\", \"Canada\"],\n        \"gold\": [24, 10, 9],\n        \"silver\": [13, 15, 12],\n        \"bronze\": [9, 12, 12],\n    }\n)\n\nfig = px.bar(\n    wide_df,\n    x=\"nation\",\n    y=[\"gold\", \"silver\", \"bronze\"],\n    title=\"Wide-Form Input\"\n)\n\nfig.show()\n\n\n                                                \n\n\n\n\n\nimport plotly.express as px\n\ndf = px.data.iris()\n\n# Use directly Columns as argument. You can use tab completion for this!\nfig = px.scatter(\n    df,\n    x=df.sepal_length,\n    y=df.sepal_width,\n    color=df.species,\n    size=df.petal_length\n)\n\nfig.show()"
   }
 ]
