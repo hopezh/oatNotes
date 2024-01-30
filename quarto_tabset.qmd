@@ -1,0 +1,72 @@
+---
+title: "quarto tabset"
+---
+
+# create tabset panel
+
+```yaml
+::: {.panel-tabset}
+
+## code block A
+
+## code block B 
+
+:::
+```
+
+::: {.panel-tabset}
+
+## use **_`polars`_** df in `plotly`
+
+```{python}
+import polars as pl
+import plotly.express as px
+
+wide_df = pl.DataFrame(
+    {
+        "nation": ["South Korea", "China", "Canada"],
+        "gold": [24, 10, 9],
+        "silver": [13, 15, 12],
+        "bronze": [9, 12, 12],
+    }
+)
+
+fig = px.bar(
+    wide_df,
+    x="nation",
+    y=["gold", "silver", "bronze"],
+    title="Wide-Form Input"
+)
+
+fig.show()
+```
+
+## use _`pandas`_ df in `plotly`
+
+```{python}
+import plotly.express as px
+
+df = px.data.iris()
+
+# Use directly Columns as argument. You can use tab completion for this!
+fig = px.scatter(
+    df,
+    x=df.sepal_length,
+    y=df.sepal_width,
+    color=df.species,
+    size=df.petal_length
+)
+
+fig.show()
+```
+
+:::
+
+# expand code block and its output to full screen width
+
+
+```{python}
+#| column: screen
+print('polars version:', pl.__version__)
+
+```
