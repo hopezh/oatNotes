@@ -2,6 +2,5 @@
 title: "OatNotes"
 ---
 
-This is a Quarto website.
+This is oat's notebook.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
