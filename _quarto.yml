@@ -9,12 +9,30 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
+  sidebar:
+    title: "Contents"
+    style: "floating"
+    search: true
+    contents:
+      - section: "Quarto"
+        contents:
+          - quarto_tabset.qmd
+      - section: "Deep Learning"
 
 format:
   html:
-    theme: cosmo
+    code-block-bg: true
+    code-block-border-left: true
+    code-copy: true
+    code-fold: false
+    code-line-numbers: true
+    code-tools: true
     css: styles.css
+    theme:
+      light: cosmo
+      dark: darkly
     toc: true
 
+  ipynb: default
 
-
+highlight-style: gruvbox
