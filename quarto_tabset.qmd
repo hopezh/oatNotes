@@ -4,20 +4,21 @@ title: "quarto tabset"
 
 # create tabset panel
 
-```` markdown
+````default
 ::: {.panel-tabset}
 
-## code block A
+## Tabset A
 ```{.python}
 import polars as pl
 print('polars version:', pl.__version__)
 ```
 
-## code block B 
+## Tabset B 
 ```{.python}
 import pandas as pd
 print('pandas version:', pd.__version__)
 ```
+
 :::
 ````
 
@@ -76,6 +77,7 @@ fig.show()
 
 ```{python}
 #| column: screen
+import polars as pl
 csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
 df = pl.read_csv(csv_path)
 df.head(5)
