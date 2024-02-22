@@ -5,21 +5,52 @@ filters:
 ---
 
 
-# Use `print(fig)` to view the underlying data strucure of a plotly figure
+# 3 ways to view a fig's data strucure
 
 ```{python}
-#| column: screen
-#| source-line-numbers: "5"
 import plotly.express as px
 
-fig = px.line(x=["a","b","c"], y=[1,3,2], title="sample figure")
-
-print(fig)
-```
-
-```{python}
+fig = px.line(
+    x=["a","b","c"],
+    y=[1,3,2],
+    title="sample figure"
+)
 fig.show()
 ```
+
+::: {.column-screen}
+::: {.panel-tabset}
+
+### `print(fig)`
+
+`print(fig)` will result in the often-verbose `layout.template` key being represented as ellipses `...` for brevity.
+
+```{python}
+#| source-line-numbers: "1"
+print(fig)      # opt 1
+# fig.to_dict()   # opt 2
+# fig.to_json()   # opt 3
+```
+
+### `fig.to_dict()`
+```{python}
+#| source-line-numbers: "2"
+# print(fig)      # opt 1
+fig.to_dict()   # opt 2
+# fig.to_json()   # opt 3
+```
+
+### `fig.to_json()`
+aaaa
+```{python}
+#| source-line-numbers: "3"
+# print(fig)      # opt 1
+# fig.to_dict()   # opt 2
+fig.to_json()   # opt 3
+```
+
+:::
+:::
 
 
 ## Ref:
