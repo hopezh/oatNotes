@@ -1,0 +1,27 @@
+---
+title: "show the underlying data strucure of a plotly fig"
+filters:
+    - line-highlight
+---
+
+
+# Use `print(fig)` to view the underlying data strucure of a plotly figure
+
+```{python}
+#| column: screen
+#| source-line-numbers: "5"
+import plotly.express as px
+
+fig = px.line(x=["a","b","c"], y=[1,3,2], title="sample figure")
+
+print(fig)
+```
+
+```{python}
+fig.show()
+```
+
+
+## Ref:
+- https://plotly.com/python/figure-structure/#:~:text=figures%20as%20trees%20of%20attributes
+
