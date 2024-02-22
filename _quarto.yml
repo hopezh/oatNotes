@@ -18,7 +18,10 @@ website:
         contents:
           - quarto_tabset.qmd
       - section: "Deep Learning"
-
+      - section: "Plotly"
+        contents:
+          - plotly_data_structure.qmd
+        
 format:
   html:
     code-block-bg: true
