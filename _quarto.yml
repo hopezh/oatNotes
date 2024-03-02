@@ -10,8 +10,9 @@ website:
         text: Home
       - about.qmd
   sidebar:
-    title: "Contents"
-    style: "floating"
+    # title: "Contents"
+    # style: "floating"
+    style: "docked"
     search: true
     contents:
       - section: "Quarto"
