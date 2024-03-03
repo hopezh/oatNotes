@@ -67,3 +67,9 @@ fig.show()
 
 :::
 
+---
+
+# Ref
+
+- https://community.plotly.com/t/having-a-transparent-background-in-plotly-express/30205 
+- 
