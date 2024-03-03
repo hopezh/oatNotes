@@ -18,10 +18,13 @@ website:
       - section: "Quarto"
         contents:
           - quarto_tabset.qmd
+          - expand_codeblock_width.qmd
+          - side_by_side_codeblock.qmd
       - section: "Deep Learning"
       - section: "Plotly"
         contents:
           - plotly_data_structure.qmd
+          - transparent_fig_bgcolor.qmd
         
 format:
   html:

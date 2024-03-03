@@ -2,19 +2,19 @@
 title: "quarto tabset"
 ---
 
-# create tabset panel
+# Syntax
 
 ````default
 ::: {.panel-tabset}
 
 ## Tabset A
-```{.python}
+```python
 import polars as pl
 print('polars version:', pl.__version__)
 ```
 
 ## Tabset B 
-```{.python}
+```python
 import pandas as pd
 print('pandas version:', pd.__version__)
 ```
@@ -22,7 +22,8 @@ print('pandas version:', pd.__version__)
 :::
 ````
 
----
+
+# Example
 
 ::: {.panel-tabset}
 
@@ -72,14 +73,4 @@ fig.show()
 
 :::
 
-
-# expand code block and its output to full screen width
-
-```{python}
-#| column: screen
-import polars as pl
-csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
-df = pl.read_csv(csv_path)
-df.head(5)
-```
 

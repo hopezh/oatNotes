@@ -1,0 +1,99 @@
+---
+title: "side by side codeblocks and outputs"
+filters:
+    - line-highlight
+---
+
+# Syntax
+
+- `:::: {.columns .column-screen-insert}` 
+- `::: column`
+
+````default
+:::: {.columns .column-screen-insert .column-screen}
+
+::: column
+```{.python}
+print('left column')
+```
+:::
+
+::: column
+```{.python}
+print('right column')
+```
+:::
+
+::::
+````
+
+
+# Example
+
+````default
+:::: {.columns .column-screen-insert .column-screen}
+
+::: column
+<h2 style="text-align: center;">left column</h2>
+
+```python
+import plotly.express as px
+df = px.data.iris() # iris is a pandas DataFrame
+fig = px.scatter(df, x="sepal_width", y="sepal_length")
+fig.show()
+```
+:::
+
+::: column 
+<h2 style="text-align: center;">right column</h2>
+
+```python
+import plotly.express as px
+data_canada = px.data.gapminder().query("country == 'Canada'")
+fig = px.bar(data_canada, x='year', y='pop')
+fig.show()
+```
+:::
+
+::::
+````
+
+
+:::: {.columns .column-screen-insert .column-screen}
+
+::: column
+
+<h2 style="text-align: center;">left column</h2>
+
+```{python}
+import plotly.express as px
+df = px.data.iris() # iris is a pandas DataFrame
+fig = px.scatter(df, x="sepal_width", y="sepal_length")
+fig.show()
+```
+
+:::
+
+::: column 
+
+<h2 style="text-align: center;">right column</h2>
+
+```{python}
+import plotly.express as px
+data_canada = px.data.gapminder().query("country == 'Canada'")
+fig = px.bar(data_canada, x='year', y='pop')
+fig.show()
+```
+
+:::
+
+::::
+
+---
+
+# Ref:
+
+- https://stackoverflow.com/a/74544808/2559693 
+- 
+
+

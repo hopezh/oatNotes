@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OatNotes</title>
+<title>OatNotes - expand the width of a code block and its output</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -102,6 +102,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -125,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -144,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">OatNotes</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_tabset.html">Quarto</a></li><li class="breadcrumb-item"><a href="./expand_codeblock_width.html">expand the width of a code block and its output</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -181,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
+  <a href="./expand_codeblock_width.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">expand the width of a code block and its output</span></a>
   </div>
 </li>
@@ -226,14 +229,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.ipynb" download="index.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#expand-to-full-page-width" id="toc-expand-to-full-page-width" class="nav-link active" data-scroll-target="#expand-to-full-page-width">expand to full <code>page</code> width</a>
+  <ul class="collapse">
+  <li><a href="#column-page" id="toc-column-page" class="nav-link" data-scroll-target="#column-page">1. <code>::: {.column-page}</code></a></li>
+  <li><a href="#column-page-1" id="toc-column-page-1" class="nav-link" data-scroll-target="#column-page-1">2. <code>#| column: page</code></a></li>
+  </ul></li>
+  <li><a href="#expand-to-full-screen-width" id="toc-expand-to-full-screen-width" class="nav-link" data-scroll-target="#expand-to-full-screen-width">expand to full <code>screen</code> width</a>
+  <ul class="collapse">
+  <li><a href="#column-screen" id="toc-column-screen" class="nav-link" data-scroll-target="#column-screen">1. <code>::: {.column-screen}</code></a></li>
+  <li><a href="#column-screen-1" id="toc-column-screen-1" class="nav-link" data-scroll-target="#column-screen-1">2. <code>#| column: screen</code></a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="expand_codeblock_width.ipynb" download="expand_codeblock_width.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto_tabset.html">Quarto</a></li><li class="breadcrumb-item"><a href="./expand_codeblock_width.html">expand the width of a code block and its output</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">OatNotes</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">expand the width of a code block and its output</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -250,11 +268,759 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>This is oat’s notebook.</p>
+<section id="expand-to-full-page-width" class="level1 page-columns page-full">
+<h1>expand to full <code>page</code> width</h1>
+<section id="column-page" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="column-page">1. <code>::: {.column-page}</code></h2>
+<p>Use this to wrap a code block to expand it and its output to <code>page</code> width.</p>
+<div class="column-page">
+<div id="dab6bdfa" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb1-2"><a href="#cb1-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<div>
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 20)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">string_idx</th>
+<th data-quarto-table-cell-role="th">string_name</th>
+<th data-quarto-table-cell-role="th">string_name_x</th>
+<th data-quarto-table-cell-role="th">string_name_y</th>
+<th data-quarto-table-cell-role="th">string_box_idx</th>
+<th data-quarto-table-cell-role="th">CB_name</th>
+<th data-quarto-table-cell-role="th">Phase</th>
+<th data-quarto-table-cell-role="th">string_num</th>
+<th data-quarto-table-cell-role="th">string_box_v1_x</th>
+<th data-quarto-table-cell-role="th">string_box_v1_y</th>
+<th data-quarto-table-cell-role="th">string_box_v2_x</th>
+<th data-quarto-table-cell-role="th">string_box_v2_y</th>
+<th data-quarto-table-cell-role="th">string_box_v3_x</th>
+<th data-quarto-table-cell-role="th">string_box_v3_y</th>
+<th data-quarto-table-cell-role="th">string_box_v4_x</th>
+<th data-quarto-table-cell-role="th">string_box_v4_y</th>
+<th data-quarto-table-cell-role="th">num_modules</th>
+<th data-quarto-table-cell-role="th">module_orientation</th>
+<th data-quarto-table-cell-role="th">num_module_along_x</th>
+<th data-quarto-table-cell-role="th">num_module_along_y</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>str</th>
+<th>f64</th>
+<th>f64</th>
+<th>i64</th>
+<th>i64</th>
+<th>i64</th>
+<th>i64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+<th>i64</th>
+<th>i64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>"20-9"</td>
+<td>5228.161911</td>
+<td>724.563534</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>723.963534</td>
+<td>5238.930342</td>
+<td>723.963534</td>
+<td>5238.930342</td>
+<td>725.163534</td>
+<td>5217.39348</td>
+<td>725.163534</td>
+<td>362</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>"20-9"</td>
+<td>5228.161911</td>
+<td>725.867048</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>725.267048</td>
+<td>5238.930342</td>
+<td>725.267048</td>
+<td>5238.930342</td>
+<td>726.467048</td>
+<td>5217.39348</td>
+<td>726.467048</td>
+<td>361</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>"21-3"</td>
+<td>5206.643309</td>
+<td>724.563534</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5195.874878</td>
+<td>723.963534</td>
+<td>5217.41174</td>
+<td>723.963534</td>
+<td>5217.41174</td>
+<td>725.163534</td>
+<td>5195.874878</td>
+<td>725.163534</td>
+<td>360</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>"21-3"</td>
+<td>5206.643309</td>
+<td>725.867048</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5195.874878</td>
+<td>725.267048</td>
+<td>5217.41174</td>
+<td>725.267048</td>
+<td>5217.41174</td>
+<td>726.467048</td>
+<td>5195.874878</td>
+<td>726.467048</td>
+<td>359</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>"20-8"</td>
+<td>5228.161911</td>
+<td>727.170562</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>726.570562</td>
+<td>5238.930342</td>
+<td>726.570562</td>
+<td>5238.930342</td>
+<td>727.770562</td>
+<td>5217.39348</td>
+<td>727.770562</td>
+<td>358</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="column-page-1" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="column-page-1">2. <code>#| column: page</code></h2>
+<p>Use it inside a code block to expand only its output to <code>page</code> width.</p>
+<div id="e82a304a" class="cell page-columns page-full" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb2-2"><a href="#cb2-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display column-page" data-execution_count="2">
+<div>
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 20)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">string_idx</th>
+<th data-quarto-table-cell-role="th">string_name</th>
+<th data-quarto-table-cell-role="th">string_name_x</th>
+<th data-quarto-table-cell-role="th">string_name_y</th>
+<th data-quarto-table-cell-role="th">string_box_idx</th>
+<th data-quarto-table-cell-role="th">CB_name</th>
+<th data-quarto-table-cell-role="th">Phase</th>
+<th data-quarto-table-cell-role="th">string_num</th>
+<th data-quarto-table-cell-role="th">string_box_v1_x</th>
+<th data-quarto-table-cell-role="th">string_box_v1_y</th>
+<th data-quarto-table-cell-role="th">string_box_v2_x</th>
+<th data-quarto-table-cell-role="th">string_box_v2_y</th>
+<th data-quarto-table-cell-role="th">string_box_v3_x</th>
+<th data-quarto-table-cell-role="th">string_box_v3_y</th>
+<th data-quarto-table-cell-role="th">string_box_v4_x</th>
+<th data-quarto-table-cell-role="th">string_box_v4_y</th>
+<th data-quarto-table-cell-role="th">num_modules</th>
+<th data-quarto-table-cell-role="th">module_orientation</th>
+<th data-quarto-table-cell-role="th">num_module_along_x</th>
+<th data-quarto-table-cell-role="th">num_module_along_y</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>str</th>
+<th>f64</th>
+<th>f64</th>
+<th>i64</th>
+<th>i64</th>
+<th>i64</th>
+<th>i64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+<th>i64</th>
+<th>i64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>"20-9"</td>
+<td>5228.161911</td>
+<td>724.563534</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>723.963534</td>
+<td>5238.930342</td>
+<td>723.963534</td>
+<td>5238.930342</td>
+<td>725.163534</td>
+<td>5217.39348</td>
+<td>725.163534</td>
+<td>362</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>"20-9"</td>
+<td>5228.161911</td>
+<td>725.867048</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>725.267048</td>
+<td>5238.930342</td>
+<td>725.267048</td>
+<td>5238.930342</td>
+<td>726.467048</td>
+<td>5217.39348</td>
+<td>726.467048</td>
+<td>361</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>"21-3"</td>
+<td>5206.643309</td>
+<td>724.563534</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5195.874878</td>
+<td>723.963534</td>
+<td>5217.41174</td>
+<td>723.963534</td>
+<td>5217.41174</td>
+<td>725.163534</td>
+<td>5195.874878</td>
+<td>725.163534</td>
+<td>360</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>"21-3"</td>
+<td>5206.643309</td>
+<td>725.867048</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5195.874878</td>
+<td>725.267048</td>
+<td>5217.41174</td>
+<td>725.267048</td>
+<td>5217.41174</td>
+<td>726.467048</td>
+<td>5195.874878</td>
+<td>726.467048</td>
+<td>359</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>"20-8"</td>
+<td>5228.161911</td>
+<td>727.170562</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>726.570562</td>
+<td>5238.930342</td>
+<td>726.570562</td>
+<td>5238.930342</td>
+<td>727.770562</td>
+<td>5217.39348</td>
+<td>727.770562</td>
+<td>358</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="expand-to-full-screen-width" class="level1 page-columns page-full">
+<h1>expand to full <code>screen</code> width</h1>
+<p>You can have content span the full width of the page with no margin (full bleed).</p>
+<section id="column-screen" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="column-screen">1. <code>::: {.column-screen}</code></h2>
+<p>Use it to wrap a code block to expand it and its output to full screen width.</p>
+<div class="column-screen">
+<div id="656fbd57" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb3-2"><a href="#cb3-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 20)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">string_idx</th>
+<th data-quarto-table-cell-role="th">string_name</th>
+<th data-quarto-table-cell-role="th">string_name_x</th>
+<th data-quarto-table-cell-role="th">string_name_y</th>
+<th data-quarto-table-cell-role="th">string_box_idx</th>
+<th data-quarto-table-cell-role="th">CB_name</th>
+<th data-quarto-table-cell-role="th">Phase</th>
+<th data-quarto-table-cell-role="th">string_num</th>
+<th data-quarto-table-cell-role="th">string_box_v1_x</th>
+<th data-quarto-table-cell-role="th">string_box_v1_y</th>
+<th data-quarto-table-cell-role="th">string_box_v2_x</th>
+<th data-quarto-table-cell-role="th">string_box_v2_y</th>
+<th data-quarto-table-cell-role="th">string_box_v3_x</th>
+<th data-quarto-table-cell-role="th">string_box_v3_y</th>
+<th data-quarto-table-cell-role="th">string_box_v4_x</th>
+<th data-quarto-table-cell-role="th">string_box_v4_y</th>
+<th data-quarto-table-cell-role="th">num_modules</th>
+<th data-quarto-table-cell-role="th">module_orientation</th>
+<th data-quarto-table-cell-role="th">num_module_along_x</th>
+<th data-quarto-table-cell-role="th">num_module_along_y</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>str</th>
+<th>f64</th>
+<th>f64</th>
+<th>i64</th>
+<th>i64</th>
+<th>i64</th>
+<th>i64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+<th>i64</th>
+<th>i64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>"20-9"</td>
+<td>5228.161911</td>
+<td>724.563534</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>723.963534</td>
+<td>5238.930342</td>
+<td>723.963534</td>
+<td>5238.930342</td>
+<td>725.163534</td>
+<td>5217.39348</td>
+<td>725.163534</td>
+<td>362</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>"20-9"</td>
+<td>5228.161911</td>
+<td>725.867048</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>725.267048</td>
+<td>5238.930342</td>
+<td>725.267048</td>
+<td>5238.930342</td>
+<td>726.467048</td>
+<td>5217.39348</td>
+<td>726.467048</td>
+<td>361</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>"21-3"</td>
+<td>5206.643309</td>
+<td>724.563534</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5195.874878</td>
+<td>723.963534</td>
+<td>5217.41174</td>
+<td>723.963534</td>
+<td>5217.41174</td>
+<td>725.163534</td>
+<td>5195.874878</td>
+<td>725.163534</td>
+<td>360</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>"21-3"</td>
+<td>5206.643309</td>
+<td>725.867048</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5195.874878</td>
+<td>725.267048</td>
+<td>5217.41174</td>
+<td>725.267048</td>
+<td>5217.41174</td>
+<td>726.467048</td>
+<td>5195.874878</td>
+<td>726.467048</td>
+<td>359</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>"20-8"</td>
+<td>5228.161911</td>
+<td>727.170562</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>726.570562</td>
+<td>5238.930342</td>
+<td>726.570562</td>
+<td>5238.930342</td>
+<td>727.770562</td>
+<td>5217.39348</td>
+<td>727.770562</td>
+<td>358</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="column-screen-1" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="column-screen-1">2. <code>#| column: screen</code></h2>
+<p>Use it inside a code block to expand only its output to full width of screen.</p>
+<div id="6705143d" class="cell page-columns page-full" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb4-2"><a href="#cb4-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display column-screen" data-execution_count="4">
+<div>
+<div><style>
+.dataframe > thead > tr,
+.dataframe > tbody > tr {
+  text-align: right;
+  white-space: pre-wrap;
+}
+</style>
+<small>shape: (5, 20)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">string_idx</th>
+<th data-quarto-table-cell-role="th">string_name</th>
+<th data-quarto-table-cell-role="th">string_name_x</th>
+<th data-quarto-table-cell-role="th">string_name_y</th>
+<th data-quarto-table-cell-role="th">string_box_idx</th>
+<th data-quarto-table-cell-role="th">CB_name</th>
+<th data-quarto-table-cell-role="th">Phase</th>
+<th data-quarto-table-cell-role="th">string_num</th>
+<th data-quarto-table-cell-role="th">string_box_v1_x</th>
+<th data-quarto-table-cell-role="th">string_box_v1_y</th>
+<th data-quarto-table-cell-role="th">string_box_v2_x</th>
+<th data-quarto-table-cell-role="th">string_box_v2_y</th>
+<th data-quarto-table-cell-role="th">string_box_v3_x</th>
+<th data-quarto-table-cell-role="th">string_box_v3_y</th>
+<th data-quarto-table-cell-role="th">string_box_v4_x</th>
+<th data-quarto-table-cell-role="th">string_box_v4_y</th>
+<th data-quarto-table-cell-role="th">num_modules</th>
+<th data-quarto-table-cell-role="th">module_orientation</th>
+<th data-quarto-table-cell-role="th">num_module_along_x</th>
+<th data-quarto-table-cell-role="th">num_module_along_y</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>str</th>
+<th>f64</th>
+<th>f64</th>
+<th>i64</th>
+<th>i64</th>
+<th>i64</th>
+<th>i64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>f64</th>
+<th>i64</th>
+<th>str</th>
+<th>i64</th>
+<th>i64</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>"20-9"</td>
+<td>5228.161911</td>
+<td>724.563534</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>723.963534</td>
+<td>5238.930342</td>
+<td>723.963534</td>
+<td>5238.930342</td>
+<td>725.163534</td>
+<td>5217.39348</td>
+<td>725.163534</td>
+<td>362</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>"20-9"</td>
+<td>5228.161911</td>
+<td>725.867048</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>725.267048</td>
+<td>5238.930342</td>
+<td>725.267048</td>
+<td>5238.930342</td>
+<td>726.467048</td>
+<td>5217.39348</td>
+<td>726.467048</td>
+<td>361</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>"21-3"</td>
+<td>5206.643309</td>
+<td>724.563534</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5195.874878</td>
+<td>723.963534</td>
+<td>5217.41174</td>
+<td>723.963534</td>
+<td>5217.41174</td>
+<td>725.163534</td>
+<td>5195.874878</td>
+<td>725.163534</td>
+<td>360</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>"21-3"</td>
+<td>5206.643309</td>
+<td>725.867048</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5195.874878</td>
+<td>725.267048</td>
+<td>5217.41174</td>
+<td>725.267048</td>
+<td>5217.41174</td>
+<td>726.467048</td>
+<td>5195.874878</td>
+<td>726.467048</td>
+<td>359</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2</td>
+<td>"20-8"</td>
+<td>5228.161911</td>
+<td>727.170562</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>5217.39348</td>
+<td>726.570562</td>
+<td>5238.930342</td>
+<td>726.570562</td>
+<td>5238.930342</td>
+<td>727.770562</td>
+<td>5217.39348</td>
+<td>727.770562</td>
+<td>358</td>
+<td>"L"</td>
+<td>10</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<p>Ref:</p>
+<ul>
+<li>https://quarto.org/docs/authoring/article-layout.html#screen-column</li>
+<li></li>
+</ul>
 
 
 <!-- -->
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -839,11 +1605,77 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "OatNotes"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="co">---</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>This is oat's notebook.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">---</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="an">title:</span><span class="co"> "expand the width of a code block and its output"</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co">---</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu"># expand to full `page` width</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a></span>
+<span id="cb5-8"><a href="#cb5-8"></a><span class="fu">## 1. `::: {.column-page}` </span></span>
+<span id="cb5-9"><a href="#cb5-9"></a></span>
+<span id="cb5-10"><a href="#cb5-10"></a>Use this to wrap a code block to expand it and its output to <span class="in">`page`</span> width.</span>
+<span id="cb5-11"><a href="#cb5-11"></a></span>
+<span id="cb5-12"><a href="#cb5-12"></a>::: {.column-page}</span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="in">```{python}</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb5-17"><a href="#cb5-17"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
+<span id="cb5-19"><a href="#cb5-19"></a>df.head(<span class="dv">5</span>)</span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="in">```</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a>:::</span>
+<span id="cb5-22"><a href="#cb5-22"></a></span>
+<span id="cb5-23"><a href="#cb5-23"></a><span class="fu">## 2. `#| column: page` </span></span>
+<span id="cb5-24"><a href="#cb5-24"></a></span>
+<span id="cb5-25"><a href="#cb5-25"></a>Use it inside a code block to expand only its output to <span class="in">`page`</span> width.</span>
+<span id="cb5-26"><a href="#cb5-26"></a></span>
+<span id="cb5-29"><a href="#cb5-29"></a><span class="in">```{python}</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a><span class="co">#| column: page</span></span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb5-32"><a href="#cb5-32"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
+<span id="cb5-33"><a href="#cb5-33"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
+<span id="cb5-34"><a href="#cb5-34"></a>df.head(<span class="dv">5</span>)</span>
+<span id="cb5-35"><a href="#cb5-35"></a><span class="in">```</span></span>
+<span id="cb5-36"><a href="#cb5-36"></a></span>
+<span id="cb5-37"><a href="#cb5-37"></a></span>
+<span id="cb5-38"><a href="#cb5-38"></a><span class="fu"># expand to full `screen` width</span></span>
+<span id="cb5-39"><a href="#cb5-39"></a></span>
+<span id="cb5-40"><a href="#cb5-40"></a>You can have content span the full width of the page with no margin (full bleed).</span>
+<span id="cb5-41"><a href="#cb5-41"></a></span>
+<span id="cb5-42"><a href="#cb5-42"></a><span class="fu">## 1. `::: {.column-screen}` </span></span>
+<span id="cb5-43"><a href="#cb5-43"></a></span>
+<span id="cb5-44"><a href="#cb5-44"></a>Use it to wrap a code block to expand it and its output to full screen width.</span>
+<span id="cb5-45"><a href="#cb5-45"></a></span>
+<span id="cb5-46"><a href="#cb5-46"></a>::: {.column-screen}</span>
+<span id="cb5-49"><a href="#cb5-49"></a><span class="in">```{python}</span></span>
+<span id="cb5-50"><a href="#cb5-50"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb5-51"><a href="#cb5-51"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
+<span id="cb5-52"><a href="#cb5-52"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
+<span id="cb5-53"><a href="#cb5-53"></a>df.head(<span class="dv">5</span>)</span>
+<span id="cb5-54"><a href="#cb5-54"></a><span class="in">```</span></span>
+<span id="cb5-55"><a href="#cb5-55"></a>:::</span>
+<span id="cb5-56"><a href="#cb5-56"></a></span>
+<span id="cb5-57"><a href="#cb5-57"></a></span>
+<span id="cb5-58"><a href="#cb5-58"></a><span class="fu">## 2. `#| column: screen` </span></span>
+<span id="cb5-59"><a href="#cb5-59"></a></span>
+<span id="cb5-60"><a href="#cb5-60"></a>Use it inside a code block to expand only its output to full width of screen. </span>
+<span id="cb5-61"><a href="#cb5-61"></a></span>
+<span id="cb5-64"><a href="#cb5-64"></a><span class="in">```{python}</span></span>
+<span id="cb5-65"><a href="#cb5-65"></a><span class="co">#| column: screen</span></span>
+<span id="cb5-66"><a href="#cb5-66"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb5-67"><a href="#cb5-67"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
+<span id="cb5-68"><a href="#cb5-68"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
+<span id="cb5-69"><a href="#cb5-69"></a>df.head(<span class="dv">5</span>)</span>
+<span id="cb5-70"><a href="#cb5-70"></a><span class="in">```</span></span>
+<span id="cb5-71"><a href="#cb5-71"></a></span>
+<span id="cb5-72"><a href="#cb5-72"></a></span>
+<span id="cb5-73"><a href="#cb5-73"></a>---</span>
+<span id="cb5-74"><a href="#cb5-74"></a></span>
+<span id="cb5-75"><a href="#cb5-75"></a>Ref:</span>
+<span id="cb5-76"><a href="#cb5-76"></a></span>
+<span id="cb5-77"><a href="#cb5-77"></a><span class="ss">- </span>https://quarto.org/docs/authoring/article-layout.html#screen-column</span>
+<span id="cb5-78"><a href="#cb5-78"></a><span class="ss">- </span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

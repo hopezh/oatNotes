@@ -1,11 +1,11 @@
 ---
-title: "show the underlying data strucure of a plotly fig"
+title: "show data strucure of a plotly figure"
 filters:
     - line-highlight
 ---
 
 
-# 3 ways to view a fig's data strucure
+# example figure
 
 ```{python}
 import plotly.express as px
@@ -18,7 +18,10 @@ fig = px.line(
 fig.show()
 ```
 
-::: {.column-screen}
+
+# 3 ways to view a fig's data strucure
+
+:::: {.column-screen}
 ::: {.panel-tabset}
 
 ### `print(fig)`
@@ -50,9 +53,10 @@ fig.to_json()   # opt 3
 ```
 
 :::
-:::
+::::
 
+---
 
-## Ref:
+# Ref
 - https://plotly.com/python/figure-structure/#:~:text=figures%20as%20trees%20of%20attributes
 
