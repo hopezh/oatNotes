@@ -9,6 +9,8 @@ title: "expand the width of a code block and its output"
 
 Use this to wrap a code block to span it and its output to `page` width.
 
+### Syntax
+
 ````default
 ::: {.column-page}
 ```{.python}
@@ -20,6 +22,8 @@ df.head(5)
 :::
 ````
 
+
+### Example
 
 ::: {.column-page}
 ```{python}
@@ -34,6 +38,8 @@ df.head(5)
 
 Use it inside a code block and only its output will span `page` width.
 
+### Syntax
+
 ````default
 ```{.python}
 #| column: page
@@ -44,6 +50,7 @@ df.head(5)
 ```
 ````
 
+### Example
 
 ```{python}
 #| column: page
@@ -62,6 +69,8 @@ You can have content span the full width of the page with no margin (full bleed)
 
 Use it to wrap a code block to expand it and its output to full screen width.
 
+### Syntax
+
 ````default
 ::: {.column-screen}
 ```python
@@ -72,6 +81,8 @@ df.head(5)
 ```
 :::
 ````
+
+### Example
 
 ::: {.column-screen}
 ```{python}
@@ -87,6 +98,8 @@ df.head(5)
 
 Use it inside a code block to expand only its output to full width of screen. 
 
+### Syntax
+
 ````default
 ```python
 #| column: screen
@@ -97,6 +110,7 @@ df.head(5)
 ```
 ````
 
+### Example
 
 ```{python}
 #| column: screen
@@ -109,7 +123,7 @@ df.head(5)
 
 ---
 
-Ref
+# Ref
 
 - https://quarto.org/docs/authoring/article-layout.html#screen-column
 - 

@@ -4,22 +4,22 @@ filters:
     - line-highlight
 ---
 
-# Syntax
 
-- `:::: {.columns .column-screen-insert}` 
-- `::: column`
+# `::::{.column-screen-insert}` 
+
+## Syntax
 
 ````default
-:::: {.columns .column-screen-insert .column-screen}
+::::{.columns .column-screen-insert .column-screen}
 
 ::: column
-```{.python}
+```python
 print('left column')
 ```
 :::
 
 ::: column
-```{.python}
+```python
 print('right column')
 ```
 :::
@@ -27,16 +27,14 @@ print('right column')
 ::::
 ````
 
+## Example
 
-# Example
-
-````default
 :::: {.columns .column-screen-insert .column-screen}
 
 ::: column
 <h2 style="text-align: center;">left column</h2>
 
-```python
+```{python}
 import plotly.express as px
 df = px.data.iris() # iris is a pandas DataFrame
 fig = px.scatter(df, x="sepal_width", y="sepal_length")
@@ -47,11 +45,87 @@ fig.show()
 ::: column 
 <h2 style="text-align: center;">right column</h2>
 
-```python
+```{python}
 import plotly.express as px
 data_canada = px.data.gapminder().query("country == 'Canada'")
 fig = px.bar(data_canada, x='year', y='pop')
 fig.show()
+```
+:::
+
+::::
+
+---
+
+# `:::{layout-ncol='3'}`
+
+## Syntax
+
+````default
+::::{.column-screen}
+:::{layout-ncol="3"}
+
+```python
+print('a')
+```
+
+```python
+print('b')
+```
+
+```python
+print('c')
+```
+
+:::
+::::
+````
+
+
+## Example
+
+::::{.column-screen}
+:::{layout-ncol="3"}
+
+```{python}
+print('a')
+```
+
+```{python}
+print('b')
+```
+
+```{python}
+print('c')
+```
+
+:::
+::::
+
+---
+
+# `::::{.columns}` and `:::{.column width="30%"}`
+
+## Syntax
+
+````default
+::::{.columns .column-screen}
+
+:::{.column width="30%"}
+```python
+print('a')
+```
+:::
+
+:::{.column width="40%"}
+```python
+print('b')
+```
+:::
+
+:::{.column width="30%"}
+```python
+print('c')
 ```
 :::
 
@@ -59,41 +133,35 @@ fig.show()
 ````
 
 
-:::: {.columns .column-screen-insert .column-screen}
+## Example
 
-::: column
+:::: {.columns .column-screen}
 
-<h2 style="text-align: center;">left column</h2>
-
+::: {.column width="30%"}
 ```{python}
-import plotly.express as px
-df = px.data.iris() # iris is a pandas DataFrame
-fig = px.scatter(df, x="sepal_width", y="sepal_length")
-fig.show()
+print('a')
 ```
-
 :::
 
-::: column 
-
-<h2 style="text-align: center;">right column</h2>
-
+::: {.column width="40%"}
 ```{python}
-import plotly.express as px
-data_canada = px.data.gapminder().query("country == 'Canada'")
-fig = px.bar(data_canada, x='year', y='pop')
-fig.show()
+print('b')
 ```
+:::
 
+::: {.column width="30%"}
+```{python}
+print('c')
+```
 :::
 
 ::::
 
 ---
 
-# Ref:
+# Ref
 
 - https://stackoverflow.com/a/74544808/2559693 
-- 
+- https://github.com/quarto-dev/quarto-cli/issues/8179 
 
 

@@ -11,8 +11,8 @@ website:
       - about.qmd
   sidebar:
     # title: "Contents"
-    # style: "floating"
-    style: "docked"
+    style: "floating"
+    # style: "docked"
     search: true
     contents:
       - section: "Quarto"

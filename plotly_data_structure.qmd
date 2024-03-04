@@ -21,12 +21,13 @@ fig.show()
 
 # 3 ways to view a fig's data strucure
 
-:::: {.column-screen}
-::: {.panel-tabset}
+:::: {.columns .column-screen}
 
-### `print(fig)`
 
-`print(fig)` will result in the often-verbose `layout.template` key being represented as ellipses `...` for brevity.
+::: {.column width="33%"}
+## `print(fig)` 
+
+As a verbose `layout.template` key (shown as ellipses `...` for brevity).
 
 ```{python}
 #| source-line-numbers: "1"
@@ -34,29 +35,39 @@ print(fig)      # opt 1
 # fig.to_dict()   # opt 2
 # fig.to_json()   # opt 3
 ```
+:::
 
-### `fig.to_dict()`
+::: {.column width="34%"}
+## `fig.to_dict()`
+
+Shown as a dictionary. 
+
 ```{python}
 #| source-line-numbers: "2"
 # print(fig)      # opt 1
 fig.to_dict()   # opt 2
 # fig.to_json()   # opt 3
 ```
+:::
 
-### `fig.to_json()`
-aaaa
+::: {.column width="33%"}
+## `fig.to_json()`
+
+Shown as a JSON file. 
+
 ```{python}
 #| source-line-numbers: "3"
 # print(fig)      # opt 1
 # fig.to_dict()   # opt 2
 fig.to_json()   # opt 3
 ```
-
 :::
+
 ::::
 
 ---
 
 # Ref
+
 - https://plotly.com/python/figure-structure/#:~:text=figures%20as%20trees%20of%20attributes
 
