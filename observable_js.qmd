@@ -1,97 +1,85 @@
 ---
-title: "Penguins"
-format:
-  html:
-    toc: false
-    echo: false
-    keep-hidden: true
-    code-tools: true
+title: "Test Observable.js"
+format: html
 ---
 
-A simple example based on Allison Horst's [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/) dataset. Here we look at how penguin body mass varies across both sex and species (use the provided inputs to filter the dataset by bill length and island):
+Source: [Observable Template for Three.js](https://observablehq.com/@observablehq/three-js)
 
 ```{ojs}
-//| panel: input
-viewof bill_length_min = Inputs.range(
-  [32, 50], 
-  {value: 35, step: 1, label: "Bill length (min):"}
-)
-viewof islands = Inputs.checkbox(
-  ["Torgersen", "Biscoe", "Dream"], 
-  { value: ["Torgersen", "Biscoe"], 
-    label: "Islands:"
+renderer.domElement
+```
+
+
+```{ojs}
+// Continuously updates
+{
+  while (true) {
+    cube.rotation.z += 0.01;
+    renderer.render(scene, camera);
+    yield null;
   }
-)
+}
 ```
 
-::: {.panel-tabset}
-
-## Plot
 
 ```{ojs}
-Plot.rectY(filtered, 
-  Plot.binX(
-    {y: "count"}, 
-    {x: "body_mass_g", fill: "species", thresholds: 20}
-  ))
-  .plot({
-    facet: {
-      data: filtered,
-      x: "sex",
-      y: "species",
-      marginRight: 80
-    },
-    marks: [
-      Plot.frame(),
-    ]
-  }
-)
+height = 600
 ```
 
-## Data
 
 ```{ojs}
-Inputs.table(filtered)
+cube = {
+  const material = new THREE.MeshNormalMaterial();
+  const geometry = new THREE.BoxGeometry(1, 1, 1);
+  const cube = new THREE.Mesh(geometry, material);
+  return cube;
+}
 ```
 
-:::
 
 ```{ojs}
-data = FileAttachment("./data/palmer-penguins.csv").csv({ typed: true })
+scene = {
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x001b42);
+  scene.add(cube);
+  return scene;
+}
 ```
 
+
 ```{ojs}
-filtered = data.filter(function(penguin) {
-  return bill_length_min < penguin.bill_length_mm &&
-         islands.includes(penguin.island);
-})
+camera = {
+  const fov = 45;
+  const aspect = width / height;
+  const near = 1;
+  const far = 1000;
+  const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera.position.set(2, 2, -2)
+  camera.lookAt(new THREE.Vector3(0, 0, 0));
+  return camera;
+}
 ```
 
----
 
 ```{ojs}
-<!-- import * as THREE from "npm:three"; -->
-THREE = require("three");
+renderer = {
+  const renderer = new THREE.WebGLRenderer({antialias: true});
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(devicePixelRatio);
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.addEventListener("change", () => renderer.render(scene, camera));
+  invalidation.then(() => (controls.dispose(), renderer.dispose()));
+  return renderer;
+}
+```
 
-const height = 300;
-const camera = new THREE.PerspectiveCamera(70, width / height, 0.01, 10);
-const scene = new THREE.Scene();
-const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-const material = new THREE.MeshNormalMaterial();
-const mesh = new THREE.Mesh(geometry, material);
-const renderer = new THREE.WebGLRenderer({antialias: true});
-camera.position.z = 1;
-scene.add(mesh);
 
-const animation = (time) => {
-  mesh.rotation.x = time / 2000;
-  mesh.rotation.y = time / 1000;
-  renderer.render(scene, camera);
-};
-
-renderer.setSize(width, height);
-renderer.setAnimationLoop(animation);
-display(renderer.domElement);
+```{ojs}
+THREE = {
+  const THREE = window.THREE = await require("three@0.130.0/build/three.min.js");
+  await require("three@0.130.0/examples/js/controls/OrbitControls.js").catch(() => {});
+  return THREE;
+}
 ```
 
 
