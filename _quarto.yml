@@ -19,17 +19,17 @@ website:
     contents:
       - section: "Quarto"
         contents:
-          - quarto_tabset.qmd
-          - expand_codeblock_width.qmd
-          - side_by_side_codeblock.qmd
+          - ./pages/quarto/quarto_tabset.qmd
+          - ./pages/quarto/expand_codeblock_width.qmd
+          - ./pages/quarto/side_by_side_codeblock.qmd
       - section: "Deep Learning"
       - section: "Plotly"
         contents:
-          - plotly_data_structure.qmd
-          - transparent_fig_bgcolor.qmd
+          - ./pages/plotly/plotly_data_structure.qmd
+          - ./pages/plotly/transparent_fig_bgcolor.qmd
       - section: "Observable.js"
         contents:
-          - observable_js.qmd
+          - ./pages/observable/observable_js.qmd
       - section: "rhino3dm"
         contents: 
           - ./pages/rhino3dm/test_rhino3dm.qmd
@@ -50,5 +50,8 @@ format:
     toc: true
 
   ipynb: default
+
+filters: 
+  - line-highlight
 
 highlight-style: gruvbox

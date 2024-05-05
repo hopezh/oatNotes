@@ -2,13 +2,11 @@
 title: "test rhino3dm"
 ---
 
-:::: {.column-screen}
-
 [rhino3dm github](https://github.com/mcneel/rhino3dm)
 
 Install rhino3dm:
 
-```shell
+```shell 
 > pip install rhino3dm
 
 > pip show rhino3dm
@@ -39,10 +37,11 @@ model = File3dm.FromByteArray(req.content)
 
 for i in range(len(model.Objects)):
     obj = model.Objects[i]
-    print("model object ", i, ':', obj)
     geometry = obj.Geometry
     bbox = geometry.GetBoundingBox()
-    print("bbbox min & max: {}, {}".format(bbox.Min, bbox.Max))
+
+    print("model object ", i, ':', obj)
+    print("bbbox min & max: {}, {}".format(bbox.Min, bbox.Max), '\n')
 ```
 
 ::: {.column-margin}
@@ -57,7 +56,6 @@ Read a 3dm file from a byte array
 :::
 :::
 
-
 ::: {.column-margin}
 ::: {.callout-tip title="File3dm.Objects --> File3dmObjectTable" collapse="true"}
 [File3dm.Objects](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)
@@ -66,7 +64,6 @@ File3dmObjectTable: Gets access to the class associated with this file, which co
 :::
 :::
 
-
 ::: {.column-margin}
 ::: {.callout-tip title="File3dmObject.Geometry -> rhino3dm.GeometryBase" collapse="true"}
 [File3dmObject.Geometry](https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#rhino3dm.File3dmObject.Geometry)
@@ -74,7 +71,6 @@ File3dmObjectTable: Gets access to the class associated with this file, which co
 rhino3dm.GeometryBase: Gets the geometry that is linked with this document object.
 :::
 :::
-
 
 ::: {.column-margin}
 ::: {.callout-tip title="GeometryBase.GetBoundingBox -> rhino3dm.BoundingBox" collapse="true"}
@@ -95,7 +91,6 @@ Return type:
 - rhino3dm.BoundingBox
 :::
 :::
-
 
 ::: {.column-margin}
 ::: {.callout-tip title="rhino3dm.BoundingBox" collapse="true"}
