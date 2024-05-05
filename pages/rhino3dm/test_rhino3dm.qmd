@@ -8,7 +8,11 @@ title: "test rhino3dm"
 
 - [rhino3dm doc](https://mcneel.github.io/rhino3dm/python/api/index.html)
 
-- [developer examples - rhino3dm.py](https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/py)
+- [developer examples](https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm)
+
+    - [rhino3dm.py](https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/py)
+
+    - [rhino3dm.js](https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/js)
 
 
 # Install rhino3dm:
@@ -34,7 +38,7 @@ Required-by: compute-rhino3d
 
 # Example 1
 
-```{python}
+```python
 from rhino3dm import *
 import requests  # pip install requests
 
@@ -121,7 +125,7 @@ Return type:
 
 # Example 2 
 
-```{python}
+```python
 from rhino3dm import *
 
 center = Point3d(1, 2, 3)
@@ -134,7 +138,7 @@ print('start point', type(start))
 
 # Example 3
 
-```{python}
+```python
 import rhino3dm
 import random
 
@@ -153,7 +157,7 @@ for i in range(20):
 
 # Example 4
 
-```{python}
+```python
 # Sample read render meshes from 3dm file
 
 import rhino3dm
@@ -173,9 +177,9 @@ print(mesh)
 ```
 
 
-# Example 4
+# Example 5
 
-```{python}
+```python
 # spherelines.py
 # Sample script that demonstrates how to use Rhino3dm.py
 # https://github.com/mcneel/rhino3dm
@@ -226,3 +230,41 @@ model.Write(path, 6)
 ```
 
 
+# test reading geometry by layer name
+
+```{python}
+import rhino3dm
+
+model = rhino3dm.File3dm.Read('./myBox.3dm')
+print('model object: ', model)
+print()
+
+# get layer table and layer fullpath
+layer_table = model.Layers
+print('layer table: ', layer_table)
+print()
+
+for i in range(len(layer_table)):
+    # print(layer_table[i].Name)
+    print('layer ', i, ' :', layer_table[i])
+    print('layer ', i, ' id:', layer_table[i].Id)
+    print('layer ', i, ' index:', layer_table[i].Index)
+    print('layer ', i, ' fullpath: ', layer_table[i].FullPath)
+    print()
+
+# get layer idx of each geom 
+for i in range(len(model.Objects)):
+    print('obj ', i, ' geom: ', model.Objects[i].Geometry)
+    print('obj ', i, ' attr: ', model.Objects[i].Attributes)
+    print('obj ', i, ' layer idx: ', model.Objects[i].Attributes.LayerIndex)
+    print()
+
+print()
+
+# brep = model.Objects[0].Geometry
+# face = brep.Faces[0]
+# mesh = face.GetMesh(rhino3dm.MeshType.Any)
+# print (len(mesh.Faces))
+
+
+```
