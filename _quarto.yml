@@ -43,8 +43,9 @@ format:
     code-line-numbers: true
     code-tools: true
     css: styles.css
-    theme:
-      light: cosmo
+    theme: 
+      # light: cosmo
+      light: materia
       dark: darkly
     toc: true
 

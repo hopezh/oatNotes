@@ -2,9 +2,11 @@
 title: "test rhino3dm"
 ---
 
+:::: {.column-screen}
+
 [rhino3dm github](https://github.com/mcneel/rhino3dm)
 
-Install rhino3dm
+Install rhino3dm:
 
 ```shell
 > pip install rhino3dm
@@ -28,7 +30,6 @@ Required-by: compute-rhino3d
 Test code:
 
 ```{python}
-#| column: page
 from rhino3dm import *
 import requests  # pip install requests
 
@@ -36,10 +37,84 @@ req = requests.get("https://files.mcneel.com/TEST/Rhino Logo.3dm")
 
 model = File3dm.FromByteArray(req.content)
 
-for obj in model.Objects:
+for i in range(len(model.Objects)):
+    obj = model.Objects[i]
+    print("model object ", i, ':', obj)
     geometry = obj.Geometry
     bbox = geometry.GetBoundingBox()
-    print("{}, {}".format(bbox.Min, bbox.Max))
+    print("bbbox min & max: {}, {}".format(bbox.Min, bbox.Max))
 ```
 
+::: {.column-margin}
+::: {.callout-tip title="File3dm.FromByteArray -> File3dm" collapse="true"}
+[File3dm.FromByteArray](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.FromByteArray)
 
+Read a 3dm file from a byte array
+
+- Returns:      New File3dm on success, None on error.
+
+- Return type:  File3dm
+:::
+:::
+
+
+::: {.column-margin}
+::: {.callout-tip title="File3dm.Objects --> File3dmObjectTable" collapse="true"}
+[File3dm.Objects](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)
+
+File3dmObjectTable: Gets access to the class associated with this file, which contains all objects.
+:::
+:::
+
+
+::: {.column-margin}
+::: {.callout-tip title="File3dmObject.Geometry -> rhino3dm.GeometryBase" collapse="true"}
+[File3dmObject.Geometry](https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#rhino3dm.File3dmObject.Geometry)
+
+rhino3dm.GeometryBase: Gets the geometry that is linked with this document object.
+:::
+:::
+
+
+::: {.column-margin}
+::: {.callout-tip title="GeometryBase.GetBoundingBox -> rhino3dm.BoundingBox" collapse="true"}
+[GeometryBase.GetBoundingBox](https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#rhino3dm.GeometryBase.GetBoundingBox)
+
+Bounding box solver. Gets the world axis aligned bounding box for the geometry.
+
+Parameters:
+
+- accurate (bool) – If true, a physically accurate bounding box will be computed. If not, a bounding box estimate will be computed. For some geometry types there is no difference between the estimate and the accurate bounding box. Estimated bounding boxes can be computed much (much) faster than accurate (or “tight”) bounding boxes. Estimated bounding boxes are always similar to or larger than accurate bounding boxes.
+
+Returns:
+
+- The bounding box of the geometry in world coordinates or BoundingBox.Empty if not bounding box could be found.
+
+Return type:
+
+- rhino3dm.BoundingBox
+:::
+:::
+
+
+::: {.column-margin}
+::: {.callout-tip title="rhino3dm.BoundingBox" collapse="true"}
+[class rhino3dm.BoundingBox](https://mcneel.github.io/rhino3dm/python/api/BoundingBox.html#rhino3dm.BoundingBox)
+
+> `BoundingBox(minX, minY, minZ, maxX, maxY, maxZ)`
+> 
+> Constructs a bounding box from numeric extremes.
+> 
+> Parameters:
+>
+>    - minX (float) – Lower extreme for box X size.
+>    - minY (float) – Lower extreme for box Y size.
+>    - minZ (float) – Lower extreme for box Z size.
+>    - maxX (float) – Upper extreme for box X size.
+>    - maxY (float) – Upper extreme for box Y size.
+>    - maxZ (float) – Upper extreme for box Z size.
+:::
+:::
+
+
+::::
