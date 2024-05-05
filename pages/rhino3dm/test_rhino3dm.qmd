@@ -239,11 +239,12 @@ model = rhino3dm.File3dm.Read('./myBox.3dm')
 print('model object: ', model)
 print()
 
-# get layer table and layer fullpath
+# get layer table
 layer_table = model.Layers
 print('layer table: ', layer_table)
 print()
 
+# loop through layer table to get layers
 for i in range(len(layer_table)):
     # print(layer_table[i].Name)
     print('layer ', i, ' :', layer_table[i])
