@@ -75,6 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -104,7 +105,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
+
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -330,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Use this to wrap a code block to span it and its output to <code>page</code> width.</p>
 <section id="syntax" class="level3">
 <h3 class="anchored" data-anchor-id="syntax">Syntax</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>::: {.column-page}</span>
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>::: {.column-page}</span>
 <span id="cb1-2"><a href="#cb1-2"></a>```{.python}</span>
 <span id="cb1-3"><a href="#cb1-3"></a>import polars as pl</span>
 <span id="cb1-4"><a href="#cb1-4"></a>csv_path = "../../data/tw_taoyuan_cankun_merged_updated.csv"</span>
@@ -343,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="example">Example</h3>
 <div class="column-page">
 <div id="7a5f7ee8" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb2-2"><a href="#cb2-2"></a>csv_path <span class="op">=</span> <span class="st">"../../data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
 <span id="cb2-4"><a href="#cb2-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -529,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Use it inside a code block and only its output will span <code>page</code> width.</p>
 <section id="syntax-1" class="level3">
 <h3 class="anchored" data-anchor-id="syntax-1">Syntax</h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1"></a>```{.python}</span>
+<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1"></a>```{.python}</span>
 <span id="cb3-2"><a href="#cb3-2"></a>#| column: page</span>
 <span id="cb3-3"><a href="#cb3-3"></a>import polars as pl</span>
 <span id="cb3-4"><a href="#cb3-4"></a>csv_path = "../../data/tw_taoyuan_cankun_merged_updated.csv"</span>
@@ -540,7 +544,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-1" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="example-1">Example</h3>
 <div id="691f4c2c" class="cell page-columns page-full" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb4-2"><a href="#cb4-2"></a>csv_path <span class="op">=</span> <span class="st">"../../data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
 <span id="cb4-4"><a href="#cb4-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -729,7 +733,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Use it to wrap a code block to expand it and its output to full screen width.</p>
 <section id="syntax-2" class="level3">
 <h3 class="anchored" data-anchor-id="syntax-2">Syntax</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1"></a>::: {.column-screen}</span>
+<div class="sourceCode" id="cb5" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1"></a>::: {.column-screen}</span>
 <span id="cb5-2"><a href="#cb5-2"></a>```python</span>
 <span id="cb5-3"><a href="#cb5-3"></a>import polars as pl</span>
 <span id="cb5-4"><a href="#cb5-4"></a>csv_path = "../../data/tw_taoyuan_cankun_merged_updated.csv"</span>
@@ -742,7 +746,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="example-2">Example</h3>
 <div class="column-screen">
 <div id="1d01b2c3" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb6-2"><a href="#cb6-2"></a>csv_path <span class="op">=</span> <span class="st">"../../data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
 <span id="cb6-4"><a href="#cb6-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -928,7 +932,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Use it inside a code block to expand only its output to full width of screen.</p>
 <section id="syntax-3" class="level3">
 <h3 class="anchored" data-anchor-id="syntax-3">Syntax</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1"></a>```python</span>
+<div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1"></a>```python</span>
 <span id="cb7-2"><a href="#cb7-2"></a>#| column: screen</span>
 <span id="cb7-3"><a href="#cb7-3"></a>import polars as pl</span>
 <span id="cb7-4"><a href="#cb7-4"></a>csv_path = "../../data/tw_taoyuan_cankun_merged_updated.csv"</span>
@@ -939,7 +943,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-3" class="level3 page-columns page-full">
 <h3 class="anchored" data-anchor-id="example-3">Example</h3>
 <div id="08887808" class="cell page-columns page-full" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb8-2"><a href="#cb8-2"></a>csv_path <span class="op">=</span> <span class="st">"../../data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
 <span id="cb8-4"><a href="#cb8-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1738,7 +1742,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">---</span></span>
+<div class="sourceCode" id="cb9" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">---</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="an">title:</span><span class="co"> "expand the width of a code block and its output"</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a><span class="co">---</span></span>
 <span id="cb9-4"><a href="#cb9-4"></a></span>
@@ -1874,4 +1878,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>

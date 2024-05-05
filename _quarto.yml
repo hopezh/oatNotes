@@ -43,9 +43,14 @@ format:
     code-line-numbers: true
     code-tools: true
     css: styles.css
+    grid:
+      # sidebar-width: 300px
+      # body-width: 900px
+      body-width: 1000px
+      # margin-width: 300px
+      # gutter-width: 1.5rem
     theme: 
-      # light: cosmo
-      light: materia
+      light: flatly
       dark: darkly
     toc: true
 
@@ -54,4 +59,4 @@ format:
 filters: 
   - line-highlight
 
-highlight-style: gruvbox
+highlight-style: breeze

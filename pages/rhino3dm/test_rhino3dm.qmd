@@ -2,9 +2,14 @@
 title: "test rhino3dm"
 ---
 
-[rhino3dm github](https://github.com/mcneel/rhino3dm)
+# Docs
 
-Install rhino3dm:
+- [rhino3dm github](https://github.com/mcneel/rhino3dm)
+
+- [rhino3dm doc](https://mcneel.github.io/rhino3dm/python/api/index.html)
+
+
+# Install rhino3dm:
 
 ```shell 
 > pip install rhino3dm
@@ -25,7 +30,7 @@ Required-by: compute-rhino3d
 ```
 
 
-Test code:
+# Example 1
 
 ```{python}
 from rhino3dm import *
@@ -112,4 +117,16 @@ Return type:
 :::
 
 
-::::
+# Example 2 
+
+```{python}
+from rhino3dm import *
+
+center = Point3d(1, 2, 3)
+arc = Arc(center, 10, 1)
+nc = arc.ToNurbsCurve()
+start = nc.PointAtStart
+print('start point', type(start))
+```
+
+

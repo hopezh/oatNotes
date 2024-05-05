@@ -265,8 +265,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="test_rhino3dm.ipynb" download="test_rhino3dm.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#docs" id="toc-docs" class="nav-link active" data-scroll-target="#docs">Docs</a></li>
+  <li><a href="#install-rhino3dm" id="toc-install-rhino3dm" class="nav-link" data-scroll-target="#install-rhino3dm">Install rhino3dm:</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="test_rhino3dm.ipynb" download="test_rhino3dm.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 
@@ -289,8 +298,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><a href="https://github.com/mcneel/rhino3dm">rhino3dm github</a></p>
-<p>Install rhino3dm:</p>
+<section id="docs" class="level1">
+<h1>Docs</h1>
+<ul>
+<li><p><a href="https://github.com/mcneel/rhino3dm">rhino3dm github</a></p></li>
+<li><p><a href="https://mcneel.github.io/rhino3dm/python/api/index.html">rhino3dm doc</a></p></li>
+</ul>
+</section>
+<section id="install-rhino3dm" class="level1">
+<h1>Install rhino3dm:</h1>
 <div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>&gt; pip install rhino3dm</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>&gt; pip show rhino3dm</span>
@@ -306,8 +322,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-13"><a href="#cb1-13"></a>Location: C:\Users\USERNAME\.conda\envs\ai\Lib\site-packages</span>
 <span id="cb1-14"><a href="#cb1-14"></a>Requires: </span>
 <span id="cb1-15"><a href="#cb1-15"></a>Required-by: compute-rhino3d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Test code:</p>
-<div id="92fb2219" class="cell" data-execution_count="1">
+</section>
+<section id="example-1" class="level1 page-columns page-full">
+<h1>Example 1</h1>
+<div id="05b709e2" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> requests  <span class="co"># pip install requests</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
@@ -323,22 +341,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-13"><a href="#cb2-13"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
 <span id="cb2-14"><a href="#cb2-14"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>model object  0 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186D12644F0&gt;
+<pre data-code-line-numbers=""><code>model object  0 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176954ED270&gt;
 bbbox min &amp; max: 1.8371907243686973,-1.5689282473879564,-4.805097727008464, 3.6645919601949197,1.5671337050051424,-3.192419551444698 
 
-model object  1 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186CF572470&gt;
+model object  1 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176985A5370&gt;
 bbbox min &amp; max: -14.652654807178946,-3.523004292398442,-7.8656395649010795, 6.406813995967793,3.5230042923984426,14.775277446067086 
 
-model object  2 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186D11FDA70&gt;
+model object  2 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176985A4DB0&gt;
 bbbox min &amp; max: -1.5839081681904716,-2.3582386650337614,-9.08301167326336, 24.194368536477562,2.3582386650337734,6.399251336457315 
 
-model object  3 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186D1985C70&gt;
+model object  3 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176985A5070&gt;
 bbbox min &amp; max: -1.0135556828519197,-3.5376915458174127,-13.422236304307603, 14.284066885969416,3.5376915458174127,-2.035007486827391 
 
-model object  4 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186A80C3570&gt;
+model object  4 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176985A6430&gt;
 bbbox min &amp; max: 0.8982316021875303,-1.5671337050051424,-5.726878488888956, 4.395812771763269,1.5671337050051424,-2.640250606356152 
 
-model object  5 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186A80C2A30&gt;
+model object  5 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176985A5B70&gt;
 bbbox min &amp; max: 2.5014992399166736,-1.5671337050051424,-4.153203305329301, 3.172512024984831,1.5671337050051424,-3.561046024146983 
 </code></pre>
 </div>
@@ -466,11 +484,26 @@ rhino3dm.BoundingBox
 
 
 
-<p>::::</p>
+</section>
+<section id="example-2" class="level1">
+<h1>Example 2</h1>
+<div id="e7393f1b" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>center <span class="op">=</span> Point3d(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb4-4"><a href="#cb4-4"></a>arc <span class="op">=</span> Arc(center, <span class="dv">10</span>, <span class="dv">1</span>)</span>
+<span id="cb4-5"><a href="#cb4-5"></a>nc <span class="op">=</span> arc.ToNurbsCurve()</span>
+<span id="cb4-6"><a href="#cb4-6"></a>start <span class="op">=</span> nc.PointAtStart</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="bu">print</span>(<span class="st">'start point'</span>, <span class="bu">type</span>(start))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>start point &lt;class 'rhino3dm._rhino3dm.Point3d'&gt;</code></pre>
+</div>
+</div>
 
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1077,121 +1110,137 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb4" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="an">title:</span><span class="co"> "test rhino3dm"</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="co">---</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">[</span><span class="ot">rhino3dm github</span><span class="co">](https://github.com/mcneel/rhino3dm)</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a></span>
-<span id="cb4-7"><a href="#cb4-7"></a>Install rhino3dm:</span>
-<span id="cb4-8"><a href="#cb4-8"></a></span>
-<span id="cb4-9"><a href="#cb4-9"></a><span class="in">```shell </span></span>
-<span id="cb4-10"><a href="#cb4-10"></a><span class="op">&gt;</span> pip <span class="fu">install</span> rhino3dm</span>
-<span id="cb4-11"><a href="#cb4-11"></a></span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="op">&gt;</span> pip <span class="ex">show</span> rhino3dm</span>
-<span id="cb4-13"><a href="#cb4-13"></a></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="ex">Name:</span> rhino3dm</span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="ex">Version:</span> 8.6.0</span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="ex">Summary:</span> Python library based on OpenNURBS with a RhinoCommon</span>
-<span id="cb4-17"><a href="#cb4-17"></a> <span class="ex">style</span></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="ex">Home-page:</span> </span>
-<span id="cb4-19"><a href="#cb4-19"></a><span class="ex">Author:</span> Robert McNeel <span class="kw">&amp;</span> <span class="ex">Associates</span></span>
-<span id="cb4-20"><a href="#cb4-20"></a><span class="ex">Author-email:</span> steve@mcneel.com</span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="ex">License:</span> </span>
-<span id="cb4-22"><a href="#cb4-22"></a><span class="ex">Location:</span> C:<span class="dt">\U</span>sers<span class="dt">\U</span>SERNAME<span class="dt">\.</span>conda<span class="dt">\e</span>nvs<span class="dt">\a</span>i<span class="dt">\L</span>ib<span class="dt">\s</span>ite-packages</span>
-<span id="cb4-23"><a href="#cb4-23"></a><span class="ex">Requires:</span> </span>
-<span id="cb4-24"><a href="#cb4-24"></a><span class="ex">Required-by:</span> compute-rhino3d</span>
-<span id="cb4-25"><a href="#cb4-25"></a><span class="in">```</span></span>
-<span id="cb4-26"><a href="#cb4-26"></a></span>
-<span id="cb4-27"><a href="#cb4-27"></a></span>
-<span id="cb4-28"><a href="#cb4-28"></a>Test code:</span>
-<span id="cb4-29"><a href="#cb4-29"></a></span>
-<span id="cb4-32"><a href="#cb4-32"></a><span class="in">```{python}</span></span>
-<span id="cb4-33"><a href="#cb4-33"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb4-34"><a href="#cb4-34"></a><span class="im">import</span> requests  <span class="co"># pip install requests</span></span>
-<span id="cb4-35"><a href="#cb4-35"></a></span>
-<span id="cb4-36"><a href="#cb4-36"></a>req <span class="op">=</span> requests.get(<span class="st">"https://files.mcneel.com/TEST/Rhino Logo.3dm"</span>)</span>
-<span id="cb4-37"><a href="#cb4-37"></a></span>
-<span id="cb4-38"><a href="#cb4-38"></a>model <span class="op">=</span> File3dm.FromByteArray(req.content)</span>
-<span id="cb4-39"><a href="#cb4-39"></a></span>
-<span id="cb4-40"><a href="#cb4-40"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(model.Objects)):</span>
-<span id="cb4-41"><a href="#cb4-41"></a>    obj <span class="op">=</span> model.Objects[i]</span>
-<span id="cb4-42"><a href="#cb4-42"></a>    geometry <span class="op">=</span> obj.Geometry</span>
-<span id="cb4-43"><a href="#cb4-43"></a>    bbox <span class="op">=</span> geometry.GetBoundingBox()</span>
-<span id="cb4-44"><a href="#cb4-44"></a></span>
-<span id="cb4-45"><a href="#cb4-45"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
-<span id="cb4-46"><a href="#cb4-46"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb4-47"><a href="#cb4-47"></a><span class="in">```</span></span>
-<span id="cb4-48"><a href="#cb4-48"></a></span>
-<span id="cb4-49"><a href="#cb4-49"></a>::: {.column-margin}</span>
-<span id="cb4-50"><a href="#cb4-50"></a>::: {.callout-tip title="File3dm.FromByteArray -&gt; File3dm" collapse="true"}</span>
-<span id="cb4-51"><a href="#cb4-51"></a><span class="co">[</span><span class="ot">File3dm.FromByteArray</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.FromByteArray)</span></span>
-<span id="cb4-52"><a href="#cb4-52"></a></span>
-<span id="cb4-53"><a href="#cb4-53"></a>Read a 3dm file from a byte array</span>
-<span id="cb4-54"><a href="#cb4-54"></a></span>
-<span id="cb4-55"><a href="#cb4-55"></a><span class="ss">- </span>Returns:      New File3dm on success, None on error.</span>
-<span id="cb4-56"><a href="#cb4-56"></a></span>
-<span id="cb4-57"><a href="#cb4-57"></a><span class="ss">- </span>Return type:  File3dm</span>
-<span id="cb4-58"><a href="#cb4-58"></a>:::</span>
-<span id="cb4-59"><a href="#cb4-59"></a>:::</span>
-<span id="cb4-60"><a href="#cb4-60"></a></span>
-<span id="cb4-61"><a href="#cb4-61"></a>::: {.column-margin}</span>
-<span id="cb4-62"><a href="#cb4-62"></a>::: {.callout-tip title="File3dm.Objects --&gt; File3dmObjectTable" collapse="true"}</span>
-<span id="cb4-63"><a href="#cb4-63"></a><span class="co">[</span><span class="ot">File3dm.Objects</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)</span></span>
-<span id="cb4-64"><a href="#cb4-64"></a></span>
-<span id="cb4-65"><a href="#cb4-65"></a>File3dmObjectTable: Gets access to the class associated with this file, which contains all objects.</span>
-<span id="cb4-66"><a href="#cb4-66"></a>:::</span>
-<span id="cb4-67"><a href="#cb4-67"></a>:::</span>
-<span id="cb4-68"><a href="#cb4-68"></a></span>
-<span id="cb4-69"><a href="#cb4-69"></a>::: {.column-margin}</span>
-<span id="cb4-70"><a href="#cb4-70"></a>::: {.callout-tip title="File3dmObject.Geometry -&gt; rhino3dm.GeometryBase" collapse="true"}</span>
-<span id="cb4-71"><a href="#cb4-71"></a><span class="co">[</span><span class="ot">File3dmObject.Geometry</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#rhino3dm.File3dmObject.Geometry)</span></span>
-<span id="cb4-72"><a href="#cb4-72"></a></span>
-<span id="cb4-73"><a href="#cb4-73"></a>rhino3dm.GeometryBase: Gets the geometry that is linked with this document object.</span>
-<span id="cb4-74"><a href="#cb4-74"></a>:::</span>
-<span id="cb4-75"><a href="#cb4-75"></a>:::</span>
-<span id="cb4-76"><a href="#cb4-76"></a></span>
-<span id="cb4-77"><a href="#cb4-77"></a>::: {.column-margin}</span>
-<span id="cb4-78"><a href="#cb4-78"></a>::: {.callout-tip title="GeometryBase.GetBoundingBox -&gt; rhino3dm.BoundingBox" collapse="true"}</span>
-<span id="cb4-79"><a href="#cb4-79"></a><span class="co">[</span><span class="ot">GeometryBase.GetBoundingBox</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#rhino3dm.GeometryBase.GetBoundingBox)</span></span>
-<span id="cb4-80"><a href="#cb4-80"></a></span>
-<span id="cb4-81"><a href="#cb4-81"></a>Bounding box solver. Gets the world axis aligned bounding box for the geometry.</span>
-<span id="cb4-82"><a href="#cb4-82"></a></span>
-<span id="cb4-83"><a href="#cb4-83"></a>Parameters:</span>
-<span id="cb4-84"><a href="#cb4-84"></a></span>
-<span id="cb4-85"><a href="#cb4-85"></a><span class="ss">- </span>accurate (bool) – If true, a physically accurate bounding box will be computed. If not, a bounding box estimate will be computed. For some geometry types there is no difference between the estimate and the accurate bounding box. Estimated bounding boxes can be computed much (much) faster than accurate (or “tight”) bounding boxes. Estimated bounding boxes are always similar to or larger than accurate bounding boxes.</span>
-<span id="cb4-86"><a href="#cb4-86"></a></span>
-<span id="cb4-87"><a href="#cb4-87"></a>Returns:</span>
-<span id="cb4-88"><a href="#cb4-88"></a></span>
-<span id="cb4-89"><a href="#cb4-89"></a><span class="ss">- </span>The bounding box of the geometry in world coordinates or BoundingBox.Empty if not bounding box could be found.</span>
-<span id="cb4-90"><a href="#cb4-90"></a></span>
-<span id="cb4-91"><a href="#cb4-91"></a>Return type:</span>
-<span id="cb4-92"><a href="#cb4-92"></a></span>
-<span id="cb4-93"><a href="#cb4-93"></a><span class="ss">- </span>rhino3dm.BoundingBox</span>
-<span id="cb4-94"><a href="#cb4-94"></a>:::</span>
-<span id="cb4-95"><a href="#cb4-95"></a>:::</span>
-<span id="cb4-96"><a href="#cb4-96"></a></span>
-<span id="cb4-97"><a href="#cb4-97"></a>::: {.column-margin}</span>
-<span id="cb4-98"><a href="#cb4-98"></a>::: {.callout-tip title="rhino3dm.BoundingBox" collapse="true"}</span>
-<span id="cb4-99"><a href="#cb4-99"></a><span class="co">[</span><span class="ot">class rhino3dm.BoundingBox</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/BoundingBox.html#rhino3dm.BoundingBox)</span></span>
-<span id="cb4-100"><a href="#cb4-100"></a></span>
-<span id="cb4-101"><a href="#cb4-101"></a><span class="at">&gt; </span><span class="in">`BoundingBox(minX, minY, minZ, maxX, maxY, maxZ)`</span></span>
-<span id="cb4-102"><a href="#cb4-102"></a><span class="at">&gt; </span></span>
-<span id="cb4-103"><a href="#cb4-103"></a><span class="at">&gt; Constructs a bounding box from numeric extremes.</span></span>
-<span id="cb4-104"><a href="#cb4-104"></a><span class="at">&gt; </span></span>
-<span id="cb4-105"><a href="#cb4-105"></a><span class="at">&gt; Parameters:</span></span>
-<span id="cb4-106"><a href="#cb4-106"></a><span class="at">&gt;</span></span>
-<span id="cb4-107"><a href="#cb4-107"></a><span class="at">&gt;    - minX (float) – Lower extreme for box X size.</span></span>
-<span id="cb4-108"><a href="#cb4-108"></a><span class="at">&gt;    - minY (float) – Lower extreme for box Y size.</span></span>
-<span id="cb4-109"><a href="#cb4-109"></a><span class="at">&gt;    - minZ (float) – Lower extreme for box Z size.</span></span>
-<span id="cb4-110"><a href="#cb4-110"></a><span class="at">&gt;    - maxX (float) – Upper extreme for box X size.</span></span>
-<span id="cb4-111"><a href="#cb4-111"></a><span class="at">&gt;    - maxY (float) – Upper extreme for box Y size.</span></span>
-<span id="cb4-112"><a href="#cb4-112"></a><span class="at">&gt;    - maxZ (float) – Upper extreme for box Z size.</span></span>
-<span id="cb4-113"><a href="#cb4-113"></a><span class="at">:::</span></span>
-<span id="cb4-114"><a href="#cb4-114"></a><span class="at">:::</span></span>
-<span id="cb4-115"><a href="#cb4-115"></a></span>
-<span id="cb4-116"><a href="#cb4-116"></a></span>
-<span id="cb4-117"><a href="#cb4-117"></a>::::</span>
+<div class="sourceCode" id="cb6" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="an">title:</span><span class="co"> "test rhino3dm"</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">---</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="fu"># Docs</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="ss">- </span><span class="co">[</span><span class="ot">rhino3dm github</span><span class="co">](https://github.com/mcneel/rhino3dm)</span></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="ss">- </span><span class="co">[</span><span class="ot">rhino3dm doc</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/index.html)</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a></span>
+<span id="cb6-11"><a href="#cb6-11"></a></span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="fu"># Install rhino3dm:</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="in">```shell </span></span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="op">&gt;</span> pip <span class="fu">install</span> rhino3dm</span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="op">&gt;</span> pip <span class="ex">show</span> rhino3dm</span>
+<span id="cb6-18"><a href="#cb6-18"></a></span>
+<span id="cb6-19"><a href="#cb6-19"></a><span class="ex">Name:</span> rhino3dm</span>
+<span id="cb6-20"><a href="#cb6-20"></a><span class="ex">Version:</span> 8.6.0</span>
+<span id="cb6-21"><a href="#cb6-21"></a><span class="ex">Summary:</span> Python library based on OpenNURBS with a RhinoCommon</span>
+<span id="cb6-22"><a href="#cb6-22"></a> <span class="ex">style</span></span>
+<span id="cb6-23"><a href="#cb6-23"></a><span class="ex">Home-page:</span> </span>
+<span id="cb6-24"><a href="#cb6-24"></a><span class="ex">Author:</span> Robert McNeel <span class="kw">&amp;</span> <span class="ex">Associates</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a><span class="ex">Author-email:</span> steve@mcneel.com</span>
+<span id="cb6-26"><a href="#cb6-26"></a><span class="ex">License:</span> </span>
+<span id="cb6-27"><a href="#cb6-27"></a><span class="ex">Location:</span> C:<span class="dt">\U</span>sers<span class="dt">\U</span>SERNAME<span class="dt">\.</span>conda<span class="dt">\e</span>nvs<span class="dt">\a</span>i<span class="dt">\L</span>ib<span class="dt">\s</span>ite-packages</span>
+<span id="cb6-28"><a href="#cb6-28"></a><span class="ex">Requires:</span> </span>
+<span id="cb6-29"><a href="#cb6-29"></a><span class="ex">Required-by:</span> compute-rhino3d</span>
+<span id="cb6-30"><a href="#cb6-30"></a><span class="in">```</span></span>
+<span id="cb6-31"><a href="#cb6-31"></a></span>
+<span id="cb6-32"><a href="#cb6-32"></a></span>
+<span id="cb6-33"><a href="#cb6-33"></a><span class="fu"># Example 1</span></span>
+<span id="cb6-34"><a href="#cb6-34"></a></span>
+<span id="cb6-37"><a href="#cb6-37"></a><span class="in">```{python}</span></span>
+<span id="cb6-38"><a href="#cb6-38"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-39"><a href="#cb6-39"></a><span class="im">import</span> requests  <span class="co"># pip install requests</span></span>
+<span id="cb6-40"><a href="#cb6-40"></a></span>
+<span id="cb6-41"><a href="#cb6-41"></a>req <span class="op">=</span> requests.get(<span class="st">"https://files.mcneel.com/TEST/Rhino Logo.3dm"</span>)</span>
+<span id="cb6-42"><a href="#cb6-42"></a></span>
+<span id="cb6-43"><a href="#cb6-43"></a>model <span class="op">=</span> File3dm.FromByteArray(req.content)</span>
+<span id="cb6-44"><a href="#cb6-44"></a></span>
+<span id="cb6-45"><a href="#cb6-45"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(model.Objects)):</span>
+<span id="cb6-46"><a href="#cb6-46"></a>    obj <span class="op">=</span> model.Objects[i]</span>
+<span id="cb6-47"><a href="#cb6-47"></a>    geometry <span class="op">=</span> obj.Geometry</span>
+<span id="cb6-48"><a href="#cb6-48"></a>    bbox <span class="op">=</span> geometry.GetBoundingBox()</span>
+<span id="cb6-49"><a href="#cb6-49"></a></span>
+<span id="cb6-50"><a href="#cb6-50"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
+<span id="cb6-51"><a href="#cb6-51"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb6-52"><a href="#cb6-52"></a><span class="in">```</span></span>
+<span id="cb6-53"><a href="#cb6-53"></a></span>
+<span id="cb6-54"><a href="#cb6-54"></a>::: {.column-margin}</span>
+<span id="cb6-55"><a href="#cb6-55"></a>::: {.callout-tip title="File3dm.FromByteArray -&gt; File3dm" collapse="true"}</span>
+<span id="cb6-56"><a href="#cb6-56"></a><span class="co">[</span><span class="ot">File3dm.FromByteArray</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.FromByteArray)</span></span>
+<span id="cb6-57"><a href="#cb6-57"></a></span>
+<span id="cb6-58"><a href="#cb6-58"></a>Read a 3dm file from a byte array</span>
+<span id="cb6-59"><a href="#cb6-59"></a></span>
+<span id="cb6-60"><a href="#cb6-60"></a><span class="ss">- </span>Returns:      New File3dm on success, None on error.</span>
+<span id="cb6-61"><a href="#cb6-61"></a></span>
+<span id="cb6-62"><a href="#cb6-62"></a><span class="ss">- </span>Return type:  File3dm</span>
+<span id="cb6-63"><a href="#cb6-63"></a>:::</span>
+<span id="cb6-64"><a href="#cb6-64"></a>:::</span>
+<span id="cb6-65"><a href="#cb6-65"></a></span>
+<span id="cb6-66"><a href="#cb6-66"></a>::: {.column-margin}</span>
+<span id="cb6-67"><a href="#cb6-67"></a>::: {.callout-tip title="File3dm.Objects --&gt; File3dmObjectTable" collapse="true"}</span>
+<span id="cb6-68"><a href="#cb6-68"></a><span class="co">[</span><span class="ot">File3dm.Objects</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)</span></span>
+<span id="cb6-69"><a href="#cb6-69"></a></span>
+<span id="cb6-70"><a href="#cb6-70"></a>File3dmObjectTable: Gets access to the class associated with this file, which contains all objects.</span>
+<span id="cb6-71"><a href="#cb6-71"></a>:::</span>
+<span id="cb6-72"><a href="#cb6-72"></a>:::</span>
+<span id="cb6-73"><a href="#cb6-73"></a></span>
+<span id="cb6-74"><a href="#cb6-74"></a>::: {.column-margin}</span>
+<span id="cb6-75"><a href="#cb6-75"></a>::: {.callout-tip title="File3dmObject.Geometry -&gt; rhino3dm.GeometryBase" collapse="true"}</span>
+<span id="cb6-76"><a href="#cb6-76"></a><span class="co">[</span><span class="ot">File3dmObject.Geometry</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#rhino3dm.File3dmObject.Geometry)</span></span>
+<span id="cb6-77"><a href="#cb6-77"></a></span>
+<span id="cb6-78"><a href="#cb6-78"></a>rhino3dm.GeometryBase: Gets the geometry that is linked with this document object.</span>
+<span id="cb6-79"><a href="#cb6-79"></a>:::</span>
+<span id="cb6-80"><a href="#cb6-80"></a>:::</span>
+<span id="cb6-81"><a href="#cb6-81"></a></span>
+<span id="cb6-82"><a href="#cb6-82"></a>::: {.column-margin}</span>
+<span id="cb6-83"><a href="#cb6-83"></a>::: {.callout-tip title="GeometryBase.GetBoundingBox -&gt; rhino3dm.BoundingBox" collapse="true"}</span>
+<span id="cb6-84"><a href="#cb6-84"></a><span class="co">[</span><span class="ot">GeometryBase.GetBoundingBox</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#rhino3dm.GeometryBase.GetBoundingBox)</span></span>
+<span id="cb6-85"><a href="#cb6-85"></a></span>
+<span id="cb6-86"><a href="#cb6-86"></a>Bounding box solver. Gets the world axis aligned bounding box for the geometry.</span>
+<span id="cb6-87"><a href="#cb6-87"></a></span>
+<span id="cb6-88"><a href="#cb6-88"></a>Parameters:</span>
+<span id="cb6-89"><a href="#cb6-89"></a></span>
+<span id="cb6-90"><a href="#cb6-90"></a><span class="ss">- </span>accurate (bool) – If true, a physically accurate bounding box will be computed. If not, a bounding box estimate will be computed. For some geometry types there is no difference between the estimate and the accurate bounding box. Estimated bounding boxes can be computed much (much) faster than accurate (or “tight”) bounding boxes. Estimated bounding boxes are always similar to or larger than accurate bounding boxes.</span>
+<span id="cb6-91"><a href="#cb6-91"></a></span>
+<span id="cb6-92"><a href="#cb6-92"></a>Returns:</span>
+<span id="cb6-93"><a href="#cb6-93"></a></span>
+<span id="cb6-94"><a href="#cb6-94"></a><span class="ss">- </span>The bounding box of the geometry in world coordinates or BoundingBox.Empty if not bounding box could be found.</span>
+<span id="cb6-95"><a href="#cb6-95"></a></span>
+<span id="cb6-96"><a href="#cb6-96"></a>Return type:</span>
+<span id="cb6-97"><a href="#cb6-97"></a></span>
+<span id="cb6-98"><a href="#cb6-98"></a><span class="ss">- </span>rhino3dm.BoundingBox</span>
+<span id="cb6-99"><a href="#cb6-99"></a>:::</span>
+<span id="cb6-100"><a href="#cb6-100"></a>:::</span>
+<span id="cb6-101"><a href="#cb6-101"></a></span>
+<span id="cb6-102"><a href="#cb6-102"></a>::: {.column-margin}</span>
+<span id="cb6-103"><a href="#cb6-103"></a>::: {.callout-tip title="rhino3dm.BoundingBox" collapse="true"}</span>
+<span id="cb6-104"><a href="#cb6-104"></a><span class="co">[</span><span class="ot">class rhino3dm.BoundingBox</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/BoundingBox.html#rhino3dm.BoundingBox)</span></span>
+<span id="cb6-105"><a href="#cb6-105"></a></span>
+<span id="cb6-106"><a href="#cb6-106"></a><span class="at">&gt; </span><span class="in">`BoundingBox(minX, minY, minZ, maxX, maxY, maxZ)`</span></span>
+<span id="cb6-107"><a href="#cb6-107"></a><span class="at">&gt; </span></span>
+<span id="cb6-108"><a href="#cb6-108"></a><span class="at">&gt; Constructs a bounding box from numeric extremes.</span></span>
+<span id="cb6-109"><a href="#cb6-109"></a><span class="at">&gt; </span></span>
+<span id="cb6-110"><a href="#cb6-110"></a><span class="at">&gt; Parameters:</span></span>
+<span id="cb6-111"><a href="#cb6-111"></a><span class="at">&gt;</span></span>
+<span id="cb6-112"><a href="#cb6-112"></a><span class="at">&gt;    - minX (float) – Lower extreme for box X size.</span></span>
+<span id="cb6-113"><a href="#cb6-113"></a><span class="at">&gt;    - minY (float) – Lower extreme for box Y size.</span></span>
+<span id="cb6-114"><a href="#cb6-114"></a><span class="at">&gt;    - minZ (float) – Lower extreme for box Z size.</span></span>
+<span id="cb6-115"><a href="#cb6-115"></a><span class="at">&gt;    - maxX (float) – Upper extreme for box X size.</span></span>
+<span id="cb6-116"><a href="#cb6-116"></a><span class="at">&gt;    - maxY (float) – Upper extreme for box Y size.</span></span>
+<span id="cb6-117"><a href="#cb6-117"></a><span class="at">&gt;    - maxZ (float) – Upper extreme for box Z size.</span></span>
+<span id="cb6-118"><a href="#cb6-118"></a><span class="at">:::</span></span>
+<span id="cb6-119"><a href="#cb6-119"></a><span class="at">:::</span></span>
+<span id="cb6-120"><a href="#cb6-120"></a></span>
+<span id="cb6-121"><a href="#cb6-121"></a></span>
+<span id="cb6-122"><a href="#cb6-122"></a><span class="fu"># Example 2 </span></span>
+<span id="cb6-123"><a href="#cb6-123"></a></span>
+<span id="cb6-126"><a href="#cb6-126"></a><span class="in">```{python}</span></span>
+<span id="cb6-127"><a href="#cb6-127"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb6-128"><a href="#cb6-128"></a></span>
+<span id="cb6-129"><a href="#cb6-129"></a>center <span class="op">=</span> Point3d(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb6-130"><a href="#cb6-130"></a>arc <span class="op">=</span> Arc(center, <span class="dv">10</span>, <span class="dv">1</span>)</span>
+<span id="cb6-131"><a href="#cb6-131"></a>nc <span class="op">=</span> arc.ToNurbsCurve()</span>
+<span id="cb6-132"><a href="#cb6-132"></a>start <span class="op">=</span> nc.PointAtStart</span>
+<span id="cb6-133"><a href="#cb6-133"></a><span class="bu">print</span>(<span class="st">'start point'</span>, <span class="bu">type</span>(start))</span>
+<span id="cb6-134"><a href="#cb6-134"></a><span class="in">```</span></span>
+<span id="cb6-135"><a href="#cb6-135"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -75,6 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -158,7 +159,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -267,7 +268,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="test_rhino3dm.out.ipynb" download="test_rhino3dm.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content column-body" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -276,7 +277,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-body">
 
     
   
@@ -290,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p><a href="https://github.com/mcneel/rhino3dm">rhino3dm github</a></p>
 <p>Install rhino3dm:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>&gt; pip install rhino3dm</span>
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>&gt; pip install rhino3dm</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>&gt; pip show rhino3dm</span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
@@ -306,7 +307,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-14"><a href="#cb1-14"></a>Requires: </span>
 <span id="cb1-15"><a href="#cb1-15"></a>Required-by: compute-rhino3d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Test code:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
+<div id="b5d00718" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> requests  <span class="co"># pip install requests</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a></span>
 <span id="cb2-4"><a href="#cb2-4"></a>req <span class="op">=</span> requests.get(<span class="st">"https://files.mcneel.com/TEST/Rhino Logo.3dm"</span>)</span>
@@ -315,22 +317,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7"></a></span>
 <span id="cb2-8"><a href="#cb2-8"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(model.Objects)):</span>
 <span id="cb2-9"><a href="#cb2-9"></a>    obj <span class="op">=</span> model.Objects[i]</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    geometry <span class="op">=</span> obj.Geometry</span>
-<span id="cb2-12"><a href="#cb2-12"></a>    bbox <span class="op">=</span> geometry.GetBoundingBox()</span>
-<span id="cb2-13"><a href="#cb2-13"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre><code>model object  0 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000017CC1C633F0&gt;
-bbbox min &amp; max: 1.8371907243686973,-1.5689282473879564,-4.805097727008464, 3.6645919601949197,1.5671337050051424,-3.192419551444698
-model object  1 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000017CBFD951B0&gt;
-bbbox min &amp; max: -14.652654807178946,-3.523004292398442,-7.8656395649010795, 6.406813995967793,3.5230042923984426,14.775277446067086
-model object  2 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000017CBFDD74B0&gt;
-bbbox min &amp; max: -1.5839081681904716,-2.3582386650337614,-9.08301167326336, 24.194368536477562,2.3582386650337734,6.399251336457315
-model object  3 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000017CC1657930&gt;
-bbbox min &amp; max: -1.0135556828519197,-3.5376915458174127,-13.422236304307603, 14.284066885969416,3.5376915458174127,-2.035007486827391
-model object  4 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000017CC1C79BF0&gt;
-bbbox min &amp; max: 0.8982316021875303,-1.5671337050051424,-5.726878488888956, 4.395812771763269,1.5671337050051424,-2.640250606356152
-model object  5 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000017CC1C79330&gt;
-bbbox min &amp; max: 2.5014992399166736,-1.5671337050051424,-4.153203305329301, 3.172512024984831,1.5671337050051424,-3.561046024146983</code></pre>
+<span id="cb2-10"><a href="#cb2-10"></a>    geometry <span class="op">=</span> obj.Geometry</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    bbox <span class="op">=</span> geometry.GetBoundingBox()</span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
+<span id="cb2-14"><a href="#cb2-14"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>model object  0 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186CFAF4D30&gt;
+bbbox min &amp; max: 1.8371907243686973,-1.5689282473879564,-4.805097727008464, 3.6645919601949197,1.5671337050051424,-3.192419551444698 
+
+model object  1 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186CFCCA9F0&gt;
+bbbox min &amp; max: -14.652654807178946,-3.523004292398442,-7.8656395649010795, 6.406813995967793,3.5230042923984426,14.775277446067086 
+
+model object  2 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186D1997230&gt;
+bbbox min &amp; max: -1.5839081681904716,-2.3582386650337614,-9.08301167326336, 24.194368536477562,2.3582386650337734,6.399251336457315 
+
+model object  3 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186D1994FB0&gt;
+bbbox min &amp; max: -1.0135556828519197,-3.5376915458174127,-13.422236304307603, 14.284066885969416,3.5376915458174127,-2.035007486827391 
+
+model object  4 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186D1997D70&gt;
+bbbox min &amp; max: 0.8982316021875303,-1.5671337050051424,-5.726878488888956, 4.395812771763269,1.5671337050051424,-2.640250606356152 
+
+model object  5 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000186D19946F0&gt;
+bbbox min &amp; max: 2.5014992399166736,-1.5671337050051424,-4.153203305329301, 3.172512024984831,1.5671337050051424,-3.561046024146983 </code></pre>
+</div>
+</div>
 <blockquote class="blockquote">
 <p><strong>File3dm.FromByteArray -&gt; File3dm</strong></p>
 <p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.FromByteArray">File3dm.FromByteArray</a></p>
@@ -384,6 +395,7 @@ bbbox min &amp; max: 2.5014992399166736,-1.5671337050051424,-4.153203305329301, 
 </ul>
 </blockquote>
 </blockquote>
+<p>::::</p>
 
 
 
@@ -997,4 +1009,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
+<script src="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>
