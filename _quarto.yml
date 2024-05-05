@@ -30,6 +30,9 @@ website:
       - section: "Observable.js"
         contents:
           - observable_js.qmd
+      - section: "rhino3dm"
+        contents: 
+          - ./pages/rhino3dm/test_rhino3dm.qmd
         
 format:
   html:

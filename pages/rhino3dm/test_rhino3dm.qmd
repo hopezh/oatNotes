@@ -1,0 +1,45 @@
+---
+title: "test rhino3dm"
+---
+
+[rhino3dm github](https://github.com/mcneel/rhino3dm)
+
+Install rhino3dm
+
+```shell
+> pip install rhino3dm
+
+> pip show rhino3dm
+
+Name: rhino3dm
+Version: 8.6.0
+Summary: Python library based on OpenNURBS with a RhinoCommon
+ style
+Home-page: 
+Author: Robert McNeel & Associates
+Author-email: steve@mcneel.com
+License: 
+Location: C:\Users\USERNAME\.conda\envs\ai\Lib\site-packages
+Requires: 
+Required-by: compute-rhino3d
+```
+
+
+Test code:
+
+```{python}
+#| column: page
+from rhino3dm import *
+import requests  # pip install requests
+
+req = requests.get("https://files.mcneel.com/TEST/Rhino Logo.3dm")
+
+model = File3dm.FromByteArray(req.content)
+
+for obj in model.Objects:
+    geometry = obj.Geometry
+    bbox = geometry.GetBoundingBox()
+    print("{}, {}".format(bbox.Min, bbox.Max))
+```
+
+
