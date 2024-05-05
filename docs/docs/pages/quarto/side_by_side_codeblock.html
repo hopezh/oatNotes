@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OatNotes - test rhino3dm</title>
+<title>OatNotes - side by side codeblocks and outputs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">test rhino3dm</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">side by side codeblocks and outputs</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -269,19 +269,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#docs" id="toc-docs" class="nav-link active" data-scroll-target="#docs">Docs</a></li>
-  <li><a href="#install-rhino3dm" id="toc-install-rhino3dm" class="nav-link" data-scroll-target="#install-rhino3dm">Install rhino3dm:</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  <li><a href="#column-screen-insert" id="toc-column-screen-insert" class="nav-link active" data-scroll-target="#column-screen-insert"><code>::::{.column-screen-insert}</code></a>
+  <ul class="collapse">
+  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  </ul></li>
+  <li><a href="#layout-ncol3" id="toc-layout-ncol3" class="nav-link" data-scroll-target="#layout-ncol3"><code>:::{layout-ncol='3'}</code></a>
+  <ul class="collapse">
+  <li><a href="#syntax-1" id="toc-syntax-1" class="nav-link" data-scroll-target="#syntax-1">Syntax</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  </ul></li>
+  <li><a href="#columns-and-.column-width30" id="toc-columns-and-.column-width30" class="nav-link" data-scroll-target="#columns-and-.column-width30"><code>::::{.columns}</code> and <code>:::{.column width="30%"}</code></a>
+  <ul class="collapse">
+  <li><a href="#syntax-2" id="toc-syntax-2" class="nav-link" data-scroll-target="#syntax-2">Syntax</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  </ul></li>
+  <li><a href="#ref" id="toc-ref" class="nav-link" data-scroll-target="#ref">Ref</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="test_rhino3dm.out.ipynb" download="test_rhino3dm.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="side_by_side_codeblock.out.ipynb" download="side_by_side_codeblock.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">test rhino3dm</h1>
+<h1 class="title">side by side codeblocks and outputs</h1>
 </div>
 
 
@@ -298,136 +310,180 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="docs" class="level1">
-<h1>Docs</h1>
-<ul>
-<li><p><a href="https://github.com/mcneel/rhino3dm">rhino3dm github</a></p></li>
-<li><p><a href="https://mcneel.github.io/rhino3dm/python/api/index.html">rhino3dm doc</a></p></li>
-</ul>
-</section>
-<section id="install-rhino3dm" class="level1">
-<h1>Install rhino3dm:</h1>
-<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>&gt; pip install rhino3dm</span>
+<section id="column-screen-insert" class="level1">
+<h1><code>::::{.column-screen-insert}</code></h1>
+<section id="syntax" class="level2">
+<h2 class="anchored" data-anchor-id="syntax">Syntax</h2>
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>::::{.columns .column-screen-insert .column-screen}</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>&gt; pip show rhino3dm</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>Name: rhino3dm</span>
-<span id="cb1-6"><a href="#cb1-6"></a>Version: 8.6.0</span>
-<span id="cb1-7"><a href="#cb1-7"></a>Summary: Python library based on OpenNURBS with a RhinoCommon</span>
-<span id="cb1-8"><a href="#cb1-8"></a> style</span>
-<span id="cb1-9"><a href="#cb1-9"></a>Home-page: </span>
-<span id="cb1-10"><a href="#cb1-10"></a>Author: Robert McNeel &amp; Associates</span>
-<span id="cb1-11"><a href="#cb1-11"></a>Author-email: steve@mcneel.com</span>
-<span id="cb1-12"><a href="#cb1-12"></a>License: </span>
-<span id="cb1-13"><a href="#cb1-13"></a>Location: C:\Users\USERNAME\.conda\envs\ai\Lib\site-packages</span>
-<span id="cb1-14"><a href="#cb1-14"></a>Requires: </span>
-<span id="cb1-15"><a href="#cb1-15"></a>Required-by: compute-rhino3d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a>::: column</span>
+<span id="cb1-4"><a href="#cb1-4"></a>```python</span>
+<span id="cb1-5"><a href="#cb1-5"></a>print('left column')</span>
+<span id="cb1-6"><a href="#cb1-6"></a>```</span>
+<span id="cb1-7"><a href="#cb1-7"></a>:::</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>::: column</span>
+<span id="cb1-10"><a href="#cb1-10"></a>```python</span>
+<span id="cb1-11"><a href="#cb1-11"></a>print('right column')</span>
+<span id="cb1-12"><a href="#cb1-12"></a>```</span>
+<span id="cb1-13"><a href="#cb1-13"></a>:::</span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="example-1" class="level1">
-<h1>Example 1</h1>
-<div id="dcd1134c" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> requests  <span class="co"># pip install requests</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a>req <span class="op">=</span> requests.get(<span class="st">"https://files.mcneel.com/TEST/Rhino Logo.3dm"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>model <span class="op">=</span> File3dm.FromByteArray(req.content)</span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(model.Objects)):</span>
-<span id="cb2-9"><a href="#cb2-9"></a>    obj <span class="op">=</span> model.Objects[i]</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    geometry <span class="op">=</span> obj.Geometry</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    bbox <span class="op">=</span> geometry.GetBoundingBox()</span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
-<span id="cb2-14"><a href="#cb2-14"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>model object  0 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176FFD196F0&gt;
-bbbox min &amp; max: 1.8371907243686973,-1.5689282473879564,-4.805097727008464, 3.6645919601949197,1.5671337050051424,-3.192419551444698 
-
-model object  1 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176FFD187F0&gt;
-bbbox min &amp; max: -14.652654807178946,-3.523004292398442,-7.8656395649010795, 6.406813995967793,3.5230042923984426,14.775277446067086 
-
-model object  2 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176EC2D08F0&gt;
-bbbox min &amp; max: -1.5839081681904716,-2.3582386650337614,-9.08301167326336, 24.194368536477562,2.3582386650337734,6.399251336457315 
-
-model object  3 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000176957D0270&gt;
-bbbox min &amp; max: -1.0135556828519197,-3.5376915458174127,-13.422236304307603, 14.284066885969416,3.5376915458174127,-2.035007486827391 
-
-model object  4 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000017695D97DF0&gt;
-bbbox min &amp; max: 0.8982316021875303,-1.5671337050051424,-5.726878488888956, 4.395812771763269,1.5671337050051424,-2.640250606356152 
-
-model object  5 : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000017695D97EB0&gt;
-bbbox min &amp; max: 2.5014992399166736,-1.5671337050051424,-4.153203305329301, 3.172512024984831,1.5671337050051424,-3.561046024146983 </code></pre>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><strong>File3dm.FromByteArray -&gt; File3dm</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.FromByteArray">File3dm.FromByteArray</a></p>
-<p>Read a 3dm file from a byte array</p>
-<ul>
-<li><p>Returns: New File3dm on success, None on error.</p></li>
-<li><p>Return type: File3dm</p></li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>File3dm.Objects –&gt; File3dmObjectTable</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects">File3dm.Objects</a></p>
-<p>File3dmObjectTable: Gets access to the class associated with this file, which contains all objects.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>File3dmObject.Geometry -&gt; rhino3dm.GeometryBase</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#rhino3dm.File3dmObject.Geometry">File3dmObject.Geometry</a></p>
-<p>rhino3dm.GeometryBase: Gets the geometry that is linked with this document object.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>GeometryBase.GetBoundingBox -&gt; rhino3dm.BoundingBox</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#rhino3dm.GeometryBase.GetBoundingBox">GeometryBase.GetBoundingBox</a></p>
-<p>Bounding box solver. Gets the world axis aligned bounding box for the geometry.</p>
-<p>Parameters:</p>
-<ul>
-<li>accurate (bool) – If true, a physically accurate bounding box will be computed. If not, a bounding box estimate will be computed. For some geometry types there is no difference between the estimate and the accurate bounding box. Estimated bounding boxes can be computed much (much) faster than accurate (or “tight”) bounding boxes. Estimated bounding boxes are always similar to or larger than accurate bounding boxes.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The bounding box of the geometry in world coordinates or BoundingBox.Empty if not bounding box could be found.</li>
-</ul>
-<p>Return type:</p>
-<ul>
-<li>rhino3dm.BoundingBox</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>rhino3dm.BoundingBox</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/BoundingBox.html#rhino3dm.BoundingBox">class rhino3dm.BoundingBox</a></p>
-<blockquote class="blockquote">
-<p><code>BoundingBox(minX, minY, minZ, maxX, maxY, maxZ)</code></p>
-<p>Constructs a bounding box from numeric extremes.</p>
-<p>Parameters:</p>
-<ul>
-<li>minX (float) – Lower extreme for box X size.</li>
-<li>minY (float) – Lower extreme for box Y size.</li>
-<li>minZ (float) – Lower extreme for box Z size.</li>
-<li>maxX (float) – Upper extreme for box X size.</li>
-<li>maxY (float) – Upper extreme for box Y size.</li>
-<li>maxZ (float) – Upper extreme for box Z size.</li>
-</ul>
-</blockquote>
-</blockquote>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<h2 style="text-align: center;" class="anchored">
+<p>left column</p>
+</h2>
+<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb2-2"><a href="#cb2-2"></a>df <span class="op">=</span> px.data.iris() <span class="co"># iris is a pandas DataFrame</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a>fig <span class="op">=</span> px.scatter(df, x<span class="op">=</span><span class="st">"sepal_width"</span>, y<span class="op">=</span><span class="st">"sepal_length"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre data-code-line-numbers=""><code>    &lt;script type="text/javascript"&gt;
+    window.PlotlyConfig = {MathJaxConfig: 'local'};
+    if (window.MathJax &amp;&amp; window.MathJax.Hub &amp;&amp; window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+    if (typeof require !== 'undefined') {
+    require.undef("plotly");
+    requirejs.config({
+        paths: {
+            'plotly': ['https://cdn.plot.ly/plotly-2.30.0.min']
+        }
+    });
+    require(['plotly'], function(Plotly) {
+        window._Plotly = Plotly;
+    });
+    }
+    &lt;/script&gt;
+    </code></pre>
+<div>
+<pre data-code-line-numbers=""><code>                        &lt;div id="aad008b0-a38a-4c6c-9ff3-9bda743b494b" class="plotly-graph-div" style="height:525px; width:100%;"&gt;&lt;/div&gt;            &lt;script type="text/javascript"&gt;                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("aad008b0-a38a-4c6c-9ff3-9bda743b494b")) {                    Plotly.newPlot(                        "aad008b0-a38a-4c6c-9ff3-9bda743b494b",                        [{"hovertemplate":"sepal_width=%{x}\u003cbr\u003esepal_length=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","symbol":"circle"},"mode":"markers","name":"","orientation":"v","showlegend":false,"x":[3.5,3.0,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3.0,3.0,4.0,4.4,3.9,3.5,3.8,3.8,3.4,3.7,3.6,3.3,3.4,3.0,3.4,3.5,3.4,3.2,3.1,3.4,4.1,4.2,3.1,3.2,3.5,3.1,3.0,3.4,3.5,2.3,3.2,3.5,3.8,3.0,3.8,3.2,3.7,3.3,3.2,3.2,3.1,2.3,2.8,2.8,3.3,2.4,2.9,2.7,2.0,3.0,2.2,2.9,2.9,3.1,3.0,2.7,2.2,2.5,3.2,2.8,2.5,2.8,2.9,3.0,2.8,3.0,2.9,2.6,2.4,2.4,2.7,2.7,3.0,3.4,3.1,2.3,3.0,2.5,2.6,3.0,2.6,2.3,2.7,3.0,2.9,2.9,2.5,2.8,3.3,2.7,3.0,2.9,3.0,3.0,2.5,2.9,2.5,3.6,3.2,2.7,3.0,2.5,2.8,3.2,3.0,3.8,2.6,2.2,3.2,2.8,2.8,2.7,3.3,3.2,2.8,3.0,2.8,3.0,2.8,3.8,2.8,2.8,2.6,3.0,3.4,3.1,3.0,3.1,3.1,3.1,2.7,3.2,3.3,3.0,2.5,3.0,3.4,3.0],"xaxis":"x","y":[5.1,4.9,4.7,4.6,5.0,5.4,4.6,5.0,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1,5.4,5.1,4.6,5.1,4.8,5.0,5.0,5.2,5.2,4.7,4.8,5.4,5.2,5.5,4.9,5.0,5.5,4.9,4.4,5.1,5.0,4.5,4.4,5.0,5.1,4.8,5.1,4.6,5.3,5.0,7.0,6.4,6.9,5.5,6.5,5.7,6.3,4.9,6.6,5.2,5.0,5.9,6.0,6.1,5.6,6.7,5.6,5.8,6.2,5.6,5.9,6.1,6.3,6.1,6.4,6.6,6.8,6.7,6.0,5.7,5.5,5.5,5.8,6.0,5.4,6.0,6.7,6.3,5.6,5.5,5.5,6.1,5.8,5.0,5.6,5.7,5.7,6.2,5.1,5.7,6.3,5.8,7.1,6.3,6.5,7.6,4.9,7.3,6.7,7.2,6.5,6.4,6.8,5.7,5.8,6.4,6.5,7.7,7.7,6.0,6.9,5.6,7.7,6.3,6.7,7.2,6.2,6.1,6.4,7.2,7.4,7.9,6.4,6.3,6.1,7.7,6.3,6.4,6.0,6.9,6.7,6.9,5.8,6.8,6.7,6.7,6.3,6.5,6.2,5.9],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"sepal_width"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"sepal_length"}},"legend":{"tracegroupgap":0}},                        {"responsive": true}                    ).then(function(){
+                        </code></pre>
+<p>var gd = document.getElementById(‘aad008b0-a38a-4c6c-9ff3-9bda743b494b’); var x = new MutationObserver(function (mutations, observer) {{ var display = window.getComputedStyle(gd).display; if (!display || display === ‘none’) {{ console.log([gd, ‘removed!’]); Plotly.purge(gd); observer.disconnect(); }} }});</p>
+<p>// Listen for the removal of the full notebook cells var notebookContainer = gd.closest(‘#notebook-container’); if (notebookContainer) {{ x.observe(notebookContainer, {childList: true}); }}</p>
+<p>// Listen for the clearing of the current output cell var outputEl = gd.closest(‘.output’); if (outputEl) {{ x.observe(outputEl, {childList: true}); }}</p>
+<pre data-code-line-numbers=""><code>                    })                };                });            &lt;/script&gt;        &lt;/div&gt;</code></pre>
+<h2 style="text-align: center;" class="anchored">
+<p>right column</p>
+</h2>
+<div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb6-2"><a href="#cb6-2"></a>data_canada <span class="op">=</span> px.data.gapminder().query(<span class="st">"country == 'Canada'"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>fig <span class="op">=</span> px.bar(data_canada, x<span class="op">=</span><span class="st">'year'</span>, y<span class="op">=</span><span class="st">'pop'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div>
+<pre data-code-line-numbers=""><code>                        &lt;div id="83ac62b6-94af-4023-b222-d2997c651269" class="plotly-graph-div" style="height:525px; width:100%;"&gt;&lt;/div&gt;            &lt;script type="text/javascript"&gt;                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("83ac62b6-94af-4023-b222-d2997c651269")) {                    Plotly.newPlot(                        "83ac62b6-94af-4023-b222-d2997c651269",                        [{"alignmentgroup":"True","hovertemplate":"year=%{x}\u003cbr\u003epop=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":[1952,1957,1962,1967,1972,1977,1982,1987,1992,1997,2002,2007],"xaxis":"x","y":[14785584,17010154,18985849,20819767,22284500,23796400,25201900,26549700,28523502,30305843,31902268,33390141],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"pop"}},"legend":{"tracegroupgap":0},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
+                        </code></pre>
+<p>var gd = document.getElementById(‘83ac62b6-94af-4023-b222-d2997c651269’); var x = new MutationObserver(function (mutations, observer) {{ var display = window.getComputedStyle(gd).display; if (!display || display === ‘none’) {{ console.log([gd, ‘removed!’]); Plotly.purge(gd); observer.disconnect(); }} }});</p>
+<p>// Listen for the removal of the full notebook cells var notebookContainer = gd.closest(‘#notebook-container’); if (notebookContainer) {{ x.observe(notebookContainer, {childList: true}); }}</p>
+<p>// Listen for the clearing of the current output cell var outputEl = gd.closest(‘.output’); if (outputEl) {{ x.observe(outputEl, {childList: true}); }}</p>
+<pre data-code-line-numbers=""><code>                    })                };                });            &lt;/script&gt;        &lt;/div&gt;</code></pre>
+<hr>
+</div></div></section>
 </section>
-<section id="example-2" class="level1">
-<h1>Example 2</h1>
-<div id="1b326bea" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a>center <span class="op">=</span> Point3d(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>arc <span class="op">=</span> Arc(center, <span class="dv">10</span>, <span class="dv">1</span>)</span>
-<span id="cb4-5"><a href="#cb4-5"></a>nc <span class="op">=</span> arc.ToNurbsCurve()</span>
-<span id="cb4-6"><a href="#cb4-6"></a>start <span class="op">=</span> nc.PointAtStart</span>
-<span id="cb4-7"><a href="#cb4-7"></a><span class="bu">print</span>(<span class="st">'start point'</span>, <span class="bu">type</span>(start))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="layout-ncol3" class="level1">
+<h1><code>:::{layout-ncol='3'}</code></h1>
+<section id="syntax-1" class="level2">
+<h2 class="anchored" data-anchor-id="syntax-1">Syntax</h2>
+<div class="sourceCode" id="cb9" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb9-1"><a href="#cb9-1"></a>::::{.column-screen}</span>
+<span id="cb9-2"><a href="#cb9-2"></a>:::{layout-ncol="3"}</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a>```python</span>
+<span id="cb9-5"><a href="#cb9-5"></a>print('a')</span>
+<span id="cb9-6"><a href="#cb9-6"></a>```</span>
+<span id="cb9-7"><a href="#cb9-7"></a></span>
+<span id="cb9-8"><a href="#cb9-8"></a>```python</span>
+<span id="cb9-9"><a href="#cb9-9"></a>print('b')</span>
+<span id="cb9-10"><a href="#cb9-10"></a>```</span>
+<span id="cb9-11"><a href="#cb9-11"></a></span>
+<span id="cb9-12"><a href="#cb9-12"></a>```python</span>
+<span id="cb9-13"><a href="#cb9-13"></a>print('c')</span>
+<span id="cb9-14"><a href="#cb9-14"></a>```</span>
+<span id="cb9-15"><a href="#cb9-15"></a></span>
+<span id="cb9-16"><a href="#cb9-16"></a>:::</span>
+<span id="cb9-17"><a href="#cb9-17"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-1">Example</h2>
+<div class="sourceCode" id="cb10" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="bu">print</span>(<span class="st">'a'</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="bu">print</span>(<span class="st">'b'</span>)</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="bu">print</span>(<span class="st">'c'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">
+<div id="4041c5eb" class="cell" data-execution_count="3" width="33.3%" data-layout-align="left">
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>start point &lt;class 'rhino3dm._rhino3dm.Point3d'&gt;</code></pre>
+<pre><code>a</code></pre>
 </div>
 </div>
+</td>
+<td style="text-align: left;">
+<div id="c7edd272" class="cell" data-execution_count="4" width="33.3%" data-layout-align="left">
+<div class="cell-output cell-output-stdout">
+<pre><code>b</code></pre>
+</div>
+</div>
+</td>
+<td style="text-align: left;">
+<div id="dc8efded" class="cell" data-execution_count="5" width="33.3%" data-layout-align="left">
+<div class="cell-output cell-output-stdout">
+<pre><code>c</code></pre>
+</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+</section>
+<section id="columns-and-.column-width30" class="level1">
+<h1><code>::::{.columns}</code> and <code>:::{.column width="30%"}</code></h1>
+<section id="syntax-2" class="level2">
+<h2 class="anchored" data-anchor-id="syntax-2">Syntax</h2>
+<div class="sourceCode" id="cb11" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb11-1"><a href="#cb11-1"></a>::::{.columns .column-screen}</span>
+<span id="cb11-2"><a href="#cb11-2"></a></span>
+<span id="cb11-3"><a href="#cb11-3"></a>:::{.column width="30%"}</span>
+<span id="cb11-4"><a href="#cb11-4"></a>```python</span>
+<span id="cb11-5"><a href="#cb11-5"></a>print('a')</span>
+<span id="cb11-6"><a href="#cb11-6"></a>```</span>
+<span id="cb11-7"><a href="#cb11-7"></a>:::</span>
+<span id="cb11-8"><a href="#cb11-8"></a></span>
+<span id="cb11-9"><a href="#cb11-9"></a>:::{.column width="40%"}</span>
+<span id="cb11-10"><a href="#cb11-10"></a>```python</span>
+<span id="cb11-11"><a href="#cb11-11"></a>print('b')</span>
+<span id="cb11-12"><a href="#cb11-12"></a>```</span>
+<span id="cb11-13"><a href="#cb11-13"></a>:::</span>
+<span id="cb11-14"><a href="#cb11-14"></a></span>
+<span id="cb11-15"><a href="#cb11-15"></a>:::{.column width="30%"}</span>
+<span id="cb11-16"><a href="#cb11-16"></a>```python</span>
+<span id="cb11-17"><a href="#cb11-17"></a>print('c')</span>
+<span id="cb11-18"><a href="#cb11-18"></a>```</span>
+<span id="cb11-19"><a href="#cb11-19"></a>:::</span>
+<span id="cb11-20"><a href="#cb11-20"></a></span>
+<span id="cb11-21"><a href="#cb11-21"></a>::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-2" class="level2">
+<h2 class="anchored" data-anchor-id="example-2">Example</h2>
+<div class="sourceCode" id="cb12" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a><span class="bu">print</span>(<span class="st">'a'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre data-code-line-numbers=""><code>a</code></pre>
+<div class="sourceCode" id="cb14" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a><span class="bu">print</span>(<span class="st">'b'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre data-code-line-numbers=""><code>b</code></pre>
+<div class="sourceCode" id="cb16" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a><span class="bu">print</span>(<span class="st">'c'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre data-code-line-numbers=""><code>c</code></pre>
+<hr>
+</section>
+</section>
+<section id="ref" class="level1">
+<h1>Ref</h1>
+<ul>
+<li>https://stackoverflow.com/a/74544808/2559693</li>
+<li>https://github.com/quarto-dev/quarto-cli/issues/8179</li>
+</ul>
 
 
 </section>
