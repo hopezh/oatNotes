@@ -1,0 +1,196 @@
+---
+title: "rhino3dm exercise"
+code-annotations: hover
+---
+
+# test reading geometry by layer name
+
+```{python}
+import rhino3dm
+
+model = rhino3dm.File3dm.Read('./data/oat_model.3dm')   # <1>
+print('model object: ', model)
+print('------')
+
+layer_table = model.Layers                              # <2>
+print('layer table: ', layer_table, '\n')
+
+for idx, layer in enumerate(iter(layer_table)):         # <3>
+    print('layer ', idx, ' object  : ', layer)
+    print('      ', idx, ' id      : ', layer.Id)
+    print('      ', idx, ' index   : ', layer.Index)
+    print('      ', idx, ' name    : ', layer.Name)
+    print('      ', idx, ' fullpath: ', layer.FullPath)
+
+print('------')
+
+object_table = model.Objects                            # <4>
+print('object table: ', object_table, '\n')
+
+for idx, object in enumerate(iter(object_table)):       # <5>
+    print('object ', idx, ' object    : ', object)
+    print('       ', idx, ' geometry  : ', object.Geometry)
+    print('       ', idx, ' attributes: ', object.Attributes)
+    print('       ', idx, ' layerIndex: ', object.Attributes.LayerIndex)
+
+print('------')
+
+
+# brep = model.Objects[0].Geometry
+# face = brep.Faces[0]
+# mesh = face.GetMesh(rhino3dm.MeshType.Any)
+# print (len(mesh.Faces))
+```
+1. read `.3dm` file as `File3dm` object
+2. get the `LayerTable` object
+3. iterate `LayerTable` to get each `Layer` and its attributes
+4. get `ObjectTable` in the model
+5. iterate `ObjectTable` to get each `Object` and its attributes
+
+
+::: {.column-margin}
+
+::: {.callout-tip title="File3dm.Read()" collapse="true"}
+[**_method_**  `rhino3dm.File3dm.Read()`](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Read)
+
+<br />
+
+Reads a `3dm` file from the specified path.
+
+<br />
+
+Parameters:
+
+- path (str) – The file to read.
+
+Returns:
+
+- new File3dm on success, None on error.
+
+Return type:
+
+- File3dm
+:::
+
+::: {.callout-tip title="File3dm.Layers" collapse="true"}
+[**_attrib_**  `rhino3dm.File3dm.Layer`](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Layers)
+
+<br />
+
+IList<Layer>: Layers in this file.
+
+<br />
+
+Returns: 
+
+- File3dmLayerTable
+:::
+
+::: {.callout-tip title="File3dmLayerTable" collapse="true"}
+[**_class_**  `rhino3dm.File3dmLayerTable`](https://mcneel.github.io/rhino3dm/python/api/File3dmLayerTable.html#module-rhino3dm)
+
+<br />
+
+Each item is a `rhino3dm.Layer` object
+
+<br />
+
+Methods:
+
+- \__getitem__()
+- \__iter__()
+- \__len__()
+- ...
+:::
+
+::: {.callout-tip title="Layer" collapse="true"}
+[**_class_**  `rhino3dm.Layer`](https://mcneel.github.io/rhino3dm/python/api/Layer.html#module-rhino3dm)
+
+<br />
+
+Attributes:
+
+- Color
+- FullPath
+- Id
+- Index
+- Locked
+- Name
+- ParentLayerId
+- Visible
+- ...
+:::
+
+::: {.callout-tip title="File3dm.Objects" collapse="true"}
+[**_attrib_**  `rhino3dm.File3dm.Objects`](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)
+
+<br />
+
+Returns a `File3dmObjectTable`: Gets access to the class associated with this file, which contains all objects.
+:::
+
+::: {.callout-tip title="File3dmObjectTable" collapse="true"}
+
+[**_class_**  `rhino3dm.File3dmObjectTable`](https://mcneel.github.io/rhino3dm/python/api/File3dmObjectTable.html#module-rhino3dm)
+
+<br />
+
+Each item is a `rhino3dm.Object` object
+
+<br />
+
+Methods:
+
+- \__getitem__()
+- \__iter__()
+- \__len__()
+- ...
+:::
+
+::: {.callout-tip title="File3dmObject" collapse="true"}
+
+[**_class_**  `rhino3dm.File3dmObject`](https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#module-rhino3dm)
+
+<br />
+
+Attribs:
+
+- Attributes 
+    - `ObjectAttributes`: Gets the attributes that are linked with this document object.
+
+- Geometry 
+    - `rhino3dm.GeometryBase`: Gets the geometry that is linked with this document object.
+:::
+
+::: {.callout-tip title="ObjectAttributes" collapse="true"}
+
+[**_class_**  `rhino3dm.ObjectAttributes`](https://mcneel.github.io/rhino3dm/python/api/ObjectAttributes.html#module-rhino3dm)
+
+<br />
+
+Attribs:
+
+- Id
+- LayerIndex
+- MaterialIndex
+- Name
+- ObjectColor
+- Visible
+- ...
+:::
+
+::: {.callout-tip title="GeomtryBase" collapse="true"}
+
+[**_class_**  `rhino3dm.GeometryBase`](https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#module-rhino3dm)
+
+<br />
+
+Attribs:
+
+- ObjectType
+- ...
+:::
+
+:::
+
+
