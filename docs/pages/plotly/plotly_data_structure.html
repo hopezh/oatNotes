@@ -105,22 +105,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
+
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
 <script type="text/javascript">
+
 window.PlotlyConfig = {MathJaxConfig: 'local'};
+
 if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+
 if (typeof require !== 'undefined') {
+
 require.undef("plotly");
+
 requirejs.config({
+
     paths: {
+
         'plotly': ['https://cdn.plot.ly/plotly-2.30.0.min']
+
     }
+
 });
+
 require(['plotly'], function(Plotly) {
+
     window._Plotly = Plotly;
+
 });
+
 }
+
 </script>
+
+
 
 
 
@@ -274,6 +293,12 @@ require(['plotly'], function(Plotly) {
   <div class="sidebar-item-container"> 
   <a href="../../pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test rhino3dm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">rhino3dm exercise 01</span></a>
   </div>
 </li>
       </ul>
