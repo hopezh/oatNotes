@@ -2,53 +2,22 @@
 title: "rhino3dm exercise 01"
 ---
 
-# test reading geometry by layer name
+
+# Extract info from `.3dm` file
+
+
+## read `.3dm` file
 
 ```{python}
 import rhino3dm
 
 model = rhino3dm.File3dm.Read('./data/oat_model.3dm')   # <1>
 print('model object: ', model)
-print('------')
 
-layer_table = model.Layers                              # <2>
-print('layer table: ', layer_table, '\n')
-
-for idx, layer in enumerate(iter(layer_table)):         # <3>
-    print('layer ', idx, ' object  : ', layer)
-    print('      ', idx, ' id      : ', layer.Id)
-    print('      ', idx, ' index   : ', layer.Index)
-    print('      ', idx, ' name    : ', layer.Name)
-    print('      ', idx, ' fullpath: ', layer.FullPath)
-
-print('------')
-
-object_table = model.Objects                            # <4>
-print('object table: ', object_table, '\n')
-
-for idx, object in enumerate(iter(object_table)):       # <5>
-    print('object ', idx, ' object    : ', object)
-    print('       ', idx, ' geometry  : ', object.Geometry)
-    print('       ', idx, ' attributes: ', object.Attributes)
-    print('       ', idx, ' layerIndex: ', object.Attributes.LayerIndex)
-
-print('------')
-
-
-# brep = model.Objects[0].Geometry
-# face = brep.Faces[0]
-# mesh = face.GetMesh(rhino3dm.MeshType.Any)
-# print (len(mesh.Faces))
 ```
 1. read `.3dm` file as `File3dm` object
-2. get the `LayerTable` object
-3. iterate `LayerTable` to get each `Layer` and its attributes
-4. get `ObjectTable` in the model
-5. iterate `ObjectTable` to get each `Object` and its attributes
 
-
-::: {.column-margin}
-
+:::: {.column-margin}
 ::: {.callout-tip title="File3dm.Read()" collapse="true"}
 [**_method_**  `rhino3dm.File3dm.Read()`](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Read)
 
@@ -70,7 +39,28 @@ Return type:
 
 - File3dm
 :::
+::::
 
+
+## read `Layer`
+
+```{python}
+layer_table = model.Layers                              # <2>
+print('layer table: ', layer_table, '\n')
+
+for idx, layer in enumerate(iter(layer_table)):         # <3>
+    print('layer ', idx, ' Object  : ', layer)
+    print('      ', idx, ' Id      : ', layer.Id)
+    print('      ', idx, ' Index   : ', layer.Index)
+    print('      ', idx, ' Name    : ', layer.Name)
+    print('      ', idx, ' Fullpath: ', layer.FullPath)
+
+
+```
+2. get the `LayerTable` object
+3. iterate `LayerTable` to get each `Layer` and its attributes
+
+:::: {.column-margin}
 ::: {.callout-tip title="File3dm.Layers" collapse="true"}
 [**_attrib_**  `rhino3dm.File3dm.Layer`](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Layers)
 
@@ -119,7 +109,29 @@ Attributes:
 - Visible
 - ...
 :::
+::::
 
+
+## read `Objects`
+
+```{python}
+object_table = model.Objects                            # <4>
+print('object table: ', object_table, '\n')
+
+for idx, object in enumerate(iter(object_table)):       # <5>
+    print('object ', idx, ' Object               : ', object)
+    print('       ', idx, ' Geometry             : ', object.Geometry)
+    print('       ', idx, ' Attributes           : ', object.Attributes)
+    print('       ', idx, ' Attributes.Id        : ', object.Attributes.Id)
+    print('       ', idx, ' Attributes.Name      : ', object.Attributes.Name)
+    print('       ', idx, ' Attributes.layerIndex: ', object.Attributes.LayerIndex)
+    print()
+```
+4. get `ObjectTable` in the model
+5. iterate `ObjectTable` to get each `Object` and its attributes
+
+
+:::: {.column-margin}
 ::: {.callout-tip title="File3dm.Objects" collapse="true"}
 [**_attrib_**  `rhino3dm.File3dm.Objects`](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)
 
@@ -177,7 +189,18 @@ Attribs:
 - Visible
 - ...
 :::
+::::
 
+
+## read `Geometry`
+
+```{python}
+# ---
+
+```
+
+
+:::: {.column-margin}
 ::: {.callout-tip title="GeomtryBase" collapse="true"}
 
 [**_class_**  `rhino3dm.GeometryBase`](https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#module-rhino3dm)
@@ -189,7 +212,16 @@ Attribs:
 - ObjectType
 - ...
 :::
+::::
 
-:::
+
+## backup code
+
+```python
+# brep = model.Objects[0].Geometry
+# face = brep.Faces[0]
+# mesh = face.GetMesh(rhino3dm.MeshType.Any)
+# print (len(mesh.Faces))
+```
 
 

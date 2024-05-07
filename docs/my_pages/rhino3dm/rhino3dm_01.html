@@ -275,7 +275,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#test-reading-geometry-by-layer-name" id="toc-test-reading-geometry-by-layer-name" class="nav-link active" data-scroll-target="#test-reading-geometry-by-layer-name">test reading geometry by layer name</a></li>
+  <li><a href="#extract-info-from-.3dm-file" id="toc-extract-info-from-.3dm-file" class="nav-link active" data-scroll-target="#extract-info-from-.3dm-file">Extract info from <code>.3dm</code> file</a>
+  <ul class="collapse">
+  <li><a href="#read-.3dm-file" id="toc-read-.3dm-file" class="nav-link" data-scroll-target="#read-.3dm-file">read <code>.3dm</code> file</a></li>
+  <li><a href="#read-layer" id="toc-read-layer" class="nav-link" data-scroll-target="#read-layer">read <code>Layer</code></a></li>
+  <li><a href="#read-objects" id="toc-read-objects" class="nav-link" data-scroll-target="#read-objects">read <code>Objects</code></a></li>
+  <li><a href="#read-geometry" id="toc-read-geometry" class="nav-link" data-scroll-target="#read-geometry">read <code>Geometry</code></a></li>
+  <li><a href="#backup-code" id="toc-backup-code" class="nav-link" data-scroll-target="#backup-code">backup code</a></li>
+  </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="rhino3dm_01.ipynb" download="rhino3dm_01.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -301,135 +308,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="test-reading-geometry-by-layer-name" class="level1 page-columns page-full">
-<h1>test reading geometry by layer name</h1>
-<div id="89b0a61f" class="cell" data-execution_count="1">
+<section id="extract-info-from-.3dm-file" class="level1 page-columns page-full">
+<h1>Extract info from <code>.3dm</code> file</h1>
+<section id="read-.3dm-file" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="read-.3dm-file">read <code>.3dm</code> file</h2>
+<div id="fc9b1d13" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="annotated-cell-1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="im">import</span> rhino3dm</span>
 <span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./data/oat_model.3dm'</span>)</span>
-<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a><span class="bu">print</span>(<span class="st">'model object: '</span>, model)</span>
-<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5"></a><span class="bu">print</span>(<span class="st">'------'</span>)</span>
-<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6"></a></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-7" class="code-annotation-target"><a href="#annotated-cell-1-7"></a>layer_table <span class="op">=</span> model.Layers</span>
-<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8"></a><span class="bu">print</span>(<span class="st">'layer table: '</span>, layer_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9"></a></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3">3</button><span id="annotated-cell-1-10" class="code-annotation-target"><a href="#annotated-cell-1-10"></a><span class="cf">for</span> idx, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(layer_table)):</span>
-<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11"></a>    <span class="bu">print</span>(<span class="st">'layer '</span>, idx, <span class="st">' object  : '</span>, layer)</span>
-<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' id      : '</span>, layer.Id)</span>
-<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' index   : '</span>, layer.Index)</span>
-<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' name    : '</span>, layer.Name)</span>
-<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' fullpath: '</span>, layer.FullPath)</span>
-<span id="annotated-cell-1-16"><a href="#annotated-cell-1-16"></a></span>
-<span id="annotated-cell-1-17"><a href="#annotated-cell-1-17"></a><span class="bu">print</span>(<span class="st">'------'</span>)</span>
-<span id="annotated-cell-1-18"><a href="#annotated-cell-1-18"></a></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4">4</button><span id="annotated-cell-1-19" class="code-annotation-target"><a href="#annotated-cell-1-19"></a>object_table <span class="op">=</span> model.Objects</span>
-<span id="annotated-cell-1-20"><a href="#annotated-cell-1-20"></a><span class="bu">print</span>(<span class="st">'object table: '</span>, object_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="annotated-cell-1-21"><a href="#annotated-cell-1-21"></a></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5">5</button><span id="annotated-cell-1-22" class="code-annotation-target"><a href="#annotated-cell-1-22"></a><span class="cf">for</span> idx, <span class="bu">object</span> <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="annotated-cell-1-23"><a href="#annotated-cell-1-23"></a>    <span class="bu">print</span>(<span class="st">'object '</span>, idx, <span class="st">' object    : '</span>, <span class="bu">object</span>)</span>
-<span id="annotated-cell-1-24"><a href="#annotated-cell-1-24"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' geometry  : '</span>, <span class="bu">object</span>.Geometry)</span>
-<span id="annotated-cell-1-25"><a href="#annotated-cell-1-25"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' attributes: '</span>, <span class="bu">object</span>.Attributes)</span>
-<span id="annotated-cell-1-26"><a href="#annotated-cell-1-26"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' layerIndex: '</span>, <span class="bu">object</span>.Attributes.LayerIndex)</span>
-<span id="annotated-cell-1-27"><a href="#annotated-cell-1-27"></a></span>
-<span id="annotated-cell-1-28"><a href="#annotated-cell-1-28"></a><span class="bu">print</span>(<span class="st">'------'</span>)</span>
-<span id="annotated-cell-1-29"><a href="#annotated-cell-1-29"></a></span>
-<span id="annotated-cell-1-30"><a href="#annotated-cell-1-30"></a></span>
-<span id="annotated-cell-1-31"><a href="#annotated-cell-1-31"></a><span class="co"># brep = model.Objects[0].Geometry</span></span>
-<span id="annotated-cell-1-32"><a href="#annotated-cell-1-32"></a><span class="co"># face = brep.Faces[0]</span></span>
-<span id="annotated-cell-1-33"><a href="#annotated-cell-1-33"></a><span class="co"># mesh = face.GetMesh(rhino3dm.MeshType.Any)</span></span>
-<span id="annotated-cell-1-34"><a href="#annotated-cell-1-34"></a><span class="co"># print (len(mesh.Faces))</span></span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a><span class="bu">print</span>(<span class="st">'model object: '</span>, model)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
 <span data-code-cell="annotated-cell-1" data-code-lines="3" data-code-annotation="1">read <code>.3dm</code> file as <code>File3dm</code> object</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="7" data-code-annotation="2">get the <code>LayerTable</code> object</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="10" data-code-annotation="3">iterate <code>LayerTable</code> to get each <code>Layer</code> and its attributes</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="19" data-code-annotation="4">get <code>ObjectTable</code> in the model</span>
-</dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
-<dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="22" data-code-annotation="5">iterate <code>ObjectTable</code> to get each <code>Object</code> and its attributes</span>
-</dd>
 </dl>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>model object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x000002400165D870&gt;
-------
-layer table:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x000002400165D030&gt; 
-
-layer  0  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000240017269B0&gt;
-       0  id      :  212960d6-ad46-439d-8516-772ce85fde03
-       0  index   :  0
-       0  name    :  Default
-       0  fullpath:  Default
-layer  1  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000002402AF5AE70&gt;
-       1  id      :  430ce6c7-13d8-40d9-ae38-08e0e7d0f1df
-       1  index   :  1
-       1  name    :  layer_1
-       1  fullpath:  layer_1
-layer  2  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000240016756F0&gt;
-       2  id      :  8e04c4aa-0bcb-4331-9ac1-79ed7bacc9f1
-       2  index   :  2
-       2  name    :  b_1
-       2  fullpath:  layer_1::b_1
-layer  3  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000002402AFCE0B0&gt;
-       3  id      :  906c125d-ea30-483a-bf45-6fc769473e09
-       3  index   :  3
-       3  name    :  s_1
-       3  fullpath:  layer_1::s_1
-layer  4  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000002402AFCF470&gt;
-       4  id      :  1d1e5147-f5b7-4fa1-82ea-3ece64f5994c
-       4  index   :  4
-       4  name    :  layer_2
-       4  fullpath:  layer_2
-------
-object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x000002402A687870&gt; 
-
-object  0  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000240015D8C30&gt;
-        0  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x000002402AFCC030&gt;
-        0  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000002402AFCC030&gt;
-        0  layerIndex:  2
-object  1  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000002402AFA9270&gt;
-        1  geometry  :  &lt;rhino3dm._rhino3dm.Mesh object at 0x00000240015D8C30&gt;
-        1  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000240015D8C30&gt;
-        1  layerIndex:  4
-object  2  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000002402AFAAC30&gt;
-        2  geometry  :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x00000240015D8C30&gt;
-        2  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000240015D8C30&gt;
-        2  layerIndex:  3
-object  3  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000002402AF998B0&gt;
-        3  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x000002402AFAAC30&gt;
-        3  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000002402AFAAC30&gt;
-        3  layerIndex:  2
-object  4  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000002402AF9A4B0&gt;
-        4  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x000002402AFAAC30&gt;
-        4  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000002402AFAAC30&gt;
-        4  layerIndex:  2
-object  5  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000002402AF99EB0&gt;
-        5  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x000002402AFAAC30&gt;
-        5  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000002402AFAAC30&gt;
-        5  layerIndex:  2
-object  6  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000002402B452970&gt;
-        6  geometry  :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x000002402AF99EB0&gt;
-        6  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000002402AF99EB0&gt;
-        6  layerIndex:  0
-------</code></pre>
+<pre data-code-line-numbers=""><code>model object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x000001E9F672D630&gt;</code></pre>
 </div>
 </div>
-
-
-
-<!-- -->
 
 <div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-tip callout-titled" title="File3dm.Read()">
@@ -463,6 +362,63 @@ File3dm.Read()
 </div>
 </div>
 </div>
+</div></div></section>
+<section id="read-layer" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="read-layer">read <code>Layer</code></h2>
+<div id="0de94166" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="annotated-cell-2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1"></a>layer_table <span class="op">=</span> model.Layers</span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2"></a><span class="bu">print</span>(<span class="st">'layer table: '</span>, layer_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="annotated-cell-2-3"><a href="#annotated-cell-2-3"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-4" class="code-annotation-target"><a href="#annotated-cell-2-4"></a><span class="cf">for</span> idx, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(layer_table)):</span>
+<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5"></a>    <span class="bu">print</span>(<span class="st">'layer '</span>, idx, <span class="st">' Object  : '</span>, layer)</span>
+<span id="annotated-cell-2-6"><a href="#annotated-cell-2-6"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Id      : '</span>, layer.Id)</span>
+<span id="annotated-cell-2-7"><a href="#annotated-cell-2-7"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Index   : '</span>, layer.Index)</span>
+<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Name    : '</span>, layer.Name)</span>
+<span id="annotated-cell-2-9"><a href="#annotated-cell-2-9"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Fullpath: '</span>, layer.FullPath)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="1" data-code-annotation="2">get the <code>LayerTable</code> object</span>
+</dd>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-2" data-code-lines="4" data-code-annotation="3">iterate <code>LayerTable</code> to get each <code>Layer</code> and its attributes</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>layer table:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x000001E9F71C28B0&gt; 
+
+layer  0  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001E9F9216830&gt;
+       0  Id      :  212960d6-ad46-439d-8516-772ce85fde03
+       0  Index   :  0
+       0  Name    :  Default
+       0  Fullpath:  Default
+layer  1  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001E9F9215CB0&gt;
+       1  Id      :  430ce6c7-13d8-40d9-ae38-08e0e7d0f1df
+       1  Index   :  1
+       1  Name    :  layer_1
+       1  Fullpath:  layer_1
+layer  2  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001E9F9217F70&gt;
+       2  Id      :  8e04c4aa-0bcb-4331-9ac1-79ed7bacc9f1
+       2  Index   :  2
+       2  Name    :  b_1
+       2  Fullpath:  layer_1::b_1
+layer  3  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001E9F9215DB0&gt;
+       3  Id      :  906c125d-ea30-483a-bf45-6fc769473e09
+       3  Index   :  3
+       3  Name    :  s_1
+       3  Fullpath:  layer_1::s_1
+layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001E9F9216030&gt;
+       4  Id      :  1d1e5147-f5b7-4fa1-82ea-3ece64f5994c
+       4  Index   :  4
+       4  Name    :  layer_2
+       4  Fullpath:  layer_2</code></pre>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-tip callout-titled" title="File3dm.Layers">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -541,6 +497,75 @@ Layer
 </div>
 </div>
 </div>
+</div></div></section>
+<section id="read-objects" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="read-objects">read <code>Objects</code></h2>
+<div id="8c045491" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="annotated-cell-3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4">4</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1"></a>object_table <span class="op">=</span> model.Objects</span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2"></a><span class="bu">print</span>(<span class="st">'object table: '</span>, object_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="annotated-cell-3-3"><a href="#annotated-cell-3-3"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="5">5</button><span id="annotated-cell-3-4" class="code-annotation-target"><a href="#annotated-cell-3-4"></a><span class="cf">for</span> idx, <span class="bu">object</span> <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
+<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5"></a>    <span class="bu">print</span>(<span class="st">'object '</span>, idx, <span class="st">' Object               : '</span>, <span class="bu">object</span>)</span>
+<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Geometry             : '</span>, <span class="bu">object</span>.Geometry)</span>
+<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes           : '</span>, <span class="bu">object</span>.Attributes)</span>
+<span id="annotated-cell-3-8"><a href="#annotated-cell-3-8"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Id        : '</span>, <span class="bu">object</span>.Attributes.Id)</span>
+<span id="annotated-cell-3-9"><a href="#annotated-cell-3-9"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Name      : '</span>, <span class="bu">object</span>.Attributes.Name)</span>
+<span id="annotated-cell-3-10"><a href="#annotated-cell-3-10"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.layerIndex: '</span>, <span class="bu">object</span>.Attributes.LayerIndex)</span>
+<span id="annotated-cell-3-11"><a href="#annotated-cell-3-11"></a>    <span class="bu">print</span>()</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-annotation">
+<dl class="code-annotation-container-hidden code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-3" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="1" data-code-annotation="4">get <code>ObjectTable</code> in the model</span>
+</dd>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-3" data-code-lines="4" data-code-annotation="5">iterate <code>ObjectTable</code> to get each <code>Object</code> and its attributes</span>
+</dd>
+</dl>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x000001E9F75BCDF0&gt; 
+
+object  0  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001E9F9215DF0&gt;
+        0  Geometry             :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x000001E9CF8CFBB0&gt;
+        0  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001E9CF8CFBB0&gt;
+        0  Attributes.Id        :  fc49c0ee-7bd9-4097-961d-3925257a4738
+        0  Attributes.Name      :  solid_1
+        0  Attributes.layerIndex:  3
+
+object  1  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001E9F9216CF0&gt;
+        1  Geometry             :  &lt;rhino3dm._rhino3dm.Brep object at 0x000001E9F91EFD70&gt;
+        1  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001E9F91EFD70&gt;
+        1  Attributes.Id        :  478a0a94-ad34-41cf-b917-b6b0050dad8f
+        1  Attributes.Name      :  polysurf_2
+        1  Attributes.layerIndex:  2
+
+object  2  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001E9F9214BB0&gt;
+        2  Geometry             :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x000001E9F91EFD70&gt;
+        2  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001E9F91EFD70&gt;
+        2  Attributes.Id        :  9afb6b4b-986d-47e6-8d2d-89c6d5448117
+        2  Attributes.Name      :  curve_1
+        2  Attributes.layerIndex:  0
+
+object  3  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001E9CF985F70&gt;
+        3  Geometry             :  &lt;rhino3dm._rhino3dm.Mesh object at 0x000001E9F9214BB0&gt;
+        3  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001E9F9214BB0&gt;
+        3  Attributes.Id        :  c85d4579-e3df-492c-a4e4-dc9626c19397
+        3  Attributes.Name      :  ball_1
+        3  Attributes.layerIndex:  4
+
+object  4  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001E9CF9853B0&gt;
+        4  Geometry             :  &lt;rhino3dm._rhino3dm.Brep object at 0x000001E9F9214BB0&gt;
+        4  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001E9F9214BB0&gt;
+        4  Attributes.Id        :  19067883-7bbc-4871-91bb-ad640c96bb46
+        4  Attributes.Name      :  polysurf_1
+        4  Attributes.layerIndex:  2
+</code></pre>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-tip callout-titled" title="File3dm.Objects">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -640,6 +665,14 @@ ObjectAttributes
 </div>
 </div>
 </div>
+</div></div></section>
+<section id="read-geometry" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="read-geometry">read <code>Geometry</code></h2>
+<div id="db7aadbc" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># ---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
 <div class="callout callout-style-default callout-tip callout-titled" title="GeomtryBase">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -663,6 +696,18 @@ GeomtryBase
 </div>
 </div>
 </div></div></section>
+<section id="backup-code" class="level2">
+<h2 class="anchored" data-anchor-id="backup-code">backup code</h2>
+<div class="sourceCode" id="cb5" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># brep = model.Objects[0].Geometry</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="co"># face = brep.Faces[0]</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># mesh = face.GetMesh(rhino3dm.MeshType.Any)</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="co"># print (len(mesh.Faces))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+<!-- -->
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1308,200 +1353,232 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "rhino3dm exercise 01"</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="co">---</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="fu"># test reading geometry by layer name</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="in">```{python}</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a><span class="im">import</span> rhino3dm</span>
-<span id="cb2-11"><a href="#cb2-11"></a></span>
-<span id="cb2-12"><a href="#cb2-12"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./data/oat_model.3dm'</span>)   <span class="co"># &lt;1&gt;</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="bu">print</span>(<span class="st">'model object: '</span>, model)</span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="bu">print</span>(<span class="st">'------'</span>)</span>
-<span id="cb2-15"><a href="#cb2-15"></a></span>
-<span id="cb2-16"><a href="#cb2-16"></a>layer_table <span class="op">=</span> model.Layers                              <span class="co"># &lt;2&gt;</span></span>
-<span id="cb2-17"><a href="#cb2-17"></a><span class="bu">print</span>(<span class="st">'layer table: '</span>, layer_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb2-18"><a href="#cb2-18"></a></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="cf">for</span> idx, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(layer_table)):         <span class="co"># &lt;3&gt;</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a>    <span class="bu">print</span>(<span class="st">'layer '</span>, idx, <span class="st">' object  : '</span>, layer)</span>
-<span id="cb2-21"><a href="#cb2-21"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' id      : '</span>, layer.Id)</span>
-<span id="cb2-22"><a href="#cb2-22"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' index   : '</span>, layer.Index)</span>
-<span id="cb2-23"><a href="#cb2-23"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' name    : '</span>, layer.Name)</span>
-<span id="cb2-24"><a href="#cb2-24"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' fullpath: '</span>, layer.FullPath)</span>
-<span id="cb2-25"><a href="#cb2-25"></a></span>
-<span id="cb2-26"><a href="#cb2-26"></a><span class="bu">print</span>(<span class="st">'------'</span>)</span>
-<span id="cb2-27"><a href="#cb2-27"></a></span>
-<span id="cb2-28"><a href="#cb2-28"></a>object_table <span class="op">=</span> model.Objects                            <span class="co"># &lt;4&gt;</span></span>
-<span id="cb2-29"><a href="#cb2-29"></a><span class="bu">print</span>(<span class="st">'object table: '</span>, object_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
-<span id="cb2-30"><a href="#cb2-30"></a></span>
-<span id="cb2-31"><a href="#cb2-31"></a><span class="cf">for</span> idx, <span class="bu">object</span> <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):       <span class="co"># &lt;5&gt;</span></span>
-<span id="cb2-32"><a href="#cb2-32"></a>    <span class="bu">print</span>(<span class="st">'object '</span>, idx, <span class="st">' object    : '</span>, <span class="bu">object</span>)</span>
-<span id="cb2-33"><a href="#cb2-33"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' geometry  : '</span>, <span class="bu">object</span>.Geometry)</span>
-<span id="cb2-34"><a href="#cb2-34"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' attributes: '</span>, <span class="bu">object</span>.Attributes)</span>
-<span id="cb2-35"><a href="#cb2-35"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' layerIndex: '</span>, <span class="bu">object</span>.Attributes.LayerIndex)</span>
-<span id="cb2-36"><a href="#cb2-36"></a></span>
-<span id="cb2-37"><a href="#cb2-37"></a><span class="bu">print</span>(<span class="st">'------'</span>)</span>
-<span id="cb2-38"><a href="#cb2-38"></a></span>
-<span id="cb2-39"><a href="#cb2-39"></a></span>
-<span id="cb2-40"><a href="#cb2-40"></a><span class="co"># brep = model.Objects[0].Geometry</span></span>
-<span id="cb2-41"><a href="#cb2-41"></a><span class="co"># face = brep.Faces[0]</span></span>
-<span id="cb2-42"><a href="#cb2-42"></a><span class="co"># mesh = face.GetMesh(rhino3dm.MeshType.Any)</span></span>
-<span id="cb2-43"><a href="#cb2-43"></a><span class="co"># print (len(mesh.Faces))</span></span>
-<span id="cb2-44"><a href="#cb2-44"></a><span class="in">```</span></span>
-<span id="cb2-45"><a href="#cb2-45"></a><span class="ss">1. </span>read <span class="in">`.3dm`</span> file as <span class="in">`File3dm`</span> object</span>
-<span id="cb2-46"><a href="#cb2-46"></a><span class="ss">2. </span>get the <span class="in">`LayerTable`</span> object</span>
-<span id="cb2-47"><a href="#cb2-47"></a><span class="ss">3. </span>iterate <span class="in">`LayerTable`</span> to get each <span class="in">`Layer`</span> and its attributes</span>
-<span id="cb2-48"><a href="#cb2-48"></a><span class="ss">4. </span>get <span class="in">`ObjectTable`</span> in the model</span>
-<span id="cb2-49"><a href="#cb2-49"></a><span class="ss">5. </span>iterate <span class="in">`ObjectTable`</span> to get each <span class="in">`Object`</span> and its attributes</span>
-<span id="cb2-50"><a href="#cb2-50"></a></span>
-<span id="cb2-51"><a href="#cb2-51"></a></span>
-<span id="cb2-52"><a href="#cb2-52"></a>::: {.column-margin}</span>
-<span id="cb2-53"><a href="#cb2-53"></a></span>
-<span id="cb2-54"><a href="#cb2-54"></a>::: {.callout-tip title="File3dm.Read()" collapse="true"}</span>
-<span id="cb2-55"><a href="#cb2-55"></a><span class="co">[</span><span class="ot">**_method_**  `rhino3dm.File3dm.Read()`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Read)</span></span>
-<span id="cb2-56"><a href="#cb2-56"></a></span>
-<span id="cb2-57"><a href="#cb2-57"></a>&lt;br /&gt;</span>
-<span id="cb2-58"><a href="#cb2-58"></a></span>
-<span id="cb2-59"><a href="#cb2-59"></a>Reads a <span class="in">`3dm`</span> file from the specified path.</span>
-<span id="cb2-60"><a href="#cb2-60"></a></span>
-<span id="cb2-61"><a href="#cb2-61"></a>&lt;br /&gt;</span>
-<span id="cb2-62"><a href="#cb2-62"></a></span>
-<span id="cb2-63"><a href="#cb2-63"></a>Parameters:</span>
-<span id="cb2-64"><a href="#cb2-64"></a></span>
-<span id="cb2-65"><a href="#cb2-65"></a><span class="ss">- </span>path (str) – The file to read.</span>
-<span id="cb2-66"><a href="#cb2-66"></a></span>
-<span id="cb2-67"><a href="#cb2-67"></a>Returns:</span>
-<span id="cb2-68"><a href="#cb2-68"></a></span>
-<span id="cb2-69"><a href="#cb2-69"></a><span class="ss">- </span>new File3dm on success, None on error.</span>
-<span id="cb2-70"><a href="#cb2-70"></a></span>
-<span id="cb2-71"><a href="#cb2-71"></a>Return type:</span>
-<span id="cb2-72"><a href="#cb2-72"></a></span>
-<span id="cb2-73"><a href="#cb2-73"></a><span class="ss">- </span>File3dm</span>
-<span id="cb2-74"><a href="#cb2-74"></a>:::</span>
-<span id="cb2-75"><a href="#cb2-75"></a></span>
-<span id="cb2-76"><a href="#cb2-76"></a>::: {.callout-tip title="File3dm.Layers" collapse="true"}</span>
-<span id="cb2-77"><a href="#cb2-77"></a><span class="co">[</span><span class="ot">**_attrib_**  `rhino3dm.File3dm.Layer`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Layers)</span></span>
-<span id="cb2-78"><a href="#cb2-78"></a></span>
-<span id="cb2-79"><a href="#cb2-79"></a>&lt;br /&gt;</span>
-<span id="cb2-80"><a href="#cb2-80"></a></span>
-<span id="cb2-81"><a href="#cb2-81"></a>IList&lt;Layer&gt;: Layers in this file.</span>
-<span id="cb2-82"><a href="#cb2-82"></a></span>
-<span id="cb2-83"><a href="#cb2-83"></a>&lt;br /&gt;</span>
-<span id="cb2-84"><a href="#cb2-84"></a></span>
-<span id="cb2-85"><a href="#cb2-85"></a>Returns: </span>
-<span id="cb2-86"><a href="#cb2-86"></a></span>
-<span id="cb2-87"><a href="#cb2-87"></a><span class="ss">- </span>File3dmLayerTable</span>
-<span id="cb2-88"><a href="#cb2-88"></a>:::</span>
-<span id="cb2-89"><a href="#cb2-89"></a></span>
-<span id="cb2-90"><a href="#cb2-90"></a>::: {.callout-tip title="File3dmLayerTable" collapse="true"}</span>
-<span id="cb2-91"><a href="#cb2-91"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.File3dmLayerTable`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmLayerTable.html#module-rhino3dm)</span></span>
-<span id="cb2-92"><a href="#cb2-92"></a></span>
-<span id="cb2-93"><a href="#cb2-93"></a>&lt;br /&gt;</span>
-<span id="cb2-94"><a href="#cb2-94"></a></span>
-<span id="cb2-95"><a href="#cb2-95"></a>Each item is a <span class="in">`rhino3dm.Layer`</span> object</span>
-<span id="cb2-96"><a href="#cb2-96"></a></span>
-<span id="cb2-97"><a href="#cb2-97"></a>&lt;br /&gt;</span>
-<span id="cb2-98"><a href="#cb2-98"></a></span>
-<span id="cb2-99"><a href="#cb2-99"></a>Methods:</span>
-<span id="cb2-100"><a href="#cb2-100"></a></span>
-<span id="cb2-101"><a href="#cb2-101"></a><span class="ss">- </span><span class="sc">\_</span>_getitem__()</span>
-<span id="cb2-102"><a href="#cb2-102"></a><span class="ss">- </span><span class="sc">\_</span>_iter__()</span>
-<span id="cb2-103"><a href="#cb2-103"></a><span class="ss">- </span><span class="sc">\_</span>_len__()</span>
-<span id="cb2-104"><a href="#cb2-104"></a><span class="ss">- </span>...</span>
-<span id="cb2-105"><a href="#cb2-105"></a>:::</span>
-<span id="cb2-106"><a href="#cb2-106"></a></span>
-<span id="cb2-107"><a href="#cb2-107"></a>::: {.callout-tip title="Layer" collapse="true"}</span>
-<span id="cb2-108"><a href="#cb2-108"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.Layer`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/Layer.html#module-rhino3dm)</span></span>
-<span id="cb2-109"><a href="#cb2-109"></a></span>
-<span id="cb2-110"><a href="#cb2-110"></a>&lt;br /&gt;</span>
-<span id="cb2-111"><a href="#cb2-111"></a></span>
-<span id="cb2-112"><a href="#cb2-112"></a>Attributes:</span>
-<span id="cb2-113"><a href="#cb2-113"></a></span>
-<span id="cb2-114"><a href="#cb2-114"></a><span class="ss">- </span>Color</span>
-<span id="cb2-115"><a href="#cb2-115"></a><span class="ss">- </span>FullPath</span>
-<span id="cb2-116"><a href="#cb2-116"></a><span class="ss">- </span>Id</span>
-<span id="cb2-117"><a href="#cb2-117"></a><span class="ss">- </span>Index</span>
-<span id="cb2-118"><a href="#cb2-118"></a><span class="ss">- </span>Locked</span>
-<span id="cb2-119"><a href="#cb2-119"></a><span class="ss">- </span>Name</span>
-<span id="cb2-120"><a href="#cb2-120"></a><span class="ss">- </span>ParentLayerId</span>
-<span id="cb2-121"><a href="#cb2-121"></a><span class="ss">- </span>Visible</span>
-<span id="cb2-122"><a href="#cb2-122"></a><span class="ss">- </span>...</span>
-<span id="cb2-123"><a href="#cb2-123"></a>:::</span>
-<span id="cb2-124"><a href="#cb2-124"></a></span>
-<span id="cb2-125"><a href="#cb2-125"></a>::: {.callout-tip title="File3dm.Objects" collapse="true"}</span>
-<span id="cb2-126"><a href="#cb2-126"></a><span class="co">[</span><span class="ot">**_attrib_**  `rhino3dm.File3dm.Objects`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)</span></span>
-<span id="cb2-127"><a href="#cb2-127"></a></span>
-<span id="cb2-128"><a href="#cb2-128"></a>&lt;br /&gt;</span>
-<span id="cb2-129"><a href="#cb2-129"></a></span>
-<span id="cb2-130"><a href="#cb2-130"></a>Returns a <span class="in">`File3dmObjectTable`</span>: Gets access to the class associated with this file, which contains all objects.</span>
-<span id="cb2-131"><a href="#cb2-131"></a>:::</span>
-<span id="cb2-132"><a href="#cb2-132"></a></span>
-<span id="cb2-133"><a href="#cb2-133"></a>::: {.callout-tip title="File3dmObjectTable" collapse="true"}</span>
-<span id="cb2-134"><a href="#cb2-134"></a></span>
-<span id="cb2-135"><a href="#cb2-135"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.File3dmObjectTable`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmObjectTable.html#module-rhino3dm)</span></span>
-<span id="cb2-136"><a href="#cb2-136"></a></span>
-<span id="cb2-137"><a href="#cb2-137"></a>&lt;br /&gt;</span>
-<span id="cb2-138"><a href="#cb2-138"></a></span>
-<span id="cb2-139"><a href="#cb2-139"></a>Each item is a <span class="in">`rhino3dm.Object`</span> object</span>
-<span id="cb2-140"><a href="#cb2-140"></a></span>
-<span id="cb2-141"><a href="#cb2-141"></a>&lt;br /&gt;</span>
-<span id="cb2-142"><a href="#cb2-142"></a></span>
-<span id="cb2-143"><a href="#cb2-143"></a>Methods:</span>
-<span id="cb2-144"><a href="#cb2-144"></a></span>
-<span id="cb2-145"><a href="#cb2-145"></a><span class="ss">- </span><span class="sc">\_</span>_getitem__()</span>
-<span id="cb2-146"><a href="#cb2-146"></a><span class="ss">- </span><span class="sc">\_</span>_iter__()</span>
-<span id="cb2-147"><a href="#cb2-147"></a><span class="ss">- </span><span class="sc">\_</span>_len__()</span>
-<span id="cb2-148"><a href="#cb2-148"></a><span class="ss">- </span>...</span>
-<span id="cb2-149"><a href="#cb2-149"></a>:::</span>
-<span id="cb2-150"><a href="#cb2-150"></a></span>
-<span id="cb2-151"><a href="#cb2-151"></a>::: {.callout-tip title="File3dmObject" collapse="true"}</span>
-<span id="cb2-152"><a href="#cb2-152"></a></span>
-<span id="cb2-153"><a href="#cb2-153"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.File3dmObject`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#module-rhino3dm)</span></span>
-<span id="cb2-154"><a href="#cb2-154"></a></span>
-<span id="cb2-155"><a href="#cb2-155"></a>&lt;br /&gt;</span>
-<span id="cb2-156"><a href="#cb2-156"></a></span>
-<span id="cb2-157"><a href="#cb2-157"></a>Attribs:</span>
-<span id="cb2-158"><a href="#cb2-158"></a></span>
-<span id="cb2-159"><a href="#cb2-159"></a><span class="ss">- </span>Attributes </span>
-<span id="cb2-160"><a href="#cb2-160"></a><span class="ss">    - </span><span class="in">`ObjectAttributes`</span>: Gets the attributes that are linked with this document object.</span>
-<span id="cb2-161"><a href="#cb2-161"></a></span>
-<span id="cb2-162"><a href="#cb2-162"></a><span class="ss">- </span>Geometry </span>
-<span id="cb2-163"><a href="#cb2-163"></a><span class="ss">    - </span><span class="in">`rhino3dm.GeometryBase`</span>: Gets the geometry that is linked with this document object.</span>
-<span id="cb2-164"><a href="#cb2-164"></a>:::</span>
-<span id="cb2-165"><a href="#cb2-165"></a></span>
-<span id="cb2-166"><a href="#cb2-166"></a>::: {.callout-tip title="ObjectAttributes" collapse="true"}</span>
-<span id="cb2-167"><a href="#cb2-167"></a></span>
-<span id="cb2-168"><a href="#cb2-168"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.ObjectAttributes`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/ObjectAttributes.html#module-rhino3dm)</span></span>
-<span id="cb2-169"><a href="#cb2-169"></a></span>
-<span id="cb2-170"><a href="#cb2-170"></a>&lt;br /&gt;</span>
-<span id="cb2-171"><a href="#cb2-171"></a></span>
-<span id="cb2-172"><a href="#cb2-172"></a>Attribs:</span>
-<span id="cb2-173"><a href="#cb2-173"></a></span>
-<span id="cb2-174"><a href="#cb2-174"></a><span class="ss">- </span>Id</span>
-<span id="cb2-175"><a href="#cb2-175"></a><span class="ss">- </span>LayerIndex</span>
-<span id="cb2-176"><a href="#cb2-176"></a><span class="ss">- </span>MaterialIndex</span>
-<span id="cb2-177"><a href="#cb2-177"></a><span class="ss">- </span>Name</span>
-<span id="cb2-178"><a href="#cb2-178"></a><span class="ss">- </span>ObjectColor</span>
-<span id="cb2-179"><a href="#cb2-179"></a><span class="ss">- </span>Visible</span>
-<span id="cb2-180"><a href="#cb2-180"></a><span class="ss">- </span>...</span>
-<span id="cb2-181"><a href="#cb2-181"></a>:::</span>
-<span id="cb2-182"><a href="#cb2-182"></a></span>
-<span id="cb2-183"><a href="#cb2-183"></a>::: {.callout-tip title="GeomtryBase" collapse="true"}</span>
-<span id="cb2-184"><a href="#cb2-184"></a></span>
-<span id="cb2-185"><a href="#cb2-185"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.GeometryBase`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#module-rhino3dm)</span></span>
-<span id="cb2-186"><a href="#cb2-186"></a></span>
-<span id="cb2-187"><a href="#cb2-187"></a>&lt;br /&gt;</span>
-<span id="cb2-188"><a href="#cb2-188"></a></span>
-<span id="cb2-189"><a href="#cb2-189"></a>Attribs:</span>
-<span id="cb2-190"><a href="#cb2-190"></a></span>
-<span id="cb2-191"><a href="#cb2-191"></a><span class="ss">- </span>ObjectType</span>
-<span id="cb2-192"><a href="#cb2-192"></a><span class="ss">- </span>...</span>
-<span id="cb2-193"><a href="#cb2-193"></a>:::</span>
-<span id="cb2-194"><a href="#cb2-194"></a></span>
-<span id="cb2-195"><a href="#cb2-195"></a>:::</span>
-<span id="cb2-196"><a href="#cb2-196"></a></span>
+<div class="sourceCode" id="cb6" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="an">title:</span><span class="co"> "rhino3dm exercise 01"</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">---</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="fu"># Extract info from `.3dm` file</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="fu">## read `.3dm` file</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="in">```{python}</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="im">import</span> rhino3dm</span>
+<span id="cb6-15"><a href="#cb6-15"></a></span>
+<span id="cb6-16"><a href="#cb6-16"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./data/oat_model.3dm'</span>)   <span class="co"># &lt;1&gt;</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a><span class="bu">print</span>(<span class="st">'model object: '</span>, model)</span>
+<span id="cb6-18"><a href="#cb6-18"></a></span>
+<span id="cb6-19"><a href="#cb6-19"></a><span class="in">```</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a><span class="ss">1. </span>read <span class="in">`.3dm`</span> file as <span class="in">`File3dm`</span> object</span>
+<span id="cb6-21"><a href="#cb6-21"></a></span>
+<span id="cb6-22"><a href="#cb6-22"></a>:::: {.column-margin}</span>
+<span id="cb6-23"><a href="#cb6-23"></a>::: {.callout-tip title="File3dm.Read()" collapse="true"}</span>
+<span id="cb6-24"><a href="#cb6-24"></a><span class="co">[</span><span class="ot">**_method_**  `rhino3dm.File3dm.Read()`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Read)</span></span>
+<span id="cb6-25"><a href="#cb6-25"></a></span>
+<span id="cb6-26"><a href="#cb6-26"></a>&lt;br /&gt;</span>
+<span id="cb6-27"><a href="#cb6-27"></a></span>
+<span id="cb6-28"><a href="#cb6-28"></a>Reads a <span class="in">`3dm`</span> file from the specified path.</span>
+<span id="cb6-29"><a href="#cb6-29"></a></span>
+<span id="cb6-30"><a href="#cb6-30"></a>&lt;br /&gt;</span>
+<span id="cb6-31"><a href="#cb6-31"></a></span>
+<span id="cb6-32"><a href="#cb6-32"></a>Parameters:</span>
+<span id="cb6-33"><a href="#cb6-33"></a></span>
+<span id="cb6-34"><a href="#cb6-34"></a><span class="ss">- </span>path (str) – The file to read.</span>
+<span id="cb6-35"><a href="#cb6-35"></a></span>
+<span id="cb6-36"><a href="#cb6-36"></a>Returns:</span>
+<span id="cb6-37"><a href="#cb6-37"></a></span>
+<span id="cb6-38"><a href="#cb6-38"></a><span class="ss">- </span>new File3dm on success, None on error.</span>
+<span id="cb6-39"><a href="#cb6-39"></a></span>
+<span id="cb6-40"><a href="#cb6-40"></a>Return type:</span>
+<span id="cb6-41"><a href="#cb6-41"></a></span>
+<span id="cb6-42"><a href="#cb6-42"></a><span class="ss">- </span>File3dm</span>
+<span id="cb6-43"><a href="#cb6-43"></a>:::</span>
+<span id="cb6-44"><a href="#cb6-44"></a>::::</span>
+<span id="cb6-45"><a href="#cb6-45"></a></span>
+<span id="cb6-46"><a href="#cb6-46"></a></span>
+<span id="cb6-47"><a href="#cb6-47"></a><span class="fu">## read `Layer`</span></span>
+<span id="cb6-48"><a href="#cb6-48"></a></span>
+<span id="cb6-51"><a href="#cb6-51"></a><span class="in">```{python}</span></span>
+<span id="cb6-52"><a href="#cb6-52"></a>layer_table <span class="op">=</span> model.Layers                              <span class="co"># &lt;2&gt;</span></span>
+<span id="cb6-53"><a href="#cb6-53"></a><span class="bu">print</span>(<span class="st">'layer table: '</span>, layer_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb6-54"><a href="#cb6-54"></a></span>
+<span id="cb6-55"><a href="#cb6-55"></a><span class="cf">for</span> idx, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(layer_table)):         <span class="co"># &lt;3&gt;</span></span>
+<span id="cb6-56"><a href="#cb6-56"></a>    <span class="bu">print</span>(<span class="st">'layer '</span>, idx, <span class="st">' Object  : '</span>, layer)</span>
+<span id="cb6-57"><a href="#cb6-57"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Id      : '</span>, layer.Id)</span>
+<span id="cb6-58"><a href="#cb6-58"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Index   : '</span>, layer.Index)</span>
+<span id="cb6-59"><a href="#cb6-59"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Name    : '</span>, layer.Name)</span>
+<span id="cb6-60"><a href="#cb6-60"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Fullpath: '</span>, layer.FullPath)</span>
+<span id="cb6-61"><a href="#cb6-61"></a></span>
+<span id="cb6-62"><a href="#cb6-62"></a></span>
+<span id="cb6-63"><a href="#cb6-63"></a><span class="in">```</span></span>
+<span id="cb6-64"><a href="#cb6-64"></a><span class="ss">2. </span>get the <span class="in">`LayerTable`</span> object</span>
+<span id="cb6-65"><a href="#cb6-65"></a><span class="ss">3. </span>iterate <span class="in">`LayerTable`</span> to get each <span class="in">`Layer`</span> and its attributes</span>
+<span id="cb6-66"><a href="#cb6-66"></a></span>
+<span id="cb6-67"><a href="#cb6-67"></a>:::: {.column-margin}</span>
+<span id="cb6-68"><a href="#cb6-68"></a>::: {.callout-tip title="File3dm.Layers" collapse="true"}</span>
+<span id="cb6-69"><a href="#cb6-69"></a><span class="co">[</span><span class="ot">**_attrib_**  `rhino3dm.File3dm.Layer`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Layers)</span></span>
+<span id="cb6-70"><a href="#cb6-70"></a></span>
+<span id="cb6-71"><a href="#cb6-71"></a>&lt;br /&gt;</span>
+<span id="cb6-72"><a href="#cb6-72"></a></span>
+<span id="cb6-73"><a href="#cb6-73"></a>IList&lt;Layer&gt;: Layers in this file.</span>
+<span id="cb6-74"><a href="#cb6-74"></a></span>
+<span id="cb6-75"><a href="#cb6-75"></a>&lt;br /&gt;</span>
+<span id="cb6-76"><a href="#cb6-76"></a></span>
+<span id="cb6-77"><a href="#cb6-77"></a>Returns: </span>
+<span id="cb6-78"><a href="#cb6-78"></a></span>
+<span id="cb6-79"><a href="#cb6-79"></a><span class="ss">- </span>File3dmLayerTable</span>
+<span id="cb6-80"><a href="#cb6-80"></a>:::</span>
+<span id="cb6-81"><a href="#cb6-81"></a></span>
+<span id="cb6-82"><a href="#cb6-82"></a>::: {.callout-tip title="File3dmLayerTable" collapse="true"}</span>
+<span id="cb6-83"><a href="#cb6-83"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.File3dmLayerTable`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmLayerTable.html#module-rhino3dm)</span></span>
+<span id="cb6-84"><a href="#cb6-84"></a></span>
+<span id="cb6-85"><a href="#cb6-85"></a>&lt;br /&gt;</span>
+<span id="cb6-86"><a href="#cb6-86"></a></span>
+<span id="cb6-87"><a href="#cb6-87"></a>Each item is a <span class="in">`rhino3dm.Layer`</span> object</span>
+<span id="cb6-88"><a href="#cb6-88"></a></span>
+<span id="cb6-89"><a href="#cb6-89"></a>&lt;br /&gt;</span>
+<span id="cb6-90"><a href="#cb6-90"></a></span>
+<span id="cb6-91"><a href="#cb6-91"></a>Methods:</span>
+<span id="cb6-92"><a href="#cb6-92"></a></span>
+<span id="cb6-93"><a href="#cb6-93"></a><span class="ss">- </span><span class="sc">\_</span>_getitem__()</span>
+<span id="cb6-94"><a href="#cb6-94"></a><span class="ss">- </span><span class="sc">\_</span>_iter__()</span>
+<span id="cb6-95"><a href="#cb6-95"></a><span class="ss">- </span><span class="sc">\_</span>_len__()</span>
+<span id="cb6-96"><a href="#cb6-96"></a><span class="ss">- </span>...</span>
+<span id="cb6-97"><a href="#cb6-97"></a>:::</span>
+<span id="cb6-98"><a href="#cb6-98"></a></span>
+<span id="cb6-99"><a href="#cb6-99"></a>::: {.callout-tip title="Layer" collapse="true"}</span>
+<span id="cb6-100"><a href="#cb6-100"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.Layer`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/Layer.html#module-rhino3dm)</span></span>
+<span id="cb6-101"><a href="#cb6-101"></a></span>
+<span id="cb6-102"><a href="#cb6-102"></a>&lt;br /&gt;</span>
+<span id="cb6-103"><a href="#cb6-103"></a></span>
+<span id="cb6-104"><a href="#cb6-104"></a>Attributes:</span>
+<span id="cb6-105"><a href="#cb6-105"></a></span>
+<span id="cb6-106"><a href="#cb6-106"></a><span class="ss">- </span>Color</span>
+<span id="cb6-107"><a href="#cb6-107"></a><span class="ss">- </span>FullPath</span>
+<span id="cb6-108"><a href="#cb6-108"></a><span class="ss">- </span>Id</span>
+<span id="cb6-109"><a href="#cb6-109"></a><span class="ss">- </span>Index</span>
+<span id="cb6-110"><a href="#cb6-110"></a><span class="ss">- </span>Locked</span>
+<span id="cb6-111"><a href="#cb6-111"></a><span class="ss">- </span>Name</span>
+<span id="cb6-112"><a href="#cb6-112"></a><span class="ss">- </span>ParentLayerId</span>
+<span id="cb6-113"><a href="#cb6-113"></a><span class="ss">- </span>Visible</span>
+<span id="cb6-114"><a href="#cb6-114"></a><span class="ss">- </span>...</span>
+<span id="cb6-115"><a href="#cb6-115"></a>:::</span>
+<span id="cb6-116"><a href="#cb6-116"></a>::::</span>
+<span id="cb6-117"><a href="#cb6-117"></a></span>
+<span id="cb6-118"><a href="#cb6-118"></a></span>
+<span id="cb6-119"><a href="#cb6-119"></a><span class="fu">## read `Objects`</span></span>
+<span id="cb6-120"><a href="#cb6-120"></a></span>
+<span id="cb6-123"><a href="#cb6-123"></a><span class="in">```{python}</span></span>
+<span id="cb6-124"><a href="#cb6-124"></a>object_table <span class="op">=</span> model.Objects                            <span class="co"># &lt;4&gt;</span></span>
+<span id="cb6-125"><a href="#cb6-125"></a><span class="bu">print</span>(<span class="st">'object table: '</span>, object_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb6-126"><a href="#cb6-126"></a></span>
+<span id="cb6-127"><a href="#cb6-127"></a><span class="cf">for</span> idx, <span class="bu">object</span> <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):       <span class="co"># &lt;5&gt;</span></span>
+<span id="cb6-128"><a href="#cb6-128"></a>    <span class="bu">print</span>(<span class="st">'object '</span>, idx, <span class="st">' Object               : '</span>, <span class="bu">object</span>)</span>
+<span id="cb6-129"><a href="#cb6-129"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Geometry             : '</span>, <span class="bu">object</span>.Geometry)</span>
+<span id="cb6-130"><a href="#cb6-130"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes           : '</span>, <span class="bu">object</span>.Attributes)</span>
+<span id="cb6-131"><a href="#cb6-131"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Id        : '</span>, <span class="bu">object</span>.Attributes.Id)</span>
+<span id="cb6-132"><a href="#cb6-132"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Name      : '</span>, <span class="bu">object</span>.Attributes.Name)</span>
+<span id="cb6-133"><a href="#cb6-133"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.layerIndex: '</span>, <span class="bu">object</span>.Attributes.LayerIndex)</span>
+<span id="cb6-134"><a href="#cb6-134"></a>    <span class="bu">print</span>()</span>
+<span id="cb6-135"><a href="#cb6-135"></a><span class="in">```</span></span>
+<span id="cb6-136"><a href="#cb6-136"></a><span class="ss">4. </span>get <span class="in">`ObjectTable`</span> in the model</span>
+<span id="cb6-137"><a href="#cb6-137"></a><span class="ss">5. </span>iterate <span class="in">`ObjectTable`</span> to get each <span class="in">`Object`</span> and its attributes</span>
+<span id="cb6-138"><a href="#cb6-138"></a></span>
+<span id="cb6-139"><a href="#cb6-139"></a></span>
+<span id="cb6-140"><a href="#cb6-140"></a>:::: {.column-margin}</span>
+<span id="cb6-141"><a href="#cb6-141"></a>::: {.callout-tip title="File3dm.Objects" collapse="true"}</span>
+<span id="cb6-142"><a href="#cb6-142"></a><span class="co">[</span><span class="ot">**_attrib_**  `rhino3dm.File3dm.Objects`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)</span></span>
+<span id="cb6-143"><a href="#cb6-143"></a></span>
+<span id="cb6-144"><a href="#cb6-144"></a>&lt;br /&gt;</span>
+<span id="cb6-145"><a href="#cb6-145"></a></span>
+<span id="cb6-146"><a href="#cb6-146"></a>Returns a <span class="in">`File3dmObjectTable`</span>: Gets access to the class associated with this file, which contains all objects.</span>
+<span id="cb6-147"><a href="#cb6-147"></a>:::</span>
+<span id="cb6-148"><a href="#cb6-148"></a></span>
+<span id="cb6-149"><a href="#cb6-149"></a>::: {.callout-tip title="File3dmObjectTable" collapse="true"}</span>
+<span id="cb6-150"><a href="#cb6-150"></a></span>
+<span id="cb6-151"><a href="#cb6-151"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.File3dmObjectTable`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmObjectTable.html#module-rhino3dm)</span></span>
+<span id="cb6-152"><a href="#cb6-152"></a></span>
+<span id="cb6-153"><a href="#cb6-153"></a>&lt;br /&gt;</span>
+<span id="cb6-154"><a href="#cb6-154"></a></span>
+<span id="cb6-155"><a href="#cb6-155"></a>Each item is a <span class="in">`rhino3dm.Object`</span> object</span>
+<span id="cb6-156"><a href="#cb6-156"></a></span>
+<span id="cb6-157"><a href="#cb6-157"></a>&lt;br /&gt;</span>
+<span id="cb6-158"><a href="#cb6-158"></a></span>
+<span id="cb6-159"><a href="#cb6-159"></a>Methods:</span>
+<span id="cb6-160"><a href="#cb6-160"></a></span>
+<span id="cb6-161"><a href="#cb6-161"></a><span class="ss">- </span><span class="sc">\_</span>_getitem__()</span>
+<span id="cb6-162"><a href="#cb6-162"></a><span class="ss">- </span><span class="sc">\_</span>_iter__()</span>
+<span id="cb6-163"><a href="#cb6-163"></a><span class="ss">- </span><span class="sc">\_</span>_len__()</span>
+<span id="cb6-164"><a href="#cb6-164"></a><span class="ss">- </span>...</span>
+<span id="cb6-165"><a href="#cb6-165"></a>:::</span>
+<span id="cb6-166"><a href="#cb6-166"></a></span>
+<span id="cb6-167"><a href="#cb6-167"></a>::: {.callout-tip title="File3dmObject" collapse="true"}</span>
+<span id="cb6-168"><a href="#cb6-168"></a></span>
+<span id="cb6-169"><a href="#cb6-169"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.File3dmObject`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#module-rhino3dm)</span></span>
+<span id="cb6-170"><a href="#cb6-170"></a></span>
+<span id="cb6-171"><a href="#cb6-171"></a>&lt;br /&gt;</span>
+<span id="cb6-172"><a href="#cb6-172"></a></span>
+<span id="cb6-173"><a href="#cb6-173"></a>Attribs:</span>
+<span id="cb6-174"><a href="#cb6-174"></a></span>
+<span id="cb6-175"><a href="#cb6-175"></a><span class="ss">- </span>Attributes </span>
+<span id="cb6-176"><a href="#cb6-176"></a><span class="ss">    - </span><span class="in">`ObjectAttributes`</span>: Gets the attributes that are linked with this document object.</span>
+<span id="cb6-177"><a href="#cb6-177"></a></span>
+<span id="cb6-178"><a href="#cb6-178"></a><span class="ss">- </span>Geometry </span>
+<span id="cb6-179"><a href="#cb6-179"></a><span class="ss">    - </span><span class="in">`rhino3dm.GeometryBase`</span>: Gets the geometry that is linked with this document object.</span>
+<span id="cb6-180"><a href="#cb6-180"></a>:::</span>
+<span id="cb6-181"><a href="#cb6-181"></a></span>
+<span id="cb6-182"><a href="#cb6-182"></a>::: {.callout-tip title="ObjectAttributes" collapse="true"}</span>
+<span id="cb6-183"><a href="#cb6-183"></a></span>
+<span id="cb6-184"><a href="#cb6-184"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.ObjectAttributes`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/ObjectAttributes.html#module-rhino3dm)</span></span>
+<span id="cb6-185"><a href="#cb6-185"></a></span>
+<span id="cb6-186"><a href="#cb6-186"></a>&lt;br /&gt;</span>
+<span id="cb6-187"><a href="#cb6-187"></a></span>
+<span id="cb6-188"><a href="#cb6-188"></a>Attribs:</span>
+<span id="cb6-189"><a href="#cb6-189"></a></span>
+<span id="cb6-190"><a href="#cb6-190"></a><span class="ss">- </span>Id</span>
+<span id="cb6-191"><a href="#cb6-191"></a><span class="ss">- </span>LayerIndex</span>
+<span id="cb6-192"><a href="#cb6-192"></a><span class="ss">- </span>MaterialIndex</span>
+<span id="cb6-193"><a href="#cb6-193"></a><span class="ss">- </span>Name</span>
+<span id="cb6-194"><a href="#cb6-194"></a><span class="ss">- </span>ObjectColor</span>
+<span id="cb6-195"><a href="#cb6-195"></a><span class="ss">- </span>Visible</span>
+<span id="cb6-196"><a href="#cb6-196"></a><span class="ss">- </span>...</span>
+<span id="cb6-197"><a href="#cb6-197"></a>:::</span>
+<span id="cb6-198"><a href="#cb6-198"></a>::::</span>
+<span id="cb6-199"><a href="#cb6-199"></a></span>
+<span id="cb6-200"><a href="#cb6-200"></a></span>
+<span id="cb6-201"><a href="#cb6-201"></a><span class="fu">## read `Geometry`</span></span>
+<span id="cb6-202"><a href="#cb6-202"></a></span>
+<span id="cb6-205"><a href="#cb6-205"></a><span class="in">```{python}</span></span>
+<span id="cb6-206"><a href="#cb6-206"></a><span class="co"># ---</span></span>
+<span id="cb6-207"><a href="#cb6-207"></a></span>
+<span id="cb6-208"><a href="#cb6-208"></a><span class="in">```</span></span>
+<span id="cb6-209"><a href="#cb6-209"></a></span>
+<span id="cb6-210"><a href="#cb6-210"></a></span>
+<span id="cb6-211"><a href="#cb6-211"></a>:::: {.column-margin}</span>
+<span id="cb6-212"><a href="#cb6-212"></a>::: {.callout-tip title="GeomtryBase" collapse="true"}</span>
+<span id="cb6-213"><a href="#cb6-213"></a></span>
+<span id="cb6-214"><a href="#cb6-214"></a><span class="co">[</span><span class="ot">**_class_**  `rhino3dm.GeometryBase`</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#module-rhino3dm)</span></span>
+<span id="cb6-215"><a href="#cb6-215"></a></span>
+<span id="cb6-216"><a href="#cb6-216"></a>&lt;br /&gt;</span>
+<span id="cb6-217"><a href="#cb6-217"></a></span>
+<span id="cb6-218"><a href="#cb6-218"></a>Attribs:</span>
+<span id="cb6-219"><a href="#cb6-219"></a></span>
+<span id="cb6-220"><a href="#cb6-220"></a><span class="ss">- </span>ObjectType</span>
+<span id="cb6-221"><a href="#cb6-221"></a><span class="ss">- </span>...</span>
+<span id="cb6-222"><a href="#cb6-222"></a>:::</span>
+<span id="cb6-223"><a href="#cb6-223"></a>::::</span>
+<span id="cb6-224"><a href="#cb6-224"></a></span>
+<span id="cb6-225"><a href="#cb6-225"></a></span>
+<span id="cb6-226"><a href="#cb6-226"></a><span class="fu">## backup code</span></span>
+<span id="cb6-227"><a href="#cb6-227"></a></span>
+<span id="cb6-228"><a href="#cb6-228"></a><span class="in">```python</span></span>
+<span id="cb6-229"><a href="#cb6-229"></a><span class="co"># brep = model.Objects[0].Geometry</span></span>
+<span id="cb6-230"><a href="#cb6-230"></a><span class="co"># face = brep.Faces[0]</span></span>
+<span id="cb6-231"><a href="#cb6-231"></a><span class="co"># mesh = face.GetMesh(rhino3dm.MeshType.Any)</span></span>
+<span id="cb6-232"><a href="#cb6-232"></a><span class="co"># print (len(mesh.Faces))</span></span>
+<span id="cb6-233"><a href="#cb6-233"></a><span class="in">```</span></span>
+<span id="cb6-234"><a href="#cb6-234"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
