@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OatNotes - test rhino3dm</title>
+<title>OatNotes - show data strucure of a plotly figure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -103,6 +103,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+<script type="text/javascript">
+window.PlotlyConfig = {MathJaxConfig: 'local'};
+if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
+if (typeof require !== 'undefined') {
+require.undef("plotly");
+requirejs.config({
+    paths: {
+        'plotly': ['https://cdn.plot.ly/plotly-2.30.0.min']
+    }
+});
+require(['plotly'], function(Plotly) {
+    window._Plotly = Plotly;
+});
+}
+</script>
+
 
 
 <link rel="stylesheet" href="../../../styles.css">
@@ -149,7 +168,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">test rhino3dm</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">show data strucure of a plotly figure</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -275,22 +294,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#docs" id="toc-docs" class="nav-link active" data-scroll-target="#docs">Docs</a></li>
-  <li><a href="#install-rhino3dm" id="toc-install-rhino3dm" class="nav-link" data-scroll-target="#install-rhino3dm">Install rhino3dm:</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
-  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3</a></li>
-  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example 4</a></li>
-  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example 5</a></li>
+  <li><a href="#example-figure" id="toc-example-figure" class="nav-link active" data-scroll-target="#example-figure">example figure</a></li>
+  <li><a href="#ways-to-view-a-figs-data-strucure" id="toc-ways-to-view-a-figs-data-strucure" class="nav-link" data-scroll-target="#ways-to-view-a-figs-data-strucure">3 ways to view a fig’s data strucure</a>
+  <ul class="collapse">
+  <li><a href="#printfig" id="toc-printfig" class="nav-link" data-scroll-target="#printfig"><code>print(fig)</code></a></li>
+  <li><a href="#fig.to_dict" id="toc-fig.to_dict" class="nav-link" data-scroll-target="#fig.to_dict"><code>fig.to_dict()</code></a></li>
+  <li><a href="#fig.to_json" id="toc-fig.to_json" class="nav-link" data-scroll-target="#fig.to_json"><code>fig.to_json()</code></a></li>
+  </ul></li>
+  <li><a href="#ref" id="toc-ref" class="nav-link" data-scroll-target="#ref">Ref</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="test_rhino3dm.out.ipynb" download="test_rhino3dm.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="plotly_data_structure.out.ipynb" download="plotly_data_structure.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">test rhino3dm</h1>
+<h1 class="title">show data strucure of a plotly figure</h1>
 </div>
 
 
@@ -307,200 +327,346 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="docs" class="level1">
-<h1>Docs</h1>
-<ul>
-<li><p><a href="https://github.com/mcneel/rhino3dm">rhino3dm github</a></p></li>
-<li><p><a href="https://mcneel.github.io/rhino3dm/python/api/index.html">rhino3dm doc</a></p></li>
-<li><p><a href="https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm">developer examples</a></p>
-<ul>
-<li><p><a href="https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/py">rhino3dm.py</a></p></li>
-<li><p><a href="https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/js">rhino3dm.js</a></p></li>
-</ul></li>
-</ul>
-</section>
-<section id="install-rhino3dm" class="level1">
-<h1>Install rhino3dm:</h1>
-<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>&gt; pip install rhino3dm</span>
+<section id="example-figure" class="level1">
+<h1>example figure</h1>
+<div id="c25af34d" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>&gt; pip show rhino3dm</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>Name: rhino3dm</span>
-<span id="cb1-6"><a href="#cb1-6"></a>Version: 8.6.0</span>
-<span id="cb1-7"><a href="#cb1-7"></a>Summary: Python library based on OpenNURBS with a RhinoCommon</span>
-<span id="cb1-8"><a href="#cb1-8"></a> style</span>
-<span id="cb1-9"><a href="#cb1-9"></a>Home-page: </span>
-<span id="cb1-10"><a href="#cb1-10"></a>Author: Robert McNeel &amp; Associates</span>
-<span id="cb1-11"><a href="#cb1-11"></a>Author-email: steve@mcneel.com</span>
-<span id="cb1-12"><a href="#cb1-12"></a>License: </span>
-<span id="cb1-13"><a href="#cb1-13"></a>Location: C:\Users\USERNAME\.conda\envs\ai\Lib\site-packages</span>
-<span id="cb1-14"><a href="#cb1-14"></a>Requires: </span>
-<span id="cb1-15"><a href="#cb1-15"></a>Required-by: compute-rhino3d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-3"><a href="#cb1-3"></a>fig <span class="op">=</span> px.line(</span>
+<span id="cb1-4"><a href="#cb1-4"></a>    x<span class="op">=</span>[<span class="st">"a"</span>,<span class="st">"b"</span>,<span class="st">"c"</span>],</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    y<span class="op">=</span>[<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>],</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    title<span class="op">=</span><span class="st">"sample figure"</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>)</span>
+<span id="cb1-8"><a href="#cb1-8"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>                            <div id="9f7743d9-cbab-452b-af0d-e72c5f978350" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("9f7743d9-cbab-452b-af0d-e72c5f978350")) {                    Plotly.newPlot(                        "9f7743d9-cbab-452b-af0d-e72c5f978350",                        [{"hovertemplate":"x=%{x}\u003cbr\u003ey=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":["a","b","c"],"xaxis":"x","y":[1,3,2],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"x"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"y"}},"legend":{"tracegroupgap":0},"title":{"text":"sample figure"}},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('9f7743d9-cbab-452b-af0d-e72c5f978350');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };                });            </script>        </div>
+</div>
+</div>
 </section>
-<section id="example-1" class="level1">
-<h1>Example 1</h1>
-<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> requests  <span class="co"># pip install requests</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a></span>
-<span id="cb2-4"><a href="#cb2-4"></a>req <span class="op">=</span> requests.get(<span class="st">"https://files.mcneel.com/TEST/Rhino Logo.3dm"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5"></a></span>
-<span id="cb2-6"><a href="#cb2-6"></a>model <span class="op">=</span> File3dm.FromByteArray(req.content)</span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(model.Objects)):</span>
-<span id="cb2-9"><a href="#cb2-9"></a>    obj <span class="op">=</span> model.Objects[i]</span>
-<span id="cb2-10"><a href="#cb2-10"></a>    geometry <span class="op">=</span> obj.Geometry</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    bbox <span class="op">=</span> geometry.GetBoundingBox()</span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
-<span id="cb2-14"><a href="#cb2-14"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<blockquote class="blockquote">
-<p><strong>File3dm.FromByteArray -&gt; File3dm</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.FromByteArray">File3dm.FromByteArray</a></p>
-<p>Read a 3dm file from a byte array</p>
-<ul>
-<li><p>Returns: New File3dm on success, None on error.</p></li>
-<li><p>Return type: File3dm</p></li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>File3dm.Objects –&gt; File3dmObjectTable</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects">File3dm.Objects</a></p>
-<p>File3dmObjectTable: Gets access to the class associated with this file, which contains all objects.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>File3dmObject.Geometry -&gt; rhino3dm.GeometryBase</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#rhino3dm.File3dmObject.Geometry">File3dmObject.Geometry</a></p>
-<p>rhino3dm.GeometryBase: Gets the geometry that is linked with this document object.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>GeometryBase.GetBoundingBox -&gt; rhino3dm.BoundingBox</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#rhino3dm.GeometryBase.GetBoundingBox">GeometryBase.GetBoundingBox</a></p>
-<p>Bounding box solver. Gets the world axis aligned bounding box for the geometry.</p>
-<p>Parameters:</p>
-<ul>
-<li>accurate (bool) – If true, a physically accurate bounding box will be computed. If not, a bounding box estimate will be computed. For some geometry types there is no difference between the estimate and the accurate bounding box. Estimated bounding boxes can be computed much (much) faster than accurate (or “tight”) bounding boxes. Estimated bounding boxes are always similar to or larger than accurate bounding boxes.</li>
-</ul>
-<p>Returns:</p>
-<ul>
-<li>The bounding box of the geometry in world coordinates or BoundingBox.Empty if not bounding box could be found.</li>
-</ul>
-<p>Return type:</p>
-<ul>
-<li>rhino3dm.BoundingBox</li>
-</ul>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>rhino3dm.BoundingBox</strong></p>
-<p><a href="https://mcneel.github.io/rhino3dm/python/api/BoundingBox.html#rhino3dm.BoundingBox">class rhino3dm.BoundingBox</a></p>
-<blockquote class="blockquote">
-<p><code>BoundingBox(minX, minY, minZ, maxX, maxY, maxZ)</code></p>
-<p>Constructs a bounding box from numeric extremes.</p>
-<p>Parameters:</p>
-<ul>
-<li>minX (float) – Lower extreme for box X size.</li>
-<li>minY (float) – Lower extreme for box Y size.</li>
-<li>minZ (float) – Lower extreme for box Z size.</li>
-<li>maxX (float) – Upper extreme for box X size.</li>
-<li>maxY (float) – Upper extreme for box Y size.</li>
-<li>maxZ (float) – Upper extreme for box Z size.</li>
-</ul>
-</blockquote>
-</blockquote>
+<section id="ways-to-view-a-figs-data-strucure" class="level1">
+<h1>3 ways to view a fig’s data strucure</h1>
+<section id="printfig" class="level2">
+<h2 class="anchored" data-anchor-id="printfig"><code>print(fig)</code></h2>
+<p>As a verbose <code>layout.template</code> key (shown as ellipses <code>...</code> for brevity).</p>
+<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="bu">print</span>(fig)      <span class="co"># opt 1</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="co"># fig.to_dict()   # opt 2</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="co"># fig.to_json()   # opt 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre data-code-line-numbers=""><code>Figure({
+    'data': [{'hovertemplate': 'x=%{x}&lt;br&gt;y=%{y}&lt;extra&gt;&lt;/extra&gt;',
+              'legendgroup': '',
+              'line': {'color': '#636efa', 'dash': 'solid'},
+              'marker': {'symbol': 'circle'},
+              'mode': 'lines',
+              'name': '',
+              'orientation': 'v',
+              'showlegend': False,
+              'type': 'scatter',
+              'x': array(['a', 'b', 'c'], dtype=object),
+              'xaxis': 'x',
+              'y': array([1, 3, 2], dtype=int64),
+              'yaxis': 'y'}],
+    'layout': {'legend': {'tracegroupgap': 0},
+               'template': '...',
+               'title': {'text': 'sample figure'},
+               'xaxis': {'anchor': 'y', 'domain': [0.0, 1.0], 'title': {'text': 'x'}},
+               'yaxis': {'anchor': 'x', 'domain': [0.0, 1.0], 'title': {'text': 'y'}}}
+})</code></pre>
 </section>
-<section id="example-2" class="level1">
-<h1>Example 2</h1>
-<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a>center <span class="op">=</span> Point3d(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>arc <span class="op">=</span> Arc(center, <span class="dv">10</span>, <span class="dv">1</span>)</span>
-<span id="cb3-5"><a href="#cb3-5"></a>nc <span class="op">=</span> arc.ToNurbsCurve()</span>
-<span id="cb3-6"><a href="#cb3-6"></a>start <span class="op">=</span> nc.PointAtStart</span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="bu">print</span>(<span class="st">'start point'</span>, <span class="bu">type</span>(start))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="fig.to_dict" class="level2">
+<h2 class="anchored" data-anchor-id="fig.to_dict"><code>fig.to_dict()</code></h2>
+<p>Shown as a dictionary.</p>
+<div class="sourceCode" id="cb4" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># print(fig)      # opt 1</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>fig.to_dict()   <span class="co"># opt 2</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co"># fig.to_json()   # opt 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre data-code-line-numbers=""><code>{'data': [{'hovertemplate': 'x=%{x}&lt;br&gt;y=%{y}&lt;extra&gt;&lt;/extra&gt;',
+   'legendgroup': '',
+   'line': {'color': '#636efa', 'dash': 'solid'},
+   'marker': {'symbol': 'circle'},
+   'mode': 'lines',
+   'name': '',
+   'orientation': 'v',
+   'showlegend': False,
+   'x': array(['a', 'b', 'c'], dtype=object),
+   'xaxis': 'x',
+   'y': array([1, 3, 2], dtype=int64),
+   'yaxis': 'y',
+   'type': 'scatter'}],
+ 'layout': {'template': {'data': {'histogram2dcontour': [{'type': 'histogram2dcontour',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''},
+      'colorscale': [[0.0, '#0d0887'],
+       [0.1111111111111111, '#46039f'],
+       [0.2222222222222222, '#7201a8'],
+       [0.3333333333333333, '#9c179e'],
+       [0.4444444444444444, '#bd3786'],
+       [0.5555555555555556, '#d8576b'],
+       [0.6666666666666666, '#ed7953'],
+       [0.7777777777777778, '#fb9f3a'],
+       [0.8888888888888888, '#fdca26'],
+       [1.0, '#f0f921']]}],
+    'choropleth': [{'type': 'choropleth',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''}}],
+    'histogram2d': [{'type': 'histogram2d',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''},
+      'colorscale': [[0.0, '#0d0887'],
+       [0.1111111111111111, '#46039f'],
+       [0.2222222222222222, '#7201a8'],
+       [0.3333333333333333, '#9c179e'],
+       [0.4444444444444444, '#bd3786'],
+       [0.5555555555555556, '#d8576b'],
+       [0.6666666666666666, '#ed7953'],
+       [0.7777777777777778, '#fb9f3a'],
+       [0.8888888888888888, '#fdca26'],
+       [1.0, '#f0f921']]}],
+    'heatmap': [{'type': 'heatmap',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''},
+      'colorscale': [[0.0, '#0d0887'],
+       [0.1111111111111111, '#46039f'],
+       [0.2222222222222222, '#7201a8'],
+       [0.3333333333333333, '#9c179e'],
+       [0.4444444444444444, '#bd3786'],
+       [0.5555555555555556, '#d8576b'],
+       [0.6666666666666666, '#ed7953'],
+       [0.7777777777777778, '#fb9f3a'],
+       [0.8888888888888888, '#fdca26'],
+       [1.0, '#f0f921']]}],
+    'heatmapgl': [{'type': 'heatmapgl',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''},
+      'colorscale': [[0.0, '#0d0887'],
+       [0.1111111111111111, '#46039f'],
+       [0.2222222222222222, '#7201a8'],
+       [0.3333333333333333, '#9c179e'],
+       [0.4444444444444444, '#bd3786'],
+       [0.5555555555555556, '#d8576b'],
+       [0.6666666666666666, '#ed7953'],
+       [0.7777777777777778, '#fb9f3a'],
+       [0.8888888888888888, '#fdca26'],
+       [1.0, '#f0f921']]}],
+    'contourcarpet': [{'type': 'contourcarpet',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''}}],
+    'contour': [{'type': 'contour',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''},
+      'colorscale': [[0.0, '#0d0887'],
+       [0.1111111111111111, '#46039f'],
+       [0.2222222222222222, '#7201a8'],
+       [0.3333333333333333, '#9c179e'],
+       [0.4444444444444444, '#bd3786'],
+       [0.5555555555555556, '#d8576b'],
+       [0.6666666666666666, '#ed7953'],
+       [0.7777777777777778, '#fb9f3a'],
+       [0.8888888888888888, '#fdca26'],
+       [1.0, '#f0f921']]}],
+    'surface': [{'type': 'surface',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''},
+      'colorscale': [[0.0, '#0d0887'],
+       [0.1111111111111111, '#46039f'],
+       [0.2222222222222222, '#7201a8'],
+       [0.3333333333333333, '#9c179e'],
+       [0.4444444444444444, '#bd3786'],
+       [0.5555555555555556, '#d8576b'],
+       [0.6666666666666666, '#ed7953'],
+       [0.7777777777777778, '#fb9f3a'],
+       [0.8888888888888888, '#fdca26'],
+       [1.0, '#f0f921']]}],
+    'mesh3d': [{'type': 'mesh3d',
+      'colorbar': {'outlinewidth': 0, 'ticks': ''}}],
+    'scatter': [{'fillpattern': {'fillmode': 'overlay',
+       'size': 10,
+       'solidity': 0.2},
+      'type': 'scatter'}],
+    'parcoords': [{'type': 'parcoords',
+      'line': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'scatterpolargl': [{'type': 'scatterpolargl',
+      'marker': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'bar': [{'error_x': {'color': '#2a3f5f'},
+      'error_y': {'color': '#2a3f5f'},
+      'marker': {'line': {'color': '#E5ECF6', 'width': 0.5},
+       'pattern': {'fillmode': 'overlay', 'size': 10, 'solidity': 0.2}},
+      'type': 'bar'}],
+    'scattergeo': [{'type': 'scattergeo',
+      'marker': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'scatterpolar': [{'type': 'scatterpolar',
+      'marker': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'histogram': [{'marker': {'pattern': {'fillmode': 'overlay',
+        'size': 10,
+        'solidity': 0.2}},
+      'type': 'histogram'}],
+    'scattergl': [{'type': 'scattergl',
+      'marker': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'scatter3d': [{'type': 'scatter3d',
+      'line': {'colorbar': {'outlinewidth': 0, 'ticks': ''}},
+      'marker': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'scattermapbox': [{'type': 'scattermapbox',
+      'marker': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'scatterternary': [{'type': 'scatterternary',
+      'marker': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'scattercarpet': [{'type': 'scattercarpet',
+      'marker': {'colorbar': {'outlinewidth': 0, 'ticks': ''}}}],
+    'carpet': [{'aaxis': {'endlinecolor': '#2a3f5f',
+       'gridcolor': 'white',
+       'linecolor': 'white',
+       'minorgridcolor': 'white',
+       'startlinecolor': '#2a3f5f'},
+      'baxis': {'endlinecolor': '#2a3f5f',
+       'gridcolor': 'white',
+       'linecolor': 'white',
+       'minorgridcolor': 'white',
+       'startlinecolor': '#2a3f5f'},
+      'type': 'carpet'}],
+    'table': [{'cells': {'fill': {'color': '#EBF0F8'},
+       'line': {'color': 'white'}},
+      'header': {'fill': {'color': '#C8D4E3'}, 'line': {'color': 'white'}},
+      'type': 'table'}],
+    'barpolar': [{'marker': {'line': {'color': '#E5ECF6', 'width': 0.5},
+       'pattern': {'fillmode': 'overlay', 'size': 10, 'solidity': 0.2}},
+      'type': 'barpolar'}],
+    'pie': [{'automargin': True, 'type': 'pie'}]},
+   'layout': {'autotypenumbers': 'strict',
+    'colorway': ['#636efa',
+     '#EF553B',
+     '#00cc96',
+     '#ab63fa',
+     '#FFA15A',
+     '#19d3f3',
+     '#FF6692',
+     '#B6E880',
+     '#FF97FF',
+     '#FECB52'],
+    'font': {'color': '#2a3f5f'},
+    'hovermode': 'closest',
+    'hoverlabel': {'align': 'left'},
+    'paper_bgcolor': 'white',
+    'plot_bgcolor': '#E5ECF6',
+    'polar': {'bgcolor': '#E5ECF6',
+     'angularaxis': {'gridcolor': 'white', 'linecolor': 'white', 'ticks': ''},
+     'radialaxis': {'gridcolor': 'white', 'linecolor': 'white', 'ticks': ''}},
+    'ternary': {'bgcolor': '#E5ECF6',
+     'aaxis': {'gridcolor': 'white', 'linecolor': 'white', 'ticks': ''},
+     'baxis': {'gridcolor': 'white', 'linecolor': 'white', 'ticks': ''},
+     'caxis': {'gridcolor': 'white', 'linecolor': 'white', 'ticks': ''}},
+    'coloraxis': {'colorbar': {'outlinewidth': 0, 'ticks': ''}},
+    'colorscale': {'sequential': [[0.0, '#0d0887'],
+      [0.1111111111111111, '#46039f'],
+      [0.2222222222222222, '#7201a8'],
+      [0.3333333333333333, '#9c179e'],
+      [0.4444444444444444, '#bd3786'],
+      [0.5555555555555556, '#d8576b'],
+      [0.6666666666666666, '#ed7953'],
+      [0.7777777777777778, '#fb9f3a'],
+      [0.8888888888888888, '#fdca26'],
+      [1.0, '#f0f921']],
+     'sequentialminus': [[0.0, '#0d0887'],
+      [0.1111111111111111, '#46039f'],
+      [0.2222222222222222, '#7201a8'],
+      [0.3333333333333333, '#9c179e'],
+      [0.4444444444444444, '#bd3786'],
+      [0.5555555555555556, '#d8576b'],
+      [0.6666666666666666, '#ed7953'],
+      [0.7777777777777778, '#fb9f3a'],
+      [0.8888888888888888, '#fdca26'],
+      [1.0, '#f0f921']],
+     'diverging': [[0, '#8e0152'],
+      [0.1, '#c51b7d'],
+      [0.2, '#de77ae'],
+      [0.3, '#f1b6da'],
+      [0.4, '#fde0ef'],
+      [0.5, '#f7f7f7'],
+      [0.6, '#e6f5d0'],
+      [0.7, '#b8e186'],
+      [0.8, '#7fbc41'],
+      [0.9, '#4d9221'],
+      [1, '#276419']]},
+    'xaxis': {'gridcolor': 'white',
+     'linecolor': 'white',
+     'ticks': '',
+     'title': {'standoff': 15},
+     'zerolinecolor': 'white',
+     'automargin': True,
+     'zerolinewidth': 2},
+    'yaxis': {'gridcolor': 'white',
+     'linecolor': 'white',
+     'ticks': '',
+     'title': {'standoff': 15},
+     'zerolinecolor': 'white',
+     'automargin': True,
+     'zerolinewidth': 2},
+    'scene': {'xaxis': {'backgroundcolor': '#E5ECF6',
+      'gridcolor': 'white',
+      'linecolor': 'white',
+      'showbackground': True,
+      'ticks': '',
+      'zerolinecolor': 'white',
+      'gridwidth': 2},
+     'yaxis': {'backgroundcolor': '#E5ECF6',
+      'gridcolor': 'white',
+      'linecolor': 'white',
+      'showbackground': True,
+      'ticks': '',
+      'zerolinecolor': 'white',
+      'gridwidth': 2},
+     'zaxis': {'backgroundcolor': '#E5ECF6',
+      'gridcolor': 'white',
+      'linecolor': 'white',
+      'showbackground': True,
+      'ticks': '',
+      'zerolinecolor': 'white',
+      'gridwidth': 2}},
+    'shapedefaults': {'line': {'color': '#2a3f5f'}},
+    'annotationdefaults': {'arrowcolor': '#2a3f5f',
+     'arrowhead': 0,
+     'arrowwidth': 1},
+    'geo': {'bgcolor': 'white',
+     'landcolor': '#E5ECF6',
+     'subunitcolor': 'white',
+     'showland': True,
+     'showlakes': True,
+     'lakecolor': 'white'},
+    'title': {'x': 0.05},
+    'mapbox': {'style': 'light'},
+    'margin': {'b': 0, 'l': 0, 'r': 0, 't': 30}}},
+  'xaxis': {'anchor': 'y', 'domain': [0.0, 1.0], 'title': {'text': 'x'}},
+  'yaxis': {'anchor': 'x', 'domain': [0.0, 1.0], 'title': {'text': 'y'}},
+  'legend': {'tracegroupgap': 0},
+  'title': {'text': 'sample figure'}}}</code></pre>
 </section>
-<section id="example-3" class="level1">
-<h1>Example 3</h1>
-<div class="sourceCode" id="cb4" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> rhino3dm</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> random</span>
-<span id="cb4-3"><a href="#cb4-3"></a></span>
-<span id="cb4-4"><a href="#cb4-4"></a>model <span class="op">=</span> rhino3dm.File3dm()</span>
-<span id="cb4-5"><a href="#cb4-5"></a></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
-<span id="cb4-7"><a href="#cb4-7"></a>    pt <span class="op">=</span> rhino3dm.Point3d(random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>), random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>), <span class="dv">0</span>)</span>
-<span id="cb4-8"><a href="#cb4-8"></a>    model.Objects.AddPoint(pt)</span>
-<span id="cb4-9"><a href="#cb4-9"></a>    circle <span class="op">=</span> rhino3dm.Circle(pt, random.uniform(<span class="dv">1</span>,<span class="dv">4</span>))</span>
-<span id="cb4-10"><a href="#cb4-10"></a>    model.Objects.AddCircle(circle)</span>
-<span id="cb4-11"><a href="#cb4-11"></a>    </span>
-<span id="cb4-12"><a href="#cb4-12"></a><span class="co"># [note] the 3dm file can only be open in Rhino v8</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a><span class="co"># model.Write("./circle.3dm")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="fig.to_json" class="level2">
+<h2 class="anchored" data-anchor-id="fig.to_json"><code>fig.to_json()</code></h2>
+<p>Shown as a JSON file.</p>
+<div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># print(fig)      # opt 1</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># fig.to_dict()   # opt 2</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>fig.to_json()   <span class="co"># opt 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre data-code-line-numbers=""><code>'{"data":[{"hovertemplate":"x=%{x}\\u003cbr\\u003ey=%{y}\\u003cextra\\u003e\\u003c\\u002fextra\\u003e","legendgroup":"","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":["a","b","c"],"xaxis":"x","y":[1,3,2],"yaxis":"y","type":"scatter"}],"layout":{"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"x"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"y"}},"legend":{"tracegroupgap":0},"title":{"text":"sample figure"}}}'</code></pre>
+<hr>
 </section>
-<section id="example-4" class="level1">
-<h1>Example 4</h1>
-<div class="sourceCode" id="cb5" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># Sample read render meshes from 3dm file</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="im">import</span> rhino3dm</span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./myBox.3dm'</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="bu">print</span>(model)</span>
-<span id="cb5-7"><a href="#cb5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8"></a>brep <span class="op">=</span> model.Objects[<span class="dv">0</span>].Geometry</span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="bu">print</span>(brep)</span>
-<span id="cb5-10"><a href="#cb5-10"></a></span>
-<span id="cb5-11"><a href="#cb5-11"></a>face <span class="op">=</span> brep.Faces[<span class="dv">0</span>]</span>
-<span id="cb5-12"><a href="#cb5-12"></a><span class="bu">print</span>(face)</span>
-<span id="cb5-13"><a href="#cb5-13"></a></span>
-<span id="cb5-14"><a href="#cb5-14"></a>mesh <span class="op">=</span> face.GetMesh(rhino3dm.MeshType.Any)</span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="bu">print</span>(mesh)</span>
-<span id="cb5-16"><a href="#cb5-16"></a><span class="co"># print (len(mesh.Faces))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="example-5" class="level1">
-<h1>Example 5</h1>
-<div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># spherelines.py</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># Sample script that demonstrates how to use Rhino3dm.py</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># https://github.com/mcneel/rhino3dm</span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="co"># This sample creates a 3dm file containing a group of randomly</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="co"># distributed lines defining an sphere.</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a></span>
-<span id="cb6-7"><a href="#cb6-7"></a><span class="im">import</span> rhino3dm</span>
-<span id="cb6-8"><a href="#cb6-8"></a><span class="im">import</span> random</span>
-<span id="cb6-9"><a href="#cb6-9"></a><span class="im">import</span> math</span>
-<span id="cb6-10"><a href="#cb6-10"></a><span class="im">import</span> os</span>
-<span id="cb6-11"><a href="#cb6-11"></a></span>
-<span id="cb6-12"><a href="#cb6-12"></a><span class="co"># Initial parameters</span></span>
-<span id="cb6-13"><a href="#cb6-13"></a>theta_min <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb6-14"><a href="#cb6-14"></a>theta_max <span class="op">=</span> math.pi</span>
-<span id="cb6-15"><a href="#cb6-15"></a>alpha_min <span class="op">=</span> <span class="fl">0.0</span></span>
-<span id="cb6-16"><a href="#cb6-16"></a>alpha_max <span class="op">=</span> math.pi <span class="op">*</span> <span class="fl">2.0</span></span>
-<span id="cb6-17"><a href="#cb6-17"></a>sphere_radius <span class="op">=</span> <span class="fl">100.0</span></span>
-<span id="cb6-18"><a href="#cb6-18"></a>num_lines <span class="op">=</span> <span class="dv">1500</span></span>
-<span id="cb6-19"><a href="#cb6-19"></a></span>
-<span id="cb6-20"><a href="#cb6-20"></a><span class="co"># Create a center point</span></span>
-<span id="cb6-21"><a href="#cb6-21"></a>center_pt <span class="op">=</span> rhino3dm.Point3d(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
-<span id="cb6-22"><a href="#cb6-22"></a></span>
-<span id="cb6-23"><a href="#cb6-23"></a><span class="co"># Create a File3dm object</span></span>
-<span id="cb6-24"><a href="#cb6-24"></a>model <span class="op">=</span> rhino3dm.File3dm()</span>
-<span id="cb6-25"><a href="#cb6-25"></a></span>
-<span id="cb6-26"><a href="#cb6-26"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_lines):</span>
-<span id="cb6-27"><a href="#cb6-27"></a>    <span class="co"># Calculate random line end point</span></span>
-<span id="cb6-28"><a href="#cb6-28"></a>    random.seed(i <span class="op">*</span> <span class="dv">100</span>)</span>
-<span id="cb6-29"><a href="#cb6-29"></a>    theta <span class="op">=</span> random.uniform(theta_min, theta_max)</span>
-<span id="cb6-30"><a href="#cb6-30"></a>    alpha <span class="op">=</span> random.uniform(alpha_min, alpha_max)</span>
-<span id="cb6-31"><a href="#cb6-31"></a>    x <span class="op">=</span> sphere_radius <span class="op">*</span> math.sin(theta) <span class="op">*</span> math.cos(alpha)</span>
-<span id="cb6-32"><a href="#cb6-32"></a>    y <span class="op">=</span> sphere_radius <span class="op">*</span> math.sin(theta) <span class="op">*</span> math.sin(alpha)</span>
-<span id="cb6-33"><a href="#cb6-33"></a>    z <span class="op">=</span> sphere_radius <span class="op">*</span> math.cos(theta)</span>
-<span id="cb6-34"><a href="#cb6-34"></a>    end_pt <span class="op">=</span> rhino3dm.Point3d(x, y, z)</span>
-<span id="cb6-35"><a href="#cb6-35"></a>    <span class="co"># Create line curve</span></span>
-<span id="cb6-36"><a href="#cb6-36"></a>    line_curve <span class="op">=</span> rhino3dm.LineCurve(center_pt, end_pt)</span>
-<span id="cb6-37"><a href="#cb6-37"></a>    <span class="co"># Add to model</span></span>
-<span id="cb6-38"><a href="#cb6-38"></a>    model.Objects.AddCurve(line_curve)</span>
-<span id="cb6-39"><a href="#cb6-39"></a></span>
-<span id="cb6-40"><a href="#cb6-40"></a><span class="co"># Full path to 3dm file to save</span></span>
-<span id="cb6-41"><a href="#cb6-41"></a>desktop <span class="op">=</span> os.path.join(os.path.join(os.environ[<span class="st">'USERPROFILE'</span>]), <span class="st">'Desktop'</span>) </span>
-<span id="cb6-42"><a href="#cb6-42"></a>filename <span class="op">=</span> <span class="st">'spherelines.3dm'</span></span>
-<span id="cb6-43"><a href="#cb6-43"></a><span class="co"># path = os.path.join(desktop, filename)</span></span>
-<span id="cb6-44"><a href="#cb6-44"></a>path <span class="op">=</span> <span class="st">'./spherelines.3dm'</span></span>
-<span id="cb6-45"><a href="#cb6-45"></a></span>
-<span id="cb6-46"><a href="#cb6-46"></a><span class="co"># Write model to disk</span></span>
-<span id="cb6-47"><a href="#cb6-47"></a>model.Write(path, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ref" class="level1">
+<h1>Ref</h1>
+<ul>
+<li>https://plotly.com/python/figure-structure/#:~:text=figures%20as%20trees%20of%20attributes</li>
+</ul>
 
 
 </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OatNotes - rhino3dm exercise</title>
+<title>OatNotes - rhino3dm exercise 01</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,7 +149,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">rhino3dm exercise</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">rhino3dm exercise 01</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -260,7 +260,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../../pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">rhino3dm exercise</span></a>
+ <span class="menu-text">rhino3dm exercise 01</span></a>
   </div>
 </li>
       </ul>
@@ -284,7 +284,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">rhino3dm exercise</h1>
+<h1 class="title">rhino3dm exercise 01</h1>
 </div>
 
 
@@ -303,7 +303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="test-reading-geometry-by-layer-name" class="level1">
 <h1>test reading geometry by layer name</h1>
-<div id="c695e55e" class="cell" data-execution_count="1">
+<div id="740d963f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> rhino3dm</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./data/oat_model.3dm'</span>)</span>
@@ -339,65 +339,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-33"><a href="#cb1-33"></a><span class="co"># mesh = face.GetMesh(rhino3dm.MeshType.Any)</span></span>
 <span id="cb1-34"><a href="#cb1-34"></a><span class="co"># print (len(mesh.Faces))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>model object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x000001B868EEC870&gt;
+<pre data-code-line-numbers=""><code>model object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x0000015BADFCA7F0&gt;
 ------
-layer table:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x000001B812809430&gt; 
+layer table:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x0000015BABE92AB0&gt; 
 
-layer  0  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001B868E29B30&gt;
+layer  0  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000015BADFCAA30&gt;
        0  id      :  212960d6-ad46-439d-8516-772ce85fde03
        0  index   :  0
        0  name    :  Default
        0  fullpath:  Default
-layer  1  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001B868E2BA30&gt;
+layer  1  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000015BADFCAFB0&gt;
        1  id      :  430ce6c7-13d8-40d9-ae38-08e0e7d0f1df
        1  index   :  1
        1  name    :  layer_1
        1  fullpath:  layer_1
-layer  2  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001B81282F2F0&gt;
+layer  2  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000015BADFCBA30&gt;
        2  id      :  8e04c4aa-0bcb-4331-9ac1-79ed7bacc9f1
        2  index   :  2
        2  name    :  b_1
        2  fullpath:  layer_1::b_1
-layer  3  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001B81282C730&gt;
+layer  3  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000015BADFCB530&gt;
        3  id      :  906c125d-ea30-483a-bf45-6fc769473e09
        3  index   :  3
        3  name    :  s_1
        3  fullpath:  layer_1::s_1
-layer  4  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001B81282DFB0&gt;
+layer  4  object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000015BADFC93F0&gt;
        4  id      :  1d1e5147-f5b7-4fa1-82ea-3ece64f5994c
        4  index   :  4
        4  name    :  layer_2
        4  fullpath:  layer_2
 ------
-object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x000001B868E29E70&gt; 
+object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x0000015BADFCBDF0&gt; 
 
-object  0  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001B81282FAB0&gt;
-        0  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x000001B810945870&gt;
-        0  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001B810945870&gt;
+object  0  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000015BADFCBD30&gt;
+        0  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000015BADFC8CF0&gt;
+        0  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000015BADFC8CF0&gt;
         0  layerIndex:  2
-object  1  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001B81282D230&gt;
-        1  geometry  :  &lt;rhino3dm._rhino3dm.Mesh object at 0x000001B810945870&gt;
-        1  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001B810945870&gt;
+object  1  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000015BADAC6CF0&gt;
+        1  geometry  :  &lt;rhino3dm._rhino3dm.Mesh object at 0x0000015BADFCBD30&gt;
+        1  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000015BADFCBD30&gt;
         1  layerIndex:  4
-object  2  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001B81282E1F0&gt;
-        2  geometry  :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x000001B810945870&gt;
-        2  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001B810945870&gt;
+object  2  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000015BADAC5530&gt;
+        2  geometry  :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x0000015BADFCBD30&gt;
+        2  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000015BADFCBD30&gt;
         2  layerIndex:  3
-object  3  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001B81282F930&gt;
-        3  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x000001B810945870&gt;
-        3  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001B810945870&gt;
+object  3  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000015BADAC5F30&gt;
+        3  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000015BADFCBD30&gt;
+        3  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000015BADFCBD30&gt;
         3  layerIndex:  2
-object  4  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001B81282CDB0&gt;
-        4  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x000001B810945870&gt;
-        4  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001B810945870&gt;
+object  4  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000015BADAC75B0&gt;
+        4  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000015BADFCBD30&gt;
+        4  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000015BADFCBD30&gt;
         4  layerIndex:  2
-object  5  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001B81282FF30&gt;
-        5  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x000001B810945870&gt;
-        5  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001B810945870&gt;
+object  5  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000015BADAC79F0&gt;
+        5  geometry  :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000015BADFCBD30&gt;
+        5  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000015BADFCBD30&gt;
         5  layerIndex:  2
-object  6  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001B81282D030&gt;
-        6  geometry  :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x000001B810945870&gt;
-        6  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001B810945870&gt;
+object  6  object    :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000015BADAC6370&gt;
+        6  geometry  :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x0000015BADFCBD30&gt;
+        6  attributes:  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000015BADFCBD30&gt;
         6  layerIndex:  0
 ------</code></pre>
 </div>
