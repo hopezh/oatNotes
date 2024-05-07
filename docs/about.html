@@ -180,19 +180,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
+  <a href="./my_pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">quarto tabset</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
+  <a href="./my_pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">expand the width of a code block and its output</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
+  <a href="./my_pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">side by side codeblocks and outputs</span></a>
   </div>
 </li>
@@ -213,13 +213,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
+  <a href="./my_pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">show data strucure of a plotly figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
+  <a href="./my_pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparent bgcolor for figure</span></a>
   </div>
 </li>
@@ -236,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
+  <a href="./my_pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test Observable.js</span></a>
   </div>
 </li>
@@ -253,8 +253,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
+  <a href="./my_pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test rhino3dm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./my_pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">rhino3dm exercise 01</span></a>
   </div>
 </li>
       </ul>
@@ -289,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>About this site</p>
+<p>Oat is a learner.</p>
 
 
 <!-- -->
@@ -841,25 +847,64 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         }
       };
     }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
           }
-        });
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
       }
   const findCites = (el) => {
     const parentEl = el.parentElement;
@@ -904,7 +949,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "About"</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="co">---</span></span>
 <span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>About this site</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5"></a>Oat is a learner.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

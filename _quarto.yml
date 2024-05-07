@@ -19,24 +19,25 @@ website:
     contents:
       - section: "Quarto"
         contents:
-          - ./pages/quarto/quarto_tabset.qmd
-          - ./pages/quarto/expand_codeblock_width.qmd
-          - ./pages/quarto/side_by_side_codeblock.qmd
+          - ./my_pages/quarto/quarto_tabset.qmd
+          - ./my_pages/quarto/expand_codeblock_width.qmd
+          - ./my_pages/quarto/side_by_side_codeblock.qmd
       - section: "Deep Learning"
       - section: "Plotly"
         contents:
-          - ./pages/plotly/plotly_data_structure.qmd
-          - ./pages/plotly/transparent_fig_bgcolor.qmd
+          - ./my_pages/plotly/plotly_data_structure.qmd
+          - ./my_pages/plotly/transparent_fig_bgcolor.qmd
       - section: "Observable.js"
         contents:
-          - ./pages/observable/observable_js.qmd
+          - ./my_pages/observable/observable_js.qmd
       - section: "rhino3dm"
         contents: 
-          - ./pages/rhino3dm/test_rhino3dm.qmd
-          - ./pages/rhino3dm/rhino3dm_01.qmd
+          - ./my_pages/rhino3dm/test_rhino3dm.qmd
+          - ./my_pages/rhino3dm/rhino3dm_01.qmd
         
 format:
   html:
+    code-annotations: hover
     code-block-bg: true
     code-block-border-left: true
     code-copy: true

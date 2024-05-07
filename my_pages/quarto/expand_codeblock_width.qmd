@@ -1,0 +1,129 @@
+---
+title: "expand the width of a code block and its output"
+---
+
+
+# expand to full `page` width
+
+## 1. `::: {.column-page}` 
+
+Use this to wrap a code block to span it and its output to `page` width.
+
+### Syntax
+
+````default
+::: {.column-page}
+```{.python}
+import polars as pl
+csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
+df = pl.read_csv(csv_path)
+df.head(5)
+```
+:::
+````
+
+
+### Example
+
+::: {.column-page}
+```{python}
+import polars as pl
+csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
+df = pl.read_csv(csv_path)
+df.head(5)
+```
+:::
+
+## 2. `#| column: page` 
+
+Use it inside a code block and only its output will span `page` width.
+
+### Syntax
+
+````default
+```{.python}
+#| column: page
+import polars as pl
+csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
+df = pl.read_csv(csv_path)
+df.head(5)
+```
+````
+
+### Example
+
+```{python}
+#| column: page
+import polars as pl
+csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
+df = pl.read_csv(csv_path)
+df.head(5)
+```
+
+
+# expand to full `screen` width
+
+You can have content span the full width of the page with no margin (full bleed).
+
+## 1. `::: {.column-screen}` 
+
+Use it to wrap a code block to expand it and its output to full screen width.
+
+### Syntax
+
+````default
+::: {.column-screen}
+```python
+import polars as pl
+csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
+df = pl.read_csv(csv_path)
+df.head(5)
+```
+:::
+````
+
+### Example
+
+::: {.column-screen}
+```{python}
+import polars as pl
+csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
+df = pl.read_csv(csv_path)
+df.head(5)
+```
+:::
+
+
+## 2. `#| column: screen` 
+
+Use it inside a code block to expand only its output to full width of screen. 
+
+### Syntax
+
+````default
+```python
+#| column: screen
+import polars as pl
+csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
+df = pl.read_csv(csv_path)
+df.head(5)
+```
+````
+
+### Example
+
+```{python}
+#| column: screen
+import polars as pl
+csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"
+df = pl.read_csv(csv_path)
+df.head(5)
+```
+
+
+---
+
+# Ref
+
+- https://quarto.org/docs/authoring/article-layout.html#screen-column
+- 
