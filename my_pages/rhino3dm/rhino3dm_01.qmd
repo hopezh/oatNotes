@@ -6,7 +6,13 @@ title: "rhino3dm exercise 01"
 # Extract info from `.3dm` file
 
 
+The demo file: [oat_model.3dm](./data/oat_model.3dm)
+
+![](./image/01.png)
+
+
 ## read `.3dm` file
+
 
 ```{python}
 import rhino3dm
