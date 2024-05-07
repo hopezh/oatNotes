@@ -310,15 +310,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="extract-info-from-.3dm-file" class="level1">
 <h1>Extract info from <code>.3dm</code> file</h1>
+<p>The demo file: <a href="./data/oat_model.3dm">oat_model.3dm</a></p>
+<p><img src="rhino3dm_01_files/figure-html/24b095a7-5c13-49ba-bbee-a882f9835d56-1-./image/01.png" class="img-fluid"></p>
 <section id="read-.3dm-file" class="level2">
 <h2 class="anchored" data-anchor-id="read-.3dm-file">read <code>.3dm</code> file</h2>
-<div id="8f6a1ef9" class="cell" data-execution_count="1">
+<div id="e9d169bf" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> rhino3dm</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./data/oat_model.3dm'</span>)</span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="bu">print</span>(<span class="st">'model object: '</span>, model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>model object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x000001680CEF2570&gt;</code></pre>
+<pre data-code-line-numbers=""><code>model object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x0000027DBB653CF0&gt;</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
@@ -343,7 +345,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="read-layer" class="level2">
 <h2 class="anchored" data-anchor-id="read-layer">read <code>Layer</code></h2>
-<div id="ebb0fcb2" class="cell" data-execution_count="2">
+<div id="e92055ee" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>layer_table <span class="op">=</span> model.Layers</span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(<span class="st">'layer table: '</span>, layer_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3"></a></span>
@@ -354,29 +356,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-8"><a href="#cb3-8"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Name    : '</span>, layer.Name)</span>
 <span id="cb3-9"><a href="#cb3-9"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Fullpath: '</span>, layer.FullPath)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>layer table:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x00000168655AEB30&gt; 
+<pre data-code-line-numbers=""><code>layer table:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x0000027DBB6C9DB0&gt; 
 
-layer  0  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000016865509BF0&gt;
+layer  0  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027DBB6C96B0&gt;
        0  Id      :  212960d6-ad46-439d-8516-772ce85fde03
        0  Index   :  0
        0  Name    :  Default
        0  Fullpath:  Default
-layer  1  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001680F3A1270&gt;
+layer  1  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027D91D938F0&gt;
        1  Id      :  430ce6c7-13d8-40d9-ae38-08e0e7d0f1df
        1  Index   :  1
        1  Name    :  layer_1
        1  Fullpath:  layer_1
-layer  2  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001680EF20E30&gt;
+layer  2  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027D91E30830&gt;
        2  Id      :  8e04c4aa-0bcb-4331-9ac1-79ed7bacc9f1
        2  Index   :  2
        2  Name    :  b_1
        2  Fullpath:  layer_1::b_1
-layer  3  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001680EF205F0&gt;
+layer  3  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027D91E30070&gt;
        3  Id      :  906c125d-ea30-483a-bf45-6fc769473e09
        3  Index   :  3
        3  Name    :  s_1
        3  Fullpath:  layer_1::s_1
-layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001680EEA1FF0&gt;
+layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027D91E30130&gt;
        4  Id      :  1d1e5147-f5b7-4fa1-82ea-3ece64f5994c
        4  Index   :  4
        4  Name    :  layer_2
@@ -428,7 +430,7 @@ layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001680EEA1FF0&g
 </section>
 <section id="read-objects" class="level2">
 <h2 class="anchored" data-anchor-id="read-objects">read <code>Objects</code></h2>
-<div id="ca06c80b" class="cell" data-execution_count="3">
+<div id="d96be9d4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>object_table <span class="op">=</span> model.Objects</span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(<span class="st">'object table: '</span>, object_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3"></a></span>
@@ -441,39 +443,39 @@ layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x000001680EEA1FF0&g
 <span id="cb5-10"><a href="#cb5-10"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.layerIndex: '</span>, <span class="bu">object</span>.Attributes.LayerIndex)</span>
 <span id="cb5-11"><a href="#cb5-11"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x000001680F3A1330&gt; 
+<pre data-code-line-numbers=""><code>object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x0000027DBB6C9870&gt; 
 
-object  0  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001680EEED170&gt;
-        0  Geometry             :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x00000168655A80B0&gt;
-        0  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001680E43A4F0&gt;
+object  0  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027D91E30070&gt;
+        0  Geometry             :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x0000027DB9A026B0&gt;
+        0  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027DB9A026B0&gt;
         0  Attributes.Id        :  fc49c0ee-7bd9-4097-961d-3925257a4738
         0  Attributes.Name      :  solid_1
         0  Attributes.layerIndex:  3
 
-object  1  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001680EEEC430&gt;
-        1  Geometry             :  &lt;rhino3dm._rhino3dm.Brep object at 0x00000168655A80B0&gt;
-        1  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000168655A80B0&gt;
+object  1  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027DBB6896F0&gt;
+        1  Geometry             :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000027D91E30070&gt;
+        1  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027D91E30070&gt;
         1  Attributes.Id        :  478a0a94-ad34-41cf-b917-b6b0050dad8f
         1  Attributes.Name      :  polysurf_2
         1  Attributes.layerIndex:  2
 
-object  2  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001680EEC5D70&gt;
-        2  Geometry             :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x000001680EEEC430&gt;
-        2  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001680EEEC430&gt;
+object  2  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027DBB689030&gt;
+        2  Geometry             :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x0000027D91E30070&gt;
+        2  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027D91E30070&gt;
         2  Attributes.Id        :  9afb6b4b-986d-47e6-8d2d-89c6d5448117
         2  Attributes.Name      :  curve_1
         2  Attributes.layerIndex:  0
 
-object  3  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001680EEC6330&gt;
-        3  Geometry             :  &lt;rhino3dm._rhino3dm.Mesh object at 0x000001680EEEC430&gt;
-        3  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001680EEEC430&gt;
+object  3  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027DBB689D70&gt;
+        3  Geometry             :  &lt;rhino3dm._rhino3dm.Mesh object at 0x0000027D91E30070&gt;
+        3  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027D91E30070&gt;
         3  Attributes.Id        :  c85d4579-e3df-492c-a4e4-dc9626c19397
         3  Attributes.Name      :  ball_1
         3  Attributes.layerIndex:  4
 
-object  4  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x000001680EEC5830&gt;
-        4  Geometry             :  &lt;rhino3dm._rhino3dm.Brep object at 0x000001680EEEC430&gt;
-        4  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x000001680EEEC430&gt;
+object  4  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027DBB689470&gt;
+        4  Geometry             :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000027D91E30070&gt;
+        4  Attributes           :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027D91E30070&gt;
         4  Attributes.Id        :  19067883-7bbc-4871-91bb-ad640c96bb46
         4  Attributes.Name      :  polysurf_1
         4  Attributes.layerIndex:  2</code></pre>
@@ -533,7 +535,7 @@ object  4  Object               :  &lt;rhino3dm._rhino3dm.File3dmObject object a
 </section>
 <section id="read-geometry" class="level2">
 <h2 class="anchored" data-anchor-id="read-geometry">read <code>Geometry</code></h2>
-<div id="a3bff0c5" class="cell" data-execution_count="4">
+<div id="41b3e1f8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># ---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
