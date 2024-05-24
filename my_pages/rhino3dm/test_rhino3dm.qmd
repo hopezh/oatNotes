@@ -138,7 +138,7 @@ print('start point', type(start))
 
 # Example 3
 
-```python
+```{python}
 import rhino3dm
 import random
 
@@ -150,8 +150,7 @@ for i in range(20):
 	circle = rhino3dm.Circle(pt, random.uniform(1,4))
 	model.Objects.AddCircle(circle)
 	
-# [note] the 3dm file can only be open in Rhino v8
-# model.Write("./circle.3dm")
+model.Write("./circle.3dm", 70)
 ```
 
 
