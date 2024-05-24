@@ -1,5 +1,7 @@
 ---
 title: "rhino3dm exercise 01"
+filters:
+    - line-highlight
 ---
 
 
@@ -60,8 +62,6 @@ for idx, layer in enumerate(iter(layer_table)):         # <3>
     print('      ', idx, ' Index   : ', layer.Index)
     print('      ', idx, ' Name    : ', layer.Name)
     print('      ', idx, ' Fullpath: ', layer.FullPath)
-
-
 ```
 2. get the `LayerTable` object
 3. iterate `LayerTable` to get each `Layer` and its attributes
@@ -124,13 +124,15 @@ Attributes:
 object_table = model.Objects                            # <4>
 print('object table: ', object_table, '\n')
 
-for idx, object in enumerate(iter(object_table)):       # <5>
-    print('object ', idx, ' Object               : ', object)
-    print('       ', idx, ' Geometry             : ', object.Geometry)
-    print('       ', idx, ' Attributes           : ', object.Attributes)
-    print('       ', idx, ' Attributes.Id        : ', object.Attributes.Id)
-    print('       ', idx, ' Attributes.Name      : ', object.Attributes.Name)
-    print('       ', idx, ' Attributes.layerIndex: ', object.Attributes.LayerIndex)
+for idx, obj in enumerate(iter(object_table)):       # <5>
+    print('object ', idx, ' Object                : ', obj)
+    print('       ', idx, ' Geometry              : ', obj.Geometry)
+    print('       ', idx, ' Attributes            : ', obj.Attributes)
+    print('       ', idx, ' Attributes.Id         : ', obj.Attributes.Id)
+    print('       ', idx, ' Attributes.Name       : ', obj.Attributes.Name)
+    print('       ', idx, ' Attributes.LayerIndex : ', obj.Attributes.LayerIndex)
+    print('       ', idx, ' Attributes.ObjectColor: ', obj.Attributes.ObjectColor)
+    print('       ', idx, ' Attributes.Visible    : ', obj.Attributes.Visible)
     print()
 ```
 4. get `ObjectTable` in the model
@@ -201,8 +203,38 @@ Attribs:
 ## read `Geometry`
 
 ```{python}
-# ---
+for idx, obj in enumerate(iter(object_table)):
+    print('object ', idx, ' Object                       : ', obj)
+    print('       ', idx, ' Geometry                     : ', obj.Geometry)
+    print('       ', idx, ' Geometry.ObjectType          : ', obj.Geometry.ObjectType)
+    print('       ', idx, ' Geometry.BoundingBox()       : ', obj.Geometry.GetBoundingBox())
+    print('       ', idx, ' Geometry.BoundingBox().Min   : ', obj.Geometry.GetBoundingBox().Min)
+    print('       ', idx, ' Geometry.BoundingBox().Min.X : ', obj.Geometry.GetBoundingBox().Min.X)
+    print('')
 
+    # if isinstance(obj.Geometry, rhino3dm.Curve):
+    if isinstance(obj.Geometry, rhino3dm.PolylineCurve):
+        print('           curve Object       :', obj)
+        print('           curve Geometry     :', obj.Geometry)
+        print('           curve IsClosed     :', obj.Geometry.IsClosed)
+        print('           curve IsPlanar     :', obj.Geometry.IsPlanar())
+        print('           curve IsPolyline   :', obj.Geometry.IsPolyline())
+        print()
+
+        print('           curve PointCount   :', obj.Geometry.PointCount)
+        
+        for i in range(obj.Geometry.PointCount):
+            # print('           curve pt ', i, ' : ', obj.Geometry.ToPolyline().PointAt(i))
+            print('           curve pt ', i, ' : ', obj.Geometry.Point(i))
+
+        print()
+
+        print('           curve SegmentCount :', obj.Geometry.ToPolyline().SegmentCount)
+
+        for i in range(obj.Geometry.ToPolyline().SegmentCount):
+            print('           segement ', i, ' : ', obj.Geometry.ToPolyline().SegmentAt(i))
+
+        print()
 ```
 
 
@@ -217,6 +249,119 @@ Attribs:
 
 - ObjectType
 - ...
+
+Methods:
+
+- GetBoundingBox()
+- ...
+:::
+
+::: {.callout-tip title="BoundingBox" collapse="true"}
+
+[**_class_**  `rhino3dm.BoundingBox`](https://mcneel.github.io/rhino3dm/python/api/BoundingBox.html#module-rhino3dm)
+
+<br />
+
+Constructor:
+
+- BoundingBox(min, max)
+- BoundingBox(minX, minY, minZ, maxX, maxY, maxZ)
+- ...
+
+Attribs:
+
+- Min: 
+    - rhino3dm.Point3d: Gets or sets the point in the minimal corner.
+
+- Max: 
+    - rhino3dm.Point3d: Gets or sets the point in the maximal corner.
+
+- Center: 
+    - rhino3dm.Point3d: Gets the point in the center of the bounding box.
+
+- Area: 
+    - float: Gets the area of this BoundingBox.
+
+- Volume: 
+    - float: Gets the volume of this BoundingBox.
+
+- Diagonal: 
+    - rhino3dm.Vector3d: Gets the diagonal vector of this BoundingBox. The diagonal connects the Min and Max points.
+
+Methods:
+
+- ClosestPoint(point)
+    - Finds the closest point on or in the bounding box.
+
+    - Parameters: point (rhino3dm.Point3d) – Sample point.
+
+    - Returns: The point on or in the box that is closest to the sample point.
+
+    - Return type: rhino3dm.Point3d
+
+- Contains(point)
+    - Tests a point for bounding box inclusion. This is the same as calling Contains(point, false)
+
+    - Parameters: point (rhino3dm.Point3d) – Point to test.
+
+    - Returns: True if the point is on the inside of or coincident with this bounding box; otherwise false.
+
+    - Return type: bool
+
+- ...
+:::
+
+::: {.callout-tip title="Point3d" collapse="true"}
+
+[**_class_**  `rhino3dm.Point3d`](https://mcneel.github.io/rhino3dm/python/api/Point3d.html)
+
+<br />
+
+Constructor:
+
+- Point3d(x, y, z)
+
+Attributs:
+
+- X: float: Gets or sets the X (first) coordinate of this point.
+
+- Y: float: Gets or sets the Y (second) coordinate of this point.
+
+- Z: float: Gets or sets the Z (third) coordinate of this point.
+
+Methods:
+
+- DistanceTo(other)
+    - Computes the distance between two points.
+    - Parameters: other (rhino3dm.Point3d) – Other point for distance measurement.
+    - Returns: The length of the line between this and the other point; or 0 if any of the points is not valid.
+    - Return type: float
+
+- ...
+:::
+
+::: {.callout-tip title="Curve" collapse="true"}
+
+[**_class_**  `rhino3dm.Curve`](https://mcneel.github.io/rhino3dm/python/api/Curve.html)
+
+<br />
+
+:::
+
+::: {.callout-tip title="PolylineCurve" collapse="true"}
+
+[**_class_**  `rhino3dm.PolylineCurve`](https://mcneel.github.io/rhino3dm/python/api/PolylineCurve.html)
+
+<br />
+
+:::
+
+::: {.callout-tip title="Polyline" collapse="true"}
+
+[**_class_**  `rhino3dm.Polyline`](https://mcneel.github.io/rhino3dm/python/api/Polyline.html)
+
+<br />
+
 :::
 ::::
 
@@ -224,10 +369,6 @@ Attribs:
 ## backup code
 
 ```python
-# brep = model.Objects[0].Geometry
-# face = brep.Faces[0]
-# mesh = face.GetMesh(rhino3dm.MeshType.Any)
-# print (len(mesh.Faces))
 ```
 
 
