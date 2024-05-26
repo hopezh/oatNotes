@@ -1,0 +1,73 @@
+---
+title: "Merge CSVs"
+filters:
+    - line-highlight
+---
+
+
+```{python}
+from glob import glob
+import os
+
+import polars as pl
+pl.Config(tbl_rows=6)
+
+```
+
+
+# glob CSVs in a folder
+
+```{python}
+csv_dir = "../../data/csvs/"
+csv_path_glob = os.path.join(csv_dir, '*.csv')
+csv_list = glob(csv_path_glob)
+
+for idx, csv in enumerate(csv_list):
+    print('csv ', idx, ' : ', csv)
+
+```
+
+
+# merge CSVs
+
+```{python}
+df_merged = pl.read_csv(csv_path_glob) # <1>
+
+df_merged
+```
+1. Use `globbing` patterns to read multiple files into a single DF.
+
+
+:::: {.column-margin}
+
+::: {.callout-tip title="Dealing with multple files" collapse="true"}
+[Multiple](https://docs.pola.rs/user-guide/io/multiple/)
+:::
+
+::: {.callout-tip title="polars.read_csv" collapse="true"}
+[polars.read_csv](https://docs.pola.rs/py-polars/html/reference/api/polars.read_csv.html)
+:::
+
+::: {.callout-tip title="polars.scan_csv" collapse="true"}
+[polars.scan_csv](https://docs.pola.rs/py-polars/html/reference/api/polars.scan_csv.html)
+:::
+
+::::
+
+
+# write merged CSV
+
+```{python}
+csv_merged_path = os.path.join("../../data/csv_merged/", "merged.csv")
+df_merged.write_csv(csv_merged_path)
+print('...merged csv written.')
+```
+
+
+:::: {.column-margin}
+::: {.callout-tip title="polars.DataFrame.write_csv" collapse="true"}
+[polars.DataFrame.write_csv](https://docs.pola.rs/py-polars/html/reference/api/polars.DataFrame.write_csv.html#polars.DataFrame.write_csv)
+:::
+::::
+
+
