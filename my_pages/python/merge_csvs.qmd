@@ -10,7 +10,7 @@ from glob import glob
 import os
 
 import polars as pl
-pl.Config(tbl_rows=6)
+pl.Config(tbl_rows=10)
 
 ```
 
@@ -31,7 +31,9 @@ for idx, csv in enumerate(csv_list):
 # merge CSVs
 
 ```{python}
-df_merged = pl.read_csv(csv_path_glob) # <1>
+%%time
+
+# df_merged = pl.read_csv(csv_path_glob) # <1>
 
 df_merged
 ```
@@ -58,9 +60,9 @@ df_merged
 # write merged CSV
 
 ```{python}
-csv_merged_path = os.path.join("../../data/csv_merged/", "merged.csv")
-df_merged.write_csv(csv_merged_path)
-print('...merged csv written.')
+# csv_merged_path = os.path.join("../../data/csv_merged/", "merged.csv")
+# df_merged.write_csv(csv_merged_path)
+# print('...merged csv written.')
 ```
 
 
@@ -71,3 +73,32 @@ print('...merged csv written.')
 ::::
 
 
+# (lazy-)filter a DF by a list of items in a column
+
+```{python}
+%%time
+
+strings_to_filter = [
+    '1-4-NB05-10',
+    '1-4-NB05-9',
+    '1-8-NB02-4',
+]
+
+query = (                               # <2>
+    pl.scan_csv(csv_path_glob)
+      .filter(pl.col('string_name')
+      .is_in(strings_to_filter))
+)
+
+df_filtered = query.collect()
+
+df_filtered
+```
+2. Build a query in `lazy` mode, and execute the it later when `collected`
+
+
+:::: {.column-margin}
+::: {.callout-tip title="lazy/eager API" collapse="true"}
+[Lazy/eager API](https://docs.pola.rs/user-guide/concepts/lazy-vs-eager/)
+:::
+::::
