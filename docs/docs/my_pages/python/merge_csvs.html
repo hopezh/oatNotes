@@ -219,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Python</span></a>
+ <span class="menu-text">Polars</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -298,6 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#glob-csvs-in-a-folder" id="toc-glob-csvs-in-a-folder" class="nav-link active" data-scroll-target="#glob-csvs-in-a-folder">glob CSVs in a folder</a></li>
   <li><a href="#merge-csvs" id="toc-merge-csvs" class="nav-link" data-scroll-target="#merge-csvs">merge CSVs</a></li>
   <li><a href="#write-merged-csv" id="toc-write-merged-csv" class="nav-link" data-scroll-target="#write-merged-csv">write merged CSV</a></li>
+  <li><a href="#lazy-filter-a-df-by-a-list-of-items-in-a-column" id="toc-lazy-filter-a-df-by-a-list-of-items-in-a-column" class="nav-link" data-scroll-target="#lazy-filter-a-df-by-a-list-of-items-in-a-column">(lazy-)filter a DF by a list of items in a column</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="merge_csvs.out.ipynb" download="merge_csvs.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
@@ -323,19 +324,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="4fdb70f9" class="cell" data-execution_count="1">
+<div id="3b3b4c6c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> os</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb1-5"><a href="#cb1-5"></a>pl.Config(tbl_rows<span class="op">=</span><span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-5"><a href="#cb1-5"></a>pl.Config(tbl_rows<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<pre data-code-line-numbers=""><code>&lt;polars.config.Config at 0x1e260a39310&gt;</code></pre>
+<pre data-code-line-numbers=""><code>&lt;polars.config.Config at 0x189d4aab350&gt;</code></pre>
 </div>
 </div>
 <section id="glob-csvs-in-a-folder" class="level1">
 <h1>glob CSVs in a folder</h1>
-<div id="7ccf53e8" class="cell" data-execution_count="2">
+<div id="e29e78f1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>csv_dir <span class="op">=</span> <span class="st">"../../data/csvs/"</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>csv_path_glob <span class="op">=</span> os.path.join(csv_dir, <span class="st">'*.csv'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3"></a>csv_list <span class="op">=</span> glob(csv_path_glob)</span>
@@ -353,14 +354,13 @@ csv  4  :  ../../data/csvs\cn_daqing_zone_1_08_module_cluster_outline.csv</code>
 </section>
 <section id="merge-csvs" class="level1">
 <h1>merge CSVs</h1>
-<div id="247f5854" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df_merged <span class="op">=</span> pl.read_csv(csv_path_glob)</span>
+<div id="ffddaadf" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">%%</span>time</span>
 <span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a>df_merged</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
+<span id="cb5-3"><a href="#cb5-3"></a><span class="co"># df_merged = pl.read_csv(csv_path_glob)</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a></span>
+<span id="cb5-5"><a href="#cb5-5"></a>df_merged</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-</section></main></div>
 <blockquote class="blockquote">
 <p><strong>Dealing with multple files</strong></p>
 <p><a href="https://docs.pola.rs/user-guide/io/multiple/">Multiple</a></p>
@@ -373,24 +373,54 @@ csv  4  :  ../../data/csvs\cn_daqing_zone_1_08_module_cluster_outline.csv</code>
 <p><strong>polars.scan_csv</strong></p>
 <p><a href="https://docs.pola.rs/py-polars/html/reference/api/polars.scan_csv.html">polars.scan_csv</a></p>
 </blockquote>
-
+</section>
 <section id="write-merged-csv" class="level1">
 <h1>write merged CSV</h1>
-<div id="397b6701" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>csv_merged_path <span class="op">=</span> os.path.join(<span class="st">"../../data/csv_merged/"</span>, <span class="st">"merged.csv"</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a>df_merged.write_csv(csv_merged_path)</span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="bu">print</span>(<span class="st">'...merged csv written.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>...merged csv written.</code></pre>
-</div>
+<div id="262cbc3a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># csv_merged_path = os.path.join("../../data/csv_merged/", "merged.csv")</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co"># df_merged.write_csv(csv_merged_path)</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co"># print('...merged csv written.')</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <blockquote class="blockquote">
 <p><strong>polars.DataFrame.write_csv</strong></p>
 <p><a href="https://docs.pola.rs/py-polars/html/reference/api/polars.DataFrame.write_csv.html#polars.DataFrame.write_csv">polars.DataFrame.write_csv</a></p>
 </blockquote>
-
-
 </section>
+<section id="lazy-filter-a-df-by-a-list-of-items-in-a-column" class="level1">
+<h1>(lazy-)filter a DF by a list of items in a column</h1>
+<div id="581c8f3b" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="op">%%</span>time</span>
+<span id="cb7-2"><a href="#cb7-2"></a></span>
+<span id="cb7-3"><a href="#cb7-3"></a>strings_to_filter <span class="op">=</span> [</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="st">'1-4-NB05-10'</span>,</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="st">'1-4-NB05-9'</span>,</span>
+<span id="cb7-6"><a href="#cb7-6"></a>    <span class="st">'1-8-NB02-4'</span>,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>]</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a>query <span class="op">=</span> (</span>
+<span id="cb7-10"><a href="#cb7-10"></a>    pl.scan_csv(csv_path_glob)</span>
+<span id="cb7-11"><a href="#cb7-11"></a>      .<span class="bu">filter</span>(pl.col(<span class="st">'string_name'</span>)</span>
+<span id="cb7-12"><a href="#cb7-12"></a>      .is_in(strings_to_filter))</span>
+<span id="cb7-13"><a href="#cb7-13"></a>)</span>
+<span id="cb7-14"><a href="#cb7-14"></a></span>
+<span id="cb7-15"><a href="#cb7-15"></a>df_filtered <span class="op">=</span> query.collect()</span>
+<span id="cb7-16"><a href="#cb7-16"></a></span>
+<span id="cb7-17"><a href="#cb7-17"></a>df_filtered</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre data-code-line-numbers=""><code>CPU times: total: 0 ns
+Wall time: 4 ms</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+</div>
+</div>
+</section></main></div>
+<blockquote class="blockquote">
+<p><strong>lazy/eager API</strong></p>
+<p><a href="https://docs.pola.rs/user-guide/concepts/lazy-vs-eager/">Lazy/eager API</a></p>
+</blockquote>
+
+
+
 
  <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
