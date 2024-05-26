@@ -25,7 +25,7 @@ website:
         contents:
           - ./my_pages/plotly/plotly_data_structure.qmd
           - ./my_pages/plotly/transparent_fig_bgcolor.qmd
-      - section: "Python"
+      - section: "Polars"
         contents:
           - ./my_pages/python/merge_csvs.qmd
       - section: "Quarto"
