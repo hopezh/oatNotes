@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OatNotes - Merge CSVs</title>
+<title>OatNotes</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,62 +20,28 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,12 +69,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -118,7 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">OatNotes</span>
     </a>
   </div>
@@ -129,15 +92,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
+    <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../dashboard.html"> 
+    <a class="nav-link" href="../dashboard.html"> 
 <span class="menu-text">Worldwide Development</span></a>
   </li>  
 </ul>
@@ -152,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Merge CSVs</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">OatNotes</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -187,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test Observable.js</span></a>
   </div>
 </li>
@@ -204,13 +167,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">show data strucure of a plotly figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparent bgcolor for figure</span></a>
   </div>
 </li>
@@ -227,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/python/merge_csvs.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/python/merge_csvs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merge CSVs</span></a>
   </div>
 </li>
@@ -244,19 +207,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">quarto tabset</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">expand the width of a code block and its output</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">side by side codeblocks and outputs</span></a>
   </div>
 </li>
@@ -273,13 +236,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test rhino3dm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
+  <a href="../my_pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">rhino3dm exercise 01</span></a>
   </div>
 </li>
@@ -291,23 +254,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#glob-csvs-in-a-folder" id="toc-glob-csvs-in-a-folder" class="nav-link active" data-scroll-target="#glob-csvs-in-a-folder">glob CSVs in a folder</a></li>
-  <li><a href="#merge-csvs" id="toc-merge-csvs" class="nav-link" data-scroll-target="#merge-csvs">merge CSVs</a></li>
-  <li><a href="#write-merged-csv" id="toc-write-merged-csv" class="nav-link" data-scroll-target="#write-merged-csv">write merged CSV</a></li>
-  <li><a href="#lazy-filter-a-df-by-a-list-of-items-in-a-column" id="toc-lazy-filter-a-df-by-a-list-of-items-in-a-column" class="nav-link" data-scroll-target="#lazy-filter-a-df-by-a-list-of-items-in-a-column">(lazy-)filter a DF by a list of items in a column</a></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="merge_csvs.out.ipynb" download="merge_csvs.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
-    </div>
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.out.ipynb" download="index.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Merge CSVs</h1>
+<h1 class="title">OatNotes</h1>
 </div>
 
 
@@ -324,124 +278,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="3955b932" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> os</span>
-<span id="cb1-3"><a href="#cb1-3"></a></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb1-5"><a href="#cb1-5"></a>pl.Config(tbl_rows<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display">
-<pre data-code-line-numbers=""><code>&lt;polars.config.Config at 0x22f2a884590&gt;</code></pre>
-</div>
-</div>
-<section id="glob-csvs-in-a-folder" class="level1">
-<h1>glob CSVs in a folder</h1>
-<div id="10b9190c" class="cell" data-source-line-numbers="1-3" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="1-3" data-code-line-numbers="1-3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>csv_dir <span class="op">=</span> <span class="st">"../../data/csvs/"</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>csv_path_glob <span class="op">=</span> os.path.join(csv_dir, <span class="st">'*.csv'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>csv_list <span class="op">=</span> glob(csv_path_glob)</span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="cf">for</span> idx, csv <span class="kw">in</span> <span class="bu">enumerate</span>(csv_list):</span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="bu">print</span>(<span class="st">'csv '</span>, idx, <span class="st">' : '</span>, csv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>csv  0  :  ../../data/csvs\cn_daqing_zone_1_04_module_cluster_outline.csv
-csv  1  :  ../../data/csvs\cn_daqing_zone_1_05_module_cluster_outline.csv
-csv  2  :  ../../data/csvs\cn_daqing_zone_1_06_module_cluster_outline.csv
-csv  3  :  ../../data/csvs\cn_daqing_zone_1_07_module_cluster_outline.csv
-csv  4  :  ../../data/csvs\cn_daqing_zone_1_08_module_cluster_outline.csv</code></pre>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><strong>glob</strong></p>
-<p><a href="https://www.geeksforgeeks.org/how-to-use-glob-function-to-find-files-recursively-in-python/">glob</a></p>
-</blockquote>
-</section>
-<section id="merge-csvs" class="level1">
-<h1>merge CSVs</h1>
-<div id="f7983256" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="op">%%</span>time</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a>df_merged <span class="op">=</span> pl.read_csv(csv_path_glob)</span>
-<span id="cb5-4"><a href="#cb5-4"></a></span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="co"># q = (</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="co">#     pl.scan_csv(csv_path_glob)</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a><span class="co"># )</span></span>
-<span id="cb5-8"><a href="#cb5-8"></a><span class="co"># df_merged = q.collect()</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a></span>
-<span id="cb5-10"><a href="#cb5-10"></a>df_merged</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>CPU times: total: 15.6 ms
-Wall time: 35.6 ms</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-</div>
-</div>
-</section></main></div>
-<blockquote class="blockquote">
-<p><strong>Dealing with multple files</strong></p>
-<p><a href="https://docs.pola.rs/user-guide/io/multiple/">Multiple</a></p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>polars.read_csv</strong></p>
-<p><a href="https://docs.pola.rs/py-polars/html/reference/api/polars.read_csv.html">polars.read_csv</a></p>
-</blockquote>
-<blockquote class="blockquote">
-<p><strong>polars.scan_csv</strong></p>
-<p><a href="https://docs.pola.rs/py-polars/html/reference/api/polars.scan_csv.html">polars.scan_csv</a></p>
-</blockquote>
-
-<section id="write-merged-csv" class="level1">
-<h1>write merged CSV</h1>
-<div id="787b704a" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>csv_merged_path <span class="op">=</span> os.path.join(<span class="st">"../../data/csv_merged/"</span>, <span class="st">"merged.csv"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a>df_merged.write_csv(csv_merged_path)</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(<span class="st">'...merged csv written.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>...merged csv written.</code></pre>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><strong>polars.DataFrame.write_csv</strong></p>
-<p><a href="https://docs.pola.rs/py-polars/html/reference/api/polars.DataFrame.write_csv.html#polars.DataFrame.write_csv">polars.DataFrame.write_csv</a></p>
-</blockquote>
-</section>
-<section id="lazy-filter-a-df-by-a-list-of-items-in-a-column" class="level1">
-<h1>(lazy-)filter a DF by a list of items in a column</h1>
-<div id="30380f4c" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="op">%%</span>time</span>
-<span id="cb9-2"><a href="#cb9-2"></a></span>
-<span id="cb9-3"><a href="#cb9-3"></a>strings_to_filter <span class="op">=</span> [</span>
-<span id="cb9-4"><a href="#cb9-4"></a>    <span class="st">'1-4-NB05-10'</span>,</span>
-<span id="cb9-5"><a href="#cb9-5"></a>    <span class="st">'1-4-NB05-9'</span>,</span>
-<span id="cb9-6"><a href="#cb9-6"></a>    <span class="st">'1-8-NB02-4'</span>,</span>
-<span id="cb9-7"><a href="#cb9-7"></a>]</span>
-<span id="cb9-8"><a href="#cb9-8"></a></span>
-<span id="cb9-9"><a href="#cb9-9"></a>query <span class="op">=</span> (</span>
-<span id="cb9-10"><a href="#cb9-10"></a>    pl.scan_csv(csv_path_glob)</span>
-<span id="cb9-11"><a href="#cb9-11"></a>      .<span class="bu">filter</span>(pl.col(<span class="st">'string_name'</span>)</span>
-<span id="cb9-12"><a href="#cb9-12"></a>      .is_in(strings_to_filter))</span>
-<span id="cb9-13"><a href="#cb9-13"></a>)</span>
-<span id="cb9-14"><a href="#cb9-14"></a></span>
-<span id="cb9-15"><a href="#cb9-15"></a>df_filtered <span class="op">=</span> query.collect()</span>
-<span id="cb9-16"><a href="#cb9-16"></a></span>
-<span id="cb9-17"><a href="#cb9-17"></a>df_filtered</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>CPU times: total: 0 ns
-Wall time: 4.97 ms</code></pre>
-</div>
-<div class="cell-output cell-output-display">
-</div>
-</div>
-
-<blockquote class="blockquote">
-<p><strong>lazy/eager API</strong></p>
-<p><a href="https://docs.pola.rs/user-guide/concepts/lazy-vs-eager/">Lazy/eager API</a></p>
-</blockquote>
+<p>This is oat’s notebook.</p>
 
 
-</section>
 
- <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1085,10 +926,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
- <!-- /content -->
+</div> <!-- /content -->
 
 
 
 
-<script src="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
+<script src="../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>
