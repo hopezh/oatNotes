@@ -37,6 +37,7 @@ website:
         contents: 
           - ./my_pages/rhino3dm/test_rhino3dm.qmd
           - ./my_pages/rhino3dm/rhino3dm_01.qmd
+          - ./my_pages/rhino3dm/rhino3dm_02.qmd
         
 format:
   html:

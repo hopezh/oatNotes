@@ -1,0 +1,56 @@
+---
+title: "rhino3dm exercise 02"
+filters:
+    - line-highlight
+---
+
+## read project 3dm file
+
+```{python}
+import rhino3dm
+
+```
+
+```{python}
+rhino_file = "./data/tw_nongke.3dm"
+model = rhino3dm.File3dm.Read(rhino_file)
+print('3dm object: ', model)
+```
+
+## read `Layer`
+
+```{python}
+layer_table = model.Layers                              # <2>
+print('layer table: ', layer_table)
+print('num of layers: ', len(layer_table), '\n')
+
+for idx, layer in enumerate(iter(layer_table)):         # <3>
+    print('layer ', idx, ' Object  : ', layer)
+    print('      ', idx, ' Id      : ', layer.Id)
+    print('      ', idx, ' Index   : ', layer.Index)
+    print('      ', idx, ' Name    : ', layer.Name)
+    print('      ', idx, ' Fullpath: ', layer.FullPath)
+    print('      ', idx, ' Color   : ', layer.Color)
+```
+
+## read `Objects` on the `pv` layer
+
+```{python}
+object_table = model.Objects                            # <4>
+print('object table: ', object_table, '\n')
+
+for idx, obj in enumerate(iter(object_table)):       # <5>
+    if idx < 77 and obj.Attributes.LayerIndex == 2:
+        print('object ', idx, ' Object                : ', obj)
+        print('       ', idx, ' Geometry              : ', obj.Geometry)
+        print('       ', idx, ' Attributes            : ', obj.Attributes)
+        print('       ', idx, ' Attributes.Id         : ', obj.Attributes.Id)
+        print('       ', idx, ' Attributes.Name       : ', obj.Attributes.Name)
+        print('       ', idx, ' Attributes.LayerIndex : ', obj.Attributes.LayerIndex)
+        print('       ', idx, ' Attributes.ObjectColor: ', obj.Attributes.ObjectColor)
+        print('       ', idx, ' Attributes.Visible    : ', obj.Attributes.Visible)
+        print()
+    else:
+        pass
+```
+
