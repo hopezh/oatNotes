@@ -4,7 +4,8 @@ filters:
     - line-highlight
 ---
 
-## read project 3dm file
+
+## read `.3dm` file 
 
 ```{python}
 import rhino3dm
@@ -12,17 +13,58 @@ import rhino3dm
 ```
 
 ```{python}
-rhino_file = "./data/tw_nongke.3dm"
-model = rhino3dm.File3dm.Read(rhino_file)
-print('3dm object: ', model)
+rhino_f_path = "./data/tw_nongke.3dm"
+file3dm_obj = rhino3dm.File3dm.Read(rhino_f_path)
+print('rhino3dm.File3dm object: ', file3dm_obj)
 ```
+
+
+## read `notes`
+
+```{python}
+rhino3dm_notes = rhino3dm.File3dm.ReadNotes(rhino_f_path).split(';')[:-1]
+
+for idx, note in enumerate(rhino3dm_notes):
+    print(
+        note.strip().split(':')[0].strip(),
+        ' : ',
+        note.strip().split(':')[1].strip()
+    )
+```
+
+
+:::: {.column-margin}
+::: {.callout-tip title="File3dm.ReadNotes()" collapse="true"}
+[**_method_**  `rhino3dm.File3dm.ReadNotes()`](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.ReadNotes)
+
+<br />
+
+Reads only the notes from an existing 3dm file.
+
+<br />
+
+Parameters: 
+
+- path (str) – The file from which to read the notes.
+
+Returns: 
+
+- The 3dm file notes.
+
+Return type: 
+
+- str
+:::
+::::
+
 
 ## read `Layer`
 
 ```{python}
-layer_table = model.Layers                              # <2>
-print('layer table: ', layer_table)
-print('num of layers: ', len(layer_table), '\n')
+layer_table = file3dm_obj.Layers                              # <2>
+print('layer table object: ', layer_table)
+print('num of layers: ', len(layer_table))
+print()
 
 for idx, layer in enumerate(iter(layer_table)):         # <3>
     print('layer ', idx, ' Object  : ', layer)
@@ -31,12 +73,14 @@ for idx, layer in enumerate(iter(layer_table)):         # <3>
     print('      ', idx, ' Name    : ', layer.Name)
     print('      ', idx, ' Fullpath: ', layer.FullPath)
     print('      ', idx, ' Color   : ', layer.Color)
+    print()
 ```
+
 
 ## read `Objects` on the `pv` layer
 
 ```{python}
-object_table = model.Objects                            # <4>
+object_table = file3dm_obj.Objects                            # <4>
 print('object table: ', object_table, '\n')
 
 for idx, obj in enumerate(iter(object_table)):       # <5>
