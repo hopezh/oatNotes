@@ -5,7 +5,7 @@ filters:
 ---
 
 
-## read `.3dm` file 
+## read `.3dm` file
 
 ```{python}
 import rhino3dm
@@ -13,7 +13,7 @@ import rhino3dm
 ```
 
 ```{python}
-rhino_f_path = "./data/tw_nongke.3dm"
+rhino_f_path = "./data/nongke.3dm"
 file3dm_obj = rhino3dm.File3dm.Read(rhino_f_path)
 print('rhino3dm.File3dm object: ', file3dm_obj)
 ```
@@ -22,9 +22,9 @@ print('rhino3dm.File3dm object: ', file3dm_obj)
 ## read `notes`
 
 ```{python}
-rhino3dm_notes = rhino3dm.File3dm.ReadNotes(rhino_f_path).split(';')[:-1]
+file3dm_notes = rhino3dm.File3dm.ReadNotes(rhino_f_path).split(';')[:-1]
 
-for idx, note in enumerate(rhino3dm_notes):
+for idx, note in enumerate(file3dm_notes):
     print(
         note.strip().split(':')[0].strip(),
         ' : ',
@@ -77,14 +77,25 @@ for idx, layer in enumerate(iter(layer_table)):         # <3>
 ```
 
 
-## read `Objects` on the `pv` layer
+## read `ObjectsTable` in the `File3dm` object
 
 ```{python}
 object_table = file3dm_obj.Objects                            # <4>
 print('object table: ', object_table, '\n')
+```
 
-for idx, obj in enumerate(iter(object_table)):       # <5>
-    if idx < 77 and obj.Attributes.LayerIndex == 2:
+
+## read `Geometry` on the `pv` layer
+
+```{python}
+layer_idx_of_pv = 2
+cnt_pv = 0
+max_num_obj = 3
+total_num_pv = 0
+
+for idx, obj in enumerate(iter(object_table)):
+    # print the first 3 obj on a layer
+    if (obj.Attributes.LayerIndex == layer_idx_of_pv) and (cnt_pv < max_num_obj):
         print('object ', idx, ' Object                : ', obj)
         print('       ', idx, ' Geometry              : ', obj.Geometry)
         print('       ', idx, ' Attributes            : ', obj.Attributes)
@@ -94,7 +105,74 @@ for idx, obj in enumerate(iter(object_table)):       # <5>
         print('       ', idx, ' Attributes.ObjectColor: ', obj.Attributes.ObjectColor)
         print('       ', idx, ' Attributes.Visible    : ', obj.Attributes.Visible)
         print()
+
+        # if geom is PolylineCurve, print its details
+        if isinstance(obj.Geometry, rhino3dm.PolylineCurve):
+            print('            curve IsClosed     :', obj.Geometry.IsClosed)
+            print('            curve IsPlanar     :', obj.Geometry.IsPlanar())
+            print('            curve IsPolyline   :', obj.Geometry.IsPolyline())
+            print()
+
+            print('            curve PointCount   :', obj.Geometry.PointCount)
+            
+            for i in range(obj.Geometry.PointCount):
+                print('            curve pt ', i, ' : ', obj.Geometry.Point(i))
+                # print('           curve pt ', i, ' : ', obj.Geometry.ToPolyline().PointAt(i)) -- alternative
+
+            print()
+
+            print('            curve SegmentCount :', obj.Geometry.ToPolyline().SegmentCount)
+
+            for i in range(obj.Geometry.ToPolyline().SegmentCount):
+                print('            segement ', i, ' : ', obj.Geometry.ToPolyline().SegmentAt(i))
+
+            print()
+
+        cnt_pv += 1
     else:
         pass
+
+for idx, obj in enumerate(iter(object_table)):
+    if (obj.Attributes.LayerIndex == layer_idx_of_pv):
+        total_num_pv += 1
+
+print('total num of pv: ', total_num_pv)
 ```
+
+
+## read `Text`
+
+```{python}
+layer_idx_of_num = 3
+cnt_text = 0
+max_num_obj = 3
+total_num_text = 0
+
+for idx, obj in enumerate(iter(object_table)):
+    if (obj.Attributes.LayerIndex == layer_idx_of_num) and (cnt_text < max_num_obj):
+        print('object ', idx, ' Object                  : ', obj)
+        print('       ', idx, ' Geometry                : ', obj.Geometry)
+        print('       ', idx, ' Attributes              : ', obj.Attributes)
+        print('       ', idx, ' Attributes.Id           : ', obj.Attributes.Id)
+        print('       ', idx, ' Attributes.Name         : ', obj.Attributes.Name)
+        print('       ', idx, ' Attributes.LayerIndex   : ', obj.Attributes.LayerIndex)
+        print('       ', idx, ' Attributes.ObjectColor  : ', obj.Attributes.ObjectColor)
+        print('       ', idx, ' Attributes.Visible      : ', obj.Attributes.Visible)
+        print()
+
+        # if geom is AnnotationBase, print its PlainText
+        if isinstance(obj.Geometry, rhino3dm.AnnotationBase):
+            print('            Geometry.PlainText     : ', obj.Geometry.PlainText)
+            print()
+
+        cnt_text += 1
+
+for idx, obj in enumerate(iter(object_table)):
+    if (obj.Attributes.LayerIndex == layer_idx_of_num):
+        total_num_text += 1
+
+print('total num of text: ', total_num_text)
+```
+
+
 
