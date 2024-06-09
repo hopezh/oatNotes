@@ -4,13 +4,22 @@ filters:
     - line-highlight
 ---
 
-
-## read `.3dm` file
+## import and util funcs
 
 ```{python}
 import rhino3dm
+from dataclasses import dataclass, field
+import random
+import string
 
+print('rhino3dm ver: ', rhino3dm.__version__)
+
+def generate_id() -> str:
+    return "".join(random.choices(string.ascii_lowercase, k=12))
 ```
+
+
+## read `.3dm` file
 
 ```{python}
 rhino_f_path = "./data/nongke.3dm"
@@ -85,13 +94,27 @@ print('object table: ', object_table, '\n')
 ```
 
 
+## create `OatPV` class
+
+```{python}
+@dataclass
+class OatPV:
+    idx: int
+    outline: rhino3dm.PolylineCurve
+    str_num: str = ''
+    id: str = field(default_factory=generate_id)
+```
+
+
 ## read `Geometry` on the `pv` layer
 
 ```{python}
-layer_idx_of_pv = 2
+layer_idx_of_pv = 3
 cnt_pv = 0
 max_num_obj = 3
 total_num_pv = 0
+
+oatPV_list = []
 
 for idx, obj in enumerate(iter(object_table)):
     # print the first 3 obj on a layer
@@ -128,6 +151,9 @@ for idx, obj in enumerate(iter(object_table)):
 
             print()
 
+            oatPV = OatPV(idx, obj.Geometry)
+            oatPV_list.append(oatPV)
+
         cnt_pv += 1
     else:
         pass
@@ -137,19 +163,78 @@ for idx, obj in enumerate(iter(object_table)):
         total_num_pv += 1
 
 print('total num of pv: ', total_num_pv)
+print()
+
+for idx, oatPV in enumerate(oatPV_list):
+    print('oatPV ', idx, ' : ', oatPV)
 ```
 
 
-## read `Text`
+## read `Geometry` on the `cable` layer
 
 ```{python}
-layer_idx_of_num = 3
+layer_idx_of_cable = 1
+cnt_cable = 0
+max_num_obj = 3
+total_num_cable = 0
+
+for idx, obj in enumerate(iter(object_table)):
+    # print the first 3 obj on a layer
+    if (obj.Attributes.LayerIndex == layer_idx_of_cable) and (cnt_cable < max_num_obj):
+        print('object ', idx, ' Object                : ', obj)
+        print('       ', idx, ' Geometry              : ', obj.Geometry)
+        print('       ', idx, ' Attributes            : ', obj.Attributes)
+        print('       ', idx, ' Attributes.Id         : ', obj.Attributes.Id)
+        print('       ', idx, ' Attributes.Name       : ', obj.Attributes.Name)
+        print('       ', idx, ' Attributes.LayerIndex : ', obj.Attributes.LayerIndex)
+        print('       ', idx, ' Attributes.ObjectColor: ', obj.Attributes.ObjectColor)
+        print('       ', idx, ' Attributes.Visible    : ', obj.Attributes.Visible)
+        print()
+
+        # if geom is PolylineCurve, print its details
+        if isinstance(obj.Geometry, rhino3dm.PolylineCurve):
+            print('            curve IsClosed     :', obj.Geometry.IsClosed)
+            print('            curve IsPlanar     :', obj.Geometry.IsPlanar())
+            print('            curve IsPolyline   :', obj.Geometry.IsPolyline())
+            print()
+
+            print('            curve PointCount   :', obj.Geometry.PointCount)
+            
+            for i in range(obj.Geometry.PointCount):
+                print('            curve pt ', i, ' : ', obj.Geometry.Point(i))
+                # print('           curve pt ', i, ' : ', obj.Geometry.ToPolyline().PointAt(i)) -- alternative
+
+            print()
+
+            print('            curve SegmentCount :', obj.Geometry.ToPolyline().SegmentCount)
+
+            for i in range(obj.Geometry.ToPolyline().SegmentCount):
+                print('            segement ', i, ' : ', obj.Geometry.ToPolyline().SegmentAt(i))
+
+            print()
+
+        cnt_cable += 1
+    else:
+        pass
+
+for idx, obj in enumerate(iter(object_table)):
+    if (obj.Attributes.LayerIndex == layer_idx_of_cable):
+        total_num_cable += 1
+
+print('total num of cable: ', total_num_cable)
+```
+
+
+## read `Text` on `text` layer
+
+```{python}
+layer_idx_of_text = 4
 cnt_text = 0
 max_num_obj = 3
 total_num_text = 0
 
 for idx, obj in enumerate(iter(object_table)):
-    if (obj.Attributes.LayerIndex == layer_idx_of_num) and (cnt_text < max_num_obj):
+    if (obj.Attributes.LayerIndex == layer_idx_of_text) and (cnt_text < max_num_obj):
         print('object ', idx, ' Object                  : ', obj)
         print('       ', idx, ' Geometry                : ', obj.Geometry)
         print('       ', idx, ' Attributes              : ', obj.Attributes)
@@ -168,11 +253,74 @@ for idx, obj in enumerate(iter(object_table)):
         cnt_text += 1
 
 for idx, obj in enumerate(iter(object_table)):
-    if (obj.Attributes.LayerIndex == layer_idx_of_num):
+    if (obj.Attributes.LayerIndex == layer_idx_of_text):
         total_num_text += 1
 
 print('total num of text: ', total_num_text)
 ```
 
 
+## create a dataclass `MyPt`
+
+```{python}
+@dataclass
+class OatPt:
+    idx  : int
+    point: rhino3dm.Point3d
+    name : str
+```
+
+
+## read `Point` on `pt` layer
+
+```{python}
+layer_idx_of_pt = 2
+cnt_pt = 0
+max_num_obj = 3
+total_num_pt = 0
+
+oaPt_list_1 = []
+
+for idx, obj in enumerate(iter(object_table)):
+    if (obj.Attributes.LayerIndex == layer_idx_of_pt) and (cnt_pt < max_num_obj):
+        print('object ', idx, ' Object                  : ', obj)
+        print('       ', idx, ' Geometry                : ', obj.Geometry)
+        print('       ', idx, ' Attributes              : ', obj.Attributes)
+        print('       ', idx, ' Attributes.Id           : ', obj.Attributes.Id)
+        print('       ', idx, ' Attributes.Name         : ', obj.Attributes.Name)
+        print('       ', idx, ' Attributes.LayerIndex   : ', obj.Attributes.LayerIndex)
+        print('       ', idx, ' Attributes.ObjectColor  : ', obj.Attributes.ObjectColor)
+        print('       ', idx, ' Attributes.Visible      : ', obj.Attributes.Visible)
+        print()
+
+        # if geom is Point, print its xyz
+        if isinstance(obj.Geometry, rhino3dm.Point):
+            pt = obj.Geometry.Location
+            print('            Geometry.Location.X     : ', pt.X)
+            print('            Geometry.Location.Y     : ', pt.Y)
+            print('            Geometry.Location.Z     : ', pt.Z)
+
+            oatPt = OatPt(idx, pt, str(idx))
+            oaPt_list_1.append(oatPt)
+
+            print()
+
+for idx, obj in enumerate(iter(object_table)):
+    if (obj.Attributes.LayerIndex == layer_idx_of_pt):
+        total_num_pt += 1
+
+print('total num of pt: ', total_num_pt)
+```
+
+
+```{python}
+for idx, oatPt in enumerate(oaPt_list_1):
+    print('myPt', idx, ' : ', oatPt)
+    print('    type of idx in myPt:', type(oatPt.idx))
+    print('    type of point in myPt:', type(oatPt.point))
+    print('    type of name in myPt:', type(oatPt.name))
+```
+
+
+aaa
 
