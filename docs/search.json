@@ -531,7 +531,7 @@
     "href": "docs/my_pages/plotly/plotly_data_structure.html",
     "title": "show data strucure of a plotly figure",
     "section": "",
-    "text": "import plotly.express as px\n\nfig = px.line(\n    x=[\"a\",\"b\",\"c\"],\n    y=[1,3,2],\n    title=\"sample figure\"\n)\nfig.show()"
+    "text": "import plotly.express as px\n\nfig = px.line(\n    x=[\"a\",\"b\",\"c\"],\n    y=[1,3,2],\n    title=\"sample figure\"\n)\n\nfig.show()"
   },
   {
     "objectID": "docs/my_pages/plotly/plotly_data_structure.html#printfig",
@@ -1006,5 +1006,19 @@
       "LazyVim",
       "LazyVim Tips"
     ]
+  },
+  {
+    "objectID": "docs/my_pages/lazyvim/lazyvim_tips.html",
+    "href": "docs/my_pages/lazyvim/lazyvim_tips.html",
+    "title": "LazyVim Tips",
+    "section": "",
+    "text": "return {\n    \"folke/flash.nvim\",\n\n    event = \"VeryLazy\",\n\n    ---@type Flash.Config\n    opts = {\n        modes = {\n            -- options used when flash is activated through\n            -- a regular search with `/` or `?`\n            search = {\n                -- when `true`, flash will be activated during regular search by default.\n                -- You can always toggle when searching with `require(\"flash\").toggle()`\n                enabled = true, \n            },\n        },\n    },\n\n    -- other settings...\n}\n\nRef: flash.nvim usage"
+  },
+  {
+    "objectID": "docs/my_pages/lazyvim/lazyvim_tips.html#flash.nvim-do-regular-search-using-or-with-jump-lables",
+    "href": "docs/my_pages/lazyvim/lazyvim_tips.html#flash.nvim-do-regular-search-using-or-with-jump-lables",
+    "title": "LazyVim Tips",
+    "section": "",
+    "text": "return {\n    \"folke/flash.nvim\",\n\n    event = \"VeryLazy\",\n\n    ---@type Flash.Config\n    opts = {\n        modes = {\n            -- options used when flash is activated through\n            -- a regular search with `/` or `?`\n            search = {\n                -- when `true`, flash will be activated during regular search by default.\n                -- You can always toggle when searching with `require(\"flash\").toggle()`\n                enabled = true, \n            },\n        },\n    },\n\n    -- other settings...\n}\n\nRef: flash.nvim usage"
   }
 ]
