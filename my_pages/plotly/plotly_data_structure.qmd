@@ -8,6 +8,7 @@ filters:
 # example figure
 
 ```{python}
+#| source-line-numbers: "3-7"
 import plotly.express as px
 
 fig = px.line(
@@ -15,6 +16,7 @@ fig = px.line(
     y=[1,3,2],
     title="sample figure"
 )
+
 fig.show()
 ```
 

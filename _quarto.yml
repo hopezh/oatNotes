@@ -18,6 +18,9 @@ website:
     search: true
     contents:
       - section: "Deep Learning"
+      - section: "LazyVim"
+        contents:
+          - ./my_pages/lazyvim/lazyvim_tips.qmd
       - section: "Observable.js"
         contents:
           - ./my_pages/observable/observable_js.qmd
