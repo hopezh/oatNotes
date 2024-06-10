@@ -354,3 +354,94 @@ print('total num of textDot: ', total_num_textDot)
 ```
 
 
+## read `EarthAnchorPoint`
+
+```{python}
+# get the `Settings` object as a property of File3dm object
+file3dm_settings = file3dm_obj.Settings 
+print('file3dm settings: ', file3dm_settings)
+
+# get `EarthAnchorPoint` in settings
+earthAnchorPoint = file3dm_settings.EarthAnchorPoint
+print('EarthAnchorPoint: ', earthAnchorPoint)
+print()
+
+# check if the earthAnchorPoint is set or not
+earthAnchorPoint_set_or_not = earthAnchorPoint.EarthLocationIsSet()
+print('earthAnchorPoint is set: ', earthAnchorPoint_set_or_not)
+
+# get lat and lon of earthAnchorPoint
+earthAnchorPoint_lat = earthAnchorPoint.EarthBasepointLatitude
+earthAnchorPoint_lon = earthAnchorPoint.EarthBasepointLongitude
+print('earthAnchorPoint latitude : ', earthAnchorPoint_lat)
+print('earthAnchorPoint longitude: ', earthAnchorPoint_lon)
+print()
+
+# get ModelBasePoint
+modelBasePoint = earthAnchorPoint.ModelBasePoint
+print('model base point: ', modelBasePoint)
+
+# get `ModelToEarthTransform`
+modelUnitSystem = file3dm_settings.ModelUnitSystem
+print('modelUnitSystem : ', modelUnitSystem)
+
+modelToEarthTransform = earthAnchorPoint.GetModelToEarthTransform(modelUnitSystem)
+print('modelToEarthTransform : ', modelToEarthTransform)
+
+# create a test pt
+# test_pt = rhino3dm.Point3d(91.2724, 187.784, 0)
+test_pt = rhino3dm.Point3d(140.492,236.638,0)
+test_pt_transformed_in_lon_lat_ele = test_pt.Transform(modelToEarthTransform)
+print('test pt transformed in lon, lat, ele: ', test_pt_transformed_in_lon_lat_ele)
+```
+
+
+:::: {.column-margin}
+::: {.callout-tip title="File3dm.Settings" collapse="true"}
+[**_property_**  `rhino3dm.File3dm.Settings`](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Settings)
+
+<br /> 
+
+File3dmSettings: Settings include tolerance, and unit system, and defaults used for creating views and objects.
+
+<br />
+
+Return: A rhino3dm.File3dm.Settings object
+:::
+
+::: {.callout-tip title="rhino3dm.File3dmSettings" collapse="true"}
+[**_class_**  `rhino3dm.File3dm`](https://mcneel.github.io/rhino3dm/python/api/File3dmSettings.html)
+
+<br />
+
+Property: 
+
+- `ModelBasePoint`
+
+- `EarthAnchorPoint`
+
+- `ModelUnitSystem`
+:::
+
+::: {.callout-tip title="rhino3dm.EarthAnchorPoint" collapse="true"}
+[**_class_**  `rhino3dm.EarthAnchorPoint`](https://mcneel.github.io/rhino3dm/python/api/EarthAnchorPoint.html#module-rhino3dm)
+
+Property:
+
+- EarthBasepointLatitude
+
+- EarthBasepointLongitude
+
+- ModelBasePoint
+
+- GetModelToEarthTransform(modelUnitSystem)
+:::
+
+::: {.callout-tip title="Set EarthAnchorPoint in Rhino" collapse="true"}
+[**_cmd_**  `Set EarthAnchorPoint in Rhino`](https://docs.mcneel.com/rhino/5/help/en-us/commands/earthanchorpoint.htm)
+:::
+
+::: {.callout-tip title="Rhino to Google Earth" collapse="true"}
+[**_wiki_**  `Rhino to Google Earth`](https://wiki.mcneel.com/rhino/googleearth)
+:::
+::::
