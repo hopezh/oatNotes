@@ -70,12 +70,12 @@ Return type:
 ## read `Layer`
 
 ```{python}
-layer_table = file3dm_obj.Layers                              # <2>
+layer_table = file3dm_obj.Layers
 print('layer table object: ', layer_table)
 print('num of layers: ', len(layer_table))
 print()
 
-for idx, layer in enumerate(iter(layer_table)):         # <3>
+for idx, layer in enumerate(iter(layer_table)):
     print('layer ', idx, ' Object  : ', layer)
     print('      ', idx, ' Id      : ', layer.Id)
     print('      ', idx, ' Index   : ', layer.Index)
@@ -89,7 +89,7 @@ for idx, layer in enumerate(iter(layer_table)):         # <3>
 ## read `ObjectsTable`
 
 ```{python}
-object_table = file3dm_obj.Objects                            # <4>
+object_table = file3dm_obj.Objects
 print('object table: ', object_table, '\n')
 ```
 
@@ -109,7 +109,7 @@ class OatPV:
 ## read `pv`
 
 ```{python}
-layer_idx_of_pv = 3
+layer_idx_of_pv = 4
 cnt_pv = 0
 max_num_obj = 3
 total_num_pv = 0
@@ -117,7 +117,6 @@ total_num_pv = 0
 oatPV_list = []
 
 for idx, obj in enumerate(iter(object_table)):
-    # print the first 3 obj on a layer
     if (obj.Attributes.LayerIndex == layer_idx_of_pv) and (cnt_pv < max_num_obj):
         print('object ', idx, ' Object                : ', obj)
         print('       ', idx, ' Geometry              : ', obj.Geometry)
@@ -228,7 +227,7 @@ print('total num of cable: ', total_num_cable)
 ## read `text` 
 
 ```{python}
-layer_idx_of_text = 4
+layer_idx_of_text = 2
 cnt_text = 0
 max_num_obj = 3
 total_num_text = 0
@@ -273,78 +272,85 @@ class OatPt:
 
 ## read `pt`
 
-```{python}
-layer_idx_of_pt = 2
-cnt_pt = 0
-max_num_obj = 3
-total_num_pt = 0
+```python
+# layer_idx_of_pt = 2
+# cnt_pt = 0
+# max_num_obj = 3
+# total_num_pt = 0
+#
+# oaPt_list_1 = []
+#
+# for idx, obj in enumerate(iter(object_table)):
+#     if (obj.Attributes.LayerIndex == layer_idx_of_pt) and (cnt_pt < max_num_obj):
+#         print('object ', idx, ' Object                  : ', obj)
+#         print('       ', idx, ' Geometry                : ', obj.Geometry)
+#         print('       ', idx, ' Attributes              : ', obj.Attributes)
+#         print('       ', idx, ' Attributes.Id           : ', obj.Attributes.Id)
+#         print('       ', idx, ' Attributes.Name         : ', obj.Attributes.Name)
+#         print('       ', idx, ' Attributes.LayerIndex   : ', obj.Attributes.LayerIndex)
+#         print('       ', idx, ' Attributes.ObjectColor  : ', obj.Attributes.ObjectColor)
+#         print('       ', idx, ' Attributes.Visible      : ', obj.Attributes.Visible)
+#         print()
+#
+#         # if geom is Point, print its xyz
+#         if isinstance(obj.Geometry, rhino3dm.Point):
+#             pt = obj.Geometry.Location
+#             print('            Geometry.Location.X     : ', pt.X)
+#             print('            Geometry.Location.Y     : ', pt.Y)
+#             print('            Geometry.Location.Z     : ', pt.Z)
+#
+#             oatPt = OatPt(idx, pt, str(idx))
+#             oaPt_list_1.append(oatPt)
+#
+#             print()
+#
+# for idx, obj in enumerate(iter(object_table)):
+#     if (obj.Attributes.LayerIndex == layer_idx_of_pt):
+#         total_num_pt += 1
+#
+# print('total num of pt: ', total_num_pt)
+```
 
-oaPt_list_1 = []
+
+```{python}
+# for idx, oatPt in enumerate(oaPt_list_1):
+#     print('myPt', idx, ' : ', oatPt)
+#     print('    type of idx in myPt:', type(oatPt.idx))
+#     print('    type of point in myPt:', type(oatPt.point))
+#     print('    type of name in myPt:', type(oatPt.name))
+```
+
+
+## read `TextDot` 
+
+```{python}
+max_num_obj = 3
+cnt_textDot = 0
+total_num_textDot = 0
 
 for idx, obj in enumerate(iter(object_table)):
-    if (obj.Attributes.LayerIndex == layer_idx_of_pt) and (cnt_pt < max_num_obj):
-        print('object ', idx, ' Object                  : ', obj)
-        print('       ', idx, ' Geometry                : ', obj.Geometry)
-        print('       ', idx, ' Attributes              : ', obj.Attributes)
-        print('       ', idx, ' Attributes.Id           : ', obj.Attributes.Id)
-        print('       ', idx, ' Attributes.Name         : ', obj.Attributes.Name)
-        print('       ', idx, ' Attributes.LayerIndex   : ', obj.Attributes.LayerIndex)
-        print('       ', idx, ' Attributes.ObjectColor  : ', obj.Attributes.ObjectColor)
-        print('       ', idx, ' Attributes.Visible      : ', obj.Attributes.Visible)
+    obj_geom = obj.Geometry
+    obj_attr = obj.Attributes
+
+    if (isinstance(obj_geom, rhino3dm.TextDot)) and (cnt_textDot < max_num_obj):
+        print('textDot object ', idx, ' : ', obj_geom)
+        print('        position            : ', obj_geom.Point)
+        print('        text                : ', obj_geom.Text)
+        print('        Attributes object   : ', obj_attr)
+        print('        attribs.Id          : ', obj_attr.Id)
+        print('        attribs.Name        : ', obj_attr.Name)
+        print('        attribs.LayerIndex  : ', obj_attr.LayerIndex)
+        print('        attribs.ObjectColor : ', obj_attr.ObjectColor)
+        print('        attribs.Visible     : ', obj_attr.Visible)
         print()
 
-        # if geom is Point, print its xyz
-        if isinstance(obj.Geometry, rhino3dm.Point):
-            pt = obj.Geometry.Location
-            print('            Geometry.Location.X     : ', pt.X)
-            print('            Geometry.Location.Y     : ', pt.Y)
-            print('            Geometry.Location.Z     : ', pt.Z)
-
-            oatPt = OatPt(idx, pt, str(idx))
-            oaPt_list_1.append(oatPt)
-
-            print()
+        cnt_textDot += 1
 
 for idx, obj in enumerate(iter(object_table)):
-    if (obj.Attributes.LayerIndex == layer_idx_of_pt):
-        total_num_pt += 1
+    if isinstance(obj.Geometry, rhino3dm.TextDot):
+        total_num_textDot += 1
 
-print('total num of pt: ', total_num_pt)
+print('total num of textDot: ', total_num_textDot)
 ```
 
-
-```{python}
-for idx, oatPt in enumerate(oaPt_list_1):
-    print('myPt', idx, ' : ', oatPt)
-    print('    type of idx in myPt:', type(oatPt.idx))
-    print('    type of point in myPt:', type(oatPt.point))
-    print('    type of name in myPt:', type(oatPt.name))
-```
-
-
-## test reading `TextDot` objects
-
-```{python}
-rhino_f_path_text_dot = './data/test_text_dot.3dm'
-file3dm_text_dot = rhino3dm.File3dm.Read(rhino_f_path_text_dot)
-print(file3dm_text_dot)
-```
-
-
-```{python}
-text_dot_obj_table = file3dm_text_dot.Objects
-print('textDot objects: ', text_dot_obj_table)
-
-for idx, text_dot_obj in enumerate(iter(text_dot_obj_table)):
-    print('textDot obj ', idx, ' : ', text_dot_obj)
-
-    text_dot_geom = text_dot_obj.Geometry
-
-    if isinstance(text_dot_geom, rhino3dm.TextDot):
-        print('    textDot obj: ', text_dot_geom)
-        print('    textDot point: ', text_dot_geom.Point)
-        print('    textDot Text: ', text_dot_geom.Text)
-
-    print()
-```
 
