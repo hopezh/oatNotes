@@ -86,7 +86,7 @@ for idx, layer in enumerate(iter(layer_table)):         # <3>
 ```
 
 
-## read `ObjectsTable` in the `File3dm` object
+## read `ObjectsTable`
 
 ```{python}
 object_table = file3dm_obj.Objects                            # <4>
@@ -94,7 +94,7 @@ print('object table: ', object_table, '\n')
 ```
 
 
-## create `OatPV` class
+## create dataclass `OatPV` 
 
 ```{python}
 @dataclass
@@ -106,7 +106,7 @@ class OatPV:
 ```
 
 
-## read `Geometry` on the `pv` layer
+## read `pv`
 
 ```{python}
 layer_idx_of_pv = 3
@@ -170,7 +170,7 @@ for idx, oatPV in enumerate(oatPV_list):
 ```
 
 
-## read `Geometry` on the `cable` layer
+## read `cable`
 
 ```{python}
 layer_idx_of_cable = 1
@@ -225,7 +225,7 @@ print('total num of cable: ', total_num_cable)
 ```
 
 
-## read `Text` on `text` layer
+## read `text` 
 
 ```{python}
 layer_idx_of_text = 4
@@ -260,7 +260,7 @@ print('total num of text: ', total_num_text)
 ```
 
 
-## create a dataclass `MyPt`
+## create dataclass `MyPt`
 
 ```{python}
 @dataclass
@@ -271,7 +271,7 @@ class OatPt:
 ```
 
 
-## read `Point` on `pt` layer
+## read `pt`
 
 ```{python}
 layer_idx_of_pt = 2
@@ -322,5 +322,29 @@ for idx, oatPt in enumerate(oaPt_list_1):
 ```
 
 
-aaa
+## test reading `TextDot` objects
+
+```{python}
+rhino_f_path_text_dot = './data/test_text_dot.3dm'
+file3dm_text_dot = rhino3dm.File3dm.Read(rhino_f_path_text_dot)
+print(file3dm_text_dot)
+```
+
+
+```{python}
+text_dot_obj_table = file3dm_text_dot.Objects
+print('textDot objects: ', text_dot_obj_table)
+
+for idx, text_dot_obj in enumerate(iter(text_dot_obj_table)):
+    print('textDot obj ', idx, ' : ', text_dot_obj)
+
+    text_dot_geom = text_dot_obj.Geometry
+
+    if isinstance(text_dot_geom, rhino3dm.TextDot):
+        print('    textDot obj: ', text_dot_geom)
+        print('    textDot point: ', text_dot_geom.Point)
+        print('    textDot Text: ', text_dot_geom.Text)
+
+    print()
+```
 
