@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -241,10 +241,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/python/merge_csvs.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merge CSVs</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+ <span class="menu-text">./pages/ploars/edit_df_column.qmd</span>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -354,7 +357,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="./image/01.png" class="img-fluid"></p>
 <section id="read-.3dm-file" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="read-.3dm-file">read <code>.3dm</code> file</h2>
-<div id="5e8b8e1b" class="cell" data-execution_count="1">
+<div id="36f799a7" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="annotated-cell-1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="im">import</span> rhino3dm</span>
 <span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-3" class="code-annotation-target"><a href="#annotated-cell-1-3"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./data/oat_model.3dm'</span>)</span>
@@ -368,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dl>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>model object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x1036957f0&gt;</code></pre>
+<pre data-code-line-numbers=""><code>model object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x0000027C0E1F0E70&gt;</code></pre>
 </div>
 </div>
 
@@ -407,7 +410,7 @@ File3dm.Read()
 </div></div></section>
 <section id="read-layer" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="read-layer">read <code>Layer</code></h2>
-<div id="9c951115" class="cell" data-execution_count="2">
+<div id="e748d8ea" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="annotated-cell-2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-1" class="code-annotation-target"><a href="#annotated-cell-2-1"></a>layer_table <span class="op">=</span> model.Layers</span>
 <span id="annotated-cell-2-2"><a href="#annotated-cell-2-2"></a><span class="bu">print</span>(<span class="st">'layer table: '</span>, layer_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="annotated-cell-2-3"><a href="#annotated-cell-2-3"></a></span>
@@ -430,29 +433,29 @@ File3dm.Read()
 </dl>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>layer table:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x1036974b0&gt; 
+<pre data-code-line-numbers=""><code>layer table:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x0000027C0DDC0EF0&gt; 
 
-layer  0  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x137430430&gt;
+layer  0  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027C0E1BFAB0&gt;
        0  Id      :  212960d6-ad46-439d-8516-772ce85fde03
        0  Index   :  0
        0  Name    :  Default
        0  Fullpath:  Default
-layer  1  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x137430530&gt;
+layer  1  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027C2FDDD7B0&gt;
        1  Id      :  430ce6c7-13d8-40d9-ae38-08e0e7d0f1df
        1  Index   :  1
        1  Name    :  layer_1
        1  Fullpath:  layer_1
-layer  2  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x137431a70&gt;
+layer  2  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027C2FDDD570&gt;
        2  Id      :  8e04c4aa-0bcb-4331-9ac1-79ed7bacc9f1
        2  Index   :  2
        2  Name    :  b_1
        2  Fullpath:  layer_1::b_1
-layer  3  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x137430f70&gt;
+layer  3  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027C2FDDD170&gt;
        3  Id      :  906c125d-ea30-483a-bf45-6fc769473e09
        3  Index   :  3
        3  Name    :  s_1
        3  Fullpath:  layer_1::s_1
-layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x1372c8ff0&gt;
+layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x0000027C2FDDC770&gt;
        4  Id      :  1d1e5147-f5b7-4fa1-82ea-3ece64f5994c
        4  Index   :  4
        4  Name    :  layer_2
@@ -542,7 +545,7 @@ Layer
 </div></div></section>
 <section id="read-objects" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="read-objects">read <code>Objects</code></h2>
-<div id="ff3e72b8" class="cell" data-execution_count="3">
+<div id="28fab7b0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="annotated-cell-3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="4">4</button><span id="annotated-cell-3-1" class="code-annotation-target"><a href="#annotated-cell-3-1"></a>object_table <span class="op">=</span> model.Objects</span>
 <span id="annotated-cell-3-2"><a href="#annotated-cell-3-2"></a><span class="bu">print</span>(<span class="st">'object table: '</span>, object_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
 <span id="annotated-cell-3-3"><a href="#annotated-cell-3-3"></a></span>
@@ -569,47 +572,47 @@ Layer
 </dl>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x1372c8df0&gt; 
+<pre data-code-line-numbers=""><code>object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x0000027C2FDCF830&gt; 
 
-object  0  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x1372c91b0&gt;
-        0  Geometry              :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x103685e70&gt;
-        0  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x103685e70&gt;
+object  0  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FDE7D70&gt;
+        0  Geometry              :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x0000027C2FDCE770&gt;
+        0  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027C2FDCE770&gt;
         0  Attributes.Id         :  fc49c0ee-7bd9-4097-961d-3925257a4738
         0  Attributes.Name       :  solid_1
         0  Attributes.LayerIndex :  3
         0  Attributes.ObjectColor:  (255, 255, 0, 255)
         0  Attributes.Visible    :  True
 
-object  1  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x13740f4b0&gt;
-        1  Geometry              :  &lt;rhino3dm._rhino3dm.Brep object at 0x1372c91b0&gt;
-        1  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x1372c91b0&gt;
+object  1  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FE0E730&gt;
+        1  Geometry              :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000027C2FDE7D70&gt;
+        1  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027C2FDE7D70&gt;
         1  Attributes.Id         :  478a0a94-ad34-41cf-b917-b6b0050dad8f
         1  Attributes.Name       :  polysurf_2
         1  Attributes.LayerIndex :  2
         1  Attributes.ObjectColor:  (255, 127, 0, 255)
         1  Attributes.Visible    :  True
 
-object  2  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x1372a21f0&gt;
-        2  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x13740f4b0&gt;
-        2  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x13740f4b0&gt;
+object  2  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FE0DA70&gt;
+        2  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x0000027C2FDE7D70&gt;
+        2  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027C2FDE7D70&gt;
         2  Attributes.Id         :  9afb6b4b-986d-47e6-8d2d-89c6d5448117
         2  Attributes.Name       :  curve_1
         2  Attributes.LayerIndex :  0
         2  Attributes.ObjectColor:  (0, 0, 0, 255)
         2  Attributes.Visible    :  True
 
-object  3  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x1372a20b0&gt;
-        3  Geometry              :  &lt;rhino3dm._rhino3dm.Mesh object at 0x13740f4b0&gt;
-        3  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x13740f4b0&gt;
+object  3  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FE0D5B0&gt;
+        3  Geometry              :  &lt;rhino3dm._rhino3dm.Mesh object at 0x0000027C2FDE7D70&gt;
+        3  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027C2FDE7D70&gt;
         3  Attributes.Id         :  c85d4579-e3df-492c-a4e4-dc9626c19397
         3  Attributes.Name       :  ball_1
         3  Attributes.LayerIndex :  4
         3  Attributes.ObjectColor:  (0, 0, 255, 255)
         3  Attributes.Visible    :  True
 
-object  4  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x137461d30&gt;
-        4  Geometry              :  &lt;rhino3dm._rhino3dm.Brep object at 0x1372a20b0&gt;
-        4  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x1372a20b0&gt;
+object  4  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FE0C7B0&gt;
+        4  Geometry              :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000027C2FDE7D70&gt;
+        4  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x0000027C2FDE7D70&gt;
         4  Attributes.Id         :  19067883-7bbc-4871-91bb-ad640c96bb46
         4  Attributes.Name       :  polysurf_1
         4  Attributes.LayerIndex :  2
@@ -722,7 +725,7 @@ ObjectAttributes
 </div></div></section>
 <section id="read-geometry" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="read-geometry">read <code>Geometry</code></h2>
-<div id="caa82c0e" class="cell" data-execution_count="4">
+<div id="37c31268" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
 <span id="cb4-2"><a href="#cb4-2"></a>    <span class="bu">print</span>(<span class="st">'object '</span>, idx, <span class="st">' Object                       : '</span>, obj)</span>
 <span id="cb4-3"><a href="#cb4-3"></a>    <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Geometry                     : '</span>, obj.Geometry)</span>
@@ -756,29 +759,29 @@ ObjectAttributes
 <span id="cb4-31"><a href="#cb4-31"></a></span>
 <span id="cb4-32"><a href="#cb4-32"></a>        <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>object  0  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x1374969f0&gt;
-        0  Geometry                     :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x137461d30&gt;
+<pre data-code-line-numbers=""><code>object  0  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FE41070&gt;
+        0  Geometry                     :  &lt;rhino3dm._rhino3dm.Extrusion object at 0x0000027C2FE0C7B0&gt;
         0  Geometry.ObjectType          :  ObjectType.Extrusion
-        0  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x137496a70&gt;
+        0  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x0000027C2FE0C7B0&gt;
         0  Geometry.BoundingBox().Min   :  -4.280928135761822,2.5452328892155567,-1.6829865361077092
         0  Geometry.BoundingBox().Min.X :  -4.280928135761822
 
-object  1  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x1374615f0&gt;
-        1  Geometry                     :  &lt;rhino3dm._rhino3dm.Brep object at 0x1372a0c30&gt;
+object  1  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FDA39F0&gt;
+        1  Geometry                     :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000027C2FE0E7B0&gt;
         1  Geometry.ObjectType          :  ObjectType.Brep
-        1  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x13743ec70&gt;
+        1  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x0000027C2FE0E7B0&gt;
         1  Geometry.BoundingBox().Min   :  0.0,0.0,0.0
         1  Geometry.BoundingBox().Min.X :  0.0
 
-object  2  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x137496df0&gt;
-        2  Geometry                     :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x1374615f0&gt;
+object  2  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FDE6570&gt;
+        2  Geometry                     :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x0000027C2FDA39F0&gt;
         2  Geometry.ObjectType          :  ObjectType.Curve
-        2  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x1374148f0&gt;
+        2  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x0000027C2FDA39F0&gt;
         2  Geometry.BoundingBox().Min   :  1.7635839661870252,-22.199390961255418,0.0
         2  Geometry.BoundingBox().Min.X :  1.7635839661870252
 
-           curve Object       : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x137496df0&gt;
-           curve Geometry     : &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x1374142f0&gt;
+           curve Object       : &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FDE6570&gt;
+           curve Geometry     : &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x0000027C2FDA39F0&gt;
            curve IsClosed     : True
            curve IsPlanar     : True
            curve IsPolyline   : True
@@ -792,23 +795,23 @@ object  2  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject 
            curve pt  5  :  1.7635839661870252,-18.01287713465675,0.0
 
            curve SegmentCount : 5
-           segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x1374970b0&gt;
-           segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x1374970b0&gt;
-           segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x1374970b0&gt;
-           segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x1374970b0&gt;
-           segement  4  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x1374970b0&gt;
+           segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x0000027C2F103B70&gt;
+           segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x0000027C2F103B70&gt;
+           segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x0000027C2F103B70&gt;
+           segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x0000027C2F103B70&gt;
+           segement  4  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x0000027C2F103B70&gt;
 
-object  3  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x1374970b0&gt;
-        3  Geometry                     :  &lt;rhino3dm._rhino3dm.Mesh object at 0x1372d0930&gt;
+object  3  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FDF9E70&gt;
+        3  Geometry                     :  &lt;rhino3dm._rhino3dm.Mesh object at 0x0000027C2FDE6570&gt;
         3  Geometry.ObjectType          :  ObjectType.Mesh
-        3  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x137497270&gt;
+        3  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x0000027C2FE0D3F0&gt;
         3  Geometry.BoundingBox().Min   :  16.164949083117783,-2.8815754439567156,-7.0
         3  Geometry.BoundingBox().Min.X :  16.164949083117783
 
-object  4  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x1374972f0&gt;
-        4  Geometry                     :  &lt;rhino3dm._rhino3dm.Brep object at 0x1372d0930&gt;
+object  4  Object                       :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x0000027C2FDFA2B0&gt;
+        4  Geometry                     :  &lt;rhino3dm._rhino3dm.Brep object at 0x0000027C2FDF9E70&gt;
         4  Geometry.ObjectType          :  ObjectType.Brep
-        4  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x137497470&gt;
+        4  Geometry.BoundingBox()       :  &lt;rhino3dm._rhino3dm.BoundingBox object at 0x0000027C0E1D9E70&gt;
         4  Geometry.BoundingBox().Min   :  -9.675258776512376,-10.151641586438862,0.0
         4  Geometry.BoundingBox().Min.X :  -9.675258776512376
 </code></pre>

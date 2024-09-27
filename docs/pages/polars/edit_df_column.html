@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OatNotes - expand the width of a code block and its output</title>
+<title>OatNotes - Edit DF Column</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,25 +57,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -103,9 +103,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -115,7 +118,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">OatNotes</span>
     </a>
   </div>
@@ -126,15 +129,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../../dashboard.html"> 
+    <a class="nav-link" href="../../dashboard.html"> 
 <span class="menu-text">Worldwide Development</span></a>
   </li>  
 </ul>
@@ -149,7 +152,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">expand the width of a code block and its output</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/polars/merge_csvs.html">Polars</a></li><li class="breadcrumb-item"><a href="../../pages/polars/edit_df_column.html">Edit DF Column</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -184,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LazyVim Tips</span></a>
   </div>
 </li>
@@ -201,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test Observable.js</span></a>
   </div>
 </li>
@@ -218,13 +221,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">show data strucure of a plotly figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparent bgcolor for figure</span></a>
   </div>
 </li>
@@ -241,8 +244,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/python/merge_csvs.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merge CSVs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/polars/edit_df_column.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Edit DF Column</span></a>
   </div>
 </li>
       </ul>
@@ -258,19 +267,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">quarto tabset</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">expand the width of a code block and its output</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">side by side codeblocks and outputs</span></a>
   </div>
 </li>
@@ -287,19 +296,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test rhino3dm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">rhino3dm exercise 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../my_pages/rhino3dm/rhino3dm_02.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/rhino3dm/rhino3dm_02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">rhino3dm exercise 02</span></a>
   </div>
 </li>
@@ -315,42 +324,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#expand-to-full-page-width" id="toc-expand-to-full-page-width" class="nav-link active" data-scroll-target="#expand-to-full-page-width">expand to full <code>page</code> width</a>
-  <ul class="collapse">
-  <li><a href="#column-page" id="toc-column-page" class="nav-link" data-scroll-target="#column-page">1. <code>::: {.column-page}</code></a>
-  <ul class="collapse">
-  <li><a href="#syntax" id="toc-syntax" class="nav-link" data-scroll-target="#syntax">Syntax</a></li>
-  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
-  </ul></li>
-  <li><a href="#column-page-1" id="toc-column-page-1" class="nav-link" data-scroll-target="#column-page-1">2. <code>#| column: page</code></a>
-  <ul class="collapse">
-  <li><a href="#syntax-1" id="toc-syntax-1" class="nav-link" data-scroll-target="#syntax-1">Syntax</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#expand-to-full-screen-width" id="toc-expand-to-full-screen-width" class="nav-link" data-scroll-target="#expand-to-full-screen-width">expand to full <code>screen</code> width</a>
-  <ul class="collapse">
-  <li><a href="#column-screen" id="toc-column-screen" class="nav-link" data-scroll-target="#column-screen">1. <code>::: {.column-screen}</code></a>
-  <ul class="collapse">
-  <li><a href="#syntax-2" id="toc-syntax-2" class="nav-link" data-scroll-target="#syntax-2">Syntax</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
-  </ul></li>
-  <li><a href="#column-screen-1" id="toc-column-screen-1" class="nav-link" data-scroll-target="#column-screen-1">2. <code>#| column: screen</code></a>
-  <ul class="collapse">
-  <li><a href="#syntax-3" id="toc-syntax-3" class="nav-link" data-scroll-target="#syntax-3">Syntax</a></li>
-  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#ref" id="toc-ref" class="nav-link" data-scroll-target="#ref">Ref</a></li>
+  <li><a href="#add-dummy-dataframe" id="toc-add-dummy-dataframe" class="nav-link active" data-scroll-target="#add-dummy-dataframe">add dummy dataframe</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="expand_codeblock_width.out.ipynb" download="expand_codeblock_width.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="edit_df_column.ipynb" download="edit_df_column.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/polars/merge_csvs.html">Polars</a></li><li class="breadcrumb-item"><a href="../../pages/polars/edit_df_column.html">Edit DF Column</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">expand the width of a code block and its output</h1>
+<div class="quarto-title-block"><div><h1 class="title">Edit DF Column</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -367,495 +350,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="expand-to-full-page-width" class="level1">
-<h1>expand to full <code>page</code> width</h1>
-<section id="column-page" class="level2">
-<h2 class="anchored" data-anchor-id="column-page">1. <code>::: {.column-page}</code></h2>
-<p>Use this to wrap a code block to span it and its output to <code>page</code> width.</p>
-<section id="syntax" class="level3">
-<h3 class="anchored" data-anchor-id="syntax">Syntax</h3>
-<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb1-1"><a href="#cb1-1"></a>::: {.column-page}</span>
-<span id="cb1-2"><a href="#cb1-2"></a>```{.python}</span>
-<span id="cb1-3"><a href="#cb1-3"></a>import polars as pl</span>
-<span id="cb1-4"><a href="#cb1-4"></a>csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"</span>
-<span id="cb1-5"><a href="#cb1-5"></a>df = pl.read_csv(csv_path)</span>
-<span id="cb1-6"><a href="#cb1-6"></a>df.head(5)</span>
-<span id="cb1-7"><a href="#cb1-7"></a>```</span>
-<span id="cb1-8"><a href="#cb1-8"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb2-2"><a href="#cb2-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
-<span id="cb2-4"><a href="#cb2-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="add-dummy-dataframe" class="level1">
+<h1>add dummy dataframe</h1>
+<div id="7f3608d2" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>df <span class="op">=</span> pl.DataFrame(</span>
+<span id="cb1-5"><a href="#cb1-5"></a>    {</span>
+<span id="cb1-6"><a href="#cb1-6"></a>        <span class="st">"integer"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb1-7"><a href="#cb1-7"></a>        <span class="st">"date"</span>: [</span>
+<span id="cb1-8"><a href="#cb1-8"></a>            datetime(<span class="dv">2025</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb1-9"><a href="#cb1-9"></a>            datetime(<span class="dv">2025</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb1-10"><a href="#cb1-10"></a>            datetime(<span class="dv">2025</span>, <span class="dv">1</span>, <span class="dv">3</span>),</span>
+<span id="cb1-11"><a href="#cb1-11"></a>        ],</span>
+<span id="cb1-12"><a href="#cb1-12"></a>        <span class="st">"float"</span>: [<span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">6.0</span>],</span>
+<span id="cb1-13"><a href="#cb1-13"></a>        <span class="st">"string"</span>: [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>],</span>
+<span id="cb1-14"><a href="#cb1-14"></a>    }</span>
+<span id="cb1-15"><a href="#cb1-15"></a>)</span>
+<span id="cb1-16"><a href="#cb1-16"></a></span>
+<span id="cb1-17"><a href="#cb1-17"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div>
-<style>
+<div><style>
 .dataframe > thead > tr,
 .dataframe > tbody > tr {
   text-align: right;
   white-space: pre-wrap;
 }
 </style>
-<p><small>shape: (5, 20)</small></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 3%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 5%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 3%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 4%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-</colgroup>
+<small>shape: (3, 4)</small>
+<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
 <thead>
 <tr class="header">
-<th>string_idx</th>
-<th>string_name</th>
-<th>string_name_x</th>
-<th>string_name_y</th>
-<th>string_box_idx</th>
-<th>CB_name</th>
-<th>Phase</th>
-<th>string_num</th>
-<th>string_box_v1_x</th>
-<th>string_box_v1_y</th>
-<th>string_box_v2_x</th>
-<th>string_box_v2_y</th>
-<th>string_box_v3_x</th>
-<th>string_box_v3_y</th>
-<th>string_box_v4_x</th>
-<th>string_box_v4_y</th>
-<th>num_modules</th>
-<th>module_orientation</th>
-<th>num_module_along_x</th>
-<th>num_module_along_y</th>
+<th data-quarto-table-cell-role="th">integer</th>
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">float</th>
+<th data-quarto-table-cell-role="th">string</th>
+</tr>
+<tr class="odd">
+<th>i64</th>
+<th>datetime[μs]</th>
+<th>f64</th>
+<th>str</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>i64</td>
-<td>str</td>
-<td>f64</td>
-<td>f64</td>
-<td>i64</td>
-<td>i64</td>
-<td>i64</td>
-<td>i64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>i64</td>
-<td>str</td>
-<td>i64</td>
-<td>i64</td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>“20-9”</td>
-<td>5228.161911</td>
-<td>724.563534</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5217.39348</td>
-<td>723.963534</td>
-<td>5238.930342</td>
-<td>723.963534</td>
-<td>5238.930342</td>
-<td>725.163534</td>
-<td>5217.39348</td>
-<td>725.163534</td>
-<td>362</td>
-<td>“L”</td>
-<td>10</td>
 <td>1</td>
-</tr>
-<tr class="odd">
-<td>0</td>
-<td>“20-9”</td>
-<td>5228.161911</td>
-<td>725.867048</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5217.39348</td>
-<td>725.267048</td>
-<td>5238.930342</td>
-<td>725.267048</td>
-<td>5238.930342</td>
-<td>726.467048</td>
-<td>5217.39348</td>
-<td>726.467048</td>
-<td>361</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>“21-3”</td>
-<td>5206.643309</td>
-<td>724.563534</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5195.874878</td>
-<td>723.963534</td>
-<td>5217.41174</td>
-<td>723.963534</td>
-<td>5217.41174</td>
-<td>725.163534</td>
-<td>5195.874878</td>
-<td>725.163534</td>
-<td>360</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>“21-3”</td>
-<td>5206.643309</td>
-<td>725.867048</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5195.874878</td>
-<td>725.267048</td>
-<td>5217.41174</td>
-<td>725.267048</td>
-<td>5217.41174</td>
-<td>726.467048</td>
-<td>5195.874878</td>
-<td>726.467048</td>
-<td>359</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
+<td>2025-01-01 00:00:00</td>
+<td>4.0</td>
+<td>"a"</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>“20-8”</td>
-<td>5228.161911</td>
-<td>727.170562</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5217.39348</td>
-<td>726.570562</td>
-<td>5238.930342</td>
-<td>726.570562</td>
-<td>5238.930342</td>
-<td>727.770562</td>
-<td>5217.39348</td>
-<td>727.770562</td>
-<td>358</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
+<td>2025-01-02 00:00:00</td>
+<td>5.0</td>
+<td>"b"</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2025-01-03 00:00:00</td>
+<td>6.0</td>
+<td>"c"</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-</section>
-<section id="column-page-1" class="level2">
-<h2 class="anchored" data-anchor-id="column-page-1">2. <code>#| column: page</code></h2>
-<p>Use it inside a code block and only its output will span <code>page</code> width.</p>
-<section id="syntax-1" class="level3">
-<h3 class="anchored" data-anchor-id="syntax-1">Syntax</h3>
-<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb3-1"><a href="#cb3-1"></a>```{.python}</span>
-<span id="cb3-2"><a href="#cb3-2"></a>#| column: page</span>
-<span id="cb3-3"><a href="#cb3-3"></a>import polars as pl</span>
-<span id="cb3-4"><a href="#cb3-4"></a>csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"</span>
-<span id="cb3-5"><a href="#cb3-5"></a>df = pl.read_csv(csv_path)</span>
-<span id="cb3-6"><a href="#cb3-6"></a>df.head(5)</span>
-<span id="cb3-7"><a href="#cb3-7"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="example-1" class="level3">
-<h3 class="anchored" data-anchor-id="example-1">Example</h3>
-<div id="b9824a6a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb4-2"><a href="#cb4-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-</section>
-</section>
-<section id="expand-to-full-screen-width" class="level1">
-<h1>expand to full <code>screen</code> width</h1>
-<p>You can have content span the full width of the page with no margin (full bleed).</p>
-<section id="column-screen" class="level2">
-<h2 class="anchored" data-anchor-id="column-screen">1. <code>::: {.column-screen}</code></h2>
-<p>Use it to wrap a code block to expand it and its output to full screen width.</p>
-<section id="syntax-2" class="level3">
-<h3 class="anchored" data-anchor-id="syntax-2">Syntax</h3>
-<div class="sourceCode" id="cb5" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb5-1"><a href="#cb5-1"></a>::: {.column-screen}</span>
-<span id="cb5-2"><a href="#cb5-2"></a>```python</span>
-<span id="cb5-3"><a href="#cb5-3"></a>import polars as pl</span>
-<span id="cb5-4"><a href="#cb5-4"></a>csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"</span>
-<span id="cb5-5"><a href="#cb5-5"></a>df = pl.read_csv(csv_path)</span>
-<span id="cb5-6"><a href="#cb5-6"></a>df.head(5)</span>
-<span id="cb5-7"><a href="#cb5-7"></a>```</span>
-<span id="cb5-8"><a href="#cb5-8"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="example-2" class="level3">
-<h3 class="anchored" data-anchor-id="example-2">Example</h3>
-<div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb6-2"><a href="#cb6-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
-<span id="cb6-4"><a href="#cb6-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div>
-<style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
-<p><small>shape: (5, 20)</small></p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 3%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 4%">
-<col style="width: 5%">
-<col style="width: 2%">
-<col style="width: 2%">
-<col style="width: 3%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 5%">
-<col style="width: 4%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>string_idx</th>
-<th>string_name</th>
-<th>string_name_x</th>
-<th>string_name_y</th>
-<th>string_box_idx</th>
-<th>CB_name</th>
-<th>Phase</th>
-<th>string_num</th>
-<th>string_box_v1_x</th>
-<th>string_box_v1_y</th>
-<th>string_box_v2_x</th>
-<th>string_box_v2_y</th>
-<th>string_box_v3_x</th>
-<th>string_box_v3_y</th>
-<th>string_box_v4_x</th>
-<th>string_box_v4_y</th>
-<th>num_modules</th>
-<th>module_orientation</th>
-<th>num_module_along_x</th>
-<th>num_module_along_y</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>i64</td>
-<td>str</td>
-<td>f64</td>
-<td>f64</td>
-<td>i64</td>
-<td>i64</td>
-<td>i64</td>
-<td>i64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>f64</td>
-<td>i64</td>
-<td>str</td>
-<td>i64</td>
-<td>i64</td>
-</tr>
-<tr class="even">
-<td>0</td>
-<td>“20-9”</td>
-<td>5228.161911</td>
-<td>724.563534</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5217.39348</td>
-<td>723.963534</td>
-<td>5238.930342</td>
-<td>723.963534</td>
-<td>5238.930342</td>
-<td>725.163534</td>
-<td>5217.39348</td>
-<td>725.163534</td>
-<td>362</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>0</td>
-<td>“20-9”</td>
-<td>5228.161911</td>
-<td>725.867048</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5217.39348</td>
-<td>725.267048</td>
-<td>5238.930342</td>
-<td>725.267048</td>
-<td>5238.930342</td>
-<td>726.467048</td>
-<td>5217.39348</td>
-<td>726.467048</td>
-<td>361</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>“21-3”</td>
-<td>5206.643309</td>
-<td>724.563534</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5195.874878</td>
-<td>723.963534</td>
-<td>5217.41174</td>
-<td>723.963534</td>
-<td>5217.41174</td>
-<td>725.163534</td>
-<td>5195.874878</td>
-<td>725.163534</td>
-<td>360</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>“21-3”</td>
-<td>5206.643309</td>
-<td>725.867048</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5195.874878</td>
-<td>725.267048</td>
-<td>5217.41174</td>
-<td>725.267048</td>
-<td>5217.41174</td>
-<td>726.467048</td>
-<td>5195.874878</td>
-<td>726.467048</td>
-<td>359</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>“20-8”</td>
-<td>5228.161911</td>
-<td>727.170562</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>5217.39348</td>
-<td>726.570562</td>
-<td>5238.930342</td>
-<td>726.570562</td>
-<td>5238.930342</td>
-<td>727.770562</td>
-<td>5217.39348</td>
-<td>727.770562</td>
-<td>358</td>
-<td>“L”</td>
-<td>10</td>
-<td>1</td>
-</tr>
-</tbody>
-</table>
 </div>
-</section>
-</section>
-<section id="column-screen-1" class="level2">
-<h2 class="anchored" data-anchor-id="column-screen-1">2. <code>#| column: screen</code></h2>
-<p>Use it inside a code block to expand only its output to full width of screen.</p>
-<section id="syntax-3" class="level3">
-<h3 class="anchored" data-anchor-id="syntax-3">Syntax</h3>
-<div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode numberSource default number-lines code-with-copy"><code class="sourceCode default"><span id="cb7-1"><a href="#cb7-1"></a>```python</span>
-<span id="cb7-2"><a href="#cb7-2"></a>#| column: screen</span>
-<span id="cb7-3"><a href="#cb7-3"></a>import polars as pl</span>
-<span id="cb7-4"><a href="#cb7-4"></a>csv_path = "./data/tw_taoyuan_cankun_merged_updated.csv"</span>
-<span id="cb7-5"><a href="#cb7-5"></a>df = pl.read_csv(csv_path)</span>
-<span id="cb7-6"><a href="#cb7-6"></a>df.head(5)</span>
-<span id="cb7-7"><a href="#cb7-7"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="example-3" class="level3">
-<h3 class="anchored" data-anchor-id="example-3">Example</h3>
-<div id="4c739363" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb8-2"><a href="#cb8-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
-<span id="cb8-4"><a href="#cb8-4"></a>df.head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<hr>
-</section>
-</section>
-</section>
-<section id="ref" class="level1">
-<h1>Ref</h1>
-<ul>
-<li>https://quarto.org/docs/authoring/article-layout.html#screen-column</li>
-<li></li>
-</ul>
 
+
+<!-- -->
 
 </section>
 
@@ -1134,24 +701,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1186,11 +735,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
+      return note.innerHTML;
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1502,11 +1047,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "Edit DF Column"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="an">filters:</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">    - line-highlight</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">---</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fu"># add dummy dataframe</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="in">```{python}</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb2-14"><a href="#cb2-14"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
+<span id="cb2-15"><a href="#cb2-15"></a></span>
+<span id="cb2-16"><a href="#cb2-16"></a>df <span class="op">=</span> pl.DataFrame(</span>
+<span id="cb2-17"><a href="#cb2-17"></a>    {</span>
+<span id="cb2-18"><a href="#cb2-18"></a>        <span class="st">"integer"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
+<span id="cb2-19"><a href="#cb2-19"></a>        <span class="st">"date"</span>: [</span>
+<span id="cb2-20"><a href="#cb2-20"></a>            datetime(<span class="dv">2025</span>, <span class="dv">1</span>, <span class="dv">1</span>),</span>
+<span id="cb2-21"><a href="#cb2-21"></a>            datetime(<span class="dv">2025</span>, <span class="dv">1</span>, <span class="dv">2</span>),</span>
+<span id="cb2-22"><a href="#cb2-22"></a>            datetime(<span class="dv">2025</span>, <span class="dv">1</span>, <span class="dv">3</span>),</span>
+<span id="cb2-23"><a href="#cb2-23"></a>        ],</span>
+<span id="cb2-24"><a href="#cb2-24"></a>        <span class="st">"float"</span>: [<span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">6.0</span>],</span>
+<span id="cb2-25"><a href="#cb2-25"></a>        <span class="st">"string"</span>: [<span class="st">"a"</span>, <span class="st">"b"</span>, <span class="st">"c"</span>],</span>
+<span id="cb2-26"><a href="#cb2-26"></a>    }</span>
+<span id="cb2-27"><a href="#cb2-27"></a>)</span>
+<span id="cb2-28"><a href="#cb2-28"></a></span>
+<span id="cb2-29"><a href="#cb2-29"></a>df</span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="in">```</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<script src="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
+<script src="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>

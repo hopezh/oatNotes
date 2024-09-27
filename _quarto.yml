@@ -30,7 +30,8 @@ website:
           - ./pages/plotly/transparent_fig_bgcolor.qmd
       - section: "Polars"
         contents:
-          - ./pages/python/merge_csvs.qmd
+          - ./pages/polars/merge_csvs.qmd
+          - ./pages/polars/edit_df_column.qmd
       - section: "Quarto"
         contents:
           - ./pages/quarto/quarto_tabset.qmd

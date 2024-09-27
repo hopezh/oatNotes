@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -241,10 +241,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/python/merge_csvs.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merge CSVs</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+ <span class="menu-text">./pages/ploars/edit_df_column.qmd</span>
+  </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -355,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="import-and-util-funcs" class="level2">
 <h2 class="anchored" data-anchor-id="import-and-util-funcs">import and util funcs</h2>
-<div id="2666ef11" class="cell" data-execution_count="1">
+<div id="f2f1106c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> rhino3dm</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass, field</span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> random</span>
@@ -366,24 +369,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8"></a><span class="kw">def</span> generate_id() <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
 <span id="cb1-9"><a href="#cb1-9"></a>    <span class="cf">return</span> <span class="st">""</span>.join(random.choices(string.ascii_lowercase, k<span class="op">=</span><span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>rhino3dm ver:  8.6.1</code></pre>
+<pre data-code-line-numbers=""><code>rhino3dm ver:  8.9.0</code></pre>
 </div>
 </div>
 </section>
 <section id="read-.3dm-file" class="level2">
 <h2 class="anchored" data-anchor-id="read-.3dm-file">read <code>.3dm</code> file</h2>
-<div id="79c197b1" class="cell" data-execution_count="2">
+<div id="7d14a67d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>rhino_f_path <span class="op">=</span> <span class="st">"./data/nongke.3dm"</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>file3dm_obj <span class="op">=</span> rhino3dm.File3dm.Read(rhino_f_path)</span>
 <span id="cb3-3"><a href="#cb3-3"></a><span class="bu">print</span>(<span class="st">'rhino3dm.File3dm object: '</span>, file3dm_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>rhino3dm.File3dm object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x12ccea970&gt;</code></pre>
+<pre data-code-line-numbers=""><code>rhino3dm.File3dm object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x00000153DEBE3B70&gt;</code></pre>
 </div>
 </div>
 </section>
 <section id="read-notes" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="read-notes">read <code>notes</code></h2>
-<div id="b8d8cfa8" class="cell" data-execution_count="3">
+<div id="e68389c1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>file3dm_notes <span class="op">=</span> rhino3dm.File3dm.ReadNotes(rhino_f_path).split(<span class="st">';'</span>)[:<span class="op">-</span><span class="dv">1</span>]</span>
 <span id="cb5-2"><a href="#cb5-2"></a></span>
 <span id="cb5-3"><a href="#cb5-3"></a><span class="cf">for</span> idx, note <span class="kw">in</span> <span class="bu">enumerate</span>(file3dm_notes):</span>
@@ -434,7 +437,7 @@ File3dm.ReadNotes()
 </div></div></section>
 <section id="read-layer" class="level2">
 <h2 class="anchored" data-anchor-id="read-layer">read <code>Layer</code></h2>
-<div id="a7accaac" class="cell" data-execution_count="4">
+<div id="0db620b0" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>layer_table <span class="op">=</span> file3dm_obj.Layers</span>
 <span id="cb7-2"><a href="#cb7-2"></a><span class="bu">print</span>(<span class="st">'layer table object: '</span>, layer_table)</span>
 <span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(<span class="st">'num of layers: '</span>, <span class="bu">len</span>(layer_table))</span>
@@ -449,45 +452,45 @@ File3dm.ReadNotes()
 <span id="cb7-12"><a href="#cb7-12"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Color   : '</span>, layer.Color)</span>
 <span id="cb7-13"><a href="#cb7-13"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>layer table object:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x12f146970&gt;
+<pre data-code-line-numbers=""><code>layer table object:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x00000153E0C121F0&gt;
 num of layers:  6
 
-layer  0  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x12f8df470&gt;
+layer  0  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000153E0C112B0&gt;
        0  Id      :  212960d6-ad46-439d-8516-772ce85fde03
        0  Index   :  0
        0  Name    :  0
        0  Fullpath:  0
        0  Color   :  (0, 0, 0, 255)
 
-layer  1  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f7f5f0&gt;
+layer  1  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000153E0C5BA30&gt;
        1  Id      :  25488de8-55a5-470b-a098-ea3c8c1220b3
        1  Index   :  1
        1  Name    :  ! cable
        1  Fullpath:  ! cable
        1  Color   :  (255, 191, 0, 255)
 
-layer  2  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f7d4b0&gt;
+layer  2  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000153E0C59930&gt;
        2  Id      :  6f40c8fc-3378-4efb-a590-0af0bf5a85dc
        2  Index   :  2
        2  Name    :  ! num
        2  Fullpath:  ! num
        2  Color   :  (0, 127, 0, 255)
 
-layer  3  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f82d30&gt;
+layer  3  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000153E0C5B970&gt;
        3  Id      :  4af54445-51c1-4fff-b520-54055554debc
        3  Index   :  3
        3  Name    :  ! num_TextDot
        3  Fullpath:  ! num_TextDot
        3  Color   :  (0, 127, 0, 255)
 
-layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f82270&gt;
+layer  4  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000153E0C5B7B0&gt;
        4  Id      :  0428f404-44e4-47e7-ae60-72284d0a89f7
        4  Index   :  4
        4  Name    :  ! pv
        4  Fullpath:  ! pv
        4  Color   :  (0, 0, 0, 255)
 
-layer  5  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f810f0&gt;
+layer  5  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000153E0C0A8B0&gt;
        5  Id      :  c0c0bbb7-2adb-4301-8c42-c09459068132
        5  Index   :  5
        5  Name    :  pv_surf
@@ -499,18 +502,18 @@ layer  5  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f810f0&gt;
 </section>
 <section id="read-objectstable" class="level2">
 <h2 class="anchored" data-anchor-id="read-objectstable">read <code>ObjectsTable</code></h2>
-<div id="e68de6d6" class="cell" data-execution_count="5">
+<div id="0a596fb7" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>object_table <span class="op">=</span> file3dm_obj.Objects</span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">'object table: '</span>, object_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x10f586670&gt; 
+<pre data-code-line-numbers=""><code>object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x00000153E0C16270&gt; 
 </code></pre>
 </div>
 </div>
 </section>
 <section id="create-dataclass-oatpv" class="level2">
 <h2 class="anchored" data-anchor-id="create-dataclass-oatpv">create dataclass <code>OatPV</code></h2>
-<div id="76c24dc3" class="cell" data-execution_count="6">
+<div id="761b76c1" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="at">@dataclass</span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="kw">class</span> OatPV:</span>
 <span id="cb11-3"><a href="#cb11-3"></a>    idx: <span class="bu">int</span></span>
@@ -521,7 +524,7 @@ layer  5  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f810f0&gt;
 </section>
 <section id="read-pv" class="level2">
 <h2 class="anchored" data-anchor-id="read-pv">read <code>pv</code></h2>
-<div id="fc251cd5" class="cell" data-execution_count="7">
+<div id="c80dfb50" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>layer_idx_of_pv <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a>cnt_pv <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a>max_num_obj <span class="op">=</span> <span class="dv">3</span></span>
@@ -580,9 +583,9 @@ layer  5  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f810f0&gt;
 <span id="cb12-56"><a href="#cb12-56"></a><span class="cf">for</span> idx, oatPV <span class="kw">in</span> <span class="bu">enumerate</span>(oatPV_list):</span>
 <span id="cb12-57"><a href="#cb12-57"></a>    <span class="bu">print</span>(<span class="st">'oatPV '</span>, idx, <span class="st">' : '</span>, oatPV)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>object  72  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x12f96ce70&gt;
-        72  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f919930&gt;
-        72  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f919930&gt;
+<pre data-code-line-numbers=""><code>object  72  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153E0C153F0&gt;
+        72  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153E0C7DCB0&gt;
+        72  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0C7DCB0&gt;
         72  Attributes.Id         :  36f08c55-5986-4aa2-b0b8-ae56b26b043c
         72  Attributes.Name       :  
         72  Attributes.LayerIndex :  4
@@ -601,14 +604,14 @@ layer  5  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x107f810f0&gt;
             curve pt  4  :  35.10614556790845,209.9589626310085,0.0
 
             curve SegmentCount : 4
-            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f8b7bb0&gt;
-            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f8b7bb0&gt;
-            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f8b7bb0&gt;
-            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f8b7bb0&gt;
+            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153DFFB6030&gt;
+            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153DFFB6030&gt;
+            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153DFFB6030&gt;
+            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153DFFB6030&gt;
 
-object  73  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x12f9416b0&gt;
-        73  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f8c9ab0&gt;
-        73  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f8c9ab0&gt;
+object  73  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153E0CAB9F0&gt;
+        73  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153E0C2EA70&gt;
+        73  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0C2EA70&gt;
         73  Attributes.Id         :  2a5e0e48-e0ca-4d27-896e-1d3f2435645e
         73  Attributes.Name       :  
         73  Attributes.LayerIndex :  4
@@ -627,14 +630,14 @@ object  73  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object
             curve pt  4  :  99.74743231227566,208.92053051678556,0.0
 
             curve SegmentCount : 4
-            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d6f0&gt;
-            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d6f0&gt;
-            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d6f0&gt;
-            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d6f0&gt;
+            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0C2EA70&gt;
+            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0C2EA70&gt;
+            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0C2EA70&gt;
+            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0C2EA70&gt;
 
-object  74  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x12f96d830&gt;
-        74  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f96d7f0&gt;
-        74  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f96d7f0&gt;
+object  74  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153E0CB4030&gt;
+        74  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153E0CABFB0&gt;
+        74  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0CABFB0&gt;
         74  Attributes.Id         :  56851944-a49b-49bc-af4f-44c779262974
         74  Attributes.Name       :  
         74  Attributes.LayerIndex :  4
@@ -653,22 +656,22 @@ object  74  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object
             curve pt  4  :  91.36944042680591,198.12663899455657,0.0
 
             curve SegmentCount : 4
-            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96dcb0&gt;
-            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96dcb0&gt;
-            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96dcb0&gt;
-            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96dcb0&gt;
+            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CABFB0&gt;
+            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CABFB0&gt;
+            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CABFB0&gt;
+            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CABFB0&gt;
 
 total num of pv:  2400
 
-oatPV  0  :  OatPV(idx=72, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f8b7bb0&gt;, str_num='', id='uytwcwfjvklp')
-oatPV  1  :  OatPV(idx=73, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f8b7cf0&gt;, str_num='', id='ixeziniumlke')
-oatPV  2  :  OatPV(idx=74, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f96dcb0&gt;, str_num='', id='dgyyxcyeuaik')</code></pre>
+oatPV  0  :  OatPV(idx=72, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153DFFB6030&gt;, str_num='', id='ivlpcyngpcmz')
+oatPV  1  :  OatPV(idx=73, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153E0C2EA70&gt;, str_num='', id='mqdsfutysyxi')
+oatPV  2  :  OatPV(idx=74, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153E0CABFB0&gt;, str_num='', id='ceslvbqaekqu')</code></pre>
 </div>
 </div>
 </section>
 <section id="read-cable" class="level2">
 <h2 class="anchored" data-anchor-id="read-cable">read <code>cable</code></h2>
-<div id="1ecd8187" class="cell" data-execution_count="8">
+<div id="39176ea8" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>layer_idx_of_cable <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>cnt_cable <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb14-3"><a href="#cb14-3"></a>max_num_obj <span class="op">=</span> <span class="dv">3</span></span>
@@ -719,9 +722,9 @@ oatPV  2  :  OatPV(idx=74, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object a
 <span id="cb14-48"><a href="#cb14-48"></a></span>
 <span id="cb14-49"><a href="#cb14-49"></a><span class="bu">print</span>(<span class="st">'total num of cable: '</span>, total_num_cable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>object  0  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x12f943970&gt;
-        0  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f90cdb0&gt;
-        0  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f90cdb0&gt;
+<pre data-code-line-numbers=""><code>object  0  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153E0CA84F0&gt;
+        0  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153E0C7C9B0&gt;
+        0  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0C7C9B0&gt;
         0  Attributes.Id         :  fa8bcce9-953e-47f0-bcfc-4de7a87e0c76
         0  Attributes.Name       :  
         0  Attributes.LayerIndex :  1
@@ -741,15 +744,15 @@ oatPV  2  :  OatPV(idx=74, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object a
             curve pt  5  :  8.684444947408636,248.6101584950016,0.0
 
             curve SegmentCount : 5
-            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f91b630&gt;
-            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f91b630&gt;
-            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f91b630&gt;
-            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f91b630&gt;
-            segement  4  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f91b630&gt;
+            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153BF027D70&gt;
+            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153BF027D70&gt;
+            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153BF027D70&gt;
+            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153BF027D70&gt;
+            segement  4  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153BF027D70&gt;
 
-object  1  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x12f91b630&gt;
-        1  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f943970&gt;
-        1  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f943970&gt;
+object  1  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153E0CAA430&gt;
+        1  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153E0CA84F0&gt;
+        1  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0CA84F0&gt;
         1  Attributes.Id         :  a11caa23-6a3a-4dac-95b5-1c6005646eae
         1  Attributes.Name       :  
         1  Attributes.LayerIndex :  1
@@ -769,15 +772,15 @@ object  1  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object 
             curve pt  5  :  1.3387704125292785,242.22821633384646,0.0
 
             curve SegmentCount : 5
-            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d1b0&gt;
-            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d1b0&gt;
-            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d1b0&gt;
-            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d1b0&gt;
-            segement  4  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d1b0&gt;
+            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CA84F0&gt;
+            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CA84F0&gt;
+            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CA84F0&gt;
+            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CA84F0&gt;
+            segement  4  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CA84F0&gt;
 
-object  2  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x12f96d1b0&gt;
-        2  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x12f91b630&gt;
-        2  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f91b630&gt;
+object  2  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153E0C09DF0&gt;
+        2  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000153E0CAA430&gt;
+        2  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0CAA430&gt;
         2  Attributes.Id         :  f2f27645-020b-4020-ab4f-369b6b5b3a71
         2  Attributes.Name       :  
         2  Attributes.LayerIndex :  1
@@ -798,12 +801,12 @@ object  2  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object 
             curve pt  6  :  3.4155472784859384,236.38933677866157,0.0
 
             curve SegmentCount : 6
-            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d770&gt;
-            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d770&gt;
-            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d770&gt;
-            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d770&gt;
-            segement  4  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d770&gt;
-            segement  5  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x12f96d770&gt;
+            segement  0  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CAA430&gt;
+            segement  1  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CAA430&gt;
+            segement  2  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CAA430&gt;
+            segement  3  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CAA430&gt;
+            segement  4  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CAA430&gt;
+            segement  5  :  &lt;rhino3dm._rhino3dm.LineCurve object at 0x00000153E0CAA430&gt;
 
 total num of cable:  72</code></pre>
 </div>
@@ -811,7 +814,7 @@ total num of cable:  72</code></pre>
 </section>
 <section id="read-text" class="level2">
 <h2 class="anchored" data-anchor-id="read-text">read <code>text</code></h2>
-<div id="5d72a318" class="cell" data-execution_count="9">
+<div id="217a516c" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>layer_idx_of_text <span class="op">=</span> <span class="dv">2</span></span>
 <span id="cb16-2"><a href="#cb16-2"></a>cnt_text <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb16-3"><a href="#cb16-3"></a>max_num_obj <span class="op">=</span> <span class="dv">3</span></span>
@@ -842,9 +845,9 @@ total num of cable:  72</code></pre>
 <span id="cb16-28"><a href="#cb16-28"></a></span>
 <span id="cb16-29"><a href="#cb16-29"></a><span class="bu">print</span>(<span class="st">'total num of text: '</span>, total_num_text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>object  4944  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x12f919130&gt;
-        4944  Geometry                :  &lt;rhino3dm._rhino3dm.AnnotationBase object at 0x107ce1cf0&gt;
-        4944  Attributes              :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x107ce1cf0&gt;
+<pre data-code-line-numbers=""><code>object  4944  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153E0C9FD70&gt;
+        4944  Geometry                :  &lt;rhino3dm._rhino3dm.Text object at 0x00000153E0C9EAB0&gt;
+        4944  Attributes              :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0C9EAB0&gt;
         4944  Attributes.Id           :  c9b6923f-bb4c-4d0c-8407-9c230a7f9d5c
         4944  Attributes.Name         :  
         4944  Attributes.LayerIndex   :  2
@@ -853,9 +856,9 @@ total num of cable:  72</code></pre>
 
             Geometry.PlainText     :  6-6-1
 
-object  4945  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x107f7fef0&gt;
-        4945  Geometry                :  &lt;rhino3dm._rhino3dm.AnnotationBase object at 0x12f919130&gt;
-        4945  Attributes              :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f919130&gt;
+object  4945  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153E0CA6BF0&gt;
+        4945  Geometry                :  &lt;rhino3dm._rhino3dm.Text object at 0x00000153E0C9FD70&gt;
+        4945  Attributes              :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0C9FD70&gt;
         4945  Attributes.Id           :  cef51aca-20e2-495b-97e2-6e0e1c5b8494
         4945  Attributes.Name         :  
         4945  Attributes.LayerIndex   :  2
@@ -864,9 +867,9 @@ object  4945  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject ob
 
             Geometry.PlainText     :  1-1-1
 
-object  4946  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x107f7d9f0&gt;
-        4946  Geometry                :  &lt;rhino3dm._rhino3dm.AnnotationBase object at 0x12f919130&gt;
-        4946  Attributes              :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f919130&gt;
+object  4946  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000153BF010E30&gt;
+        4946  Geometry                :  &lt;rhino3dm._rhino3dm.Text object at 0x00000153E0CA6BF0&gt;
+        4946  Attributes              :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153E0CA6BF0&gt;
         4946  Attributes.Id           :  09230350-7cef-453f-b45a-bf53ea14eb44
         4946  Attributes.Name         :  
         4946  Attributes.LayerIndex   :  2
@@ -881,7 +884,7 @@ total num of text:  72</code></pre>
 </section>
 <section id="create-dataclass-mypt" class="level2">
 <h2 class="anchored" data-anchor-id="create-dataclass-mypt">create dataclass <code>MyPt</code></h2>
-<div id="4fc94f31" class="cell" data-execution_count="10">
+<div id="02e8f946" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="at">@dataclass</span></span>
 <span id="cb18-2"><a href="#cb18-2"></a><span class="kw">class</span> OatPt:</span>
 <span id="cb18-3"><a href="#cb18-3"></a>    idx  : <span class="bu">int</span></span>
@@ -927,7 +930,7 @@ total num of text:  72</code></pre>
 <span id="cb19-34"><a href="#cb19-34"></a><span class="co">#         total_num_pt += 1</span></span>
 <span id="cb19-35"><a href="#cb19-35"></a><span class="co">#</span></span>
 <span id="cb19-36"><a href="#cb19-36"></a><span class="co"># print('total num of pt: ', total_num_pt)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="06d9c56d" class="cell" data-execution_count="11">
+<div id="d6bdc36f" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># for idx, oatPt in enumerate(oaPt_list_1):</span></span>
 <span id="cb20-2"><a href="#cb20-2"></a><span class="co">#     print('myPt', idx, ' : ', oatPt)</span></span>
 <span id="cb20-3"><a href="#cb20-3"></a><span class="co">#     print('    type of idx in myPt:', type(oatPt.idx))</span></span>
@@ -937,7 +940,7 @@ total num of text:  72</code></pre>
 </section>
 <section id="read-textdot" class="level2">
 <h2 class="anchored" data-anchor-id="read-textdot">read <code>TextDot</code></h2>
-<div id="a47cc9f9" class="cell" data-execution_count="12">
+<div id="45382b17" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>max_num_obj <span class="op">=</span> <span class="dv">3</span></span>
 <span id="cb21-2"><a href="#cb21-2"></a>cnt_textDot <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb21-3"><a href="#cb21-3"></a>total_num_textDot <span class="op">=</span> <span class="dv">0</span></span>
@@ -966,30 +969,30 @@ total num of text:  72</code></pre>
 <span id="cb21-26"><a href="#cb21-26"></a></span>
 <span id="cb21-27"><a href="#cb21-27"></a><span class="bu">print</span>(<span class="st">'total num of textDot: '</span>, total_num_textDot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>textDot object  4872  :  &lt;rhino3dm._rhino3dm.TextDot object at 0x10b3aafb0&gt;
+<pre data-code-line-numbers=""><code>textDot object  4872  :  &lt;rhino3dm._rhino3dm.TextDot object at 0x00000153BF01E9B0&gt;
         position            :  27.064173777436537,200.67848337106952,0.0
         text                :  6-6-1
-        Attributes object   :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f9647b0&gt;
+        Attributes object   :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153BF013630&gt;
         attribs.Id          :  ace09291-2363-4c79-a99d-2ae7be61531d
         attribs.Name        :  
         attribs.LayerIndex  :  3
         attribs.ObjectColor :  (0, 0, 0, 255)
         attribs.Visible     :  True
 
-textDot object  4873  :  &lt;rhino3dm._rhino3dm.TextDot object at 0x12f885870&gt;
+textDot object  4873  :  &lt;rhino3dm._rhino3dm.TextDot object at 0x00000153BEC30430&gt;
         position            :  35.21171531476992,205.36180830113673,0.0
         text                :  1-1-1
-        Attributes object   :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x10b3aafb0&gt;
+        Attributes object   :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153BF01E9B0&gt;
         attribs.Id          :  b7bc5562-82b9-4119-b8ef-aa9c68ce3dee
         attribs.Name        :  
         attribs.LayerIndex  :  3
         attribs.ObjectColor :  (0, 0, 0, 255)
         attribs.Visible     :  True
 
-textDot object  4874  :  &lt;rhino3dm._rhino3dm.TextDot object at 0x12f965570&gt;
+textDot object  4874  :  &lt;rhino3dm._rhino3dm.TextDot object at 0x00000153E0CAA570&gt;
         position            :  42.1912202855743,199.72217247117237,0.0
         text                :  1-1-2
-        Attributes object   :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x12f885870&gt;
+        Attributes object   :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000153BEC30430&gt;
         attribs.Id          :  65b8075f-ceac-48f6-9b96-6d021fe2ad2a
         attribs.Name        :  
         attribs.LayerIndex  :  3
@@ -1002,7 +1005,7 @@ total num of textDot:  72</code></pre>
 </section>
 <section id="read-earthanchorpoint" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="read-earthanchorpoint">read <code>EarthAnchorPoint</code></h2>
-<div id="5695433e" class="cell" data-execution_count="13">
+<div id="f8d183bc" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># get the `Settings` object as a property of File3dm object</span></span>
 <span id="cb23-2"><a href="#cb23-2"></a>file3dm_settings <span class="op">=</span> file3dm_obj.Settings </span>
 <span id="cb23-3"><a href="#cb23-3"></a><span class="bu">print</span>(<span class="st">'file3dm settings: '</span>, file3dm_settings)</span>
@@ -1040,8 +1043,8 @@ total num of textDot:  72</code></pre>
 <span id="cb23-35"><a href="#cb23-35"></a>test_pt_transformed_in_lon_lat_ele <span class="op">=</span> test_pt.Transform(modelToEarthTransform)</span>
 <span id="cb23-36"><a href="#cb23-36"></a><span class="bu">print</span>(<span class="st">'test pt transformed in lon, lat, ele: '</span>, test_pt_transformed_in_lon_lat_ele)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>file3dm settings:  &lt;rhino3dm._rhino3dm.File3dmSettings object at 0x12f8ddbb0&gt;
-EarthAnchorPoint:  &lt;rhino3dm._rhino3dm.EarthAnchorPoint object at 0x12f968670&gt;
+<pre data-code-line-numbers=""><code>file3dm settings:  &lt;rhino3dm._rhino3dm.File3dmSettings object at 0x00000153BF03A870&gt;
+EarthAnchorPoint:  &lt;rhino3dm._rhino3dm.EarthAnchorPoint object at 0x00000153BF039730&gt;
 
 earthAnchorPoint is set:  True
 earthAnchorPoint latitude :  22.716611
@@ -1049,7 +1052,7 @@ earthAnchorPoint longitude:  120.534701
 
 model base point:  1.887214762712837,254.12517650890035,0.0
 modelUnitSystem :  UnitSystem.Meters
-modelToEarthTransform :  &lt;rhino3dm._rhino3dm.Transform object at 0x12f96bab0&gt;
+modelToEarthTransform :  &lt;rhino3dm._rhino3dm.Transform object at 0x00000153BF06C170&gt;
 test pt transformed in lon, lat, ele:  120.53605149715442,22.716453831047513,0.0</code></pre>
 </div>
 </div>
