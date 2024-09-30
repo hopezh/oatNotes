@@ -4,6 +4,10 @@ filters:
     - line-highlight
 ---
 
+:::{.callout-note}
+Using `lambda` func with `map_elements()`, or `appl()`, is much slower than using native expressions. 
+:::
+
 
 # add dummy dataframe
 
@@ -25,6 +29,32 @@ df = pl.DataFrame(
 )
 
 df
+
 ```
 
+# use lambda func to edit a string column
+
+```{python}
+lambda_add_str = lambda str: str + "+"
+
+df = df.with_columns(
+    pl.col('string')
+        .map_elements(lambda_add_str, return_dtype=pl.String)
+        .alias('str_plus')
+)
+
+df
+
+```
+
+```{python}
+# alternativly...
+
+df = df.with_columns(
+    (pl.col('string') + "-").alias('str_minus')
+)
+
+df
+
+```
 
