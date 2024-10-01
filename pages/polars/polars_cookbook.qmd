@@ -15,7 +15,7 @@ print('polars ver:', pl.__version__)
 
 # read data
 
-## Create dummy df. 
+Create dummy df. 
 
 ```{python}
 df = pl.DataFrame({
@@ -26,7 +26,7 @@ df = pl.DataFrame({
 df.head()
 ```
 
-## Read `CSV` file.
+Read `CSV` file.
 
 ```{python}
 #| column: screen
@@ -34,7 +34,8 @@ df_csv = pl.read_csv('./data/titanic.csv')
 
 df_csv.head()
 ```
-## df info
+
+Get df info
 
 ```{python}
 df_csv.schema
@@ -58,7 +59,7 @@ print('df height:', df_csv.height)
 df_csv.flags
 ```
 
-## create df with schema
+Create df with schema
 
 ```{python}
 import numpy as np
