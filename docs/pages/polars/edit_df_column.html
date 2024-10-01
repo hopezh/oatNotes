@@ -372,7 +372,7 @@ Note
 </div>
 <section id="add-dummy-dataframe" class="level1">
 <h1>add dummy dataframe</h1>
-<div id="8aa36468" class="cell" data-execution_count="1">
+<div id="d6e73ee8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -390,7 +390,7 @@ Note
 <span id="cb1-15"><a href="#cb1-15"></a>)</span>
 <span id="cb1-16"><a href="#cb1-16"></a></span>
 <span id="cb1-17"><a href="#cb1-17"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="13">
+<div class="cell-output cell-output-display" data-execution_count="1">
 <div><style>
 .dataframe > thead > tr,
 .dataframe > tbody > tr {
@@ -441,7 +441,7 @@ Note
 </section>
 <section id="use-lambda-func-to-edit-a-string-column" class="level1">
 <h1>use lambda func to edit a string column</h1>
-<div id="4e2124af" class="cell" data-execution_count="2">
+<div id="c5aa08d3" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>lambda_add_str <span class="op">=</span> <span class="kw">lambda</span> <span class="bu">str</span>: <span class="bu">str</span> <span class="op">+</span> <span class="st">"+"</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> df.with_columns(</span>
@@ -452,7 +452,7 @@ Note
 <span id="cb2-8"><a href="#cb2-8"></a></span>
 <span id="cb2-9"><a href="#cb2-9"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>/var/folders/3y/h7wbnqln179cb54qswjq7g880000gn/T/ipykernel_11394/3168615590.py:5: PolarsInefficientMapWarning:
+<pre data-code-line-numbers=""><code>/var/folders/3y/h7wbnqln179cb54qswjq7g880000gn/T/ipykernel_23629/3168615590.py:5: PolarsInefficientMapWarning:
 
 
 Expr.map_elements is significantly slower than the native expressions API.
@@ -464,7 +464,7 @@ with this one instead:
 
 </code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="14">
+<div class="cell-output cell-output-display" data-execution_count="2">
 <div><style>
 .dataframe > thead > tr,
 .dataframe > tbody > tr {
@@ -517,7 +517,7 @@ with this one instead:
 </div>
 </div>
 </div>
-<div id="e831069c" class="cell" data-execution_count="3">
+<div id="ff78ccc5" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># alternativly...</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>df <span class="op">=</span> df.with_columns(</span>
@@ -525,7 +525,7 @@ with this one instead:
 <span id="cb4-5"><a href="#cb4-5"></a>)</span>
 <span id="cb4-6"><a href="#cb4-6"></a></span>
 <span id="cb4-7"><a href="#cb4-7"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="15">
+<div class="cell-output cell-output-display" data-execution_count="3">
 <div><style>
 .dataframe > thead > tr,
 .dataframe > tbody > tr {
