@@ -13,7 +13,9 @@ import polars as pl
 print('polars ver:', pl.__version__)
 ```
 
-# dummy data
+# read data
+
+## Create dummy df. 
 
 ```{python}
 df = pl.DataFrame({
@@ -24,5 +26,54 @@ df = pl.DataFrame({
 df.head()
 ```
 
+## Read `CSV` file.
 
+```{python}
+#| column: screen
+df_csv = pl.read_csv('./data/titanic.csv')
+
+df_csv.head()
+```
+## df info
+
+```{python}
+df_csv.schema
+```
+
+```{python}
+df_csv.columns
+```
+
+```{python}
+df_csv.dtypes
+```
+
+```{python}
+print('df shape:', df_csv.shape)
+print('df width:', df_csv.width)
+print('df height:', df_csv.height)
+```
+
+```{python}
+df_csv.flags
+```
+
+## create df with schema
+
+```{python}
+import numpy as np
+
+numpy_arr = np.array([[1,1,1], [2,2,2]])
+
+df = pl.from_numpy(
+    numpy_arr,
+    schema={
+        'ones': pl.Float32,
+        'twos': pl.Int8,
+    },
+    orient='col'
+)
+
+df.head()
+```
 
