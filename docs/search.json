@@ -570,5 +570,17 @@
     "title": "OatNotes",
     "section": "",
     "text": "This is oat’s notebook."
+  },
+  {
+    "objectID": "pages/polars/polars_cookbook.html",
+    "href": "pages/polars/polars_cookbook.html",
+    "title": "Polars Cookbook",
+    "section": "",
+    "text": "import polars\n\nimport polars as pl\n\nprint('polars ver:', pl.__version__)\n\npolars ver: 1.7.1\n\n\n\n\ndummy data\n\ndf = pl.DataFrame({\n    'nums': [1, 2, 3, 4, 5],\n    'letters': ['a', 'b', 'c', 'd', 'e']\n})\n\ndf.head()\n\n\nshape: (5, 2)\n\n\n\nnums\nletters\n\n\ni64\nstr\n\n\n\n\n1\n\"a\"\n\n\n2\n\"b\"\n\n\n3\n\"c\"\n\n\n4\n\"d\"\n\n\n5\n\"e\"",
+    "crumbs": [
+      "Home",
+      "Polars",
+      "Polars Cookbook"
+    ]
   }
 ]

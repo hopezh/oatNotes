@@ -32,6 +32,7 @@ website:
         contents:
           - ./pages/polars/merge_csvs.qmd
           - ./pages/polars/edit_df_column.qmd
+          - ./pages/polars/polars_cookbook.qmd
       - section: "Quarto"
         contents:
           - ./pages/quarto/quarto_tabset.qmd
