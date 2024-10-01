@@ -1,0 +1,28 @@
+---
+title: "Polars Cookbook"
+filters:
+    - line-highlight
+---
+
+
+# import polars
+
+```{python}
+import polars as pl
+
+print('polars ver:', pl.__version__)
+```
+
+# dummy data
+
+```{python}
+df = pl.DataFrame({
+    'nums': [1, 2, 3, 4, 5],
+    'letters': ['a', 'b', 'c', 'd', 'e']
+})
+
+df.head()
+```
+
+
+
