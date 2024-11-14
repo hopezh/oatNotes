@@ -1,0 +1,19 @@
+
+---
+title: "Polars Intro"
+filters:
+    - line-highlight
+---
+
+> Source: [polars: intro](https://calmcode.io/course/polars/introduction)
+
+
+```{python}
+import pandas as pd
+import polars as pl
+
+print('pandas:', pd.__version__)
+print('polars:', pl.__version__)
+```
+
+

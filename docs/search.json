@@ -630,5 +630,17 @@
       "Polars",
       "Polars Cookbook"
     ]
+  },
+  {
+    "objectID": "pages/polars/polars_intro.html",
+    "href": "pages/polars/polars_intro.html",
+    "title": "Polars Intro",
+    "section": "",
+    "text": "Source: polars: intro\n\n\nimport pandas as pd\nimport polars as pl\n\nprint('pandas:', pd.__version__)\nprint('polars:', pl.__version__)\n\npandas: 2.2.0\npolars: 1.8.2\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "Polars",
+      "Polars Intro"
+    ]
   }
 ]
