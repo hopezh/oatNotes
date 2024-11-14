@@ -44,6 +44,9 @@ website:
           - ./pages/rhino3dm/test_rhino3dm.qmd
           - ./pages/rhino3dm/rhino3dm_01.qmd
           - ./pages/rhino3dm/rhino3dm_02.qmd
+      - section: "shiny"
+        contents: 
+          - ./pages/shiny/test.qmd
 
   back-to-top-navigation: true      
   reader-mode: true

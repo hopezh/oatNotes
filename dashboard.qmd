@@ -39,10 +39,9 @@ px.line(df, x="year", y="lifeExp", color="continent", line_group="country")
 
 # Data
 
-![](gapminder.png) Learn more about the Gapminder dataset at <https://www.gapminder.org/data/documentation/>
+![](./resource/gapminder.png) Learn more about the Gapminder dataset at <https://www.gapminder.org/data/documentation/>
 
 ```{python}
 from itables import show
 show(df, showIndex = False)
 ```
-
