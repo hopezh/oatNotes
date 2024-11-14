@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OatNotes - Polars Cookbook</title>
+<title>OatNotes - LazyVim Tips</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,7 +57,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -103,9 +103,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
-
-<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -157,7 +154,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/polars/merge_csvs.html">Polars</a></li><li class="breadcrumb-item"><a href="../../pages/polars/polars_cookbook.html">Polars Cookbook</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/lazyvim/lazyvim_tips.html">LazyVim</a></li><li class="breadcrumb-item"><a href="../../pages/lazyvim/lazyvim_tips.html">LazyVim Tips</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -192,7 +189,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">LazyVim Tips</span></a>
   </div>
 </li>
@@ -261,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/polars/polars_cookbook.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/polars/polars_cookbook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polars Cookbook</span></a>
   </div>
 </li>
@@ -331,23 +328,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
- <span class="menu-text">shiny</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../pages/shiny/test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">test dashboard</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -358,17 +338,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#import-polars" id="toc-import-polars" class="nav-link active" data-scroll-target="#import-polars">import polars</a></li>
-  <li><a href="#read-data" id="toc-read-data" class="nav-link" data-scroll-target="#read-data">read data</a></li>
+  <li><a href="#flash.nvim-do-regular-search-using-or-with-jump-lables" id="toc-flash.nvim-do-regular-search-using-or-with-jump-lables" class="nav-link active" data-scroll-target="#flash.nvim-do-regular-search-using-or-with-jump-lables">[flash.nvim] do regular search using <code>/</code> or <code>?</code> with jump lables</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="polars_cookbook.ipynb" download="polars_cookbook.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lazyvim_tips.ipynb" download="lazyvim_tips.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/polars/merge_csvs.html">Polars</a></li><li class="breadcrumb-item"><a href="../../pages/polars/polars_cookbook.html">Polars Cookbook</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/lazyvim/lazyvim_tips.html">LazyVim</a></li><li class="breadcrumb-item"><a href="../../pages/lazyvim/lazyvim_tips.html">LazyVim Tips</a></li></ol></nav>
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Polars Cookbook</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">LazyVim Tips</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -385,282 +364,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="import-polars" class="level1">
-<h1>import polars</h1>
-<div id="64b6397f" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="bu">print</span>(<span class="st">'polars ver:'</span>, pl.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>polars ver: 1.8.2</code></pre>
+<section id="flash.nvim-do-regular-search-using-or-with-jump-lables" class="level2">
+<h2 class="anchored" data-anchor-id="flash.nvim-do-regular-search-using-or-with-jump-lables">[flash.nvim] do regular search using <code>/</code> or <code>?</code> with jump lables</h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>/lua/plugins/flash.lua</strong></pre>
 </div>
+<div class="sourceCode" id="cb1" data-filename="/lua/plugins/flash.lua" data-source-line-numbers="8-16" data-code-line-numbers="8-16"><pre class="sourceCode numberSource lua number-lines code-with-copy"><code class="sourceCode lua"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">return</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>    <span class="st">"folke/flash.nvim"</span><span class="op">,</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="va">event</span> <span class="op">=</span> <span class="st">"VeryLazy"</span><span class="op">,</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="co">---</span><span class="an">@type</span><span class="co"> Flash.Config</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>    <span class="va">opts</span> <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>        <span class="va">modes</span> <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>            <span class="co">-- options used when flash is activated through</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>            <span class="co">-- a regular search with `/` or `?`</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>            <span class="va">search</span> <span class="op">=</span> <span class="op">{</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>                <span class="co">-- when `true`, flash will be activated during regular search by default.</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>                <span class="co">-- You can always toggle when searching with `require("flash").toggle()`</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>                <span class="va">enabled</span> <span class="op">=</span> <span class="kw">true</span><span class="op">,</span> </span>
+<span id="cb1-15"><a href="#cb1-15"></a>            <span class="op">},</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>        <span class="op">},</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>    <span class="op">},</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a>    <span class="co">-- other settings...</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="read-data" class="level1 page-columns page-full">
-<h1>read data</h1>
-<p>Create dummy df.</p>
-<div id="7d77446a" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>df <span class="op">=</span> pl.DataFrame({</span>
-<span id="cb3-2"><a href="#cb3-2"></a>    <span class="st">'nums'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="st">'letters'</span>: [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>]</span>
-<span id="cb3-4"><a href="#cb3-4"></a>})</span>
-<span id="cb3-5"><a href="#cb3-5"></a></span>
-<span id="cb3-6"><a href="#cb3-6"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
-<div>
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
-<small>shape: (5, 2)</small>
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">nums</th>
-<th data-quarto-table-cell-role="th">letters</th>
-</tr>
-<tr class="odd">
-<th>i64</th>
-<th>str</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>"a"</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>"b"</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>"c"</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>"d"</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>"e"</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<p>Read <code>CSV</code> file.</p>
-<div id="a3c82598" class="cell page-columns page-full" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>df_csv <span class="op">=</span> pl.read_csv(<span class="st">'./data/titanic.csv'</span>)</span>
-<span id="cb4-2"><a href="#cb4-2"></a></span>
-<span id="cb4-3"><a href="#cb4-3"></a>df_csv.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display column-screen" data-execution_count="3">
-<div>
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
-<small>shape: (5, 8)</small>
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Survived</th>
-<th data-quarto-table-cell-role="th">Pclass</th>
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Sex</th>
-<th data-quarto-table-cell-role="th">Age</th>
-<th data-quarto-table-cell-role="th">Siblings/Spouses Aboard</th>
-<th data-quarto-table-cell-role="th">Parents/Children Aboard</th>
-<th data-quarto-table-cell-role="th">Fare</th>
-</tr>
-<tr class="odd">
-<th>i64</th>
-<th>i64</th>
-<th>str</th>
-<th>str</th>
-<th>f64</th>
-<th>i64</th>
-<th>i64</th>
-<th>f64</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>0</td>
-<td>3</td>
-<td>"Mr. Owen Harris Braund"</td>
-<td>"male"</td>
-<td>22.0</td>
-<td>1</td>
-<td>0</td>
-<td>7.25</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td>"Mrs. John Bradley (Florence Br…</td>
-<td>"female"</td>
-<td>38.0</td>
-<td>1</td>
-<td>0</td>
-<td>71.2833</td>
-</tr>
-<tr class="odd">
-<td>1</td>
-<td>3</td>
-<td>"Miss. Laina Heikkinen"</td>
-<td>"female"</td>
-<td>26.0</td>
-<td>0</td>
-<td>0</td>
-<td>7.925</td>
-</tr>
-<tr class="even">
-<td>1</td>
-<td>1</td>
-<td>"Mrs. Jacques Heath (Lily May P…</td>
-<td>"female"</td>
-<td>35.0</td>
-<td>1</td>
-<td>0</td>
-<td>53.1</td>
-</tr>
-<tr class="odd">
-<td>0</td>
-<td>3</td>
-<td>"Mr. William Henry Allen"</td>
-<td>"male"</td>
-<td>35.0</td>
-<td>0</td>
-<td>0</td>
-<td>8.05</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-<p>Get df info</p>
-<div id="fbca1283" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df_csv.schema</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
-<pre data-code-line-numbers=""><code>Schema([('Survived', Int64),
-        ('Pclass', Int64),
-        ('Name', String),
-        ('Sex', String),
-        ('Age', Float64),
-        ('Siblings/Spouses Aboard', Int64),
-        ('Parents/Children Aboard', Int64),
-        ('Fare', Float64)])</code></pre>
-</div>
-</div>
-<div id="f16d0379" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>df_csv.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
-<pre data-code-line-numbers=""><code>['Survived',
- 'Pclass',
- 'Name',
- 'Sex',
- 'Age',
- 'Siblings/Spouses Aboard',
- 'Parents/Children Aboard',
- 'Fare']</code></pre>
-</div>
-</div>
-<div id="6b259a52" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>df_csv.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
-<pre data-code-line-numbers=""><code>[Int64, Int64, String, String, Float64, Int64, Int64, Float64]</code></pre>
-</div>
-</div>
-<div id="1744ab77" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">print</span>(<span class="st">'df shape:'</span>, df_csv.shape)</span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(<span class="st">'df width:'</span>, df_csv.width)</span>
-<span id="cb11-3"><a href="#cb11-3"></a><span class="bu">print</span>(<span class="st">'df height:'</span>, df_csv.height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>df shape: (887, 8)
-df width: 8
-df height: 887</code></pre>
-</div>
-</div>
-<div id="39a8b081" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>df_csv.flags</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
-<pre data-code-line-numbers=""><code>{'Survived': {'SORTED_ASC': False, 'SORTED_DESC': False},
- 'Pclass': {'SORTED_ASC': False, 'SORTED_DESC': False},
- 'Name': {'SORTED_ASC': False, 'SORTED_DESC': False},
- 'Sex': {'SORTED_ASC': False, 'SORTED_DESC': False},
- 'Age': {'SORTED_ASC': False, 'SORTED_DESC': False},
- 'Siblings/Spouses Aboard': {'SORTED_ASC': False, 'SORTED_DESC': False},
- 'Parents/Children Aboard': {'SORTED_ASC': False, 'SORTED_DESC': False},
- 'Fare': {'SORTED_ASC': False, 'SORTED_DESC': False}}</code></pre>
-</div>
-</div>
-<p>Create df with schema</p>
-<div id="71904c64" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb15-2"><a href="#cb15-2"></a></span>
-<span id="cb15-3"><a href="#cb15-3"></a>numpy_arr <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], [<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>]])</span>
-<span id="cb15-4"><a href="#cb15-4"></a></span>
-<span id="cb15-5"><a href="#cb15-5"></a>df <span class="op">=</span> pl.from_numpy(</span>
-<span id="cb15-6"><a href="#cb15-6"></a>    numpy_arr,</span>
-<span id="cb15-7"><a href="#cb15-7"></a>    schema<span class="op">=</span>{</span>
-<span id="cb15-8"><a href="#cb15-8"></a>        <span class="st">'ones'</span>: pl.Float32,</span>
-<span id="cb15-9"><a href="#cb15-9"></a>        <span class="st">'twos'</span>: pl.Int8,</span>
-<span id="cb15-10"><a href="#cb15-10"></a>    },</span>
-<span id="cb15-11"><a href="#cb15-11"></a>    orient<span class="op">=</span><span class="st">'col'</span></span>
-<span id="cb15-12"><a href="#cb15-12"></a>)</span>
-<span id="cb15-13"><a href="#cb15-13"></a></span>
-<span id="cb15-14"><a href="#cb15-14"></a>df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
-<div>
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
-<small>shape: (3, 2)</small>
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">ones</th>
-<th data-quarto-table-cell-role="th">twos</th>
-</tr>
-<tr class="odd">
-<th>f32</th>
-<th>i8</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1.0</td>
-<td>2</td>
-</tr>
-<tr class="even">
-<td>1.0</td>
-<td>2</td>
-</tr>
-<tr class="odd">
-<td>1.0</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
+<blockquote class="blockquote">
+<p>Ref: <a href="https://github.com/folke/flash.nvim#-usage">flash.nvim usage</a></p>
+</blockquote>
 
 
 <!-- -->
@@ -1289,86 +1022,41 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb16" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1"></a><span class="co">---</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="an">title:</span><span class="co"> "Polars Cookbook"</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a><span class="an">filters:</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a><span class="co">    - line-highlight</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a><span class="co">---</span></span>
-<span id="cb16-6"><a href="#cb16-6"></a></span>
-<span id="cb16-7"><a href="#cb16-7"></a></span>
-<span id="cb16-8"><a href="#cb16-8"></a><span class="fu"># import polars</span></span>
-<span id="cb16-9"><a href="#cb16-9"></a></span>
-<span id="cb16-12"><a href="#cb16-12"></a><span class="in">```{python}</span></span>
-<span id="cb16-13"><a href="#cb16-13"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb16-14"><a href="#cb16-14"></a></span>
-<span id="cb16-15"><a href="#cb16-15"></a><span class="bu">print</span>(<span class="st">'polars ver:'</span>, pl.__version__)</span>
-<span id="cb16-16"><a href="#cb16-16"></a><span class="in">```</span></span>
-<span id="cb16-17"><a href="#cb16-17"></a></span>
-<span id="cb16-18"><a href="#cb16-18"></a><span class="fu"># read data</span></span>
-<span id="cb16-19"><a href="#cb16-19"></a></span>
-<span id="cb16-20"><a href="#cb16-20"></a>Create dummy df. </span>
-<span id="cb16-21"><a href="#cb16-21"></a></span>
-<span id="cb16-24"><a href="#cb16-24"></a><span class="in">```{python}</span></span>
-<span id="cb16-25"><a href="#cb16-25"></a>df <span class="op">=</span> pl.DataFrame({</span>
-<span id="cb16-26"><a href="#cb16-26"></a>    <span class="st">'nums'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
-<span id="cb16-27"><a href="#cb16-27"></a>    <span class="st">'letters'</span>: [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>]</span>
-<span id="cb16-28"><a href="#cb16-28"></a>})</span>
-<span id="cb16-29"><a href="#cb16-29"></a></span>
-<span id="cb16-30"><a href="#cb16-30"></a>df.head()</span>
-<span id="cb16-31"><a href="#cb16-31"></a><span class="in">```</span></span>
-<span id="cb16-32"><a href="#cb16-32"></a></span>
-<span id="cb16-33"><a href="#cb16-33"></a>Read <span class="in">`CSV`</span> file.</span>
-<span id="cb16-34"><a href="#cb16-34"></a></span>
-<span id="cb16-37"><a href="#cb16-37"></a><span class="in">```{python}</span></span>
-<span id="cb16-38"><a href="#cb16-38"></a><span class="co">#| column: screen</span></span>
-<span id="cb16-39"><a href="#cb16-39"></a>df_csv <span class="op">=</span> pl.read_csv(<span class="st">'./data/titanic.csv'</span>)</span>
-<span id="cb16-40"><a href="#cb16-40"></a></span>
-<span id="cb16-41"><a href="#cb16-41"></a>df_csv.head()</span>
-<span id="cb16-42"><a href="#cb16-42"></a><span class="in">```</span></span>
-<span id="cb16-43"><a href="#cb16-43"></a></span>
-<span id="cb16-44"><a href="#cb16-44"></a>Get df info</span>
-<span id="cb16-45"><a href="#cb16-45"></a></span>
-<span id="cb16-48"><a href="#cb16-48"></a><span class="in">```{python}</span></span>
-<span id="cb16-49"><a href="#cb16-49"></a>df_csv.schema</span>
-<span id="cb16-50"><a href="#cb16-50"></a><span class="in">```</span></span>
-<span id="cb16-51"><a href="#cb16-51"></a></span>
-<span id="cb16-54"><a href="#cb16-54"></a><span class="in">```{python}</span></span>
-<span id="cb16-55"><a href="#cb16-55"></a>df_csv.columns</span>
-<span id="cb16-56"><a href="#cb16-56"></a><span class="in">```</span></span>
-<span id="cb16-57"><a href="#cb16-57"></a></span>
-<span id="cb16-60"><a href="#cb16-60"></a><span class="in">```{python}</span></span>
-<span id="cb16-61"><a href="#cb16-61"></a>df_csv.dtypes</span>
-<span id="cb16-62"><a href="#cb16-62"></a><span class="in">```</span></span>
-<span id="cb16-63"><a href="#cb16-63"></a></span>
-<span id="cb16-66"><a href="#cb16-66"></a><span class="in">```{python}</span></span>
-<span id="cb16-67"><a href="#cb16-67"></a><span class="bu">print</span>(<span class="st">'df shape:'</span>, df_csv.shape)</span>
-<span id="cb16-68"><a href="#cb16-68"></a><span class="bu">print</span>(<span class="st">'df width:'</span>, df_csv.width)</span>
-<span id="cb16-69"><a href="#cb16-69"></a><span class="bu">print</span>(<span class="st">'df height:'</span>, df_csv.height)</span>
-<span id="cb16-70"><a href="#cb16-70"></a><span class="in">```</span></span>
-<span id="cb16-71"><a href="#cb16-71"></a></span>
-<span id="cb16-74"><a href="#cb16-74"></a><span class="in">```{python}</span></span>
-<span id="cb16-75"><a href="#cb16-75"></a>df_csv.flags</span>
-<span id="cb16-76"><a href="#cb16-76"></a><span class="in">```</span></span>
-<span id="cb16-77"><a href="#cb16-77"></a></span>
-<span id="cb16-78"><a href="#cb16-78"></a>Create df with schema</span>
-<span id="cb16-79"><a href="#cb16-79"></a></span>
-<span id="cb16-82"><a href="#cb16-82"></a><span class="in">```{python}</span></span>
-<span id="cb16-83"><a href="#cb16-83"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb16-84"><a href="#cb16-84"></a></span>
-<span id="cb16-85"><a href="#cb16-85"></a>numpy_arr <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], [<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>]])</span>
-<span id="cb16-86"><a href="#cb16-86"></a></span>
-<span id="cb16-87"><a href="#cb16-87"></a>df <span class="op">=</span> pl.from_numpy(</span>
-<span id="cb16-88"><a href="#cb16-88"></a>    numpy_arr,</span>
-<span id="cb16-89"><a href="#cb16-89"></a>    schema<span class="op">=</span>{</span>
-<span id="cb16-90"><a href="#cb16-90"></a>        <span class="st">'ones'</span>: pl.Float32,</span>
-<span id="cb16-91"><a href="#cb16-91"></a>        <span class="st">'twos'</span>: pl.Int8,</span>
-<span id="cb16-92"><a href="#cb16-92"></a>    },</span>
-<span id="cb16-93"><a href="#cb16-93"></a>    orient<span class="op">=</span><span class="st">'col'</span></span>
-<span id="cb16-94"><a href="#cb16-94"></a>)</span>
-<span id="cb16-95"><a href="#cb16-95"></a></span>
-<span id="cb16-96"><a href="#cb16-96"></a>df.head()</span>
-<span id="cb16-97"><a href="#cb16-97"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "LazyVim Tips"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="an">filters:</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">    - quarto</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">    - line-highlight</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="co">---</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="fu">## [flash.nvim] do regular search using `/` or `?` with jump lables </span></span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="in">```{.lua filename="/lua/plugins/flash.lua" source-line-numbers="8-16"}</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="in">return {</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="in">    "folke/flash.nvim",</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="in">    event = "VeryLazy",</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a></span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="in">    ---@type Flash.Config</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="in">    opts = {</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="in">        modes = {</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="in">            -- options used when flash is activated through</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a><span class="in">            -- a regular search with `/` or `?`</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="in">            search = {</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="in">                -- when `true`, flash will be activated during regular search by default.</span></span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="in">                -- You can always toggle when searching with `require("flash").toggle()`</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="in">                enabled = true, </span></span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="in">            },</span></span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="in">        },</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a><span class="in">    },</span></span>
+<span id="cb2-29"><a href="#cb2-29"></a></span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="in">    -- other settings...</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a><span class="in">}</span></span>
+<span id="cb2-32"><a href="#cb2-32"></a><span class="in">```</span></span>
+<span id="cb2-33"><a href="#cb2-33"></a><span class="at">&gt; Ref: </span><span class="co">[</span><span class="ot">flash.nvim usage</span><span class="co">](https://github.com/folke/flash.nvim#-usage)</span></span>
+<span id="cb2-34"><a href="#cb2-34"></a></span>
+<span id="cb2-35"><a href="#cb2-35"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

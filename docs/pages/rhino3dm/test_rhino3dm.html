@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>OatNotes - test rhino3dm</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">OatNotes</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../dashboard.html"> 
+<span class="menu-text">Worldwide Development</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/rhino3dm/test_rhino3dm.html">rhino3dm</a></li><li class="breadcrumb-item"><a href="../../pages/rhino3dm/test_rhino3dm.html">test rhino3dm</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Deep Learning</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">LazyVim</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">LazyVim Tips</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Observable.js</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test Observable.js</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text">Plotly</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">show data strucure of a plotly figure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Transparent bgcolor for figure</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+ <span class="menu-text">Polars</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Merge CSVs</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/polars/edit_df_column.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Edit DF Column</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/polars/polars_cookbook.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polars Cookbook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/polars/polars_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polars Intro</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+ <span class="menu-text">Quarto</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">quarto tabset</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">expand the width of a code block and its output</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">side by side codeblocks and outputs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
+ <span class="menu-text">rhino3dm</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">test rhino3dm</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">rhino3dm exercise 01</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/rhino3dm/rhino3dm_02.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">rhino3dm exercise 02</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#docs" id="toc-docs" class="nav-link active" data-scroll-target="#docs">Docs</a></li>
+  <li><a href="#install-rhino3dm" id="toc-install-rhino3dm" class="nav-link" data-scroll-target="#install-rhino3dm">Install rhino3dm:</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example 4</a></li>
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example 5</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="test_rhino3dm.ipynb" download="test_rhino3dm.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/rhino3dm/test_rhino3dm.html">rhino3dm</a></li><li class="breadcrumb-item"><a href="../../pages/rhino3dm/test_rhino3dm.html">test rhino3dm</a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">test rhino3dm</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="docs" class="level1">
+<h1>Docs</h1>
+<ul>
+<li><p><a href="https://github.com/mcneel/rhino3dm">rhino3dm github</a></p></li>
+<li><p><a href="https://mcneel.github.io/rhino3dm/python/api/index.html">rhino3dm doc</a></p></li>
+<li><p><a href="https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm">developer examples</a></p>
+<ul>
+<li><p><a href="https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/py">rhino3dm.py</a></p></li>
+<li><p><a href="https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/js">rhino3dm.js</a></p></li>
+</ul></li>
+</ul>
+</section>
+<section id="install-rhino3dm" class="level1">
+<h1>Install rhino3dm:</h1>
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource shell number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href="#cb1-1"></a>&gt; pip install rhino3dm</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>&gt; pip show rhino3dm</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>Name: rhino3dm</span>
+<span id="cb1-6"><a href="#cb1-6"></a>Version: 8.6.0</span>
+<span id="cb1-7"><a href="#cb1-7"></a>Summary: Python library based on OpenNURBS with a RhinoCommon</span>
+<span id="cb1-8"><a href="#cb1-8"></a> style</span>
+<span id="cb1-9"><a href="#cb1-9"></a>Home-page: </span>
+<span id="cb1-10"><a href="#cb1-10"></a>Author: Robert McNeel &amp; Associates</span>
+<span id="cb1-11"><a href="#cb1-11"></a>Author-email: steve@mcneel.com</span>
+<span id="cb1-12"><a href="#cb1-12"></a>License: </span>
+<span id="cb1-13"><a href="#cb1-13"></a>Location: C:\Users\USERNAME\.conda\envs\ai\Lib\site-packages</span>
+<span id="cb1-14"><a href="#cb1-14"></a>Requires: </span>
+<span id="cb1-15"><a href="#cb1-15"></a>Required-by: compute-rhino3d</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-1" class="level1 page-columns page-full">
+<h1>Example 1</h1>
+<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">import</span> requests  <span class="co"># pip install requests</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a></span>
+<span id="cb2-4"><a href="#cb2-4"></a>req <span class="op">=</span> requests.get(<span class="st">"https://files.mcneel.com/TEST/Rhino Logo.3dm"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a></span>
+<span id="cb2-6"><a href="#cb2-6"></a>model <span class="op">=</span> File3dm.FromByteArray(req.content)</span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(model.Objects)):</span>
+<span id="cb2-9"><a href="#cb2-9"></a>    obj <span class="op">=</span> model.Objects[i]</span>
+<span id="cb2-10"><a href="#cb2-10"></a>    geometry <span class="op">=</span> obj.Geometry</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    bbox <span class="op">=</span> geometry.GetBoundingBox()</span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
+<span id="cb2-14"><a href="#cb2-14"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="callout callout-style-default callout-tip callout-titled" title="File3dm.FromByteArray -> File3dm">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+File3dm.FromByteArray -&gt; File3dm
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.FromByteArray">File3dm.FromByteArray</a></p>
+<p>Read a 3dm file from a byte array</p>
+<ul>
+<li><p>Returns: New File3dm on success, None on error.</p></li>
+<li><p>Return type: File3dm</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="">
+<div class="callout callout-style-default callout-tip callout-titled" title="File3dm.Objects --> File3dmObjectTable">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+File3dm.Objects –&gt; File3dmObjectTable
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects">File3dm.Objects</a></p>
+<p>File3dmObjectTable: Gets access to the class associated with this file, which contains all objects.</p>
+</div>
+</div>
+</div>
+</div><div class="">
+<div class="callout callout-style-default callout-tip callout-titled" title="File3dmObject.Geometry -> rhino3dm.GeometryBase">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+File3dmObject.Geometry -&gt; rhino3dm.GeometryBase
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#rhino3dm.File3dmObject.Geometry">File3dmObject.Geometry</a></p>
+<p>rhino3dm.GeometryBase: Gets the geometry that is linked with this document object.</p>
+</div>
+</div>
+</div>
+</div><div class="">
+<div class="callout callout-style-default callout-tip callout-titled" title="GeometryBase.GetBoundingBox -> rhino3dm.BoundingBox">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+GeometryBase.GetBoundingBox -&gt; rhino3dm.BoundingBox
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#rhino3dm.GeometryBase.GetBoundingBox">GeometryBase.GetBoundingBox</a></p>
+<p>Bounding box solver. Gets the world axis aligned bounding box for the geometry.</p>
+<p>Parameters:</p>
+<ul>
+<li>accurate (bool) – If true, a physically accurate bounding box will be computed. If not, a bounding box estimate will be computed. For some geometry types there is no difference between the estimate and the accurate bounding box. Estimated bounding boxes can be computed much (much) faster than accurate (or “tight”) bounding boxes. Estimated bounding boxes are always similar to or larger than accurate bounding boxes.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>The bounding box of the geometry in world coordinates or BoundingBox.Empty if not bounding box could be found.</li>
+</ul>
+<p>Return type:</p>
+<ul>
+<li>rhino3dm.BoundingBox</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="">
+<div class="callout callout-style-default callout-tip callout-titled" title="rhino3dm.BoundingBox">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+rhino3dm.BoundingBox
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://mcneel.github.io/rhino3dm/python/api/BoundingBox.html#rhino3dm.BoundingBox">class rhino3dm.BoundingBox</a></p>
+<blockquote class="blockquote">
+<p><code>BoundingBox(minX, minY, minZ, maxX, maxY, maxZ)</code></p>
+<p>Constructs a bounding box from numeric extremes.</p>
+<p>Parameters:</p>
+<ul>
+<li>minX (float) – Lower extreme for box X size.</li>
+<li>minY (float) – Lower extreme for box Y size.</li>
+<li>minZ (float) – Lower extreme for box Z size.</li>
+<li>maxX (float) – Upper extreme for box X size.</li>
+<li>maxY (float) – Upper extreme for box Y size.</li>
+<li>maxZ (float) – Upper extreme for box Z size.</li>
+</ul>
+</blockquote>
+</div>
+</div>
+</div>
+</div></div>
+
+
+
+</section>
+<section id="example-2" class="level1">
+<h1>Example 2</h1>
+<div class="sourceCode" id="cb3" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>center <span class="op">=</span> Point3d(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb3-4"><a href="#cb3-4"></a>arc <span class="op">=</span> Arc(center, <span class="dv">10</span>, <span class="dv">1</span>)</span>
+<span id="cb3-5"><a href="#cb3-5"></a>nc <span class="op">=</span> arc.ToNurbsCurve()</span>
+<span id="cb3-6"><a href="#cb3-6"></a>start <span class="op">=</span> nc.PointAtStart</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="bu">print</span>(<span class="st">'start point'</span>, <span class="bu">type</span>(start))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-3" class="level1">
+<h1>Example 3</h1>
+<div id="6e6360b9" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> rhino3dm</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> random</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>model <span class="op">=</span> rhino3dm.File3dm()</span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
+<span id="cb4-7"><a href="#cb4-7"></a>    pt <span class="op">=</span> rhino3dm.Point3d(random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>), random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>), <span class="dv">0</span>)</span>
+<span id="cb4-8"><a href="#cb4-8"></a>    model.Objects.AddPoint(pt)</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    circle <span class="op">=</span> rhino3dm.Circle(pt, random.uniform(<span class="dv">1</span>,<span class="dv">4</span>))</span>
+<span id="cb4-10"><a href="#cb4-10"></a>    model.Objects.AddCircle(circle)</span>
+<span id="cb4-11"><a href="#cb4-11"></a>    </span>
+<span id="cb4-12"><a href="#cb4-12"></a>model.Write(<span class="st">"./circle.3dm"</span>, <span class="dv">70</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre data-code-line-numbers=""><code>True</code></pre>
+</div>
+</div>
+</section>
+<section id="example-4" class="level1">
+<h1>Example 4</h1>
+<div class="sourceCode" id="cb6" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="co"># Sample read render meshes from 3dm file</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="im">import</span> rhino3dm</span>
+<span id="cb6-4"><a href="#cb6-4"></a></span>
+<span id="cb6-5"><a href="#cb6-5"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./data/myBox.3dm'</span>)</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="bu">print</span>(model)</span>
+<span id="cb6-7"><a href="#cb6-7"></a></span>
+<span id="cb6-8"><a href="#cb6-8"></a>brep <span class="op">=</span> model.Objects[<span class="dv">0</span>].Geometry</span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="bu">print</span>(brep)</span>
+<span id="cb6-10"><a href="#cb6-10"></a></span>
+<span id="cb6-11"><a href="#cb6-11"></a>face <span class="op">=</span> brep.Faces[<span class="dv">0</span>]</span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="bu">print</span>(face)</span>
+<span id="cb6-13"><a href="#cb6-13"></a></span>
+<span id="cb6-14"><a href="#cb6-14"></a>mesh <span class="op">=</span> face.GetMesh(rhino3dm.MeshType.Any)</span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="bu">print</span>(mesh)</span>
+<span id="cb6-16"><a href="#cb6-16"></a><span class="co"># print (len(mesh.Faces))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="example-5" class="level1">
+<h1>Example 5</h1>
+<div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># spherelines.py</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="co"># Sample script that demonstrates how to use Rhino3dm.py</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="co"># https://github.com/mcneel/rhino3dm</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="co"># This sample creates a 3dm file containing a group of randomly</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="co"># distributed lines defining an sphere.</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="im">import</span> rhino3dm</span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="im">import</span> random</span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="im">import</span> math</span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="im">import</span> os</span>
+<span id="cb7-11"><a href="#cb7-11"></a></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="co"># Initial parameters</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>theta_min <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>theta_max <span class="op">=</span> math.pi</span>
+<span id="cb7-15"><a href="#cb7-15"></a>alpha_min <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>alpha_max <span class="op">=</span> math.pi <span class="op">*</span> <span class="fl">2.0</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>sphere_radius <span class="op">=</span> <span class="fl">100.0</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>num_lines <span class="op">=</span> <span class="dv">1500</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="co"># Create a center point</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a>center_pt <span class="op">=</span> rhino3dm.Point3d(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb7-22"><a href="#cb7-22"></a></span>
+<span id="cb7-23"><a href="#cb7-23"></a><span class="co"># Create a File3dm object</span></span>
+<span id="cb7-24"><a href="#cb7-24"></a>model <span class="op">=</span> rhino3dm.File3dm()</span>
+<span id="cb7-25"><a href="#cb7-25"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_lines):</span>
+<span id="cb7-27"><a href="#cb7-27"></a>    <span class="co"># Calculate random line end point</span></span>
+<span id="cb7-28"><a href="#cb7-28"></a>    random.seed(i <span class="op">*</span> <span class="dv">100</span>)</span>
+<span id="cb7-29"><a href="#cb7-29"></a>    theta <span class="op">=</span> random.uniform(theta_min, theta_max)</span>
+<span id="cb7-30"><a href="#cb7-30"></a>    alpha <span class="op">=</span> random.uniform(alpha_min, alpha_max)</span>
+<span id="cb7-31"><a href="#cb7-31"></a>    x <span class="op">=</span> sphere_radius <span class="op">*</span> math.sin(theta) <span class="op">*</span> math.cos(alpha)</span>
+<span id="cb7-32"><a href="#cb7-32"></a>    y <span class="op">=</span> sphere_radius <span class="op">*</span> math.sin(theta) <span class="op">*</span> math.sin(alpha)</span>
+<span id="cb7-33"><a href="#cb7-33"></a>    z <span class="op">=</span> sphere_radius <span class="op">*</span> math.cos(theta)</span>
+<span id="cb7-34"><a href="#cb7-34"></a>    end_pt <span class="op">=</span> rhino3dm.Point3d(x, y, z)</span>
+<span id="cb7-35"><a href="#cb7-35"></a>    <span class="co"># Create line curve</span></span>
+<span id="cb7-36"><a href="#cb7-36"></a>    line_curve <span class="op">=</span> rhino3dm.LineCurve(center_pt, end_pt)</span>
+<span id="cb7-37"><a href="#cb7-37"></a>    <span class="co"># Add to model</span></span>
+<span id="cb7-38"><a href="#cb7-38"></a>    model.Objects.AddCurve(line_curve)</span>
+<span id="cb7-39"><a href="#cb7-39"></a></span>
+<span id="cb7-40"><a href="#cb7-40"></a><span class="co"># Full path to 3dm file to save</span></span>
+<span id="cb7-41"><a href="#cb7-41"></a>desktop <span class="op">=</span> os.path.join(os.path.join(os.environ[<span class="st">'USERPROFILE'</span>]), <span class="st">'Desktop'</span>) </span>
+<span id="cb7-42"><a href="#cb7-42"></a>filename <span class="op">=</span> <span class="st">'spherelines.3dm'</span></span>
+<span id="cb7-43"><a href="#cb7-43"></a><span class="co"># path = os.path.join(desktop, filename)</span></span>
+<span id="cb7-44"><a href="#cb7-44"></a>path <span class="op">=</span> <span class="st">'./spherelines.3dm'</span></span>
+<span id="cb7-45"><a href="#cb7-45"></a></span>
+<span id="cb7-46"><a href="#cb7-46"></a><span class="co"># Write model to disk</span></span>
+<span id="cb7-47"><a href="#cb7-47"></a>model.Write(path, <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+<!-- -->
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+      for (let i=0; i<annoteTargets.length; i++) {
+        const annoteTarget = annoteTargets[i];
+        const targetCell = annoteTarget.getAttribute("data-target-cell");
+        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+        const contentFn = () => {
+          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          if (content) {
+            const tipContent = content.cloneNode(true);
+            tipContent.classList.add("code-annotation-tip-content");
+            return tipContent.outerHTML;
+          }
+        }
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          onShow: (instance) => {
+            selectCodeLines(instance.reference);
+            instance.reference.classList.add('code-annotation-active');
+            window.tippy.hideAll();
+          },
+          onHide: (instance) => {
+            unselectCodeLines();
+            instance.reference.classList.remove('code-annotation-active');
+          },
+          maxWidth: 300,
+          delay: [50, 0],
+          duration: [200, 0],
+          offset: [5, 10],
+          arrow: true,
+          appendTo: function(el) {
+            return el.parentElement.parentElement.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto',
+          placement: 'right',
+          popperOptions: {
+            modifiers: [
+            {
+              name: 'flip',
+              options: {
+                flipVariations: false, // true by default
+                allowedAutoPlacements: ['right'],
+                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+              },
+            },
+            {
+              name: 'preventOverflow',
+              options: {
+                mainAxis: false,
+                altAxis: false
+              }
+            }
+            ]        
+          }      
+        };
+        window.tippy(annoteTarget, config); 
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb8" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">---</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="an">title:</span><span class="co"> "test rhino3dm"</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="co">---</span></span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a><span class="fu"># Docs</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a></span>
+<span id="cb8-7"><a href="#cb8-7"></a><span class="ss">- </span><span class="co">[</span><span class="ot">rhino3dm github</span><span class="co">](https://github.com/mcneel/rhino3dm)</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a></span>
+<span id="cb8-9"><a href="#cb8-9"></a><span class="ss">- </span><span class="co">[</span><span class="ot">rhino3dm doc</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/index.html)</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a></span>
+<span id="cb8-11"><a href="#cb8-11"></a><span class="ss">- </span><span class="co">[</span><span class="ot">developer examples</span><span class="co">](https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm)</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a></span>
+<span id="cb8-13"><a href="#cb8-13"></a><span class="ss">    - </span><span class="co">[</span><span class="ot">rhino3dm.py</span><span class="co">](https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/py)</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a></span>
+<span id="cb8-15"><a href="#cb8-15"></a><span class="ss">    - </span><span class="co">[</span><span class="ot">rhino3dm.js</span><span class="co">](https://github.com/mcneel/rhino-developer-samples/tree/7/rhino3dm/js)</span></span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a></span>
+<span id="cb8-18"><a href="#cb8-18"></a><span class="fu"># Install rhino3dm:</span></span>
+<span id="cb8-19"><a href="#cb8-19"></a></span>
+<span id="cb8-20"><a href="#cb8-20"></a><span class="in">```shell </span></span>
+<span id="cb8-21"><a href="#cb8-21"></a><span class="op">&gt;</span> pip <span class="fu">install</span> rhino3dm</span>
+<span id="cb8-22"><a href="#cb8-22"></a></span>
+<span id="cb8-23"><a href="#cb8-23"></a><span class="op">&gt;</span> pip <span class="ex">show</span> rhino3dm</span>
+<span id="cb8-24"><a href="#cb8-24"></a></span>
+<span id="cb8-25"><a href="#cb8-25"></a><span class="ex">Name:</span> rhino3dm</span>
+<span id="cb8-26"><a href="#cb8-26"></a><span class="ex">Version:</span> 8.6.0</span>
+<span id="cb8-27"><a href="#cb8-27"></a><span class="ex">Summary:</span> Python library based on OpenNURBS with a RhinoCommon</span>
+<span id="cb8-28"><a href="#cb8-28"></a> <span class="ex">style</span></span>
+<span id="cb8-29"><a href="#cb8-29"></a><span class="ex">Home-page:</span> </span>
+<span id="cb8-30"><a href="#cb8-30"></a><span class="ex">Author:</span> Robert McNeel <span class="kw">&amp;</span> <span class="ex">Associates</span></span>
+<span id="cb8-31"><a href="#cb8-31"></a><span class="ex">Author-email:</span> steve@mcneel.com</span>
+<span id="cb8-32"><a href="#cb8-32"></a><span class="ex">License:</span> </span>
+<span id="cb8-33"><a href="#cb8-33"></a><span class="ex">Location:</span> C:<span class="dt">\U</span>sers<span class="dt">\U</span>SERNAME<span class="dt">\.</span>conda<span class="dt">\e</span>nvs<span class="dt">\a</span>i<span class="dt">\L</span>ib<span class="dt">\s</span>ite-packages</span>
+<span id="cb8-34"><a href="#cb8-34"></a><span class="ex">Requires:</span> </span>
+<span id="cb8-35"><a href="#cb8-35"></a><span class="ex">Required-by:</span> compute-rhino3d</span>
+<span id="cb8-36"><a href="#cb8-36"></a><span class="in">```</span></span>
+<span id="cb8-37"><a href="#cb8-37"></a></span>
+<span id="cb8-38"><a href="#cb8-38"></a></span>
+<span id="cb8-39"><a href="#cb8-39"></a><span class="fu"># Example 1</span></span>
+<span id="cb8-40"><a href="#cb8-40"></a></span>
+<span id="cb8-41"><a href="#cb8-41"></a><span class="in">```python</span></span>
+<span id="cb8-42"><a href="#cb8-42"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb8-43"><a href="#cb8-43"></a><span class="im">import</span> requests  <span class="co"># pip install requests</span></span>
+<span id="cb8-44"><a href="#cb8-44"></a></span>
+<span id="cb8-45"><a href="#cb8-45"></a>req <span class="op">=</span> requests.get(<span class="st">"https://files.mcneel.com/TEST/Rhino Logo.3dm"</span>)</span>
+<span id="cb8-46"><a href="#cb8-46"></a></span>
+<span id="cb8-47"><a href="#cb8-47"></a>model <span class="op">=</span> File3dm.FromByteArray(req.content)</span>
+<span id="cb8-48"><a href="#cb8-48"></a></span>
+<span id="cb8-49"><a href="#cb8-49"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(model.Objects)):</span>
+<span id="cb8-50"><a href="#cb8-50"></a>    obj <span class="op">=</span> model.Objects[i]</span>
+<span id="cb8-51"><a href="#cb8-51"></a>    geometry <span class="op">=</span> obj.Geometry</span>
+<span id="cb8-52"><a href="#cb8-52"></a>    bbox <span class="op">=</span> geometry.GetBoundingBox()</span>
+<span id="cb8-53"><a href="#cb8-53"></a></span>
+<span id="cb8-54"><a href="#cb8-54"></a>    <span class="bu">print</span>(<span class="st">"model object "</span>, i, <span class="st">':'</span>, obj)</span>
+<span id="cb8-55"><a href="#cb8-55"></a>    <span class="bu">print</span>(<span class="st">"bbbox min &amp; max: </span><span class="sc">{}</span><span class="st">, </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(bbox.Min, bbox.Max), <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span>
+<span id="cb8-56"><a href="#cb8-56"></a><span class="in">```</span></span>
+<span id="cb8-57"><a href="#cb8-57"></a></span>
+<span id="cb8-58"><a href="#cb8-58"></a>::: {.column-margin}</span>
+<span id="cb8-59"><a href="#cb8-59"></a>::: {.callout-tip title="File3dm.FromByteArray -&gt; File3dm" collapse="true"}</span>
+<span id="cb8-60"><a href="#cb8-60"></a><span class="co">[</span><span class="ot">File3dm.FromByteArray</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.FromByteArray)</span></span>
+<span id="cb8-61"><a href="#cb8-61"></a></span>
+<span id="cb8-62"><a href="#cb8-62"></a>Read a 3dm file from a byte array</span>
+<span id="cb8-63"><a href="#cb8-63"></a></span>
+<span id="cb8-64"><a href="#cb8-64"></a><span class="ss">- </span>Returns:      New File3dm on success, None on error.</span>
+<span id="cb8-65"><a href="#cb8-65"></a></span>
+<span id="cb8-66"><a href="#cb8-66"></a><span class="ss">- </span>Return type:  File3dm</span>
+<span id="cb8-67"><a href="#cb8-67"></a>:::</span>
+<span id="cb8-68"><a href="#cb8-68"></a>:::</span>
+<span id="cb8-69"><a href="#cb8-69"></a></span>
+<span id="cb8-70"><a href="#cb8-70"></a>::: {.column-margin}</span>
+<span id="cb8-71"><a href="#cb8-71"></a>::: {.callout-tip title="File3dm.Objects --&gt; File3dmObjectTable" collapse="true"}</span>
+<span id="cb8-72"><a href="#cb8-72"></a><span class="co">[</span><span class="ot">File3dm.Objects</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Objects)</span></span>
+<span id="cb8-73"><a href="#cb8-73"></a></span>
+<span id="cb8-74"><a href="#cb8-74"></a>File3dmObjectTable: Gets access to the class associated with this file, which contains all objects.</span>
+<span id="cb8-75"><a href="#cb8-75"></a>:::</span>
+<span id="cb8-76"><a href="#cb8-76"></a>:::</span>
+<span id="cb8-77"><a href="#cb8-77"></a></span>
+<span id="cb8-78"><a href="#cb8-78"></a>::: {.column-margin}</span>
+<span id="cb8-79"><a href="#cb8-79"></a>::: {.callout-tip title="File3dmObject.Geometry -&gt; rhino3dm.GeometryBase" collapse="true"}</span>
+<span id="cb8-80"><a href="#cb8-80"></a><span class="co">[</span><span class="ot">File3dmObject.Geometry</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/File3dmObject.html#rhino3dm.File3dmObject.Geometry)</span></span>
+<span id="cb8-81"><a href="#cb8-81"></a></span>
+<span id="cb8-82"><a href="#cb8-82"></a>rhino3dm.GeometryBase: Gets the geometry that is linked with this document object.</span>
+<span id="cb8-83"><a href="#cb8-83"></a>:::</span>
+<span id="cb8-84"><a href="#cb8-84"></a>:::</span>
+<span id="cb8-85"><a href="#cb8-85"></a></span>
+<span id="cb8-86"><a href="#cb8-86"></a>::: {.column-margin}</span>
+<span id="cb8-87"><a href="#cb8-87"></a>::: {.callout-tip title="GeometryBase.GetBoundingBox -&gt; rhino3dm.BoundingBox" collapse="true"}</span>
+<span id="cb8-88"><a href="#cb8-88"></a><span class="co">[</span><span class="ot">GeometryBase.GetBoundingBox</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/GeometryBase.html#rhino3dm.GeometryBase.GetBoundingBox)</span></span>
+<span id="cb8-89"><a href="#cb8-89"></a></span>
+<span id="cb8-90"><a href="#cb8-90"></a>Bounding box solver. Gets the world axis aligned bounding box for the geometry.</span>
+<span id="cb8-91"><a href="#cb8-91"></a></span>
+<span id="cb8-92"><a href="#cb8-92"></a>Parameters:</span>
+<span id="cb8-93"><a href="#cb8-93"></a></span>
+<span id="cb8-94"><a href="#cb8-94"></a><span class="ss">- </span>accurate (bool) – If true, a physically accurate bounding box will be computed. If not, a bounding box estimate will be computed. For some geometry types there is no difference between the estimate and the accurate bounding box. Estimated bounding boxes can be computed much (much) faster than accurate (or “tight”) bounding boxes. Estimated bounding boxes are always similar to or larger than accurate bounding boxes.</span>
+<span id="cb8-95"><a href="#cb8-95"></a></span>
+<span id="cb8-96"><a href="#cb8-96"></a>Returns:</span>
+<span id="cb8-97"><a href="#cb8-97"></a></span>
+<span id="cb8-98"><a href="#cb8-98"></a><span class="ss">- </span>The bounding box of the geometry in world coordinates or BoundingBox.Empty if not bounding box could be found.</span>
+<span id="cb8-99"><a href="#cb8-99"></a></span>
+<span id="cb8-100"><a href="#cb8-100"></a>Return type:</span>
+<span id="cb8-101"><a href="#cb8-101"></a></span>
+<span id="cb8-102"><a href="#cb8-102"></a><span class="ss">- </span>rhino3dm.BoundingBox</span>
+<span id="cb8-103"><a href="#cb8-103"></a>:::</span>
+<span id="cb8-104"><a href="#cb8-104"></a>:::</span>
+<span id="cb8-105"><a href="#cb8-105"></a></span>
+<span id="cb8-106"><a href="#cb8-106"></a>::: {.column-margin}</span>
+<span id="cb8-107"><a href="#cb8-107"></a>::: {.callout-tip title="rhino3dm.BoundingBox" collapse="true"}</span>
+<span id="cb8-108"><a href="#cb8-108"></a><span class="co">[</span><span class="ot">class rhino3dm.BoundingBox</span><span class="co">](https://mcneel.github.io/rhino3dm/python/api/BoundingBox.html#rhino3dm.BoundingBox)</span></span>
+<span id="cb8-109"><a href="#cb8-109"></a></span>
+<span id="cb8-110"><a href="#cb8-110"></a><span class="at">&gt; </span><span class="in">`BoundingBox(minX, minY, minZ, maxX, maxY, maxZ)`</span></span>
+<span id="cb8-111"><a href="#cb8-111"></a><span class="at">&gt; </span></span>
+<span id="cb8-112"><a href="#cb8-112"></a><span class="at">&gt; Constructs a bounding box from numeric extremes.</span></span>
+<span id="cb8-113"><a href="#cb8-113"></a><span class="at">&gt; </span></span>
+<span id="cb8-114"><a href="#cb8-114"></a><span class="at">&gt; Parameters:</span></span>
+<span id="cb8-115"><a href="#cb8-115"></a><span class="at">&gt;</span></span>
+<span id="cb8-116"><a href="#cb8-116"></a><span class="at">&gt;    - minX (float) – Lower extreme for box X size.</span></span>
+<span id="cb8-117"><a href="#cb8-117"></a><span class="at">&gt;    - minY (float) – Lower extreme for box Y size.</span></span>
+<span id="cb8-118"><a href="#cb8-118"></a><span class="at">&gt;    - minZ (float) – Lower extreme for box Z size.</span></span>
+<span id="cb8-119"><a href="#cb8-119"></a><span class="at">&gt;    - maxX (float) – Upper extreme for box X size.</span></span>
+<span id="cb8-120"><a href="#cb8-120"></a><span class="at">&gt;    - maxY (float) – Upper extreme for box Y size.</span></span>
+<span id="cb8-121"><a href="#cb8-121"></a><span class="at">&gt;    - maxZ (float) – Upper extreme for box Z size.</span></span>
+<span id="cb8-122"><a href="#cb8-122"></a><span class="at">:::</span></span>
+<span id="cb8-123"><a href="#cb8-123"></a><span class="at">:::</span></span>
+<span id="cb8-124"><a href="#cb8-124"></a></span>
+<span id="cb8-125"><a href="#cb8-125"></a></span>
+<span id="cb8-126"><a href="#cb8-126"></a><span class="fu"># Example 2 </span></span>
+<span id="cb8-127"><a href="#cb8-127"></a></span>
+<span id="cb8-128"><a href="#cb8-128"></a><span class="in">```python</span></span>
+<span id="cb8-129"><a href="#cb8-129"></a><span class="im">from</span> rhino3dm <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb8-130"><a href="#cb8-130"></a></span>
+<span id="cb8-131"><a href="#cb8-131"></a>center <span class="op">=</span> Point3d(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb8-132"><a href="#cb8-132"></a>arc <span class="op">=</span> Arc(center, <span class="dv">10</span>, <span class="dv">1</span>)</span>
+<span id="cb8-133"><a href="#cb8-133"></a>nc <span class="op">=</span> arc.ToNurbsCurve()</span>
+<span id="cb8-134"><a href="#cb8-134"></a>start <span class="op">=</span> nc.PointAtStart</span>
+<span id="cb8-135"><a href="#cb8-135"></a><span class="bu">print</span>(<span class="st">'start point'</span>, <span class="bu">type</span>(start))</span>
+<span id="cb8-136"><a href="#cb8-136"></a><span class="in">```</span></span>
+<span id="cb8-137"><a href="#cb8-137"></a></span>
+<span id="cb8-138"><a href="#cb8-138"></a></span>
+<span id="cb8-139"><a href="#cb8-139"></a><span class="fu"># Example 3</span></span>
+<span id="cb8-140"><a href="#cb8-140"></a></span>
+<span id="cb8-143"><a href="#cb8-143"></a><span class="in">```{python}</span></span>
+<span id="cb8-144"><a href="#cb8-144"></a><span class="im">import</span> rhino3dm</span>
+<span id="cb8-145"><a href="#cb8-145"></a><span class="im">import</span> random</span>
+<span id="cb8-146"><a href="#cb8-146"></a></span>
+<span id="cb8-147"><a href="#cb8-147"></a>model <span class="op">=</span> rhino3dm.File3dm()</span>
+<span id="cb8-148"><a href="#cb8-148"></a></span>
+<span id="cb8-149"><a href="#cb8-149"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">20</span>):</span>
+<span id="cb8-150"><a href="#cb8-150"></a>    pt <span class="op">=</span> rhino3dm.Point3d(random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>), random.uniform(<span class="op">-</span><span class="dv">10</span>,<span class="dv">10</span>), <span class="dv">0</span>)</span>
+<span id="cb8-151"><a href="#cb8-151"></a>    model.Objects.AddPoint(pt)</span>
+<span id="cb8-152"><a href="#cb8-152"></a>    circle <span class="op">=</span> rhino3dm.Circle(pt, random.uniform(<span class="dv">1</span>,<span class="dv">4</span>))</span>
+<span id="cb8-153"><a href="#cb8-153"></a>    model.Objects.AddCircle(circle)</span>
+<span id="cb8-154"><a href="#cb8-154"></a>    </span>
+<span id="cb8-155"><a href="#cb8-155"></a>model.Write(<span class="st">"./circle.3dm"</span>, <span class="dv">70</span>)</span>
+<span id="cb8-156"><a href="#cb8-156"></a><span class="in">```</span></span>
+<span id="cb8-157"><a href="#cb8-157"></a></span>
+<span id="cb8-158"><a href="#cb8-158"></a></span>
+<span id="cb8-159"><a href="#cb8-159"></a><span class="fu"># Example 4</span></span>
+<span id="cb8-160"><a href="#cb8-160"></a></span>
+<span id="cb8-161"><a href="#cb8-161"></a><span class="in">```python</span></span>
+<span id="cb8-162"><a href="#cb8-162"></a><span class="co"># Sample read render meshes from 3dm file</span></span>
+<span id="cb8-163"><a href="#cb8-163"></a></span>
+<span id="cb8-164"><a href="#cb8-164"></a><span class="im">import</span> rhino3dm</span>
+<span id="cb8-165"><a href="#cb8-165"></a></span>
+<span id="cb8-166"><a href="#cb8-166"></a>model <span class="op">=</span> rhino3dm.File3dm.Read(<span class="st">'./data/myBox.3dm'</span>)</span>
+<span id="cb8-167"><a href="#cb8-167"></a><span class="bu">print</span>(model)</span>
+<span id="cb8-168"><a href="#cb8-168"></a></span>
+<span id="cb8-169"><a href="#cb8-169"></a>brep <span class="op">=</span> model.Objects[<span class="dv">0</span>].Geometry</span>
+<span id="cb8-170"><a href="#cb8-170"></a><span class="bu">print</span>(brep)</span>
+<span id="cb8-171"><a href="#cb8-171"></a></span>
+<span id="cb8-172"><a href="#cb8-172"></a>face <span class="op">=</span> brep.Faces[<span class="dv">0</span>]</span>
+<span id="cb8-173"><a href="#cb8-173"></a><span class="bu">print</span>(face)</span>
+<span id="cb8-174"><a href="#cb8-174"></a></span>
+<span id="cb8-175"><a href="#cb8-175"></a>mesh <span class="op">=</span> face.GetMesh(rhino3dm.MeshType.Any)</span>
+<span id="cb8-176"><a href="#cb8-176"></a><span class="bu">print</span>(mesh)</span>
+<span id="cb8-177"><a href="#cb8-177"></a><span class="co"># print (len(mesh.Faces))</span></span>
+<span id="cb8-178"><a href="#cb8-178"></a><span class="in">```</span></span>
+<span id="cb8-179"><a href="#cb8-179"></a></span>
+<span id="cb8-180"><a href="#cb8-180"></a></span>
+<span id="cb8-181"><a href="#cb8-181"></a><span class="fu"># Example 5</span></span>
+<span id="cb8-182"><a href="#cb8-182"></a></span>
+<span id="cb8-183"><a href="#cb8-183"></a><span class="in">```python</span></span>
+<span id="cb8-184"><a href="#cb8-184"></a><span class="co"># spherelines.py</span></span>
+<span id="cb8-185"><a href="#cb8-185"></a><span class="co"># Sample script that demonstrates how to use Rhino3dm.py</span></span>
+<span id="cb8-186"><a href="#cb8-186"></a><span class="co"># https://github.com/mcneel/rhino3dm</span></span>
+<span id="cb8-187"><a href="#cb8-187"></a><span class="co"># This sample creates a 3dm file containing a group of randomly</span></span>
+<span id="cb8-188"><a href="#cb8-188"></a><span class="co"># distributed lines defining an sphere.</span></span>
+<span id="cb8-189"><a href="#cb8-189"></a></span>
+<span id="cb8-190"><a href="#cb8-190"></a><span class="im">import</span> rhino3dm</span>
+<span id="cb8-191"><a href="#cb8-191"></a><span class="im">import</span> random</span>
+<span id="cb8-192"><a href="#cb8-192"></a><span class="im">import</span> math</span>
+<span id="cb8-193"><a href="#cb8-193"></a><span class="im">import</span> os</span>
+<span id="cb8-194"><a href="#cb8-194"></a></span>
+<span id="cb8-195"><a href="#cb8-195"></a><span class="co"># Initial parameters</span></span>
+<span id="cb8-196"><a href="#cb8-196"></a>theta_min <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb8-197"><a href="#cb8-197"></a>theta_max <span class="op">=</span> math.pi</span>
+<span id="cb8-198"><a href="#cb8-198"></a>alpha_min <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb8-199"><a href="#cb8-199"></a>alpha_max <span class="op">=</span> math.pi <span class="op">*</span> <span class="fl">2.0</span></span>
+<span id="cb8-200"><a href="#cb8-200"></a>sphere_radius <span class="op">=</span> <span class="fl">100.0</span></span>
+<span id="cb8-201"><a href="#cb8-201"></a>num_lines <span class="op">=</span> <span class="dv">1500</span></span>
+<span id="cb8-202"><a href="#cb8-202"></a></span>
+<span id="cb8-203"><a href="#cb8-203"></a><span class="co"># Create a center point</span></span>
+<span id="cb8-204"><a href="#cb8-204"></a>center_pt <span class="op">=</span> rhino3dm.Point3d(<span class="fl">0.0</span>, <span class="fl">0.0</span>, <span class="fl">0.0</span>)</span>
+<span id="cb8-205"><a href="#cb8-205"></a></span>
+<span id="cb8-206"><a href="#cb8-206"></a><span class="co"># Create a File3dm object</span></span>
+<span id="cb8-207"><a href="#cb8-207"></a>model <span class="op">=</span> rhino3dm.File3dm()</span>
+<span id="cb8-208"><a href="#cb8-208"></a></span>
+<span id="cb8-209"><a href="#cb8-209"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(num_lines):</span>
+<span id="cb8-210"><a href="#cb8-210"></a>    <span class="co"># Calculate random line end point</span></span>
+<span id="cb8-211"><a href="#cb8-211"></a>    random.seed(i <span class="op">*</span> <span class="dv">100</span>)</span>
+<span id="cb8-212"><a href="#cb8-212"></a>    theta <span class="op">=</span> random.uniform(theta_min, theta_max)</span>
+<span id="cb8-213"><a href="#cb8-213"></a>    alpha <span class="op">=</span> random.uniform(alpha_min, alpha_max)</span>
+<span id="cb8-214"><a href="#cb8-214"></a>    x <span class="op">=</span> sphere_radius <span class="op">*</span> math.sin(theta) <span class="op">*</span> math.cos(alpha)</span>
+<span id="cb8-215"><a href="#cb8-215"></a>    y <span class="op">=</span> sphere_radius <span class="op">*</span> math.sin(theta) <span class="op">*</span> math.sin(alpha)</span>
+<span id="cb8-216"><a href="#cb8-216"></a>    z <span class="op">=</span> sphere_radius <span class="op">*</span> math.cos(theta)</span>
+<span id="cb8-217"><a href="#cb8-217"></a>    end_pt <span class="op">=</span> rhino3dm.Point3d(x, y, z)</span>
+<span id="cb8-218"><a href="#cb8-218"></a>    <span class="co"># Create line curve</span></span>
+<span id="cb8-219"><a href="#cb8-219"></a>    line_curve <span class="op">=</span> rhino3dm.LineCurve(center_pt, end_pt)</span>
+<span id="cb8-220"><a href="#cb8-220"></a>    <span class="co"># Add to model</span></span>
+<span id="cb8-221"><a href="#cb8-221"></a>    model.Objects.AddCurve(line_curve)</span>
+<span id="cb8-222"><a href="#cb8-222"></a></span>
+<span id="cb8-223"><a href="#cb8-223"></a><span class="co"># Full path to 3dm file to save</span></span>
+<span id="cb8-224"><a href="#cb8-224"></a>desktop <span class="op">=</span> os.path.join(os.path.join(os.environ[<span class="st">'USERPROFILE'</span>]), <span class="st">'Desktop'</span>) </span>
+<span id="cb8-225"><a href="#cb8-225"></a>filename <span class="op">=</span> <span class="st">'spherelines.3dm'</span></span>
+<span id="cb8-226"><a href="#cb8-226"></a><span class="co"># path = os.path.join(desktop, filename)</span></span>
+<span id="cb8-227"><a href="#cb8-227"></a>path <span class="op">=</span> <span class="st">'./spherelines.3dm'</span></span>
+<span id="cb8-228"><a href="#cb8-228"></a></span>
+<span id="cb8-229"><a href="#cb8-229"></a><span class="co"># Write model to disk</span></span>
+<span id="cb8-230"><a href="#cb8-230"></a>model.Write(path, <span class="dv">6</span>)</span>
+<span id="cb8-231"><a href="#cb8-231"></a><span class="in">```</span></span>
+<span id="cb8-232"><a href="#cb8-232"></a></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
+</body></html>
