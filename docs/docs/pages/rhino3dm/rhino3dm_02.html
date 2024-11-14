@@ -75,6 +75,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-dashboard/quarto-dashboard.js"></script>
+<script src="../../../site_libs/quarto-dashboard/stickythead.js"></script>
+<script src="../../../site_libs/quarto-dashboard/datatables.min.js" kdttablesentinel="true"></script>
+<script src="../../../site_libs/quarto-dashboard/pdfmake.min.js" kdttablesentinel="true"></script>
+<script src="../../../site_libs/quarto-dashboard/vfs_fonts.js" kdttablesentinel="true"></script>
+<script src="../../../site_libs/quarto-dashboard/web-components.js" type="module"></script>
+<script src="../../../site_libs/quarto-dashboard/components.js"></script>
+<link href="../../../site_libs/quarto-dashboard/datatables.min.css" rel="stylesheet" kdttablesentinel="true">
 <link href="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -105,10 +113,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="quarto-dashboard nav-sidebar nav-fixed dashboard-fill fullcontent">
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -137,10 +145,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../../dashboard.html"> 
 <span class="menu-text">Worldwide Development</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../dashboard_shiny.html"> 
+<span class="menu-text">Shiny Dashboard</span></a>
+  </li>  
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
   <i class="bi"></i>
@@ -149,301 +160,121 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">rhino3dm exercise 02</li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
+<header id="quarto-dashboard-header">
+<nav class="navbar navbar-expand-md slim" data-bs-theme="dark">
+  <div class="navbar-container container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-controls="dashboard-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>    
+
+
+    <div class="navbar-brand-container">       
+
+      <div class="navbar-title">
+        <div class="navbar-title-text"><a href="#">rhino3dm exercise 02</a></div>
+        
+        
+      </div>
     </div>
-  </nav>
-</header>
-<!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
-<!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Deep Learning</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">LazyVim</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">LazyVim Tips</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
- <span class="menu-text">Observable.js</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Test Observable.js</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
- <span class="menu-text">Plotly</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">show data strucure of a plotly figure</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Transparent bgcolor for figure</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
- <span class="menu-text">Polars</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Merge CSVs</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/polars/edit_df_column.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Edit DF Column</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/polars/polars_cookbook.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polars Cookbook</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/polars/polars_intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Polars Intro</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
- <span class="menu-text">Quarto</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">quarto tabset</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">expand the width of a code block and its output</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">side by side codeblocks and outputs</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true">
- <span class="menu-text">rhino3dm</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">test rhino3dm</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">rhino3dm exercise 01</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/rhino3dm/rhino3dm_02.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">rhino3dm exercise 02</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true">
- <span class="menu-text">shiny</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../pages/shiny/test.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">test dashboard</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
+<div id="dashboard-collapse" class="navbar-collapse collapse"><ul class="navbar-nav navbar-nav-scroll me-auto" role="tablist"><li class="nav-item" role="presentation"><a id="tab-rhino3dm-exercise-02" class="nav-link active" data-bs-toggle="tab" role="tab" data-bs-target="#rhino3dm-exercise-02" data-scrolling="false" href="#rhino3dm-exercise-02" aria-controls="rhino3dm-exercise-02" aria-selected="true"><span class="nav-link-text">rhino3dm exercise 02</span></a></li></ul></div></div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+</header></header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-layout-custom page-navbar quarto-dashboard-content bslib-gap-spacing html-fill-container bslib-page-fill quarto-dashboard-pages">
+<!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#rhino3dm-exercise-02" id="toc-rhino3dm-exercise-02" class="nav-link active" data-scroll-target="#rhino3dm-exercise-02">rhino3dm exercise 02</a>
-  <ul class="collapse">
-  <li><a href="#import-and-util-funcs" id="toc-import-and-util-funcs" class="nav-link" data-scroll-target="#import-and-util-funcs">import and util funcs</a></li>
-  <li><a href="#read-.3dm-file" id="toc-read-.3dm-file" class="nav-link" data-scroll-target="#read-.3dm-file">read <code>.3dm</code> file</a></li>
-  <li><a href="#read-notes" id="toc-read-notes" class="nav-link" data-scroll-target="#read-notes">read <code>notes</code></a></li>
-  <li><a href="#read-layer" id="toc-read-layer" class="nav-link" data-scroll-target="#read-layer">read <code>Layer</code></a></li>
-  <li><a href="#read-objectstable" id="toc-read-objectstable" class="nav-link" data-scroll-target="#read-objectstable">read <code>ObjectsTable</code></a></li>
-  <li><a href="#create-dataclass-oatpv" id="toc-create-dataclass-oatpv" class="nav-link" data-scroll-target="#create-dataclass-oatpv">create dataclass <code>OatPV</code></a></li>
-  <li><a href="#read-pv" id="toc-read-pv" class="nav-link" data-scroll-target="#read-pv">read <code>pv</code></a></li>
-  <li><a href="#read-cable" id="toc-read-cable" class="nav-link" data-scroll-target="#read-cable">read <code>cable</code></a></li>
-  <li><a href="#read-text" id="toc-read-text" class="nav-link" data-scroll-target="#read-text">read <code>text</code></a></li>
-  <li><a href="#create-dataclass-mypt" id="toc-create-dataclass-mypt" class="nav-link" data-scroll-target="#create-dataclass-mypt">create dataclass <code>MyPt</code></a></li>
-  <li><a href="#read-pt" id="toc-read-pt" class="nav-link" data-scroll-target="#read-pt">read <code>pt</code></a></li>
-  <li><a href="#read-textdot" id="toc-read-textdot" class="nav-link" data-scroll-target="#read-textdot">read <code>TextDot</code></a></li>
-  <li><a href="#read-earthanchorpoint" id="toc-read-earthanchorpoint" class="nav-link" data-scroll-target="#read-earthanchorpoint">read <code>EarthAnchorPoint</code></a></li>
-  </ul></li>
-  </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="rhino3dm_02.out.ipynb" download="rhino3dm_02.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
-    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">rhino3dm exercise 02</h1>
+<div class="bslib-grid-item html-fill-item tab-content bslib-grid" data-layout="fill" style="display: grid; grid-template-rows: minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div id="rhino3dm-exercise-02" class="dashboard-page tab-pane show active html-fill-item html-fill-container" data-orientation="rows" aria-labelledby="tab-rhino3dm-exercise-02">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-rows: minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, max-content) minmax(3em, max-content) minmax(3em, 1fr) minmax(3em, 1fr); grid-auto-columns: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="h4">
+import
+
+and
+
+util
+
+funcs
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="rhino3dm-exercise-02" class="level1">
-<h1>rhino3dm exercise 02</h1>
-<section id="import-and-util-funcs" class="level2">
-<h2 class="anchored" data-anchor-id="import-and-util-funcs">import and util funcs</h2>
-<div id="7e50fef6" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> rhino3dm</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> dataclasses <span class="im">import</span> dataclass, field</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="im">import</span> random</span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> string</span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="bu">print</span>(<span class="st">'rhino3dm ver: '</span>, rhino3dm.__version__)</span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="kw">def</span> generate_id() <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
-<span id="cb1-9"><a href="#cb1-9"></a>    <span class="cf">return</span> <span class="st">""</span>.join(random.choices(string.ascii_lowercase, k<span class="op">=</span><span class="dv">12</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>rhino3dm ver:  8.9.0</code></pre>
 </div>
 </div>
-</section>
-<section id="read-.3dm-file" class="level2">
-<h2 class="anchored" data-anchor-id="read-.3dm-file">read <code>.3dm</code> file</h2>
-<div id="78ec663b" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>rhino_f_path <span class="op">=</span> <span class="st">"./data/nongke.3dm"</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>file3dm_obj <span class="op">=</span> rhino3dm.File3dm.Read(rhino_f_path)</span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="bu">print</span>(<span class="st">'rhino3dm.File3dm object: '</span>, file3dm_obj)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>rhino3dm.File3dm object:  &lt;rhino3dm._rhino3dm.File3dm object at 0x00000213C4FBFEB0&gt;</code></pre>
 </div>
 </div>
-</section>
-<section id="read-notes" class="level2">
-<h2 class="anchored" data-anchor-id="read-notes">read <code>notes</code></h2>
-<div id="eda312a7" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>file3dm_notes <span class="op">=</span> rhino3dm.File3dm.ReadNotes(rhino_f_path).split(<span class="st">';'</span>)[:<span class="op">-</span><span class="dv">1</span>]</span>
-<span id="cb5-2"><a href="#cb5-2"></a></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="cf">for</span> idx, note <span class="kw">in</span> <span class="bu">enumerate</span>(file3dm_notes):</span>
-<span id="cb5-4"><a href="#cb5-4"></a>    <span class="bu">print</span>(</span>
-<span id="cb5-5"><a href="#cb5-5"></a>        note.strip().split(<span class="st">':'</span>)[<span class="dv">0</span>].strip(),</span>
-<span id="cb5-6"><a href="#cb5-6"></a>        <span class="st">' : '</span>,</span>
-<span id="cb5-7"><a href="#cb5-7"></a>        note.strip().split(<span class="st">':'</span>)[<span class="dv">1</span>].strip()</span>
-<span id="cb5-8"><a href="#cb5-8"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>name  :  nongke
 lati  :  20
 long  :  100</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="h4">
+read
+
+<code>Layer</code>
+</div>
+</div>
+<div class="card-footer">
 <p><strong>File3dm.ReadNotes()</strong></p>
 <p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.ReadNotes"><strong><em>method</em></strong> <code>rhino3dm.File3dm.ReadNotes()</code></a></p>
 <p><br></p>
@@ -461,25 +292,15 @@ long  :  100</code></pre>
 <ul>
 <li>str</li>
 </ul>
-</blockquote>
-</section>
-<section id="read-layer" class="level2">
-<h2 class="anchored" data-anchor-id="read-layer">read <code>Layer</code></h2>
-<div id="777461e8" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>layer_table <span class="op">=</span> file3dm_obj.Layers</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">print</span>(<span class="st">'layer table object: '</span>, layer_table)</span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="bu">print</span>(<span class="st">'num of layers: '</span>, <span class="bu">len</span>(layer_table))</span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="bu">print</span>()</span>
-<span id="cb7-5"><a href="#cb7-5"></a></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="cf">for</span> idx, layer <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(layer_table)):</span>
-<span id="cb7-7"><a href="#cb7-7"></a>    <span class="bu">print</span>(<span class="st">'layer '</span>, idx, <span class="st">' Object  : '</span>, layer)</span>
-<span id="cb7-8"><a href="#cb7-8"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Id      : '</span>, layer.Id)</span>
-<span id="cb7-9"><a href="#cb7-9"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Index   : '</span>, layer.Index)</span>
-<span id="cb7-10"><a href="#cb7-10"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Name    : '</span>, layer.Name)</span>
-<span id="cb7-11"><a href="#cb7-11"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Fullpath: '</span>, layer.FullPath)</span>
-<span id="cb7-12"><a href="#cb7-12"></a>    <span class="bu">print</span>(<span class="st">'      '</span>, idx, <span class="st">' Color   : '</span>, layer.Color)</span>
-<span id="cb7-13"><a href="#cb7-13"></a>    <span class="bu">print</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>layer table object:  &lt;rhino3dm._rhino3dm.File3dmLayerTable object at 0x00000213C4C5C370&gt;
 num of layers:  6
 
@@ -526,89 +347,64 @@ layer  5  Object  :  &lt;rhino3dm._rhino3dm.Layer object at 0x00000213C4FD8270&g
        5  Color   :  (191, 191, 255, 255)</code></pre>
 </div>
 </div>
-</section>
-<section id="read-objectstable" class="level2">
-<h2 class="anchored" data-anchor-id="read-objectstable">read <code>ObjectsTable</code></h2>
-<div id="7cbca170" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>object_table <span class="op">=</span> file3dm_obj.Objects</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="bu">print</span>(<span class="st">'object table: '</span>, object_table, <span class="st">'</span><span class="ch">\n</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>object table:  &lt;rhino3dm._rhino3dm.File3dmObjectTable object at 0x00000213A3285030&gt; </code></pre>
 </div>
 </div>
-</section>
-<section id="create-dataclass-oatpv" class="level2">
-<h2 class="anchored" data-anchor-id="create-dataclass-oatpv">create dataclass <code>OatPV</code></h2>
-<div id="c7ab8068" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="at">@dataclass</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">class</span> OatPV:</span>
-<span id="cb11-3"><a href="#cb11-3"></a>    idx: <span class="bu">int</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a>    outline: rhino3dm.PolylineCurve</span>
-<span id="cb11-5"><a href="#cb11-5"></a>    str_num: <span class="bu">str</span> <span class="op">=</span> <span class="st">''</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a>    <span class="bu">id</span>: <span class="bu">str</span> <span class="op">=</span> field(default_factory<span class="op">=</span>generate_id)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-</section>
-<section id="read-pv" class="level2">
-<h2 class="anchored" data-anchor-id="read-pv">read <code>pv</code></h2>
-<div id="9dab6c10" class="cell" data-execution_count="7">
-<div class="sourceCode cell-code" id="cb12" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>layer_idx_of_pv <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>cnt_pv <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>max_num_obj <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>total_num_pv <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb12-5"><a href="#cb12-5"></a></span>
-<span id="cb12-6"><a href="#cb12-6"></a>oatPV_list <span class="op">=</span> []</span>
-<span id="cb12-7"><a href="#cb12-7"></a></span>
-<span id="cb12-8"><a href="#cb12-8"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="cb12-9"><a href="#cb12-9"></a>    <span class="cf">if</span> (obj.Attributes.LayerIndex <span class="op">==</span> layer_idx_of_pv) <span class="kw">and</span> (cnt_pv <span class="op">&lt;</span> max_num_obj):</span>
-<span id="cb12-10"><a href="#cb12-10"></a>        <span class="bu">print</span>(<span class="st">'object '</span>, idx, <span class="st">' Object                : '</span>, obj)</span>
-<span id="cb12-11"><a href="#cb12-11"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Geometry              : '</span>, obj.Geometry)</span>
-<span id="cb12-12"><a href="#cb12-12"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes            : '</span>, obj.Attributes)</span>
-<span id="cb12-13"><a href="#cb12-13"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Id         : '</span>, obj.Attributes.Id)</span>
-<span id="cb12-14"><a href="#cb12-14"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Name       : '</span>, obj.Attributes.Name)</span>
-<span id="cb12-15"><a href="#cb12-15"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.LayerIndex : '</span>, obj.Attributes.LayerIndex)</span>
-<span id="cb12-16"><a href="#cb12-16"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.ObjectColor: '</span>, obj.Attributes.ObjectColor)</span>
-<span id="cb12-17"><a href="#cb12-17"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Visible    : '</span>, obj.Attributes.Visible)</span>
-<span id="cb12-18"><a href="#cb12-18"></a>        <span class="bu">print</span>()</span>
-<span id="cb12-19"><a href="#cb12-19"></a></span>
-<span id="cb12-20"><a href="#cb12-20"></a>        <span class="co"># if geom is PolylineCurve, print its details</span></span>
-<span id="cb12-21"><a href="#cb12-21"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(obj.Geometry, rhino3dm.PolylineCurve):</span>
-<span id="cb12-22"><a href="#cb12-22"></a>            <span class="bu">print</span>(<span class="st">'            curve IsClosed     :'</span>, obj.Geometry.IsClosed)</span>
-<span id="cb12-23"><a href="#cb12-23"></a>            <span class="bu">print</span>(<span class="st">'            curve IsPlanar     :'</span>, obj.Geometry.IsPlanar())</span>
-<span id="cb12-24"><a href="#cb12-24"></a>            <span class="bu">print</span>(<span class="st">'            curve IsPolyline   :'</span>, obj.Geometry.IsPolyline())</span>
-<span id="cb12-25"><a href="#cb12-25"></a>            <span class="bu">print</span>()</span>
-<span id="cb12-26"><a href="#cb12-26"></a></span>
-<span id="cb12-27"><a href="#cb12-27"></a>            <span class="bu">print</span>(<span class="st">'            curve PointCount   :'</span>, obj.Geometry.PointCount)</span>
-<span id="cb12-28"><a href="#cb12-28"></a>            </span>
-<span id="cb12-29"><a href="#cb12-29"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(obj.Geometry.PointCount):</span>
-<span id="cb12-30"><a href="#cb12-30"></a>                <span class="bu">print</span>(<span class="st">'            curve pt '</span>, i, <span class="st">' : '</span>, obj.Geometry.Point(i))</span>
-<span id="cb12-31"><a href="#cb12-31"></a>                <span class="co"># print('           curve pt ', i, ' : ', obj.Geometry.ToPolyline().PointAt(i)) -- alternative</span></span>
-<span id="cb12-32"><a href="#cb12-32"></a></span>
-<span id="cb12-33"><a href="#cb12-33"></a>            <span class="bu">print</span>()</span>
-<span id="cb12-34"><a href="#cb12-34"></a></span>
-<span id="cb12-35"><a href="#cb12-35"></a>            <span class="bu">print</span>(<span class="st">'            curve SegmentCount :'</span>, obj.Geometry.ToPolyline().SegmentCount)</span>
-<span id="cb12-36"><a href="#cb12-36"></a></span>
-<span id="cb12-37"><a href="#cb12-37"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(obj.Geometry.ToPolyline().SegmentCount):</span>
-<span id="cb12-38"><a href="#cb12-38"></a>                <span class="bu">print</span>(<span class="st">'            segement '</span>, i, <span class="st">' : '</span>, obj.Geometry.ToPolyline().SegmentAt(i))</span>
-<span id="cb12-39"><a href="#cb12-39"></a></span>
-<span id="cb12-40"><a href="#cb12-40"></a>            <span class="bu">print</span>()</span>
-<span id="cb12-41"><a href="#cb12-41"></a></span>
-<span id="cb12-42"><a href="#cb12-42"></a>            oatPV <span class="op">=</span> OatPV(idx, obj.Geometry)</span>
-<span id="cb12-43"><a href="#cb12-43"></a>            oatPV_list.append(oatPV)</span>
-<span id="cb12-44"><a href="#cb12-44"></a></span>
-<span id="cb12-45"><a href="#cb12-45"></a>        cnt_pv <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb12-46"><a href="#cb12-46"></a>    <span class="cf">else</span>:</span>
-<span id="cb12-47"><a href="#cb12-47"></a>        <span class="cf">pass</span></span>
-<span id="cb12-48"><a href="#cb12-48"></a></span>
-<span id="cb12-49"><a href="#cb12-49"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="cb12-50"><a href="#cb12-50"></a>    <span class="cf">if</span> (obj.Attributes.LayerIndex <span class="op">==</span> layer_idx_of_pv):</span>
-<span id="cb12-51"><a href="#cb12-51"></a>        total_num_pv <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb12-52"><a href="#cb12-52"></a></span>
-<span id="cb12-53"><a href="#cb12-53"></a><span class="bu">print</span>(<span class="st">'total num of pv: '</span>, total_num_pv)</span>
-<span id="cb12-54"><a href="#cb12-54"></a><span class="bu">print</span>()</span>
-<span id="cb12-55"><a href="#cb12-55"></a></span>
-<span id="cb12-56"><a href="#cb12-56"></a><span class="cf">for</span> idx, oatPV <span class="kw">in</span> <span class="bu">enumerate</span>(oatPV_list):</span>
-<span id="cb12-57"><a href="#cb12-57"></a>    <span class="bu">print</span>(<span class="st">'oatPV '</span>, idx, <span class="st">' : '</span>, oatPV)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>object  72  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000213C4FD8B30&gt;
         72  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000213C4FEF7F0&gt;
         72  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000213C4FEF7F0&gt;
@@ -694,60 +490,27 @@ oatPV  1  :  OatPV(idx=73, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object a
 oatPV  2  :  OatPV(idx=74, outline=&lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000213C5082570&gt;, str_num='', id='aaumibtcpqmk')</code></pre>
 </div>
 </div>
-</section>
-<section id="read-cable" class="level2">
-<h2 class="anchored" data-anchor-id="read-cable">read <code>cable</code></h2>
-<div id="964058da" class="cell" data-execution_count="8">
-<div class="sourceCode cell-code" id="cb14" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1"></a>layer_idx_of_cable <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a>cnt_cable <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-3"><a href="#cb14-3"></a>max_num_obj <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb14-4"><a href="#cb14-4"></a>total_num_cable <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a></span>
-<span id="cb14-6"><a href="#cb14-6"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="cb14-7"><a href="#cb14-7"></a>    <span class="co"># print the first 3 obj on a layer</span></span>
-<span id="cb14-8"><a href="#cb14-8"></a>    <span class="cf">if</span> (obj.Attributes.LayerIndex <span class="op">==</span> layer_idx_of_cable) <span class="kw">and</span> (cnt_cable <span class="op">&lt;</span> max_num_obj):</span>
-<span id="cb14-9"><a href="#cb14-9"></a>        <span class="bu">print</span>(<span class="st">'object '</span>, idx, <span class="st">' Object                : '</span>, obj)</span>
-<span id="cb14-10"><a href="#cb14-10"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Geometry              : '</span>, obj.Geometry)</span>
-<span id="cb14-11"><a href="#cb14-11"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes            : '</span>, obj.Attributes)</span>
-<span id="cb14-12"><a href="#cb14-12"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Id         : '</span>, obj.Attributes.Id)</span>
-<span id="cb14-13"><a href="#cb14-13"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Name       : '</span>, obj.Attributes.Name)</span>
-<span id="cb14-14"><a href="#cb14-14"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.LayerIndex : '</span>, obj.Attributes.LayerIndex)</span>
-<span id="cb14-15"><a href="#cb14-15"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.ObjectColor: '</span>, obj.Attributes.ObjectColor)</span>
-<span id="cb14-16"><a href="#cb14-16"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Visible    : '</span>, obj.Attributes.Visible)</span>
-<span id="cb14-17"><a href="#cb14-17"></a>        <span class="bu">print</span>()</span>
-<span id="cb14-18"><a href="#cb14-18"></a></span>
-<span id="cb14-19"><a href="#cb14-19"></a>        <span class="co"># if geom is PolylineCurve, print its details</span></span>
-<span id="cb14-20"><a href="#cb14-20"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(obj.Geometry, rhino3dm.PolylineCurve):</span>
-<span id="cb14-21"><a href="#cb14-21"></a>            <span class="bu">print</span>(<span class="st">'            curve IsClosed     :'</span>, obj.Geometry.IsClosed)</span>
-<span id="cb14-22"><a href="#cb14-22"></a>            <span class="bu">print</span>(<span class="st">'            curve IsPlanar     :'</span>, obj.Geometry.IsPlanar())</span>
-<span id="cb14-23"><a href="#cb14-23"></a>            <span class="bu">print</span>(<span class="st">'            curve IsPolyline   :'</span>, obj.Geometry.IsPolyline())</span>
-<span id="cb14-24"><a href="#cb14-24"></a>            <span class="bu">print</span>()</span>
-<span id="cb14-25"><a href="#cb14-25"></a></span>
-<span id="cb14-26"><a href="#cb14-26"></a>            <span class="bu">print</span>(<span class="st">'            curve PointCount   :'</span>, obj.Geometry.PointCount)</span>
-<span id="cb14-27"><a href="#cb14-27"></a>            </span>
-<span id="cb14-28"><a href="#cb14-28"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(obj.Geometry.PointCount):</span>
-<span id="cb14-29"><a href="#cb14-29"></a>                <span class="bu">print</span>(<span class="st">'            curve pt '</span>, i, <span class="st">' : '</span>, obj.Geometry.Point(i))</span>
-<span id="cb14-30"><a href="#cb14-30"></a>                <span class="co"># print('           curve pt ', i, ' : ', obj.Geometry.ToPolyline().PointAt(i)) -- alternative</span></span>
-<span id="cb14-31"><a href="#cb14-31"></a></span>
-<span id="cb14-32"><a href="#cb14-32"></a>            <span class="bu">print</span>()</span>
-<span id="cb14-33"><a href="#cb14-33"></a></span>
-<span id="cb14-34"><a href="#cb14-34"></a>            <span class="bu">print</span>(<span class="st">'            curve SegmentCount :'</span>, obj.Geometry.ToPolyline().SegmentCount)</span>
-<span id="cb14-35"><a href="#cb14-35"></a></span>
-<span id="cb14-36"><a href="#cb14-36"></a>            <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(obj.Geometry.ToPolyline().SegmentCount):</span>
-<span id="cb14-37"><a href="#cb14-37"></a>                <span class="bu">print</span>(<span class="st">'            segement '</span>, i, <span class="st">' : '</span>, obj.Geometry.ToPolyline().SegmentAt(i))</span>
-<span id="cb14-38"><a href="#cb14-38"></a></span>
-<span id="cb14-39"><a href="#cb14-39"></a>            <span class="bu">print</span>()</span>
-<span id="cb14-40"><a href="#cb14-40"></a></span>
-<span id="cb14-41"><a href="#cb14-41"></a>        cnt_cable <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb14-42"><a href="#cb14-42"></a>    <span class="cf">else</span>:</span>
-<span id="cb14-43"><a href="#cb14-43"></a>        <span class="cf">pass</span></span>
-<span id="cb14-44"><a href="#cb14-44"></a></span>
-<span id="cb14-45"><a href="#cb14-45"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="cb14-46"><a href="#cb14-46"></a>    <span class="cf">if</span> (obj.Attributes.LayerIndex <span class="op">==</span> layer_idx_of_cable):</span>
-<span id="cb14-47"><a href="#cb14-47"></a>        total_num_cable <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb14-48"><a href="#cb14-48"></a></span>
-<span id="cb14-49"><a href="#cb14-49"></a><span class="bu">print</span>(<span class="st">'total num of cable: '</span>, total_num_cable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>object  0  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000213C4FBC9B0&gt;
         0  Geometry              :  &lt;rhino3dm._rhino3dm.PolylineCurve object at 0x00000213C505B6B0&gt;
         0  Attributes            :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000213C505B6B0&gt;
@@ -837,40 +600,27 @@ object  2  Object                :  &lt;rhino3dm._rhino3dm.File3dmObject object 
 total num of cable:  72</code></pre>
 </div>
 </div>
-</section>
-<section id="read-text" class="level2">
-<h2 class="anchored" data-anchor-id="read-text">read <code>text</code></h2>
-<div id="18d13882" class="cell" data-execution_count="9">
-<div class="sourceCode cell-code" id="cb16" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1"></a>layer_idx_of_text <span class="op">=</span> <span class="dv">2</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>cnt_text <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>max_num_obj <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb16-4"><a href="#cb16-4"></a>total_num_text <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb16-5"><a href="#cb16-5"></a></span>
-<span id="cb16-6"><a href="#cb16-6"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="cb16-7"><a href="#cb16-7"></a>    <span class="cf">if</span> (obj.Attributes.LayerIndex <span class="op">==</span> layer_idx_of_text) <span class="kw">and</span> (cnt_text <span class="op">&lt;</span> max_num_obj):</span>
-<span id="cb16-8"><a href="#cb16-8"></a>        <span class="bu">print</span>(<span class="st">'object '</span>, idx, <span class="st">' Object                  : '</span>, obj)</span>
-<span id="cb16-9"><a href="#cb16-9"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Geometry                : '</span>, obj.Geometry)</span>
-<span id="cb16-10"><a href="#cb16-10"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes              : '</span>, obj.Attributes)</span>
-<span id="cb16-11"><a href="#cb16-11"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Id           : '</span>, obj.Attributes.Id)</span>
-<span id="cb16-12"><a href="#cb16-12"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Name         : '</span>, obj.Attributes.Name)</span>
-<span id="cb16-13"><a href="#cb16-13"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.LayerIndex   : '</span>, obj.Attributes.LayerIndex)</span>
-<span id="cb16-14"><a href="#cb16-14"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.ObjectColor  : '</span>, obj.Attributes.ObjectColor)</span>
-<span id="cb16-15"><a href="#cb16-15"></a>        <span class="bu">print</span>(<span class="st">'       '</span>, idx, <span class="st">' Attributes.Visible      : '</span>, obj.Attributes.Visible)</span>
-<span id="cb16-16"><a href="#cb16-16"></a>        <span class="bu">print</span>()</span>
-<span id="cb16-17"><a href="#cb16-17"></a></span>
-<span id="cb16-18"><a href="#cb16-18"></a>        <span class="co"># if geom is AnnotationBase, print its PlainText</span></span>
-<span id="cb16-19"><a href="#cb16-19"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(obj.Geometry, rhino3dm.AnnotationBase):</span>
-<span id="cb16-20"><a href="#cb16-20"></a>            <span class="bu">print</span>(<span class="st">'            Geometry.PlainText     : '</span>, obj.Geometry.PlainText)</span>
-<span id="cb16-21"><a href="#cb16-21"></a>            <span class="bu">print</span>()</span>
-<span id="cb16-22"><a href="#cb16-22"></a></span>
-<span id="cb16-23"><a href="#cb16-23"></a>        cnt_text <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb16-24"><a href="#cb16-24"></a></span>
-<span id="cb16-25"><a href="#cb16-25"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="cb16-26"><a href="#cb16-26"></a>    <span class="cf">if</span> (obj.Attributes.LayerIndex <span class="op">==</span> layer_idx_of_text):</span>
-<span id="cb16-27"><a href="#cb16-27"></a>        total_num_text <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb16-28"><a href="#cb16-28"></a></span>
-<span id="cb16-29"><a href="#cb16-29"></a><span class="bu">print</span>(<span class="st">'total num of text: '</span>, total_num_text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>object  4944  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject object at 0x00000213A3231FF0&gt;
         4944  Geometry                :  &lt;rhino3dm._rhino3dm.Text object at 0x00000213A3232DF0&gt;
         4944  Attributes              :  &lt;rhino3dm._rhino3dm.ObjectAttributes object at 0x00000213A3232DF0&gt;
@@ -907,94 +657,88 @@ object  4946  Object                  :  &lt;rhino3dm._rhino3dm.File3dmObject ob
 total num of text:  72</code></pre>
 </div>
 </div>
-</section>
-<section id="create-dataclass-mypt" class="level2">
-<h2 class="anchored" data-anchor-id="create-dataclass-mypt">create dataclass <code>MyPt</code></h2>
-<div id="5ebb7669" class="cell" data-execution_count="10">
-<div class="sourceCode cell-code" id="cb18" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="at">@dataclass</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">class</span> OatPt:</span>
-<span id="cb18-3"><a href="#cb18-3"></a>    idx  : <span class="bu">int</span></span>
-<span id="cb18-4"><a href="#cb18-4"></a>    point: rhino3dm.Point3d</span>
-<span id="cb18-5"><a href="#cb18-5"></a>    name : <span class="bu">str</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
 </div>
-</section>
-<section id="read-pt" class="level2">
-<h2 class="anchored" data-anchor-id="read-pt">read <code>pt</code></h2>
-<div class="sourceCode" id="cb19" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="co"># layer_idx_of_pt = 2</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="co"># cnt_pt = 0</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># max_num_obj = 3</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a><span class="co"># total_num_pt = 0</span></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="co">#</span></span>
-<span id="cb19-6"><a href="#cb19-6"></a><span class="co"># oaPt_list_1 = []</span></span>
-<span id="cb19-7"><a href="#cb19-7"></a><span class="co">#</span></span>
-<span id="cb19-8"><a href="#cb19-8"></a><span class="co"># for idx, obj in enumerate(iter(object_table)):</span></span>
-<span id="cb19-9"><a href="#cb19-9"></a><span class="co">#     if (obj.Attributes.LayerIndex == layer_idx_of_pt) and (cnt_pt &lt; max_num_obj):</span></span>
-<span id="cb19-10"><a href="#cb19-10"></a><span class="co">#         print('object ', idx, ' Object                  : ', obj)</span></span>
-<span id="cb19-11"><a href="#cb19-11"></a><span class="co">#         print('       ', idx, ' Geometry                : ', obj.Geometry)</span></span>
-<span id="cb19-12"><a href="#cb19-12"></a><span class="co">#         print('       ', idx, ' Attributes              : ', obj.Attributes)</span></span>
-<span id="cb19-13"><a href="#cb19-13"></a><span class="co">#         print('       ', idx, ' Attributes.Id           : ', obj.Attributes.Id)</span></span>
-<span id="cb19-14"><a href="#cb19-14"></a><span class="co">#         print('       ', idx, ' Attributes.Name         : ', obj.Attributes.Name)</span></span>
-<span id="cb19-15"><a href="#cb19-15"></a><span class="co">#         print('       ', idx, ' Attributes.LayerIndex   : ', obj.Attributes.LayerIndex)</span></span>
-<span id="cb19-16"><a href="#cb19-16"></a><span class="co">#         print('       ', idx, ' Attributes.ObjectColor  : ', obj.Attributes.ObjectColor)</span></span>
-<span id="cb19-17"><a href="#cb19-17"></a><span class="co">#         print('       ', idx, ' Attributes.Visible      : ', obj.Attributes.Visible)</span></span>
-<span id="cb19-18"><a href="#cb19-18"></a><span class="co">#         print()</span></span>
-<span id="cb19-19"><a href="#cb19-19"></a><span class="co">#</span></span>
-<span id="cb19-20"><a href="#cb19-20"></a><span class="co">#         # if geom is Point, print its xyz</span></span>
-<span id="cb19-21"><a href="#cb19-21"></a><span class="co">#         if isinstance(obj.Geometry, rhino3dm.Point):</span></span>
-<span id="cb19-22"><a href="#cb19-22"></a><span class="co">#             pt = obj.Geometry.Location</span></span>
-<span id="cb19-23"><a href="#cb19-23"></a><span class="co">#             print('            Geometry.Location.X     : ', pt.X)</span></span>
-<span id="cb19-24"><a href="#cb19-24"></a><span class="co">#             print('            Geometry.Location.Y     : ', pt.Y)</span></span>
-<span id="cb19-25"><a href="#cb19-25"></a><span class="co">#             print('            Geometry.Location.Z     : ', pt.Z)</span></span>
-<span id="cb19-26"><a href="#cb19-26"></a><span class="co">#</span></span>
-<span id="cb19-27"><a href="#cb19-27"></a><span class="co">#             oatPt = OatPt(idx, pt, str(idx))</span></span>
-<span id="cb19-28"><a href="#cb19-28"></a><span class="co">#             oaPt_list_1.append(oatPt)</span></span>
-<span id="cb19-29"><a href="#cb19-29"></a><span class="co">#</span></span>
-<span id="cb19-30"><a href="#cb19-30"></a><span class="co">#             print()</span></span>
-<span id="cb19-31"><a href="#cb19-31"></a><span class="co">#</span></span>
-<span id="cb19-32"><a href="#cb19-32"></a><span class="co"># for idx, obj in enumerate(iter(object_table)):</span></span>
-<span id="cb19-33"><a href="#cb19-33"></a><span class="co">#     if (obj.Attributes.LayerIndex == layer_idx_of_pt):</span></span>
-<span id="cb19-34"><a href="#cb19-34"></a><span class="co">#         total_num_pt += 1</span></span>
-<span id="cb19-35"><a href="#cb19-35"></a><span class="co">#</span></span>
-<span id="cb19-36"><a href="#cb19-36"></a><span class="co"># print('total num of pt: ', total_num_pt)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div id="ebdd2f27" class="cell" data-execution_count="11">
-<div class="sourceCode cell-code" id="cb20" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># for idx, oatPt in enumerate(oaPt_list_1):</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="co">#     print('myPt', idx, ' : ', oatPt)</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="co">#     print('    type of idx in myPt:', type(oatPt.idx))</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="co">#     print('    type of point in myPt:', type(oatPt.point))</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="co">#     print('    type of name in myPt:', type(oatPt.name))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
 </div>
-</section>
-<section id="read-textdot" class="level2">
-<h2 class="anchored" data-anchor-id="read-textdot">read <code>TextDot</code></h2>
-<div id="6e927d32" class="cell" data-execution_count="12">
-<div class="sourceCode cell-code" id="cb21" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a>max_num_obj <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a>cnt_textDot <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>total_num_textDot <span class="op">=</span> <span class="dv">0</span></span>
-<span id="cb21-4"><a href="#cb21-4"></a></span>
-<span id="cb21-5"><a href="#cb21-5"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="cb21-6"><a href="#cb21-6"></a>    obj_geom <span class="op">=</span> obj.Geometry</span>
-<span id="cb21-7"><a href="#cb21-7"></a>    obj_attr <span class="op">=</span> obj.Attributes</span>
-<span id="cb21-8"><a href="#cb21-8"></a></span>
-<span id="cb21-9"><a href="#cb21-9"></a>    <span class="cf">if</span> (<span class="bu">isinstance</span>(obj_geom, rhino3dm.TextDot)) <span class="kw">and</span> (cnt_textDot <span class="op">&lt;</span> max_num_obj):</span>
-<span id="cb21-10"><a href="#cb21-10"></a>        <span class="bu">print</span>(<span class="st">'textDot object '</span>, idx, <span class="st">' : '</span>, obj_geom)</span>
-<span id="cb21-11"><a href="#cb21-11"></a>        <span class="bu">print</span>(<span class="st">'        position            : '</span>, obj_geom.Point)</span>
-<span id="cb21-12"><a href="#cb21-12"></a>        <span class="bu">print</span>(<span class="st">'        text                : '</span>, obj_geom.Text)</span>
-<span id="cb21-13"><a href="#cb21-13"></a>        <span class="bu">print</span>(<span class="st">'        Attributes object   : '</span>, obj_attr)</span>
-<span id="cb21-14"><a href="#cb21-14"></a>        <span class="bu">print</span>(<span class="st">'        attribs.Id          : '</span>, obj_attr.Id)</span>
-<span id="cb21-15"><a href="#cb21-15"></a>        <span class="bu">print</span>(<span class="st">'        attribs.Name        : '</span>, obj_attr.Name)</span>
-<span id="cb21-16"><a href="#cb21-16"></a>        <span class="bu">print</span>(<span class="st">'        attribs.LayerIndex  : '</span>, obj_attr.LayerIndex)</span>
-<span id="cb21-17"><a href="#cb21-17"></a>        <span class="bu">print</span>(<span class="st">'        attribs.ObjectColor : '</span>, obj_attr.ObjectColor)</span>
-<span id="cb21-18"><a href="#cb21-18"></a>        <span class="bu">print</span>(<span class="st">'        attribs.Visible     : '</span>, obj_attr.Visible)</span>
-<span id="cb21-19"><a href="#cb21-19"></a>        <span class="bu">print</span>()</span>
-<span id="cb21-20"><a href="#cb21-20"></a></span>
-<span id="cb21-21"><a href="#cb21-21"></a>        cnt_textDot <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb21-22"><a href="#cb21-22"></a></span>
-<span id="cb21-23"><a href="#cb21-23"></a><span class="cf">for</span> idx, obj <span class="kw">in</span> <span class="bu">enumerate</span>(<span class="bu">iter</span>(object_table)):</span>
-<span id="cb21-24"><a href="#cb21-24"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(obj.Geometry, rhino3dm.TextDot):</span>
-<span id="cb21-25"><a href="#cb21-25"></a>        total_num_textDot <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb21-26"><a href="#cb21-26"></a></span>
-<span id="cb21-27"><a href="#cb21-27"></a><span class="bu">print</span>(<span class="st">'total num of textDot: '</span>, total_num_textDot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="sourceCode html-fill-item html-fill-container" id="cb9" data-code-line-numbers=""><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># layer_idx_of_pt = 2</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cnt_pt = 0</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># max_num_obj = 3</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># total_num_pt = 0</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># oaPt_list_1 = []</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># for idx, obj in enumerate(iter(object_table)):</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#     if (obj.Attributes.LayerIndex == layer_idx_of_pt) and (cnt_pt &lt; max_num_obj):</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#         print('object ', idx, ' Object                  : ', obj)</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#         print('       ', idx, ' Geometry                : ', obj.Geometry)</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#         print('       ', idx, ' Attributes              : ', obj.Attributes)</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#         print('       ', idx, ' Attributes.Id           : ', obj.Attributes.Id)</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#         print('       ', idx, ' Attributes.Name         : ', obj.Attributes.Name)</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#         print('       ', idx, ' Attributes.LayerIndex   : ', obj.Attributes.LayerIndex)</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#         print('       ', idx, ' Attributes.ObjectColor  : ', obj.Attributes.ObjectColor)</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">#         print('       ', idx, ' Attributes.Visible      : ', obj.Attributes.Visible)</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">#         print()</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co">#         # if geom is Point, print its xyz</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co">#         if isinstance(obj.Geometry, rhino3dm.Point):</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="co">#             pt = obj.Geometry.Location</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="co">#             print('            Geometry.Location.X     : ', pt.X)</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a><span class="co">#             print('            Geometry.Location.Y     : ', pt.Y)</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="co">#             print('            Geometry.Location.Z     : ', pt.Z)</span></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co">#             oatPt = OatPt(idx, pt, str(idx))</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co">#             oaPt_list_1.append(oatPt)</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="co">#             print()</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="co"># for idx, obj in enumerate(iter(object_table)):</span></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="co">#     if (obj.Attributes.LayerIndex == layer_idx_of_pt):</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="co">#         total_num_pt += 1</span></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="co"># print('total num of pt: ', total_num_pt)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>textDot object  4872  :  &lt;rhino3dm._rhino3dm.TextDot object at 0x00000213A32310B0&gt;
         position            :  27.064173777436537,200.67848337106952,0.0
         text                :  6-6-1
@@ -1028,47 +772,27 @@ textDot object  4874  :  &lt;rhino3dm._rhino3dm.TextDot object at 0x00000213C507
 total num of textDot:  72</code></pre>
 </div>
 </div>
-</section>
-<section id="read-earthanchorpoint" class="level2">
-<h2 class="anchored" data-anchor-id="read-earthanchorpoint">read <code>EarthAnchorPoint</code></h2>
-<div id="dda127be" class="cell" data-execution_count="13">
-<div class="sourceCode cell-code" id="cb23" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># get the `Settings` object as a property of File3dm object</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>file3dm_settings <span class="op">=</span> file3dm_obj.Settings </span>
-<span id="cb23-3"><a href="#cb23-3"></a><span class="bu">print</span>(<span class="st">'file3dm settings: '</span>, file3dm_settings)</span>
-<span id="cb23-4"><a href="#cb23-4"></a></span>
-<span id="cb23-5"><a href="#cb23-5"></a><span class="co"># get `EarthAnchorPoint` in settings</span></span>
-<span id="cb23-6"><a href="#cb23-6"></a>earthAnchorPoint <span class="op">=</span> file3dm_settings.EarthAnchorPoint</span>
-<span id="cb23-7"><a href="#cb23-7"></a><span class="bu">print</span>(<span class="st">'EarthAnchorPoint: '</span>, earthAnchorPoint)</span>
-<span id="cb23-8"><a href="#cb23-8"></a><span class="bu">print</span>()</span>
-<span id="cb23-9"><a href="#cb23-9"></a></span>
-<span id="cb23-10"><a href="#cb23-10"></a><span class="co"># check if the earthAnchorPoint is set or not</span></span>
-<span id="cb23-11"><a href="#cb23-11"></a>earthAnchorPoint_set_or_not <span class="op">=</span> earthAnchorPoint.EarthLocationIsSet()</span>
-<span id="cb23-12"><a href="#cb23-12"></a><span class="bu">print</span>(<span class="st">'earthAnchorPoint is set: '</span>, earthAnchorPoint_set_or_not)</span>
-<span id="cb23-13"><a href="#cb23-13"></a></span>
-<span id="cb23-14"><a href="#cb23-14"></a><span class="co"># get lat and lon of earthAnchorPoint</span></span>
-<span id="cb23-15"><a href="#cb23-15"></a>earthAnchorPoint_lat <span class="op">=</span> earthAnchorPoint.EarthBasepointLatitude</span>
-<span id="cb23-16"><a href="#cb23-16"></a>earthAnchorPoint_lon <span class="op">=</span> earthAnchorPoint.EarthBasepointLongitude</span>
-<span id="cb23-17"><a href="#cb23-17"></a><span class="bu">print</span>(<span class="st">'earthAnchorPoint latitude : '</span>, earthAnchorPoint_lat)</span>
-<span id="cb23-18"><a href="#cb23-18"></a><span class="bu">print</span>(<span class="st">'earthAnchorPoint longitude: '</span>, earthAnchorPoint_lon)</span>
-<span id="cb23-19"><a href="#cb23-19"></a><span class="bu">print</span>()</span>
-<span id="cb23-20"><a href="#cb23-20"></a></span>
-<span id="cb23-21"><a href="#cb23-21"></a><span class="co"># get ModelBasePoint</span></span>
-<span id="cb23-22"><a href="#cb23-22"></a>modelBasePoint <span class="op">=</span> earthAnchorPoint.ModelBasePoint</span>
-<span id="cb23-23"><a href="#cb23-23"></a><span class="bu">print</span>(<span class="st">'model base point: '</span>, modelBasePoint)</span>
-<span id="cb23-24"><a href="#cb23-24"></a></span>
-<span id="cb23-25"><a href="#cb23-25"></a><span class="co"># get `ModelToEarthTransform`</span></span>
-<span id="cb23-26"><a href="#cb23-26"></a>modelUnitSystem <span class="op">=</span> file3dm_settings.ModelUnitSystem</span>
-<span id="cb23-27"><a href="#cb23-27"></a><span class="bu">print</span>(<span class="st">'modelUnitSystem : '</span>, modelUnitSystem)</span>
-<span id="cb23-28"><a href="#cb23-28"></a></span>
-<span id="cb23-29"><a href="#cb23-29"></a>modelToEarthTransform <span class="op">=</span> earthAnchorPoint.GetModelToEarthTransform(modelUnitSystem)</span>
-<span id="cb23-30"><a href="#cb23-30"></a><span class="bu">print</span>(<span class="st">'modelToEarthTransform : '</span>, modelToEarthTransform)</span>
-<span id="cb23-31"><a href="#cb23-31"></a></span>
-<span id="cb23-32"><a href="#cb23-32"></a><span class="co"># create a test pt</span></span>
-<span id="cb23-33"><a href="#cb23-33"></a><span class="co"># test_pt = rhino3dm.Point3d(91.2724, 187.784, 0)</span></span>
-<span id="cb23-34"><a href="#cb23-34"></a>test_pt <span class="op">=</span> rhino3dm.Point3d(<span class="fl">140.492</span>,<span class="fl">236.638</span>,<span class="dv">0</span>)</span>
-<span id="cb23-35"><a href="#cb23-35"></a>test_pt_transformed_in_lon_lat_ele <span class="op">=</span> test_pt.Transform(modelToEarthTransform)</span>
-<span id="cb23-36"><a href="#cb23-36"></a><span class="bu">print</span>(<span class="st">'test pt transformed in lon, lat, ele: '</span>, test_pt_transformed_in_lon_lat_ele)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div>
+</div>
+<div class="html-fill-item html-fill-container bslib-grid" style="display: grid; grid-template-columns: minmax(3em, 1fr) minmax(3em, 1fr) minmax(3em, 1fr);
+grid-auto-rows: minmax(0, 1fr);">
+<div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container flow">
+
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell html-fill-item html-fill-container bslib-card" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-body html-fill-item html-fill-container">
+<div class="cell-output cell-output-stdout html-fill-item html-fill-container">
 <pre data-code-line-numbers=""><code>file3dm settings:  &lt;rhino3dm._rhino3dm.File3dmSettings object at 0x00000213C4FD6C30&gt;
 EarthAnchorPoint:  &lt;rhino3dm._rhino3dm.EarthAnchorPoint object at 0x00000213C5004870&gt;
 
@@ -1082,15 +806,19 @@ modelToEarthTransform :  &lt;rhino3dm._rhino3dm.Transform object at 0x00000213C4
 test pt transformed in lon, lat, ele:  120.53605149715442,22.716453831047513,0.0</code></pre>
 </div>
 </div>
-<blockquote class="blockquote">
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div class="card cell markdown html-fill-item html-fill-container bslib-card" data-fill="false" data-bslib-card-init="" data-require-bs-caller="card()" data-full-screen="false">
+<div class="card-footer">
 <p><strong>File3dm.Settings</strong></p>
 <p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dm.html#rhino3dm.File3dm.Settings"><strong><em>property</em></strong> <code>rhino3dm.File3dm.Settings</code></a></p>
 <p><br></p>
 <p>File3dmSettings: Settings include tolerance, and unit system, and defaults used for creating views and objects.</p>
 <p><br></p>
 <p>Return: A rhino3dm.File3dm.Settings object</p>
-</blockquote>
-<blockquote class="blockquote">
 <p><strong>rhino3dm.File3dmSettings</strong></p>
 <p><a href="https://mcneel.github.io/rhino3dm/python/api/File3dmSettings.html"><strong><em>class</em></strong> <code>rhino3dm.File3dm</code></a></p>
 <p><br></p>
@@ -1100,8 +828,6 @@ test pt transformed in lon, lat, ele:  120.53605149715442,22.716453831047513,0.0
 <li><p><code>EarthAnchorPoint</code></p></li>
 <li><p><code>ModelUnitSystem</code></p></li>
 </ul>
-</blockquote>
-<blockquote class="blockquote">
 <p><strong>rhino3dm.EarthAnchorPoint</strong></p>
 <p><a href="https://mcneel.github.io/rhino3dm/python/api/EarthAnchorPoint.html#module-rhino3dm"><strong><em>class</em></strong> <code>rhino3dm.EarthAnchorPoint</code></a></p>
 <p>Property:</p>
@@ -1111,21 +837,25 @@ test pt transformed in lon, lat, ele:  120.53605149715442,22.716453831047513,0.0
 <li><p>ModelBasePoint</p></li>
 <li><p>GetModelToEarthTransform(modelUnitSystem)</p></li>
 </ul>
-</blockquote>
-<blockquote class="blockquote">
 <p><strong>Set EarthAnchorPoint in Rhino</strong></p>
 <p><a href="https://docs.mcneel.com/rhino/5/help/en-us/commands/earthanchorpoint.htm"><strong><em>cmd</em></strong> <code>Set EarthAnchorPoint in Rhino</code></a></p>
-</blockquote>
-<blockquote class="blockquote">
 <p><strong>Rhino to Google Earth</strong></p>
 <p><a href="https://wiki.mcneel.com/rhino/googleearth"><strong><em>wiki</em></strong> <code>Rhino to Google Earth</code></a></p>
-</blockquote>
+</div>
+<bslib-tooltip placement="auto" bsoptions="[]" data-require-bs-version="5" data-require-bs-caller="tooltip()">
+    <template>Expand</template>
+    <span class="bslib-full-screen-enter badge rounded-pill">
+        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" style="height:1em;width:1em;" aria-hidden="true" role="img"><path d="M20 5C20 4.4 19.6 4 19 4H13C12.4 4 12 3.6 12 3C12 2.4 12.4 2 13 2H21C21.6 2 22 2.4 22 3V11C22 11.6 21.6 12 21 12C20.4 12 20 11.6 20 11V5ZM4 19C4 19.6 4.4 20 5 20H11C11.6 20 12 20.4 12 21C12 21.6 11.6 22 11 22H3C2.4 22 2 21.6 2 21V13C2 12.4 2.4 12 3 12C3.6 12 4 12.4 4 13V19Z"></path></svg>
+    </span>
+</bslib-tooltip><script data-bslib-card-init="">bslib.Card.initializeAllCards();</script></div><div id="3ade8a4a-fb1d-4a6c-8409-ac45482d5fc9" class="hidden html-fill-item html-fill-container">
+
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
-</section>
-</section>
-
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1349,57 +1079,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1649,64 +1328,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         }
       };
     }
-      const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
-      for (let i=0; i<annoteTargets.length; i++) {
-        const annoteTarget = annoteTargets[i];
-        const targetCell = annoteTarget.getAttribute("data-target-cell");
-        const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
-        const contentFn = () => {
-          const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-          if (content) {
-            const tipContent = content.cloneNode(true);
-            tipContent.classList.add("code-annotation-tip-content");
-            return tipContent.outerHTML;
-          }
-        }
-        const config = {
-          allowHTML: true,
-          content: contentFn,
-          onShow: (instance) => {
-            selectCodeLines(instance.reference);
-            instance.reference.classList.add('code-annotation-active');
-            window.tippy.hideAll();
-          },
-          onHide: (instance) => {
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
             unselectCodeLines();
-            instance.reference.classList.remove('code-annotation-active');
-          },
-          maxWidth: 300,
-          delay: [50, 0],
-          duration: [200, 0],
-          offset: [5, 10],
-          arrow: true,
-          appendTo: function(el) {
-            return el.parentElement.parentElement.parentElement;
-          },
-          interactive: true,
-          interactiveBorder: 10,
-          theme: 'quarto',
-          placement: 'right',
-          popperOptions: {
-            modifiers: [
-            {
-              name: 'flip',
-              options: {
-                flipVariations: false, // true by default
-                allowedAutoPlacements: ['right'],
-                fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
-              },
-            },
-            {
-              name: 'preventOverflow',
-              options: {
-                mainAxis: false,
-                altAxis: false
-              }
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
             }
-            ]        
-          }      
-        };
-        window.tippy(annoteTarget, config); 
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
       }
   const findCites = (el) => {
     const parentEl = el.parentElement;
@@ -1749,6 +1389,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 </div> <!-- /content -->
 
+<script type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (_event) {
+  if (window.bslib.Card) {
+    window.bslib.Card.initializeAllCards();
+  }
+}); 
+</script>
+  
 
 
 
