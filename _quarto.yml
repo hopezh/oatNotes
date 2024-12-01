@@ -70,9 +70,10 @@ format:
       body-width: 1000px
       # margin-width: 300px
       # gutter-width: 1.5rem
+    number-sections: true
     theme: 
-      light: flatly
       dark: darkly
+      light: flatly
     toc: true
 
   ipynb: default
