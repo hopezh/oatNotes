@@ -51,6 +51,7 @@ website:
           - ./pages/shiny/test.qmd
 
   back-to-top-navigation: true      
+  page-navigation: true
   reader-mode: true
 
 format:
