@@ -29,6 +29,7 @@ website:
         contents:
           - ./pages/plotly/plotly_data_structure.qmd
           - ./pages/plotly/transparent_fig_bgcolor.qmd
+          - ./pages/plotly/multiline_annotation.qmd
       - section: "Polars"
         contents:
           - ./pages/polars/merge_csvs.qmd

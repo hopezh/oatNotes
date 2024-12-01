@@ -1,0 +1,44 @@
+---
+title: "Add Multiline Annotation"
+filters:
+    - line-highlight
+---
+
+
+# Use the `<br>` tag
+
+Use the html tag `<br>` to break a line after the string section in the `text` property of an annotation. 
+
+```{python}
+#| source-line-numbers: "17"
+import plotly.graph_objects as go
+
+labels = ['Oxygen','Hydrogen','Carbon_Dioxide','Nitrogen']
+values = [45.00, 25.00, 10.53, 5.00]
+
+# Use `hole` to create a donut-like pie chart
+fig = go.Figure(data=[go.Pie(
+    labels=labels,
+    values=values,
+    hole=.3,
+    textinfo='label+value+percent',
+)])
+
+fig.add_annotation(
+    x=0.5,
+    y=0.5,
+    text='total values:<br>' + f'{round(sum(values),2):,}',
+    font=dict(size=16, weight='bold'),
+    showarrow=False,
+)
+
+fig.update_layout(height=600)
+
+fig.show()
+```
+
+::: {.column-margin}
+Ref: [How to add multi-line annotation at the center of a donut chart?](https://community.plotly.com/t/how-to-add-multi-line-annotation-at-the-center-of-a-donut-chart/89082)
+:::
+
+
