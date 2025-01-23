@@ -57,27 +57,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../pages/polars/merge_csvs.html" rel="next">
-<link href="../../pages/plotly/transparent_fig_bgcolor.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-14abb8284ba5d94560a5fbf30c1a4bef.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5c3888f27347c78fd849423dde8c1586.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b2c94af04d2cc02992362769ff9dbba6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-1057f841468b4599d9db233149eba809.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-14abb8284ba5d94560a5fbf30c1a4bef.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5c3888f27347c78fd849423dde8c1586.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-b2c94af04d2cc02992362769ff9dbba6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-1057f841468b4599d9db233149eba809.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -107,55 +105,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
-
-
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-
 <script type="text/javascript">
-
 window.PlotlyConfig = {MathJaxConfig: 'local'};
-
 if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
-
 if (typeof require !== 'undefined') {
-
 require.undef("plotly");
-
 requirejs.config({
-
     paths: {
-
         'plotly': ['https://cdn.plot.ly/plotly-2.35.2.min']
-
     }
-
 });
-
 require(['plotly'], function(Plotly) {
-
     window._Plotly = Plotly;
-
 });
-
 }
-
 </script>
 
 
 
-
-
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed slimcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">OatNotes</span>
     </a>
   </div>
@@ -166,19 +145,19 @@ require(['plotly'], function(Plotly) {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../index.html"> 
+    <a class="nav-link" href="../../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../dashboard.html"> 
+    <a class="nav-link" href="../../../dashboard.html"> 
 <span class="menu-text">Worldwide Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../dashboard_shiny.html"> 
+    <a class="nav-link" href="../../../dashboard_shiny.html"> 
 <span class="menu-text">Shiny Dashboard</span></a>
   </li>  
 </ul>
@@ -198,7 +177,7 @@ require(['plotly'], function(Plotly) {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/plotly/plotly_data_structure.html">Plotly</a></li><li class="breadcrumb-item"><a href="../../pages/plotly/multiline_annotation.html">Add Multiline Annotation</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Add Multiline Annotation</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -233,7 +212,7 @@ require(['plotly'], function(Plotly) {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LazyVim Tips</span></a>
   </div>
 </li>
@@ -250,7 +229,7 @@ require(['plotly'], function(Plotly) {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test Observable.js</span></a>
   </div>
 </li>
@@ -267,19 +246,19 @@ require(['plotly'], function(Plotly) {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">show data strucure of a plotly figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparent bgcolor for figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/multiline_annotation.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../pages/plotly/multiline_annotation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add Multiline Annotation</span></a>
   </div>
 </li>
@@ -296,25 +275,25 @@ require(['plotly'], function(Plotly) {
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merge CSVs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/polars/edit_df_column.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/polars/edit_df_column.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Edit DF Column</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/polars/polars_cookbook.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/polars/polars_cookbook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polars Cookbook</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/polars/polars_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/polars/polars_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polars Intro</span></a>
   </div>
 </li>
@@ -331,19 +310,19 @@ require(['plotly'], function(Plotly) {
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">quarto tabset</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">expand the width of a code block and its output</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">side by side codeblocks and outputs</span></a>
   </div>
 </li>
@@ -360,19 +339,19 @@ require(['plotly'], function(Plotly) {
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test rhino3dm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">rhino3dm exercise 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/rhino3dm/rhino3dm_02.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../pages/rhino3dm/rhino3dm_02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">rhino3dm exercise 02</span></a>
   </div>
 </li>
@@ -404,14 +383,14 @@ require(['plotly'], function(Plotly) {
   <ul>
   <li><a href="#use-the-br-tag" id="toc-use-the-br-tag" class="nav-link active" data-scroll-target="#use-the-br-tag"><span class="header-section-number">1</span> Use the <code>&lt;br&gt;</code> tag</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="multiline_annotation.ipynb" download="multiline_annotation.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="multiline_annotation.out.ipynb" download="multiline_annotation.out.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/plotly/plotly_data_structure.html">Plotly</a></li><li class="breadcrumb-item"><a href="../../pages/plotly/multiline_annotation.html">Add Multiline Annotation</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">Add Multiline Annotation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<h1 class="title">Add Multiline Annotation</h1>
 </div>
 
 
@@ -428,10 +407,10 @@ require(['plotly'], function(Plotly) {
 </header>
 
 
-<section id="use-the-br-tag" class="level1 page-columns page-full" data-number="1">
+<section id="use-the-br-tag" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Use the <code>&lt;br&gt;</code> tag</h1>
 <p>Use the html tag <code>&lt;br&gt;</code> to break a line after the string section in the <code>text</code> property of an annotation.</p>
-<div id="321c623c" class="cell" data-source-line-numbers="17" data-execution_count="1">
+<div id="c340a527" class="cell" data-source-line-numbers="17" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="17" data-code-line-numbers="17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>labels <span class="op">=</span> [<span class="st">'Oxygen'</span>,<span class="st">'Hydrogen'</span>,<span class="st">'Carbon_Dioxide'</span>,<span class="st">'Nitrogen'</span>]</span>
@@ -445,24 +424,21 @@ require(['plotly'], function(Plotly) {
 <span id="cb1-11"><a href="#cb1-11"></a>    textinfo<span class="op">=</span><span class="st">'label+value+percent'</span>,</span>
 <span id="cb1-12"><a href="#cb1-12"></a>)])</span>
 <span id="cb1-13"><a href="#cb1-13"></a></span>
-<span id="cb1-14"><a href="#cb1-14"></a>fig.add_annotation(</span>
-<span id="cb1-15"><a href="#cb1-15"></a>    x<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb1-16"><a href="#cb1-16"></a>    y<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb1-17"><a href="#cb1-17"></a>    text<span class="op">=</span><span class="st">'total values:&lt;br&gt;'</span> <span class="op">+</span> <span class="ss">f'</span><span class="sc">{</span><span class="bu">round</span>(<span class="bu">sum</span>(values),<span class="dv">2</span>)<span class="sc">:,}</span><span class="ss">'</span>,</span>
-<span id="cb1-18"><a href="#cb1-18"></a>    font<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb1-19"><a href="#cb1-19"></a>        size<span class="op">=</span><span class="dv">16</span>,</span>
-<span id="cb1-20"><a href="#cb1-20"></a>        weight<span class="op">=</span><span class="st">'bold'</span>   <span class="co"># alternatively, use "weight=1000" (require plotly v5.24)</span></span>
-<span id="cb1-21"><a href="#cb1-21"></a>    ),</span>
-<span id="cb1-22"><a href="#cb1-22"></a>    showarrow<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb1-23"><a href="#cb1-23"></a>)</span>
-<span id="cb1-24"><a href="#cb1-24"></a></span>
-<span id="cb1-25"><a href="#cb1-25"></a>fig.update_layout(height<span class="op">=</span><span class="dv">600</span>)</span>
-<span id="cb1-26"><a href="#cb1-26"></a></span>
-<span id="cb1-27"><a href="#cb1-27"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="co"># fig.add_annotation(</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="co">#     x=0.5,</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="co">#     y=0.5,</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="co">#     #     text='total values:&lt;br&gt;' + f'{round(sum(values),2):,}',</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="co">#     #     font=dict(size=16, weight='bold'),</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="co">#     #     showarrow=False,</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="co">#     # )</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="co">#</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="co">#     fig.update_layout(height=600)</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a></span>
+<span id="cb1-24"><a href="#cb1-24"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div>                            <div id="a772c64e-a992-4453-b4ca-5a74f33cc267" class="plotly-graph-div" style="height:600px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("a772c64e-a992-4453-b4ca-5a74f33cc267")) {                    Plotly.newPlot(                        "a772c64e-a992-4453-b4ca-5a74f33cc267",                        [{"hole":0.3,"labels":["Oxygen","Hydrogen","Carbon_Dioxide","Nitrogen"],"textinfo":"label+value+percent","values":[45.0,25.0,10.53,5.0],"type":"pie"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"annotations":[{"font":{"size":16,"weight":"bold"},"showarrow":false,"text":"total values:\u003cbr\u003e85.53","x":0.5,"y":0.5}],"height":600},                        {"responsive": true}                    ).then(function(){
+<div>                            <div id="8149d0dd-149d-43f2-ace9-f877beecf48e" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("8149d0dd-149d-43f2-ace9-f877beecf48e")) {                    Plotly.newPlot(                        "8149d0dd-149d-43f2-ace9-f877beecf48e",                        [{"hole":0.3,"labels":["Oxygen","Hydrogen","Carbon_Dioxide","Nitrogen"],"textinfo":"label+value+percent","values":[45.0,25.0,10.53,5.0],"type":"pie"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('a772c64e-a992-4453-b4ca-5a74f33cc267');
+var gd = document.getElementById('8149d0dd-149d-43f2-ace9-f877beecf48e');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -487,32 +463,10 @@ if (outputEl) {{
                         })                };                });            </script>        </div>
 </div>
 </div>
+<p>Ref: <a href="https://community.plotly.com/t/how-to-add-multi-line-annotation-at-the-center-of-a-donut-chart/89082">How to add multi-line annotation at the center of a donut chart?</a></p>
 
 
-
-<!-- -->
-
-<div class="no-row-height column-margin column-container"><div class="">
-<div class="callout callout-style-default callout-tip callout-titled" title="Reference">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Reference
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
-<div class="callout-body-container callout-body">
-<ul>
-<li><p><a href="https://community.plotly.com/t/how-to-add-multi-line-annotation-at-the-center-of-a-donut-chart/89082">How to add multi-line annotation at the center of a donut chart?</a></p></li>
-<li><p><a href="https://plotly.com/python/reference/layout/annotations/#layout-annotations-items-annotation-font-weight">fig.update_annotations(font_weight)</a></p></li>
-</ul>
-</div>
-</div>
-</div>
-</div></div></section>
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1166,75 +1120,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../../pages/plotly/transparent_fig_bgcolor.html" class="pagination-link" aria-label="Transparent bgcolor for figure">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Transparent bgcolor for figure</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../../pages/polars/merge_csvs.html" class="pagination-link" aria-label="Merge CSVs">
-        <span class="nav-page-text">Merge CSVs</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "Add Multiline Annotation"</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="an">filters:</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="co">    - line-highlight</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="co">---</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="fu"># Use the `&lt;br&gt;` tag</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a></span>
-<span id="cb2-10"><a href="#cb2-10"></a>Use the html tag <span class="in">`&lt;br&gt;`</span> to break a line after the string section in the <span class="in">`text`</span> property of an annotation. </span>
-<span id="cb2-11"><a href="#cb2-11"></a></span>
-<span id="cb2-14"><a href="#cb2-14"></a><span class="in">```{python}</span></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="co">#| source-line-numbers: "17"</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
-<span id="cb2-17"><a href="#cb2-17"></a></span>
-<span id="cb2-18"><a href="#cb2-18"></a>labels <span class="op">=</span> [<span class="st">'Oxygen'</span>,<span class="st">'Hydrogen'</span>,<span class="st">'Carbon_Dioxide'</span>,<span class="st">'Nitrogen'</span>]</span>
-<span id="cb2-19"><a href="#cb2-19"></a>values <span class="op">=</span> [<span class="fl">45.00</span>, <span class="fl">25.00</span>, <span class="fl">10.53</span>, <span class="fl">5.00</span>]</span>
-<span id="cb2-20"><a href="#cb2-20"></a></span>
-<span id="cb2-21"><a href="#cb2-21"></a><span class="co"># Use `hole` to create a donut-like pie chart</span></span>
-<span id="cb2-22"><a href="#cb2-22"></a>fig <span class="op">=</span> go.Figure(data<span class="op">=</span>[go.Pie(</span>
-<span id="cb2-23"><a href="#cb2-23"></a>    labels<span class="op">=</span>labels,</span>
-<span id="cb2-24"><a href="#cb2-24"></a>    values<span class="op">=</span>values,</span>
-<span id="cb2-25"><a href="#cb2-25"></a>    hole<span class="op">=</span><span class="fl">.3</span>,</span>
-<span id="cb2-26"><a href="#cb2-26"></a>    textinfo<span class="op">=</span><span class="st">'label+value+percent'</span>,</span>
-<span id="cb2-27"><a href="#cb2-27"></a>)])</span>
-<span id="cb2-28"><a href="#cb2-28"></a></span>
-<span id="cb2-29"><a href="#cb2-29"></a>fig.add_annotation(</span>
-<span id="cb2-30"><a href="#cb2-30"></a>    x<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb2-31"><a href="#cb2-31"></a>    y<span class="op">=</span><span class="fl">0.5</span>,</span>
-<span id="cb2-32"><a href="#cb2-32"></a>    text<span class="op">=</span><span class="st">'total values:&lt;br&gt;'</span> <span class="op">+</span> <span class="ss">f'</span><span class="sc">{</span><span class="bu">round</span>(<span class="bu">sum</span>(values),<span class="dv">2</span>)<span class="sc">:,}</span><span class="ss">'</span>,</span>
-<span id="cb2-33"><a href="#cb2-33"></a>    font<span class="op">=</span><span class="bu">dict</span>(</span>
-<span id="cb2-34"><a href="#cb2-34"></a>        size<span class="op">=</span><span class="dv">16</span>,</span>
-<span id="cb2-35"><a href="#cb2-35"></a>        weight<span class="op">=</span><span class="st">'bold'</span>   <span class="co"># alternatively, use "weight=1000" (require plotly v5.24)</span></span>
-<span id="cb2-36"><a href="#cb2-36"></a>    ),</span>
-<span id="cb2-37"><a href="#cb2-37"></a>    showarrow<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb2-38"><a href="#cb2-38"></a>)</span>
-<span id="cb2-39"><a href="#cb2-39"></a></span>
-<span id="cb2-40"><a href="#cb2-40"></a>fig.update_layout(height<span class="op">=</span><span class="dv">600</span>)</span>
-<span id="cb2-41"><a href="#cb2-41"></a></span>
-<span id="cb2-42"><a href="#cb2-42"></a>fig.show()</span>
-<span id="cb2-43"><a href="#cb2-43"></a><span class="in">```</span></span>
-<span id="cb2-44"><a href="#cb2-44"></a></span>
-<span id="cb2-45"><a href="#cb2-45"></a>:::: {.column-margin}</span>
-<span id="cb2-46"><a href="#cb2-46"></a></span>
-<span id="cb2-47"><a href="#cb2-47"></a>::: {.callout-tip title="Reference" collapse="false"}</span>
-<span id="cb2-48"><a href="#cb2-48"></a><span class="ss">- </span><span class="co">[</span><span class="ot">How to add multi-line annotation at the center of a donut chart?</span><span class="co">](https://community.plotly.com/t/how-to-add-multi-line-annotation-at-the-center-of-a-donut-chart/89082)</span></span>
-<span id="cb2-49"><a href="#cb2-49"></a></span>
-<span id="cb2-50"><a href="#cb2-50"></a><span class="ss">- </span><span class="co">[</span><span class="ot">fig.update_annotations(font_weight)</span><span class="co">](https://plotly.com/python/reference/layout/annotations/#layout-annotations-items-annotation-font-weight)</span></span>
-<span id="cb2-51"><a href="#cb2-51"></a>:::</span>
-<span id="cb2-52"><a href="#cb2-52"></a></span>
-<span id="cb2-53"><a href="#cb2-53"></a>::::</span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
-</div></div></div></div></div>
 </div> <!-- /content -->
 
 
 
 
-<script src="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
+<script src="../../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
 </body></html>
