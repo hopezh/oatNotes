@@ -36,6 +36,7 @@ website:
           - ./pages/polars/edit_df_column.qmd
           - ./pages/polars/polars_cookbook.qmd
           - ./pages/polars/polars_intro.qmd
+          - ./pages/polars/polars_FAQ.qmd
       - section: "Quarto"
         contents:
           - ./pages/quarto/quarto_tabset.qmd
