@@ -109,7 +109,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -360,9 +360,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Add Logo</span></a>
   </div>
 </li>
-          <li class="sidebar-item">
- <span class="menu-text">./pages/shiny/test.qmd</span>
-  </li>
       </ul>
   </li>
     </ul>
@@ -374,7 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         
     <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="add_logo.ipynb" download="add_logo.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/shiny/add_logo.html">shiny</a></li><li class="breadcrumb-item"><a href="../../pages/shiny/add_logo.html">Add Logo</a></li></ol></nav>
 <div class="quarto-title">
@@ -395,6 +392,71 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>Add a logo to the left of the title of a <code>page_navbar</code>.</p>
+<p>Pay attention to line 10-17 and 26.</p>
+<ul>
+<li><p>A <code>www</code> folder must be added to the root dir of the app;</p></li>
+<li><p><code>static_assets=app_dir / 'www'</code> needs to be specified as an argument of <code>app</code>;</p></li>
+<li><p>Shiny will look for asset in this folder following the relative path specified in the <code>src</code> argument of <code>ui.tags.img</code></p></li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>app.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb1" data-filename="app.py" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> shiny <span class="im">import</span> App, ui</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>app_ui <span class="op">=</span> ui.page_navbar(  </span>
+<span id="cb1-5"><a href="#cb1-5"></a>    ui.nav_panel(<span class="st">"A"</span>, <span class="st">"Page A content"</span>),  </span>
+<span id="cb1-6"><a href="#cb1-6"></a>    ui.nav_panel(<span class="st">"B"</span>, <span class="st">"Page B content"</span>),  </span>
+<span id="cb1-7"><a href="#cb1-7"></a>    ui.nav_panel(<span class="st">"C"</span>, <span class="st">"Page C content"</span>),  </span>
+<span id="cb1-8"><a href="#cb1-8"></a>    title <span class="op">=</span> ui.div(</span>
+<span id="cb1-9"><a href="#cb1-9"></a>        ui.tags.img(</span>
+<span id="cb1-10"><a href="#cb1-10"></a>            src<span class="op">=</span><span class="st">'asset/logo.png'</span>, <span class="co"># this image is put in the www/asset/logo.png folder</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>            height<span class="op">=</span><span class="st">'40px'</span>,</span>
+<span id="cb1-12"><a href="#cb1-12"></a>            style<span class="op">=</span><span class="st">'margin-right: 10px;'</span>,</span>
+<span id="cb1-13"><a href="#cb1-13"></a>        ),</span>
+<span id="cb1-14"><a href="#cb1-14"></a>        <span class="st">'App with Navbar &amp; Logo'</span>,</span>
+<span id="cb1-15"><a href="#cb1-15"></a>    ),</span>
+<span id="cb1-16"><a href="#cb1-16"></a>    <span class="bu">id</span><span class="op">=</span><span class="st">"page"</span>,  </span>
+<span id="cb1-17"><a href="#cb1-17"></a>)  </span>
+<span id="cb1-18"><a href="#cb1-18"></a></span>
+<span id="cb1-19"><a href="#cb1-19"></a></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="kw">def</span> server(<span class="bu">input</span>, output, session):</span>
+<span id="cb1-21"><a href="#cb1-21"></a>    <span class="cf">pass</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a></span>
+<span id="cb1-23"><a href="#cb1-23"></a>app_dir <span class="op">=</span> Path(<span class="va">__file__</span>).parent</span>
+<span id="cb1-24"><a href="#cb1-24"></a>app <span class="op">=</span> App(app_ui, server, static_assets<span class="op">=</span>app_dir <span class="op">/</span> <span class="st">'www'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="">
+<div class="callout callout-style-default callout-tip callout-titled" title="Serve local files">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Serve local files
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><a href="https://shiny.posit.co/py/docs/ui-customize.html#serve-local-files"><code>Serve local files</code></a></p>
+<p><br></p>
+<p>When customizing UI with CSS (and/or JavaScript), it’s often useful to serve local files (e.g., fonts, images, CSS, etc) to the app. This can be done by providing a value for <code>static_assets</code>.</p>
+<p><br></p>
+<p>To make static files available for the UI in Shiny Core, use the <code>static_assets</code> argument of <code>shiny.App()</code>. Unlike Shiny Express, the <code>www</code> subdirectory is not automatically mounted at <code>/</code> but you can add it manually like any other static asset directory.</p>
+</div>
+</div>
+</div>
+</div></div><p>The code above will create the following page:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./image/app_with_logo.png" class="img-fluid figure-img"></p>
+<figcaption>App with Logo</figcaption>
+</figure>
+</div>
 
 
 <!-- -->
@@ -1061,12 +1123,70 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-next">
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="an">title:</span><span class="co"> "Add Logo"</span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="an">filters:</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="co">    - line-highlight</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="co">---</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="an">title:</span><span class="co"> "Add Logo"</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="an">filters:</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="co">    - line-highlight</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co">---</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a>Add a logo to the left of the title of a <span class="in">`page_navbar`</span>.</span>
+<span id="cb2-8"><a href="#cb2-8"></a></span>
+<span id="cb2-9"><a href="#cb2-9"></a>Pay attention to line 10-17 and 26.</span>
+<span id="cb2-10"><a href="#cb2-10"></a></span>
+<span id="cb2-11"><a href="#cb2-11"></a><span class="ss">- </span>A <span class="in">`www`</span> folder must be added to the root dir of the app;</span>
+<span id="cb2-12"><a href="#cb2-12"></a></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="ss">- </span><span class="in">`static_assets=app_dir / 'www'`</span> needs to be specified as an argument of <span class="in">`app`</span>;</span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a><span class="ss">- </span>Shiny will look for asset in this folder following the relative path specified in the <span class="in">`src`</span> argument of <span class="in">`ui.tags.img`</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a></span>
+<span id="cb2-17"><a href="#cb2-17"></a></span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="in">```{.python filename="app.py"}</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a><span class="in">from shiny import App, ui</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a><span class="in">from pathlib import Path</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a></span>
+<span id="cb2-22"><a href="#cb2-22"></a><span class="in">app_ui = ui.page_navbar(  </span></span>
+<span id="cb2-23"><a href="#cb2-23"></a><span class="in">    ui.nav_panel("A", "Page A content"),  </span></span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="in">    ui.nav_panel("B", "Page B content"),  </span></span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="in">    ui.nav_panel("C", "Page C content"),  </span></span>
+<span id="cb2-26"><a href="#cb2-26"></a><span class="in">    title = ui.div(</span></span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="in">        ui.tags.img(</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a><span class="in">            src='asset/logo.png', # this image is put in the www/asset/logo.png folder</span></span>
+<span id="cb2-29"><a href="#cb2-29"></a><span class="in">            height='40px',</span></span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="in">            style='margin-right: 10px;',</span></span>
+<span id="cb2-31"><a href="#cb2-31"></a><span class="in">        ),</span></span>
+<span id="cb2-32"><a href="#cb2-32"></a><span class="in">        'App with Navbar &amp; Logo',</span></span>
+<span id="cb2-33"><a href="#cb2-33"></a><span class="in">    ),</span></span>
+<span id="cb2-34"><a href="#cb2-34"></a><span class="in">    id="page",  </span></span>
+<span id="cb2-35"><a href="#cb2-35"></a><span class="in">)  </span></span>
+<span id="cb2-36"><a href="#cb2-36"></a></span>
+<span id="cb2-37"><a href="#cb2-37"></a></span>
+<span id="cb2-38"><a href="#cb2-38"></a><span class="in">def server(input, output, session):</span></span>
+<span id="cb2-39"><a href="#cb2-39"></a><span class="in">    pass</span></span>
+<span id="cb2-40"><a href="#cb2-40"></a></span>
+<span id="cb2-41"><a href="#cb2-41"></a><span class="in">app_dir = Path(__file__).parent</span></span>
+<span id="cb2-42"><a href="#cb2-42"></a><span class="in">app = App(app_ui, server, static_assets=app_dir / 'www')</span></span>
+<span id="cb2-43"><a href="#cb2-43"></a><span class="in">```</span></span>
+<span id="cb2-44"><a href="#cb2-44"></a></span>
+<span id="cb2-45"><a href="#cb2-45"></a>:::: {.column-margin}</span>
+<span id="cb2-46"><a href="#cb2-46"></a>::: {.callout-tip title="Serve local files" collapse="true"}</span>
+<span id="cb2-47"><a href="#cb2-47"></a><span class="co">[</span><span class="ot">`Serve local files`</span><span class="co">](https://shiny.posit.co/py/docs/ui-customize.html#serve-local-files)</span></span>
+<span id="cb2-48"><a href="#cb2-48"></a></span>
+<span id="cb2-49"><a href="#cb2-49"></a>&lt;br /&gt;</span>
+<span id="cb2-50"><a href="#cb2-50"></a></span>
+<span id="cb2-51"><a href="#cb2-51"></a>When customizing UI with CSS (and/or JavaScript), it’s often useful to serve local files (e.g., fonts, images, CSS, etc) to the app. This can be done by providing a value for <span class="in">`static_assets`</span>. </span>
+<span id="cb2-52"><a href="#cb2-52"></a></span>
+<span id="cb2-53"><a href="#cb2-53"></a>&lt;br /&gt;</span>
+<span id="cb2-54"><a href="#cb2-54"></a></span>
+<span id="cb2-55"><a href="#cb2-55"></a>To make static files available for the UI in Shiny Core, use the <span class="in">`static_assets`</span> argument of <span class="in">`shiny.App()`</span>. Unlike Shiny Express, the <span class="in">`www`</span> subdirectory is not automatically mounted at <span class="in">`/`</span> but you can add it manually like any other static asset directory.</span>
+<span id="cb2-56"><a href="#cb2-56"></a></span>
+<span id="cb2-57"><a href="#cb2-57"></a>:::</span>
+<span id="cb2-58"><a href="#cb2-58"></a>::::</span>
+<span id="cb2-59"><a href="#cb2-59"></a></span>
+<span id="cb2-60"><a href="#cb2-60"></a></span>
+<span id="cb2-61"><a href="#cb2-61"></a>The code above will create the following page:</span>
+<span id="cb2-62"><a href="#cb2-62"></a></span>
+<span id="cb2-63"><a href="#cb2-63"></a><span class="al">![App with Logo](./image/app_with_logo.png)</span></span>
+<span id="cb2-64"><a href="#cb2-64"></a></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

@@ -4,4 +4,62 @@ filters:
     - line-highlight
 ---
 
+Add a logo to the left of the title of a `page_navbar`.
+
+Pay attention to line 10-17 and 26.
+
+- A `www` folder must be added to the root dir of the app;
+
+- `static_assets=app_dir / 'www'` needs to be specified as an argument of `app`;
+
+- Shiny will look for asset in this folder following the relative path specified in the `src` argument of `ui.tags.img`
+
+
+```{.python filename="app.py"}
+from shiny import App, ui
+from pathlib import Path
+
+app_ui = ui.page_navbar(  
+    ui.nav_panel("A", "Page A content"),  
+    ui.nav_panel("B", "Page B content"),  
+    ui.nav_panel("C", "Page C content"),  
+    title = ui.div(
+        ui.tags.img(
+            src='asset/logo.png', # this image is put in the www/asset/logo.png folder
+            height='40px',
+            style='margin-right: 10px;',
+        ),
+        'App with Navbar & Logo',
+    ),
+    id="page",  
+)  
+
+
+def server(input, output, session):
+    pass
+
+app_dir = Path(__file__).parent
+app = App(app_ui, server, static_assets=app_dir / 'www')
+```
+
+:::: {.column-margin}
+::: {.callout-tip title="Serve local files" collapse="true"}
+[`Serve local files`](https://shiny.posit.co/py/docs/ui-customize.html#serve-local-files)
+
+<br />
+
+When customizing UI with CSS (and/or JavaScript), it’s often useful to serve local files (e.g., fonts, images, CSS, etc) to the app. This can be done by providing a value for `static_assets`. 
+
+<br />
+
+To make static files available for the UI in Shiny Core, use the `static_assets` argument of `shiny.App()`. Unlike Shiny Express, the `www` subdirectory is not automatically mounted at `/` but you can add it manually like any other static asset directory.
+
+:::
+::::
+
+
+The code above will create the following page:
+
+![App with Logo](./image/app_with_logo.png)
+
 
