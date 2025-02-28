@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,12 +71,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-14abb8284ba5d94560a5fbf30c1a4bef.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5c3888f27347c78fd849423dde8c1586.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b1a009cd478e574395e6b462a577de8f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-197bbad5089936ec81d920701ba89875.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b2c94af04d2cc02992362769ff9dbba6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-1057f841468b4599d9db233149eba809.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-ca22cf2810385a502b2922b584cc3a67.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-379a643cadd6884617f8f383d657b1e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -242,6 +242,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Transparent bgcolor for figure</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/plotly/multiline_annotation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add Multiline Annotation</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -275,6 +281,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../../pages/polars/polars_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polars Intro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/polars/polars_FAQ.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polars FAQ</span></a>
   </div>
 </li>
       </ul>
@@ -346,6 +358,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </a> 
       </div>
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/shiny/add_logo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Add Logo</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
  <span class="menu-text">./pages/shiny/test.qmd</span>
   </li>
@@ -432,7 +450,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example" class="level3 page-columns page-full" data-number="1.1.2">
 <h3 data-number="1.1.2" class="anchored" data-anchor-id="example"><span class="header-section-number">1.1.2</span> Example</h3>
 <div class="column-page">
-<div id="8b60f888" class="cell" data-execution_count="1">
+<div id="a26e24a3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb2-2"><a href="#cb2-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
 <span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
@@ -627,7 +645,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example-1" class="level3 page-columns page-full" data-number="1.2.2">
 <h3 data-number="1.2.2" class="anchored" data-anchor-id="example-1"><span class="header-section-number">1.2.2</span> Example</h3>
-<div id="7984d55a" class="cell page-columns page-full" data-execution_count="2">
+<div id="900bc0bc" class="cell page-columns page-full" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb4-2"><a href="#cb4-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
 <span id="cb4-3"><a href="#cb4-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
@@ -827,7 +845,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="example-2" class="level3 page-columns page-full" data-number="2.1.2">
 <h3 data-number="2.1.2" class="anchored" data-anchor-id="example-2"><span class="header-section-number">2.1.2</span> Example</h3>
 <div class="column-screen">
-<div id="6791fc91" class="cell" data-execution_count="3">
+<div id="c199c726" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb6-2"><a href="#cb6-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
 <span id="cb6-3"><a href="#cb6-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>
@@ -1022,7 +1040,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="example-3" class="level3 page-columns page-full" data-number="2.2.2">
 <h3 data-number="2.2.2" class="anchored" data-anchor-id="example-3"><span class="header-section-number">2.2.2</span> Example</h3>
-<div id="dfd865bb" class="cell page-columns page-full" data-execution_count="4">
+<div id="8b287216" class="cell page-columns page-full" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb8-2"><a href="#cb8-2"></a>csv_path <span class="op">=</span> <span class="st">"./data/tw_taoyuan_cankun_merged_updated.csv"</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a>df <span class="op">=</span> pl.read_csv(csv_path)</span>

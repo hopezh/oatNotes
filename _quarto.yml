@@ -49,7 +49,7 @@ website:
           - ./pages/rhino3dm/rhino3dm_02.qmd
       - section: "shiny"
         contents: 
-          - ./pages/shiny/test.qmd
+          - ./pages/shiny/add_logo.qmd
 
   back-to-top-navigation: true      
   page-navigation: true
