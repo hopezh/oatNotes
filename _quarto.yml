@@ -81,5 +81,6 @@ format:
 
 filters: 
   - line-highlight
+  - shinylive
 
 highlight-style: breeze
