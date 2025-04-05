@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,8 +71,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b1a009cd478e574395e6b462a577de8f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-197bbad5089936ec81d920701ba89875.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ce80fb680f754bdddd2e33f428b7c2fe.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-a77d94411ef28645364aa138da2dc249.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-ca22cf2810385a502b2922b584cc3a67.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -405,19 +405,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="ba279f56" class="cell" data-execution_count="1">
+<div id="a6a2e8a5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">from</span> glob <span class="im">import</span> glob</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">import</span> os</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-5"><a href="#cb1-5"></a>pl.Config(tbl_rows<span class="op">=</span><span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="1">
-<pre data-code-line-numbers=""><code>&lt;polars.config.Config at 0x11650c090&gt;</code></pre>
+<pre data-code-line-numbers=""><code>&lt;polars.config.Config at 0x110576610&gt;</code></pre>
 </div>
 </div>
 <section id="glob-csvs-in-a-folder" class="level1 page-columns page-full" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> glob CSVs in a folder</h1>
-<div id="1d1f2555" class="cell" data-source-line-numbers="1-3" data-execution_count="2">
+<div id="93f052f2" class="cell" data-source-line-numbers="1-3" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" data-source-line-numbers="1-3" data-code-line-numbers="1-3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>csv_dir <span class="op">=</span> <span class="st">"./data/csv/"</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>csv_path_glob <span class="op">=</span> os.path.join(csv_dir, <span class="st">'*.csv'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3"></a>csv_list <span class="op">=</span> glob(csv_path_glob)</span>
@@ -453,7 +453,7 @@ glob
 </div></div></section>
 <section id="merge-csvs-into-a-df" class="level1 page-columns page-full" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> merge CSVs into a df</h1>
-<div id="8f3b0552" class="cell" data-execution_count="3">
+<div id="9794c4b9" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="annotated-cell-3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode python"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a><span class="op">%%</span>time</span>
 <span id="annotated-cell-3-2"><a href="#annotated-cell-3-2"></a></span>
 <button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3"></a>df_merged <span class="op">=</span> pl.read_csv(csv_path_glob)</span>
@@ -473,8 +473,8 @@ glob
 </dl>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>CPU times: user 8.91 ms, sys: 10.8 ms, total: 19.7 ms
-Wall time: 29.7 ms</code></pre>
+<pre data-code-line-numbers=""><code>CPU times: user 3.07 ms, sys: 15.6 ms, total: 18.7 ms
+Wall time: 22.3 ms</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <div><style>
@@ -859,7 +859,7 @@ polars.scan_csv
 </div></div></section>
 <section id="write-the-df-as-a-merged-csv" class="level1 page-columns page-full" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> write the df as a merged CSV</h1>
-<div id="e7958832" class="cell" data-execution_count="4">
+<div id="fee36501" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a>csv_merged_path <span class="op">=</span> os.path.join(<span class="st">"./data/csv_merged/"</span>, <span class="st">"cn_zone_1_04-08_merged.csv"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2"></a>df_merged.write_csv(csv_merged_path)</span>
 <span id="cb6-3"><a href="#cb6-3"></a><span class="bu">print</span>(<span class="st">'...merged csv written.'</span>)</span>
