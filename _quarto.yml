@@ -73,8 +73,8 @@ format:
       # gutter-width: 1.5rem
     number-sections: true
     theme: 
-      dark: darkly
-      light: flatly
+      dark: cyborg
+      light: cosmo
     toc: true
 
   ipynb: default
