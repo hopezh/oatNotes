@@ -50,6 +50,9 @@ website:
       - section: "shiny"
         contents: 
           - ./pages/shiny/add_logo.qmd
+      - section: "three.js"
+        contents: 
+          - ./pages/threejs/add_3js_code_blk.qmd
 
   back-to-top-navigation: true      
   page-navigation: true
