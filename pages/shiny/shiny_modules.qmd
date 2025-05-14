@@ -1,0 +1,33 @@
+---
+title: "Shiny Modules"
+filters:
+    - line-highlight
+---
+
+# Intro
+
+:::{.column-margin}
+Source: [Shiny Modules](https://shiny.posit.co/py/docs/modules.html)
+:::
+
+> Writing modules in Shiny is the best strategy for organizing a large Shiny code base. 
+>
+> With modules, you can break your application into small pieces that can be reasoned about separately and composed to build larger applications. 
+> 
+> This article explains the basics of why we need modules and how to use them, and the next article explains how to communicate between modules.
+
+
+# Why do we need modules
+
+> Modules solve these problems by **_encapsulating_** both the `UI` and `server` logic in their own `namespace`. 
+> 
+> A `module namespace` can be thought of as a **_container_** for a module’s code, and helps to keep the module’s `variables`, `functions`, and `classes` separate from those in other modules. 
+> 
+> This separation prevents naming conflicts and makes the code easier to understand and manage. 
+> 
+> A `namespace` is a unique **_identifier_** that Shiny assigns to each instance of a module to keep its `input` and `output` IDs separate from the IDs of other instances and from the rest of the Shiny application.
+
+
+# How to use modules
+
+

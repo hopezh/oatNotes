@@ -612,5 +612,29 @@
       "three.js",
       "Add three.js code block"
     ]
+  },
+  {
+    "objectID": "pages/shiny/shiny_modules.html",
+    "href": "pages/shiny/shiny_modules.html",
+    "title": "Shiny Modules",
+    "section": "",
+    "text": "1 Intro\n\n\nSource: Shiny Modules\n\nWriting modules in Shiny is the best strategy for organizing a large Shiny code base.\nWith modules, you can break your application into small pieces that can be reasoned about separately and composed to build larger applications.\nThis article explains the basics of why we need modules and how to use them, and the next article explains how to communicate between modules.\n\n\n\n2 Why do we need modules\n\nModules solve these problems by encapsulating both the UI and server logic in their own namespace.\nA module namespace can be thought of as a container for a module’s code, and helps to keep the module’s variables, functions, and classes separate from those in other modules.\nThis separation prevents naming conflicts and makes the code easier to understand and manage.\nA namespace is a unique identifier that Shiny assigns to each instance of a module to keep its input and output IDs separate from the IDs of other instances and from the rest of the Shiny application.\n\n\n\n3 How to use modules\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "shiny",
+      "Shiny Modules"
+    ]
+  },
+  {
+    "objectID": "pages/shiny/shinylive_extension.html",
+    "href": "pages/shiny/shinylive_extension.html",
+    "title": "Shinylive Quarto Extension",
+    "section": "",
+    "text": "1 Interactive Shiny App\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| viewerHeight: 420\n\nfrom shiny import App, render, ui\nimport numpy as np\nimport matplotlib.pyplot as plt\n\napp_ui = ui.page_fluid(\n    ui.layout_sidebar(\n        ui.sidebar(\n            ui.input_slider(\"period\", \"Period\", 0.5, 4, 1, step=0.5),\n            ui.input_slider(\"amplitude\", \"Amplitude\", 0, 2, 1, step=0.25),\n            ui.input_slider(\"shift\", \"Phase shift\", 0, 2, 0, step=0.1),\n        ),\n        ui.output_plot(\"plot\"),\n    ),\n)\n\n\ndef server(input, output, session):\n    @output\n    @render.plot(alt=\"Sine wave\")\n    def plot():\n        t = np.arange(0.0, 4.0, 0.01)\n        s = input.amplitude() * np.sin(\n            2 * np.pi / input.period() * (t - input.shift() / 2)\n        )\n        fig, ax = plt.subplots()\n        ax.set_ylim([-2, 2])\n        ax.plot(t, s)\n        ax.grid()\n\n\napp = App(app_ui, server)\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Home",
+      "shiny",
+      "Shinylive Quarto Extension"
+    ]
   }
 ]

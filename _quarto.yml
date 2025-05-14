@@ -49,7 +49,9 @@ website:
           - ./pages/rhino3dm/rhino3dm_02.qmd
       - section: "shiny"
         contents: 
+          - ./pages/shiny/shinylive_extension.qmd
           - ./pages/shiny/add_logo.qmd
+          - ./pages/shiny/shiny_modules.qmd
       - section: "three.js"
         contents: 
           - ./pages/threejs/add_3js_code_blk.qmd
