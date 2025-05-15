@@ -2,6 +2,7 @@
 title: "Shiny Modules"
 filters:
     - line-highlight
+    - shinylive
 ---
 
 # Intro
@@ -29,5 +30,85 @@ Source: [Shiny Modules](https://shiny.posit.co/py/docs/modules.html)
 
 
 # How to use modules
+
+## Create modules
+
+> At their core, `modules` are just `functions` and so anything you can do with a function you can also do with a module. 
+> 
+> Modules can take any `argument`, and can `return` any value to the caller. 
+> 
+> Modules usually include both `UI` and `server` elements which work together to encapsulate a part of your application, and the module UI and server work exactly the same way they do in a regular Shiny application.
+
+> The UI part of the module is a function which returns UI elements, and is decorated with the `@module.ui` decorator. 
+> 
+> This decorator sets a default `module namespace`, so each component created by the function has a prefix implicitly added to its ID.
+
+```{.python}
+@module.ui
+def row_ui():
+    return ui.layout_columns(
+        ui.card(ui.input_text("text_in", "Enter text")),
+        ui.card(ui.output_text("text_out")),
+    )
+```
+
+> The module server function looks just like a Shiny app server function, except it’s decorated with the `@module.server` decorator.
+
+```{.python}
+@module.server
+def row_server(input, output, session):
+    @output
+    @render.text
+    def text_out():
+        return f'You entered "{input.text_in()}"'
+```
+
+
+## Use modules
+
+> To use this module in an application, you call the module UI and server functions inside of the application UI and server functions. 
+> 
+> Every module call includes an id argument which defines the module’s `namespace.` This id has two requirements. 
+> 
+> - First, it must be **_unique_** in a single scope, and can’t be duplicated in a given application or module definition. If you need to generate many instances of a single module, it is often a good idea to store their ids in a list, and use `list comprehension` to generate the UI and server instances. 
+> 
+> - Second, the UI and server ids must match. This ensures that the UI and server instances exist in the same namespace, and if the ids don’t match, the UI and server modules will not be able to interact.
+
+
+```{shinylive-python}
+#| standalone: true
+#| components: [editor, viewer]
+
+from shiny import App, module, render, ui
+
+@module.ui
+def row_ui():
+    return ui.layout_columns(
+        ui.card(ui.input_text("text_in", "Enter text")),
+        ui.card(ui.output_text("text_out")),
+    )
+
+@module.server
+def row_server(input, output, session):
+    @output
+    @render.text
+    def text_out():
+        return f'You entered "{input.text_in()}"'
+
+extra_ids = ["row_3", "row_4", "row_5"]
+
+app_ui = ui.page_fluid(
+    row_ui("row_1"),
+    row_ui("row_2"),
+    [row_ui(x) for x in extra_ids]
+)
+
+def server(input, output, session):
+    row_server("row_1")
+    row_server("row_2")
+    [row_server(x) for x in extra_ids]
+
+app = App(app_ui, server)
+```
 
 

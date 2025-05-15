@@ -618,7 +618,7 @@
     "href": "pages/shiny/shiny_modules.html",
     "title": "Shiny Modules",
     "section": "",
-    "text": "1 Intro\n\n\nSource: Shiny Modules\n\nWriting modules in Shiny is the best strategy for organizing a large Shiny code base.\nWith modules, you can break your application into small pieces that can be reasoned about separately and composed to build larger applications.\nThis article explains the basics of why we need modules and how to use them, and the next article explains how to communicate between modules.\n\n\n\n2 Why do we need modules\n\nModules solve these problems by encapsulating both the UI and server logic in their own namespace.\nA module namespace can be thought of as a container for a module’s code, and helps to keep the module’s variables, functions, and classes separate from those in other modules.\nThis separation prevents naming conflicts and makes the code easier to understand and manage.\nA namespace is a unique identifier that Shiny assigns to each instance of a module to keep its input and output IDs separate from the IDs of other instances and from the rest of the Shiny application.\n\n\n\n3 How to use modules\n\n\n\n\n\n\n Back to top",
+    "text": "Source: Shiny Modules\n\nWriting modules in Shiny is the best strategy for organizing a large Shiny code base.\nWith modules, you can break your application into small pieces that can be reasoned about separately and composed to build larger applications.\nThis article explains the basics of why we need modules and how to use them, and the next article explains how to communicate between modules.",
     "crumbs": [
       "Home",
       "shiny",
@@ -635,6 +635,30 @@
       "Home",
       "shiny",
       "Shinylive Quarto Extension"
+    ]
+  },
+  {
+    "objectID": "pages/shiny/shiny_modules.html#create-modules",
+    "href": "pages/shiny/shiny_modules.html#create-modules",
+    "title": "Shiny Modules",
+    "section": "3.1 Create modules",
+    "text": "3.1 Create modules\n\nAt their core, modules are just functions and so anything you can do with a function you can also do with a module.\nModules can take any argument, and can return any value to the caller.\nModules usually include both UI and server elements which work together to encapsulate a part of your application, and the module UI and server work exactly the same way they do in a regular Shiny application.\n\n\nThe UI part of the module is a function which returns UI elements, and is decorated with the @module.ui decorator.\nThis decorator sets a default module namespace, so each component created by the function has a prefix implicitly added to its ID.\n\n@module.ui\ndef row_ui():\n    return ui.layout_columns(\n        ui.card(ui.input_text(\"text_in\", \"Enter text\")),\n        ui.card(ui.output_text(\"text_out\")),\n    )\n\nThe module server function looks just like a Shiny app server function, except it’s decorated with the @module.server decorator.\n\n@module.server\ndef row_server(input, output, session):\n    @output\n    @render.text\n    def text_out():\n        return f'You entered \"{input.text_in()}\"'",
+    "crumbs": [
+      "Home",
+      "shiny",
+      "Shiny Modules"
+    ]
+  },
+  {
+    "objectID": "pages/shiny/shiny_modules.html#use-modules",
+    "href": "pages/shiny/shiny_modules.html#use-modules",
+    "title": "Shiny Modules",
+    "section": "3.2 Use modules",
+    "text": "3.2 Use modules\n\nTo use this module in an application, you call the module UI and server functions inside of the application UI and server functions.\nEvery module call includes an id argument which defines the module’s namespace. This id has two requirements.\n\nFirst, it must be unique in a single scope, and can’t be duplicated in a given application or module definition. If you need to generate many instances of a single module, it is often a good idea to store their ids in a list, and use list comprehension to generate the UI and server instances.\nSecond, the UI and server ids must match. This ensures that the UI and server instances exist in the same namespace, and if the ids don’t match, the UI and server modules will not be able to interact.\n\n\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| components: [editor, viewer]\n\nfrom shiny import App, module, render, ui\n\n@module.ui\ndef row_ui():\n    return ui.layout_columns(\n        ui.card(ui.input_text(\"text_in\", \"Enter text\")),\n        ui.card(ui.output_text(\"text_out\")),\n    )\n\n@module.server\ndef row_server(input, output, session):\n    @output\n    @render.text\n    def text_out():\n        return f'You entered \"{input.text_in()}\"'\n\nextra_ids = [\"row_3\", \"row_4\", \"row_5\"]\n\napp_ui = ui.page_fluid(\n    row_ui(\"row_1\"),\n    row_ui(\"row_2\"),\n    [row_ui(x) for x in extra_ids]\n)\n\ndef server(input, output, session):\n    row_server(\"row_1\")\n    row_server(\"row_2\")\n    [row_server(x) for x in extra_ids]\n\napp = App(app_ui, server)",
+    "crumbs": [
+      "Home",
+      "shiny",
+      "Shiny Modules"
     ]
   }
 ]
