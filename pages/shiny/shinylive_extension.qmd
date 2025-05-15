@@ -5,11 +5,43 @@ filters:
     - shinylive
 ---
 
+# Installation
+
+```{.shell}
+pip install shinylive --upgrade
+
+# cd into quarto project folder
+quarto add quarto-ext/shinylive
+```
+
+
+```{.yml}
+# add the following in `_quarto.yml` header
+filters:
+    - shinylive
+```
+
+
 # Interactive Shiny App
 
+- `#| standalone: true`: the code represents a complete Shiny application, as opposed to one which has parts spread throughout the document (which will be supported in the future).
+
+- `#| components: [editor, viewer]`: show code editor and viewer side-by-side.
+
+- `#| layout: vertical`: stacking editor and viewer
+
+- `:::{.column-screen-inset}`: the app will take up the whole window width.
+
+:::{.column-margin}
+Ref: 
+
+- [quarto layout container](https://quarto.org/docs/authoring/article-layout.html)
+:::
+
+:::{.column-screen-inset}
 ```{shinylive-python}
 #| standalone: true
-#| viewerHeight: 420
+#| components: [editor, viewer]
 
 from shiny import App, render, ui
 import numpy as np
@@ -43,5 +75,6 @@ def server(input, output, session):
 
 app = App(app_ui, server)
 ```
+:::
 
 
