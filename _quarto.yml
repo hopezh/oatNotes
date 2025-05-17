@@ -5,6 +5,7 @@ project:
 website:
   title: "OatNotes"
   navbar:
+    logo: ./resource/episode_logo_v03_color.png
     left:
       - href: index.qmd
         text: Home

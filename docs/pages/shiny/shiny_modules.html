@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
-<head>
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
 
-<meta charset="utf-8" />
-<meta name="generator" content="quarto-1.6.42" />
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Shiny Modules – OatNotes</title>
@@ -58,7 +56,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 </style>
 
-<!-- htmldependencies:E3FAD763 -->
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../pages/threejs/add_3js_code_blk.html" rel="next">
+<link href="../../pages/shiny/add_logo.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ce80fb680f754bdddd2e33f428b7c2fe.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-a77d94411ef28645364aa138da2dc249.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-75104ac61829f003e5966952de19cbc0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-3403c89977baa4be1786ac358af99b8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
+<meta name="shinylive:serviceworker_dir" content="../..">
+<script src="../../site_libs/quarto-contrib/shinylive-0.10.4/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="../../site_libs/quarto-contrib/shinylive-0.10.4/shinylive/run-python-blocks.js" type="module"></script>
+<link href="../../site_libs/quarto-contrib/shinylive-0.10.4/shinylive/shinylive.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -88,42 +112,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="../../styles.css" />
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body>
+<body class="nav-sidebar floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="/index.html">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../.././resource/episode_logo_v03_color.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">OatNotes</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation"
-  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/about.html"> 
+    <a class="nav-link" href="../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/dashboard.html"> 
+    <a class="nav-link" href="../../dashboard.html"> 
 <span class="menu-text">Worldwide Development</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/dashboard_shiny.html"> 
+    <a class="nav-link" href="../../dashboard_shiny.html"> 
 <span class="menu-text">Shiny Dashboard</span></a>
   </li>  
 </ul>
@@ -140,16 +165,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn"
-      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
-      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
-        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
-        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/shiny/shinylive_extension.html">shiny</a></li><li class="breadcrumb-item"><a href="../../pages/shiny/shiny_modules.html">Shiny Modules</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -174,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">LazyVim</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -183,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/lazyvim/lazyvim_tips.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LazyVim Tips</span></a>
   </div>
 </li>
@@ -191,7 +211,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Observable.js</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -200,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/observable/observable_js.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Test Observable.js</span></a>
   </div>
 </li>
@@ -208,7 +228,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Plotly</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -217,19 +237,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">show data strucure of a plotly figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparent bgcolor for figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/plotly/multiline_annotation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly/multiline_annotation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add Multiline Annotation</span></a>
   </div>
 </li>
@@ -237,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
  <span class="menu-text">Polars</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -246,31 +266,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/polars/merge_csvs.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Merge CSVs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/polars/edit_df_column.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/polars/edit_df_column.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Edit DF Column</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/polars/polars_cookbook.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/polars/polars_cookbook.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polars Cookbook</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/polars/polars_intro.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/polars/polars_intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polars Intro</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/polars/polars_FAQ.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/polars/polars_FAQ.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Polars FAQ</span></a>
   </div>
 </li>
@@ -278,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true">
  <span class="menu-text">Quarto</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -287,19 +307,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/quarto/quarto_tabset.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">quarto tabset</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/quarto/expand_codeblock_width.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">expand the width of a code block and its output</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/quarto/side_by_side_codeblock.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">side by side codeblocks and outputs</span></a>
   </div>
 </li>
@@ -307,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true">
  <span class="menu-text">rhino3dm</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -316,19 +336,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/rhino3dm/test_rhino3dm.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">test rhino3dm</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/rhino3dm/rhino3dm_01.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">rhino3dm exercise 01</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/rhino3dm/rhino3dm_02.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/rhino3dm/rhino3dm_02.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">rhino3dm exercise 02</span></a>
   </div>
 </li>
@@ -336,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true">
  <span class="menu-text">shiny</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -345,19 +365,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/shiny/shinylive_extension.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/shiny/shinylive_extension.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shinylive Quarto Extension</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/shiny/add_logo.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/shiny/add_logo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add Logo</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/shiny/shiny_modules.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../pages/shiny/shiny_modules.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Shiny Modules</span></a>
   </div>
 </li>
@@ -365,7 +385,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9"  role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true">
  <span class="menu-text">three.js</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -374,7 +394,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="/pages/threejs/add_3js_code_blk.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/threejs/add_3js_code_blk.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add three.js code block</span></a>
   </div>
 </li>
@@ -383,17 +403,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <div id="quarto-toc-target"></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro"><span class="header-section-number">1</span> Intro</a></li>
+  <li><a href="#why-do-we-need-modules" id="toc-why-do-we-need-modules" class="nav-link" data-scroll-target="#why-do-we-need-modules"><span class="header-section-number">2</span> Why do we need modules</a></li>
+  <li><a href="#how-to-use-modules" id="toc-how-to-use-modules" class="nav-link" data-scroll-target="#how-to-use-modules"><span class="header-section-number">3</span> How to use modules</a>
+  <ul class="collapse">
+  <li><a href="#create-modules" id="toc-create-modules" class="nav-link" data-scroll-target="#create-modules"><span class="header-section-number">3.1</span> Create modules</a></li>
+  <li><a href="#use-modules" id="toc-use-modules" class="nav-link" data-scroll-target="#use-modules"><span class="header-section-number">3.2</span> Use modules</a></li>
+  </ul></li>
+  <li><a href="#module-communication" id="toc-module-communication" class="nav-link" data-scroll-target="#module-communication"><span class="header-section-number">4</span> Module communication</a>
+  <ul class="collapse">
+  <li><a href="#non-reactive-arguments" id="toc-non-reactive-arguments" class="nav-link" data-scroll-target="#non-reactive-arguments"><span class="header-section-number">4.1</span> Non-reactive arguments</a></li>
+  <li><a href="#passihng-multiple-ui-elements-to-modules" id="toc-passihng-multiple-ui-elements-to-modules" class="nav-link" data-scroll-target="#passihng-multiple-ui-elements-to-modules"><span class="header-section-number">4.2</span> Passihng multiple UI elements to modules</a></li>
+  <li><a href="#passing-reactives-to-modules" id="toc-passing-reactives-to-modules" class="nav-link" data-scroll-target="#passing-reactives-to-modules"><span class="header-section-number">4.3</span> Passing reactives to modules</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="shiny_modules.ipynb" download="shiny_modules.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../pages/shiny/shinylive_extension.html">shiny</a></li><li class="breadcrumb-item"><a href="../../pages/shiny/shiny_modules.html">Shiny Modules</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Shiny Modules</h1>
+<div class="quarto-title-block"><div><h1 class="title">Shiny Modules</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -409,25 +447,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<nav id="TOC" role="doc-toc">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#intro" id="toc-intro"><span class="header-section-number">1</span> Intro</a></li>
-  <li><a href="#why-do-we-need-modules" id="toc-why-do-we-need-modules"><span class="header-section-number">2</span> Why do we need modules</a></li>
-  <li><a href="#how-to-use-modules" id="toc-how-to-use-modules"><span class="header-section-number">3</span> How to use modules</a>
-  <ul>
-  <li><a href="#create-modules" id="toc-create-modules"><span class="header-section-number">3.1</span> Create modules</a></li>
-  <li><a href="#use-modules" id="toc-use-modules"><span class="header-section-number">3.2</span> Use modules</a></li>
-  </ul></li>
-  </ul>
-</nav>
-<section id="intro" class="level1" data-number="1">
+
+<section id="intro" class="level1 page-columns page-full" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Intro</h1>
-<div class="column-margin">
+
+<div class="no-row-height column-margin column-container"><div class="">
 <p>Source: <a href="https://shiny.posit.co/py/docs/modules.html">Shiny Modules</a></p>
-</div>
-<blockquote>
+</div></div><blockquote class="blockquote">
 <p>Writing modules in Shiny is the best strategy for organizing a large Shiny code base.</p>
 <p>With modules, you can break your application into small pieces that can be reasoned about separately and composed to build larger applications.</p>
 <p>This article explains the basics of why we need modules and how to use them, and the next article explains how to communicate between modules.</p>
@@ -435,7 +461,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="why-do-we-need-modules" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Why do we need modules</h1>
-<blockquote>
+<blockquote class="blockquote">
 <p>Modules solve these problems by <strong><em>encapsulating</em></strong> both the <code>UI</code> and <code>server</code> logic in their own <code>namespace</code>.</p>
 <p>A <code>module namespace</code> can be thought of as a <strong><em>container</em></strong> for a module’s code, and helps to keep the module’s <code>variables</code>, <code>functions</code>, and <code>classes</code> separate from those in other modules.</p>
 <p>This separation prevents naming conflicts and makes the code easier to understand and manage.</p>
@@ -445,35 +471,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="how-to-use-modules" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> How to use modules</h1>
 <section id="create-modules" class="level2" data-number="3.1">
-<h2 data-number="3.1"><span class="header-section-number">3.1</span> Create modules</h2>
-<blockquote>
+<h2 data-number="3.1" class="anchored" data-anchor-id="create-modules"><span class="header-section-number">3.1</span> Create modules</h2>
+<blockquote class="blockquote">
 <p>At their core, <code>modules</code> are just <code>functions</code> and so anything you can do with a function you can also do with a module.</p>
 <p>Modules can take any <code>argument</code>, and can <code>return</code> any value to the caller.</p>
 <p>Modules usually include both <code>UI</code> and <code>server</code> elements which work together to encapsulate a part of your application, and the module UI and server work exactly the same way they do in a regular Shiny application.</p>
 </blockquote>
-<blockquote>
+<blockquote class="blockquote">
 <p>The UI part of the module is a function which returns UI elements, and is decorated with the <code>@module.ui</code> decorator.</p>
 <p>This decorator sets a default <code>module namespace</code>, so each component created by the function has a prefix implicitly added to its ID.</p>
 </blockquote>
-<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="at">@module.ui</span></span>
+<div class="sourceCode" id="cb1" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="at">@module.ui</span></span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="kw">def</span> row_ui():</span>
 <span id="cb1-3"><a href="#cb1-3"></a>    <span class="cf">return</span> ui.layout_columns(</span>
-<span id="cb1-4"><a href="#cb1-4"></a>        ui.card(ui.input_text(<span class="st">&quot;text_in&quot;</span>, <span class="st">&quot;Enter text&quot;</span>)),</span>
-<span id="cb1-5"><a href="#cb1-5"></a>        ui.card(ui.output_text(<span class="st">&quot;text_out&quot;</span>)),</span>
-<span id="cb1-6"><a href="#cb1-6"></a>    )</span></code></pre></div>
-<blockquote>
+<span id="cb1-4"><a href="#cb1-4"></a>        ui.card(ui.input_text(<span class="st">"text_in"</span>, <span class="st">"Enter text"</span>)),</span>
+<span id="cb1-5"><a href="#cb1-5"></a>        ui.card(ui.output_text(<span class="st">"text_out"</span>)),</span>
+<span id="cb1-6"><a href="#cb1-6"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
 <p>The module server function looks just like a Shiny app server function, except it’s decorated with the <code>@module.server</code> decorator.</p>
 </blockquote>
-<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="at">@module.server</span></span>
+<div class="sourceCode" id="cb2" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="at">@module.server</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="kw">def</span> row_server(<span class="bu">input</span>, output, session):</span>
 <span id="cb2-3"><a href="#cb2-3"></a>    <span class="at">@output</span></span>
 <span id="cb2-4"><a href="#cb2-4"></a>    <span class="at">@render.text</span></span>
 <span id="cb2-5"><a href="#cb2-5"></a>    <span class="kw">def</span> text_out():</span>
-<span id="cb2-6"><a href="#cb2-6"></a>        <span class="cf">return</span> <span class="ss">f&#39;You entered &quot;</span><span class="sc">{</span><span class="bu">input</span><span class="sc">.</span>text_in()<span class="sc">}</span><span class="ss">&quot;&#39;</span></span></code></pre></div>
+<span id="cb2-6"><a href="#cb2-6"></a>        <span class="cf">return</span> <span class="ss">f'You entered "</span><span class="sc">{</span><span class="bu">input</span><span class="sc">.</span>text_in()<span class="sc">}</span><span class="ss">"'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="use-modules" class="level2" data-number="3.2">
-<h2 data-number="3.2"><span class="header-section-number">3.2</span> Use modules</h2>
-<blockquote>
+<h2 data-number="3.2" class="anchored" data-anchor-id="use-modules"><span class="header-section-number">3.2</span> Use modules</h2>
+<blockquote class="blockquote">
 <p>To use this module in an application, you call the module UI and server functions inside of the application UI and server functions.</p>
 <p>Every module call includes an id argument which defines the module’s <code>namespace.</code> This id has two requirements.</p>
 <ul>
@@ -481,7 +507,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Second, the UI and server ids must match. This ensures that the UI and server instances exist in the same namespace, and if the ids don’t match, the UI and server modules will not be able to interact.</p></li>
 </ul>
 </blockquote>
-<div class="sourceCode" id="cb3" data-code-line-numbers="" data-engine="python"><pre class="sourceCode numberSource shinylive-python number-lines"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>#| &#39;!! shinylive warning !!&#39;: |</span>
+<div class="sourceCode" id="cb3" data-code-line-numbers="" data-engine="python"><pre class="sourceCode numberSource shinylive-python number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a href="#cb3-1"></a>#| '!! shinylive warning !!': |</span>
 <span id="cb3-2"><a href="#cb3-2"></a>#|   shinylive does not work in self-contained HTML documents.</span>
 <span id="cb3-3"><a href="#cb3-3"></a>#|   Please set `embed-resources: false` in your metadata.</span>
 <span id="cb3-4"><a href="#cb3-4"></a>#| standalone: true</span>
@@ -492,8 +518,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-9"><a href="#cb3-9"></a>@module.ui</span>
 <span id="cb3-10"><a href="#cb3-10"></a>def row_ui():</span>
 <span id="cb3-11"><a href="#cb3-11"></a>    return ui.layout_columns(</span>
-<span id="cb3-12"><a href="#cb3-12"></a>        ui.card(ui.input_text(&quot;text_in&quot;, &quot;Enter text&quot;)),</span>
-<span id="cb3-13"><a href="#cb3-13"></a>        ui.card(ui.output_text(&quot;text_out&quot;)),</span>
+<span id="cb3-12"><a href="#cb3-12"></a>        ui.card(ui.input_text("text_in", "Enter text")),</span>
+<span id="cb3-13"><a href="#cb3-13"></a>        ui.card(ui.output_text("text_out")),</span>
 <span id="cb3-14"><a href="#cb3-14"></a>    )</span>
 <span id="cb3-15"><a href="#cb3-15"></a></span>
 <span id="cb3-16"><a href="#cb3-16"></a>@module.server</span>
@@ -501,149 +527,280 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-18"><a href="#cb3-18"></a>    @output</span>
 <span id="cb3-19"><a href="#cb3-19"></a>    @render.text</span>
 <span id="cb3-20"><a href="#cb3-20"></a>    def text_out():</span>
-<span id="cb3-21"><a href="#cb3-21"></a>        return f&#39;You entered &quot;{input.text_in()}&quot;&#39;</span>
+<span id="cb3-21"><a href="#cb3-21"></a>        return f'You entered "{input.text_in()}"'</span>
 <span id="cb3-22"><a href="#cb3-22"></a></span>
-<span id="cb3-23"><a href="#cb3-23"></a>extra_ids = [&quot;row_3&quot;, &quot;row_4&quot;, &quot;row_5&quot;]</span>
+<span id="cb3-23"><a href="#cb3-23"></a>extra_ids = ["row_3", "row_4", "row_5"]</span>
 <span id="cb3-24"><a href="#cb3-24"></a></span>
 <span id="cb3-25"><a href="#cb3-25"></a>app_ui = ui.page_fluid(</span>
-<span id="cb3-26"><a href="#cb3-26"></a>    row_ui(&quot;row_1&quot;),</span>
-<span id="cb3-27"><a href="#cb3-27"></a>    row_ui(&quot;row_2&quot;),</span>
+<span id="cb3-26"><a href="#cb3-26"></a>    row_ui("row_1"),</span>
+<span id="cb3-27"><a href="#cb3-27"></a>    row_ui("row_2"),</span>
 <span id="cb3-28"><a href="#cb3-28"></a>    [row_ui(x) for x in extra_ids]</span>
 <span id="cb3-29"><a href="#cb3-29"></a>)</span>
 <span id="cb3-30"><a href="#cb3-30"></a></span>
 <span id="cb3-31"><a href="#cb3-31"></a>def server(input, output, session):</span>
-<span id="cb3-32"><a href="#cb3-32"></a>    row_server(&quot;row_1&quot;)</span>
-<span id="cb3-33"><a href="#cb3-33"></a>    row_server(&quot;row_2&quot;)</span>
+<span id="cb3-32"><a href="#cb3-32"></a>    row_server("row_1")</span>
+<span id="cb3-33"><a href="#cb3-33"></a>    row_server("row_2")</span>
 <span id="cb3-34"><a href="#cb3-34"></a>    [row_server(x) for x in extra_ids]</span>
 <span id="cb3-35"><a href="#cb3-35"></a></span>
-<span id="cb3-36"><a href="#cb3-36"></a>app = App(app_ui, server)</span></code></pre></div>
-<div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">OatNotes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">OatNotes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uZXh0">Add three.js code block</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1wcmV2">Add Logo</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMQ==">Deep Learning</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMg==">LazyVim</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9sYXp5dmltL2xhenl2aW1fdGlwcy5odG1sTGF6eVZpbS1UaXBz">LazyVim Tips</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMw==">Observable.js</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9vYnNlcnZhYmxlL29ic2VydmFibGVfanMuaHRtbFRlc3QtT2JzZXJ2YWJsZS5qcw==">Test Observable.js</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNA==">Plotly</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9wbG90bHkvcGxvdGx5X2RhdGFfc3RydWN0dXJlLmh0bWxzaG93LWRhdGEtc3RydWN1cmUtb2YtYS1wbG90bHktZmlndXJl">show data strucure of a plotly figure</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9wbG90bHkvdHJhbnNwYXJlbnRfZmlnX2JnY29sb3IuaHRtbFRyYW5zcGFyZW50LWJnY29sb3ItZm9yLWZpZ3VyZQ==">Transparent bgcolor for figure</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9wbG90bHkvbXVsdGlsaW5lX2Fubm90YXRpb24uaHRtbEFkZC1NdWx0aWxpbmUtQW5ub3RhdGlvbg==">Add Multiline Annotation</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNQ==">Polars</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9wb2xhcnMvbWVyZ2VfY3N2cy5odG1sTWVyZ2UtQ1NWcw==">Merge CSVs</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9wb2xhcnMvZWRpdF9kZl9jb2x1bW4uaHRtbEVkaXQtREYtQ29sdW1u">Edit DF Column</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9wb2xhcnMvcG9sYXJzX2Nvb2tib29rLmh0bWxQb2xhcnMtQ29va2Jvb2s=">Polars Cookbook</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9wb2xhcnMvcG9sYXJzX2ludHJvLmh0bWxQb2xhcnMtSW50cm8=">Polars Intro</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9wb2xhcnMvcG9sYXJzX0ZBUS5odG1sUG9sYXJzLUZBUQ==">Polars FAQ</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNg==">Quarto</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9xdWFydG8vcXVhcnRvX3RhYnNldC5odG1scXVhcnRvLXRhYnNldA==">quarto tabset</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9xdWFydG8vZXhwYW5kX2NvZGVibG9ja193aWR0aC5odG1sZXhwYW5kLXRoZS13aWR0aC1vZi1hLWNvZGUtYmxvY2stYW5kLWl0cy1vdXRwdXQ=">expand the width of a code block and its output</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9xdWFydG8vc2lkZV9ieV9zaWRlX2NvZGVibG9jay5odG1sc2lkZS1ieS1zaWRlLWNvZGVibG9ja3MtYW5kLW91dHB1dHM=">side by side codeblocks and outputs</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNw==">rhino3dm</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9yaGlubzNkbS90ZXN0X3JoaW5vM2RtLmh0bWx0ZXN0LXJoaW5vM2Rt">test rhino3dm</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9yaGlubzNkbS9yaGlubzNkbV8wMS5odG1scmhpbm8zZG0tZXhlcmNpc2UtMDE=">rhino3dm exercise 01</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9yaGlubzNkbS9yaGlubzNkbV8wMi5odG1scmhpbm8zZG0tZXhlcmNpc2UtMDI=">rhino3dm exercise 02</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tOA==">shiny</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9zaGlueS9zaGlueWxpdmVfZXh0ZW5zaW9uLmh0bWxTaGlueWxpdmUtUXVhcnRvLUV4dGVuc2lvbg==">Shinylive Quarto Extension</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9zaGlueS9hZGRfbG9nby5odG1sQWRkLUxvZ28=">Add Logo</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy9zaGlueS9zaGlueV9tb2R1bGVzLmh0bWxTaGlueS1Nb2R1bGVz">Shiny Modules</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tOQ==">three.js</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9wYWdlcy90aHJlZWpzL2FkZF8zanNfY29kZV9ibGsuaHRtbEFkZC10aHJlZS5qcy1jb2RlLWJsb2Nr">Add three.js code block</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG9tZQ==">Home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QWJvdXQ=">About</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Fib3V0Lmh0bWw=">/about.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6V29ybGR3aWRlIERldmVsb3BtZW50">Worldwide Development</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Rhc2hib2FyZC5odG1s">/dashboard.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2hpbnkgRGFzaGJvYXJk">Shiny Dashboard</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Rhc2hib2FyZF9zaGlueS5odG1s">/dashboard_shiny.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLXNoaW55">shiny</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLVNoaW55LU1vZHVsZXM=">Shiny Modules</span></p>
+<span id="cb3-36"><a href="#cb3-36"></a>app = App(app_ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="module-communication" class="level1 page-columns page-full" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Module communication</h1>
+<blockquote class="blockquote">
+<p>There are four main patterns you should be aware of when building Shiny modules:</p>
+<p>Modules that take non-reactive arguments Passing callbacks to modules Modules that take reactive arguments Modules that return reactive arguments</p>
+</blockquote>
+<section id="non-reactive-arguments" class="level2 page-columns page-full" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="non-reactive-arguments"><span class="header-section-number">4.1</span> Non-reactive arguments</h2>
+<p>Add arg to the <code>module UI</code> function.</p>
+<div class="sourceCode" id="cb4" data-source-line-numbers="4,6,7" data-code-line-numbers="4,6,7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="im">from</span> shiny <span class="im">import</span> module, ui, render, reactive, event, App</span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="at">@module.ui</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="kw">def</span> counter_ui(custom_label: <span class="bu">str</span> <span class="op">=</span> <span class="st">"Increment counter"</span>):</span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="cf">return</span> ui.card(</span>
+<span id="cb4-6"><a href="#cb4-6"></a>        ui.h2(<span class="st">"This is "</span>, custom_label),</span>
+<span id="cb4-7"><a href="#cb4-7"></a>        ui.input_action_button(<span class="bu">id</span><span class="op">=</span><span class="st">"button"</span>, label<span class="op">=</span>custom_label),</span>
+<span id="cb4-8"><a href="#cb4-8"></a>        ui.output_code(<span class="bu">id</span><span class="op">=</span><span class="st">"out"</span>),</span>
+<span id="cb4-9"><a href="#cb4-9"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Add arg to the <code>module server</code> function.</p>
+<div class="sourceCode" id="cb5" data-source-line-numbers="3,4" data-code-line-numbers="3,4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="at">@module.server</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">def</span> counter_server(<span class="bu">input</span>, output, session, starting_value: <span class="bu">int</span> <span class="op">=</span> <span class="dv">0</span>):</span>
+<span id="cb5-4"><a href="#cb5-4"></a>    count <span class="op">=</span>  reactive.value(starting_value)</span>
+<span id="cb5-5"><a href="#cb5-5"></a></span>
+<span id="cb5-6"><a href="#cb5-6"></a>    <span class="at">@reactive.effect</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>    <span class="at">@reactive.event</span>(<span class="bu">input</span>.button)</span>
+<span id="cb5-8"><a href="#cb5-8"></a>    <span class="kw">def</span> _():</span>
+<span id="cb5-9"><a href="#cb5-9"></a>        count.<span class="bu">set</span>(count() <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb5-10"><a href="#cb5-10"></a></span>
+<span id="cb5-11"><a href="#cb5-11"></a>    <span class="at">@render.code</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>    <span class="kw">def</span> out():</span>
+<span id="cb5-13"><a href="#cb5-13"></a>        <span class="cf">return</span> <span class="ss">f"Click count is </span><span class="sc">{</span>count()<span class="sc">}</span><span class="ss">"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>You can then pass in values when you call the module in your app.</p>
+<p>Note that you always need to provide an <code>id</code> to the module function to define its namespace.</p>
+<p>Using arguments like this makes your modules much more flexible and allows you to encapsulate some of the logic while maintaining the flexibility that your application needs.</p>
+</blockquote>
+<div class="column-screen-inset">
+<div class="sourceCode" id="cb6" data-code-line-numbers="" data-engine="python"><pre class="sourceCode numberSource shinylive-python number-lines code-with-copy"><code class="sourceCode"><span id="cb6-1"><a href="#cb6-1"></a>#| '!! shinylive warning !!': |</span>
+<span id="cb6-2"><a href="#cb6-2"></a>#|   shinylive does not work in self-contained HTML documents.</span>
+<span id="cb6-3"><a href="#cb6-3"></a>#|   Please set `embed-resources: false` in your metadata.</span>
+<span id="cb6-4"><a href="#cb6-4"></a>#| standalone: true</span>
+<span id="cb6-5"><a href="#cb6-5"></a>#| components: [editor, viewer]</span>
+<span id="cb6-6"><a href="#cb6-6"></a></span>
+<span id="cb6-7"><a href="#cb6-7"></a>## file: app.py</span>
+<span id="cb6-8"><a href="#cb6-8"></a>from shiny import App, ui</span>
+<span id="cb6-9"><a href="#cb6-9"></a># Note: In a normal Shiny Core app, use an absolute import, as in:</span>
+<span id="cb6-10"><a href="#cb6-10"></a># `from counter import ...`</span>
+<span id="cb6-11"><a href="#cb6-11"></a>from .counter import counter_ui, counter_server</span>
+<span id="cb6-12"><a href="#cb6-12"></a></span>
+<span id="cb6-13"><a href="#cb6-13"></a>app_ui = ui.page_fluid(</span>
+<span id="cb6-14"><a href="#cb6-14"></a>    counter_ui("counter1", "Counter 1"),</span>
+<span id="cb6-15"><a href="#cb6-15"></a>    counter_ui("counter2", "Counter 2"),</span>
+<span id="cb6-16"><a href="#cb6-16"></a>)</span>
+<span id="cb6-17"><a href="#cb6-17"></a></span>
+<span id="cb6-18"><a href="#cb6-18"></a>def server(input, output, session):</span>
+<span id="cb6-19"><a href="#cb6-19"></a>    counter_server("counter1", starting_value=5)</span>
+<span id="cb6-20"><a href="#cb6-20"></a>    counter_server("counter2", starting_value=3)</span>
+<span id="cb6-21"><a href="#cb6-21"></a></span>
+<span id="cb6-22"><a href="#cb6-22"></a>app = App(app_ui, server)</span>
+<span id="cb6-23"><a href="#cb6-23"></a></span>
+<span id="cb6-24"><a href="#cb6-24"></a></span>
+<span id="cb6-25"><a href="#cb6-25"></a>## file: counter.py</span>
+<span id="cb6-26"><a href="#cb6-26"></a>from shiny import module, ui, render, reactive, event</span>
+<span id="cb6-27"><a href="#cb6-27"></a></span>
+<span id="cb6-28"><a href="#cb6-28"></a>@module.ui</span>
+<span id="cb6-29"><a href="#cb6-29"></a>def counter_ui(label: str = "Increment counter"):</span>
+<span id="cb6-30"><a href="#cb6-30"></a>    return ui.card(</span>
+<span id="cb6-31"><a href="#cb6-31"></a>        ui.card_header("This is " + label),</span>
+<span id="cb6-32"><a href="#cb6-32"></a>        ui.input_action_button(id="button", label=label),</span>
+<span id="cb6-33"><a href="#cb6-33"></a>        ui.output_code(id="out"),</span>
+<span id="cb6-34"><a href="#cb6-34"></a>    )</span>
+<span id="cb6-35"><a href="#cb6-35"></a></span>
+<span id="cb6-36"><a href="#cb6-36"></a>@module.server</span>
+<span id="cb6-37"><a href="#cb6-37"></a>def counter_server(input, output, session, starting_value: int = 0):</span>
+<span id="cb6-38"><a href="#cb6-38"></a>    count =  reactive.value(starting_value)</span>
+<span id="cb6-39"><a href="#cb6-39"></a></span>
+<span id="cb6-40"><a href="#cb6-40"></a>    @reactive.effect</span>
+<span id="cb6-41"><a href="#cb6-41"></a>    @reactive.event(input.button)</span>
+<span id="cb6-42"><a href="#cb6-42"></a>    def _():</span>
+<span id="cb6-43"><a href="#cb6-43"></a>        count.set(count() + 1)</span>
+<span id="cb6-44"><a href="#cb6-44"></a></span>
+<span id="cb6-45"><a href="#cb6-45"></a>    @render.code</span>
+<span id="cb6-46"><a href="#cb6-46"></a>    def out():</span>
+<span id="cb6-47"><a href="#cb6-47"></a>        return f"Click count is {count()}"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">Shiny Modules – OatNotes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">Shiny Modules – OatNotes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">Shiny Modules – OatNotes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">OatNotes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note that in the example above we used the relative import <code>from .counter import ...</code> instead of the absolute import <code>from counter import ...</code>.</p>
+<p>This is necessary when running multiple Shinylive applications on one web page as we do here, so that different apps do not cause conflicts when importing their own counter modules.</p>
+<p>In normal Shiny Core applications, you <strong>MUST</strong> use the <strong>absolute import</strong> (relative imports will generally not work with Shiny Core applications).</p>
+</div>
+</div>
+</section>
+<section id="passihng-multiple-ui-elements-to-modules" class="level2 page-columns page-full" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="passihng-multiple-ui-elements-to-modules"><span class="header-section-number">4.2</span> Passihng multiple UI elements to modules</h2>
+<blockquote class="blockquote">
+<p>There are two main ways to pass multiple UI elements to a module. First, you can have the module take a <strong><em>list</em></strong> as one of the arguments and pass that list to another container function.</p>
+<p>This is convenient because it lets the parent context pass in any number of elements to the module, but requires that you wrap the elements in a list before passing them to the module.</p>
+</blockquote>
+<div class="sourceCode" id="cb7" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="at">@module.ui</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">def</span> mod_ui(elements):</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="cf">return</span> ui.div(elements)</span>
+<span id="cb7-4"><a href="#cb7-4"></a></span>
+<span id="cb7-5"><a href="#cb7-5"></a>ui <span class="op">=</span> ui.page_fluid(mod_ui([ui.h1(<span class="st">"heading"</span>), ui.p(<span class="st">"paragraph"</span>)]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>The second method is to have your module take <strong>non keyword argument</strong> with <code>*args</code>. This is how Shiny’s container functions are designed, and using this pattern lets you to call the module UI just like you would any Shiny function.</p>
+</blockquote>
+<div class="sourceCode" id="cb8" data-code-line-numbers=""><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="at">@module.ui</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">def</span> mod_ui(<span class="op">*</span>args):</span>
+<span id="cb8-3"><a href="#cb8-3"></a>    <span class="cf">return</span> ui.div(<span class="op">*</span>args)</span>
+<span id="cb8-4"><a href="#cb8-4"></a></span>
+<span id="cb8-5"><a href="#cb8-5"></a>ui <span class="op">=</span> ui.page_fluid(mod_ui(ui.h1(<span class="st">"heading"</span>), ui.p(<span class="st">"paragraph"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>For example, let’s say we wanted to display two cards, one which displayed a standard table, and the other displaying an arbitrary set of elements.</p>
+<p>One way we could do this is by writing a module which rendered a table in one card and passed *args to a second card.</p>
+</blockquote>
+<div class="column-screen-inset">
+<div class="sourceCode" id="cb9" data-code-line-numbers=""><pre class="sourceCode numberSource shinylive-python number-lines code-with-copy"><code class="sourceCode"><span id="cb9-1"><a href="#cb9-1"></a>#| standalone: true</span>
+<span id="cb9-2"><a href="#cb9-2"></a>#| components: [editor, viewer]</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a>## file: app.py</span>
+<span id="cb9-5"><a href="#cb9-5"></a>import matplotlib.pyplot as plt</span>
+<span id="cb9-6"><a href="#cb9-6"></a>import numpy as np</span>
+<span id="cb9-7"><a href="#cb9-7"></a>from .modules import table_cards_server, table_cards_ui</span>
+<span id="cb9-8"><a href="#cb9-8"></a>from shiny import App, render, ui</span>
+<span id="cb9-9"><a href="#cb9-9"></a></span>
+<span id="cb9-10"><a href="#cb9-10"></a>text_tags = [ui.h1("A heading"), ui.p("Some paragraph text")]</span>
+<span id="cb9-11"><a href="#cb9-11"></a>reactive_tags = [</span>
+<span id="cb9-12"><a href="#cb9-12"></a>    ui.input_numeric("dots", "Number of points", value=25), ui.output_plot("dot_plot")</span>
+<span id="cb9-13"><a href="#cb9-13"></a>]</span>
+<span id="cb9-14"><a href="#cb9-14"></a></span>
+<span id="cb9-15"><a href="#cb9-15"></a>app_ui = ui.page_fluid(</span>
+<span id="cb9-16"><a href="#cb9-16"></a>    table_cards_ui("output_example", reactive_tags),</span>
+<span id="cb9-17"><a href="#cb9-17"></a>    table_cards_ui("heading_example", text_tags),</span>
+<span id="cb9-18"><a href="#cb9-18"></a>)</span>
+<span id="cb9-19"><a href="#cb9-19"></a></span>
+<span id="cb9-20"><a href="#cb9-20"></a>def server(input, output, session):</span>
+<span id="cb9-21"><a href="#cb9-21"></a>    @render.plot</span>
+<span id="cb9-22"><a href="#cb9-22"></a>    def dot_plot():</span>
+<span id="cb9-23"><a href="#cb9-23"></a>        x = np.random.rand(input.dots())</span>
+<span id="cb9-24"><a href="#cb9-24"></a>        y = np.random.rand(input.dots())</span>
+<span id="cb9-25"><a href="#cb9-25"></a>        fig, ax = plt.subplots()</span>
+<span id="cb9-26"><a href="#cb9-26"></a>        ax.scatter(x, y)</span>
+<span id="cb9-27"><a href="#cb9-27"></a>        return fig</span>
+<span id="cb9-28"><a href="#cb9-28"></a></span>
+<span id="cb9-29"><a href="#cb9-29"></a>    table_cards_server("heading_example")</span>
+<span id="cb9-30"><a href="#cb9-30"></a>    table_cards_server("output_example")</span>
+<span id="cb9-31"><a href="#cb9-31"></a></span>
+<span id="cb9-32"><a href="#cb9-32"></a>app = App(app_ui, server)</span>
+<span id="cb9-33"><a href="#cb9-33"></a></span>
+<span id="cb9-34"><a href="#cb9-34"></a>## file: modules.py</span>
+<span id="cb9-35"><a href="#cb9-35"></a>import pandas as pd</span>
+<span id="cb9-36"><a href="#cb9-36"></a>from shiny import module, render, ui</span>
+<span id="cb9-37"><a href="#cb9-37"></a></span>
+<span id="cb9-38"><a href="#cb9-38"></a>@module.ui</span>
+<span id="cb9-39"><a href="#cb9-39"></a>def table_cards_ui(*args):</span>
+<span id="cb9-40"><a href="#cb9-40"></a>    return ui.row(</span>
+<span id="cb9-41"><a href="#cb9-41"></a>        ui.layout_column_wrap(</span>
+<span id="cb9-42"><a href="#cb9-42"></a>            ui.card(</span>
+<span id="cb9-43"><a href="#cb9-43"></a>                ui.card_header("Standard table"), ui.output_table("module_table")</span>
+<span id="cb9-44"><a href="#cb9-44"></a>            ),</span>
+<span id="cb9-45"><a href="#cb9-45"></a>            ui.card(ui.card_header("New elements"), *args),</span>
+<span id="cb9-46"><a href="#cb9-46"></a>            width = 1 / 2,</span>
+<span id="cb9-47"><a href="#cb9-47"></a>        ),</span>
+<span id="cb9-48"><a href="#cb9-48"></a>    )</span>
+<span id="cb9-49"><a href="#cb9-49"></a></span>
+<span id="cb9-50"><a href="#cb9-50"></a>@module.server</span>
+<span id="cb9-51"><a href="#cb9-51"></a>def table_cards_server(input, output, session):</span>
+<span id="cb9-52"><a href="#cb9-52"></a>    @render.table</span>
+<span id="cb9-53"><a href="#cb9-53"></a>    def module_table():</span>
+<span id="cb9-54"><a href="#cb9-54"></a>        df = pd.DataFrame({"col1": range(4), "col2": range(4)})</span>
+<span id="cb9-55"><a href="#cb9-55"></a>        return df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="passing-reactives-to-modules" class="level2 page-columns page-full" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="passing-reactives-to-modules"><span class="header-section-number">4.3</span> Passing reactives to modules</h2>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is important to distinguish between calls to reactive objects like <code>input.n()</code> and the reactive object itself, <code>input.n</code>. While <code>input.n</code> is reactive object, calling <code>input.n()</code> returns the current value that object.</p>
+</div>
+</div>
+<div class="column-screen-inset">
+<div class="sourceCode" id="cb10" data-code-line-numbers=""><pre class="sourceCode numberSource shinylive-python number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a href="#cb10-1"></a>#| standalone: true</span>
+<span id="cb10-2"><a href="#cb10-2"></a>#| components: [editor, viewer]</span>
+<span id="cb10-3"><a href="#cb10-3"></a></span>
+<span id="cb10-4"><a href="#cb10-4"></a>## file: app.py</span>
+<span id="cb10-5"><a href="#cb10-5"></a>from shiny import App, module, reactive, render, ui</span>
+<span id="cb10-6"><a href="#cb10-6"></a>from .modules import counter_ui, counter_server</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a>app_ui = ui.page_fluid(</span>
+<span id="cb10-9"><a href="#cb10-9"></a>    ui.input_action_button("clear", "Clear counters"),</span>
+<span id="cb10-10"><a href="#cb10-10"></a>    counter_ui("counter1", "Counter 1"),</span>
+<span id="cb10-11"><a href="#cb10-11"></a>    counter_ui("counter2", "Counter 2"),</span>
+<span id="cb10-12"><a href="#cb10-12"></a>)</span>
+<span id="cb10-13"><a href="#cb10-13"></a></span>
+<span id="cb10-14"><a href="#cb10-14"></a>def server(input, output, session):</span>
+<span id="cb10-15"><a href="#cb10-15"></a>    counter_server("counter1", starting_value=5, global_clear=input.clear)</span>
+<span id="cb10-16"><a href="#cb10-16"></a>    counter_server("counter2", starting_value=3, global_clear=input.clear)</span>
+<span id="cb10-17"><a href="#cb10-17"></a></span>
+<span id="cb10-18"><a href="#cb10-18"></a>app = App(app_ui, server)</span>
+<span id="cb10-19"><a href="#cb10-19"></a></span>
+<span id="cb10-20"><a href="#cb10-20"></a>## file: modules.py</span>
+<span id="cb10-21"><a href="#cb10-21"></a>from shiny import App, module, reactive, render, ui</span>
+<span id="cb10-22"><a href="#cb10-22"></a></span>
+<span id="cb10-23"><a href="#cb10-23"></a>@module.ui</span>
+<span id="cb10-24"><a href="#cb10-24"></a>def counter_ui(label: str = "Increment counter"):</span>
+<span id="cb10-25"><a href="#cb10-25"></a>    return ui.card(</span>
+<span id="cb10-26"><a href="#cb10-26"></a>        ui.card_header("This is " + label),</span>
+<span id="cb10-27"><a href="#cb10-27"></a>        ui.input_action_button(id="button", label=label),</span>
+<span id="cb10-28"><a href="#cb10-28"></a>        ui.output_code(id="out"),</span>
+<span id="cb10-29"><a href="#cb10-29"></a>    )</span>
+<span id="cb10-30"><a href="#cb10-30"></a></span>
+<span id="cb10-31"><a href="#cb10-31"></a>@module.server</span>
+<span id="cb10-32"><a href="#cb10-32"></a>def counter_server(input, output, session, global_clear, starting_value=0):</span>
+<span id="cb10-33"><a href="#cb10-33"></a>    rv_count = reactive.value(starting_value)</span>
+<span id="cb10-34"><a href="#cb10-34"></a></span>
+<span id="cb10-35"><a href="#cb10-35"></a>    @reactive.effect</span>
+<span id="cb10-36"><a href="#cb10-36"></a>    @reactive.event(global_clear)</span>
+<span id="cb10-37"><a href="#cb10-37"></a>    def clear_all():</span>
+<span id="cb10-38"><a href="#cb10-38"></a>        rv_count.set(0)</span>
+<span id="cb10-39"><a href="#cb10-39"></a></span>
+<span id="cb10-40"><a href="#cb10-40"></a>    @reactive.effect</span>
+<span id="cb10-41"><a href="#cb10-41"></a>    @reactive.event(input.button)</span>
+<span id="cb10-42"><a href="#cb10-42"></a>    def increment_counter():</span>
+<span id="cb10-43"><a href="#cb10-43"></a>        rv_count.set(rv_count() + 1)</span>
+<span id="cb10-44"><a href="#cb10-44"></a></span>
+<span id="cb10-45"><a href="#cb10-45"></a>    @render.code</span>
+<span id="cb10-46"><a href="#cb10-46"></a>    def out():</span>
+<span id="cb10-47"><a href="#cb10-47"></a>        return f"Click count is {rv_count()}"</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
 <!-- -->
-<div class="quarto-embedded-source-code">
-<div class="sourceCode" id="cb4" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">---</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="an">title:</span><span class="co"> &quot;Shiny Modules&quot;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="an">filters:</span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="co">    - line-highlight</span></span>
-<span id="cb4-5"><a href="#cb4-5"></a><span class="co">    - shinylive</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a><span class="co">---</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a></span>
-<span id="cb4-8"><a href="#cb4-8"></a><span class="fu"># Intro</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a></span>
-<span id="cb4-10"><a href="#cb4-10"></a>:::{.column-margin}</span>
-<span id="cb4-11"><a href="#cb4-11"></a>Source: <span class="co">[</span><span class="ot">Shiny Modules</span><span class="co">](https://shiny.posit.co/py/docs/modules.html)</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a>:::</span>
-<span id="cb4-13"><a href="#cb4-13"></a></span>
-<span id="cb4-14"><a href="#cb4-14"></a><span class="at">&gt; Writing modules in Shiny is the best strategy for organizing a large Shiny code base. </span></span>
-<span id="cb4-15"><a href="#cb4-15"></a><span class="at">&gt;</span></span>
-<span id="cb4-16"><a href="#cb4-16"></a><span class="at">&gt; With modules, you can break your application into small pieces that can be reasoned about separately and composed to build larger applications. </span></span>
-<span id="cb4-17"><a href="#cb4-17"></a><span class="at">&gt; </span></span>
-<span id="cb4-18"><a href="#cb4-18"></a><span class="at">&gt; This article explains the basics of why we need modules and how to use them, and the next article explains how to communicate between modules.</span></span>
-<span id="cb4-19"><a href="#cb4-19"></a></span>
-<span id="cb4-20"><a href="#cb4-20"></a></span>
-<span id="cb4-21"><a href="#cb4-21"></a><span class="fu"># Why do we need modules</span></span>
-<span id="cb4-22"><a href="#cb4-22"></a></span>
-<span id="cb4-23"><a href="#cb4-23"></a><span class="at">&gt; Modules solve these problems by **_encapsulating_** both the </span><span class="in">`UI`</span><span class="at"> and </span><span class="in">`server`</span><span class="at"> logic in their own </span><span class="in">`namespace`</span><span class="at">. </span></span>
-<span id="cb4-24"><a href="#cb4-24"></a><span class="at">&gt; </span></span>
-<span id="cb4-25"><a href="#cb4-25"></a><span class="at">&gt; A </span><span class="in">`module namespace`</span><span class="at"> can be thought of as a **_container_** for a module’s code, and helps to keep the module’s </span><span class="in">`variables`</span><span class="at">, </span><span class="in">`functions`</span><span class="at">, and </span><span class="in">`classes`</span><span class="at"> separate from those in other modules. </span></span>
-<span id="cb4-26"><a href="#cb4-26"></a><span class="at">&gt; </span></span>
-<span id="cb4-27"><a href="#cb4-27"></a><span class="at">&gt; This separation prevents naming conflicts and makes the code easier to understand and manage. </span></span>
-<span id="cb4-28"><a href="#cb4-28"></a><span class="at">&gt; </span></span>
-<span id="cb4-29"><a href="#cb4-29"></a><span class="at">&gt; A </span><span class="in">`namespace`</span><span class="at"> is a unique **_identifier_** that Shiny assigns to each instance of a module to keep its </span><span class="in">`input`</span><span class="at"> and </span><span class="in">`output`</span><span class="at"> IDs separate from the IDs of other instances and from the rest of the Shiny application.</span></span>
-<span id="cb4-30"><a href="#cb4-30"></a></span>
-<span id="cb4-31"><a href="#cb4-31"></a></span>
-<span id="cb4-32"><a href="#cb4-32"></a><span class="fu"># How to use modules</span></span>
-<span id="cb4-33"><a href="#cb4-33"></a></span>
-<span id="cb4-34"><a href="#cb4-34"></a><span class="fu">## Create modules</span></span>
-<span id="cb4-35"><a href="#cb4-35"></a></span>
-<span id="cb4-36"><a href="#cb4-36"></a><span class="at">&gt; At their core, </span><span class="in">`modules`</span><span class="at"> are just </span><span class="in">`functions`</span><span class="at"> and so anything you can do with a function you can also do with a module. </span></span>
-<span id="cb4-37"><a href="#cb4-37"></a><span class="at">&gt; </span></span>
-<span id="cb4-38"><a href="#cb4-38"></a><span class="at">&gt; Modules can take any </span><span class="in">`argument`</span><span class="at">, and can </span><span class="in">`return`</span><span class="at"> any value to the caller. </span></span>
-<span id="cb4-39"><a href="#cb4-39"></a><span class="at">&gt; </span></span>
-<span id="cb4-40"><a href="#cb4-40"></a><span class="at">&gt; Modules usually include both </span><span class="in">`UI`</span><span class="at"> and </span><span class="in">`server`</span><span class="at"> elements which work together to encapsulate a part of your application, and the module UI and server work exactly the same way they do in a regular Shiny application.</span></span>
-<span id="cb4-41"><a href="#cb4-41"></a></span>
-<span id="cb4-42"><a href="#cb4-42"></a><span class="at">&gt; The UI part of the module is a function which returns UI elements, and is decorated with the </span><span class="in">`@module.ui`</span><span class="at"> decorator. </span></span>
-<span id="cb4-43"><a href="#cb4-43"></a><span class="at">&gt; </span></span>
-<span id="cb4-44"><a href="#cb4-44"></a><span class="at">&gt; This decorator sets a default </span><span class="in">`module namespace`</span><span class="at">, so each component created by the function has a prefix implicitly added to its ID.</span></span>
-<span id="cb4-45"><a href="#cb4-45"></a></span>
-<span id="cb4-46"><a href="#cb4-46"></a><span class="in">```{.python}</span></span>
-<span id="cb4-47"><a href="#cb4-47"></a><span class="in">@module.ui</span></span>
-<span id="cb4-48"><a href="#cb4-48"></a><span class="in">def row_ui():</span></span>
-<span id="cb4-49"><a href="#cb4-49"></a><span class="in">    return ui.layout_columns(</span></span>
-<span id="cb4-50"><a href="#cb4-50"></a><span class="in">        ui.card(ui.input_text(&quot;text_in&quot;, &quot;Enter text&quot;)),</span></span>
-<span id="cb4-51"><a href="#cb4-51"></a><span class="in">        ui.card(ui.output_text(&quot;text_out&quot;)),</span></span>
-<span id="cb4-52"><a href="#cb4-52"></a><span class="in">    )</span></span>
-<span id="cb4-53"><a href="#cb4-53"></a><span class="in">```</span></span>
-<span id="cb4-54"><a href="#cb4-54"></a></span>
-<span id="cb4-55"><a href="#cb4-55"></a><span class="at">&gt; The module server function looks just like a Shiny app server function, except it’s decorated with the </span><span class="in">`@module.server`</span><span class="at"> decorator.</span></span>
-<span id="cb4-56"><a href="#cb4-56"></a></span>
-<span id="cb4-57"><a href="#cb4-57"></a><span class="in">```{.python}</span></span>
-<span id="cb4-58"><a href="#cb4-58"></a><span class="in">@module.server</span></span>
-<span id="cb4-59"><a href="#cb4-59"></a><span class="in">def row_server(input, output, session):</span></span>
-<span id="cb4-60"><a href="#cb4-60"></a><span class="in">    @output</span></span>
-<span id="cb4-61"><a href="#cb4-61"></a><span class="in">    @render.text</span></span>
-<span id="cb4-62"><a href="#cb4-62"></a><span class="in">    def text_out():</span></span>
-<span id="cb4-63"><a href="#cb4-63"></a><span class="in">        return f&#39;You entered &quot;{input.text_in()}&quot;&#39;</span></span>
-<span id="cb4-64"><a href="#cb4-64"></a><span class="in">```</span></span>
-<span id="cb4-65"><a href="#cb4-65"></a></span>
-<span id="cb4-66"><a href="#cb4-66"></a></span>
-<span id="cb4-67"><a href="#cb4-67"></a><span class="fu">## Use modules</span></span>
-<span id="cb4-68"><a href="#cb4-68"></a></span>
-<span id="cb4-69"><a href="#cb4-69"></a><span class="at">&gt; To use this module in an application, you call the module UI and server functions inside of the application UI and server functions. </span></span>
-<span id="cb4-70"><a href="#cb4-70"></a><span class="at">&gt; </span></span>
-<span id="cb4-71"><a href="#cb4-71"></a><span class="at">&gt; Every module call includes an id argument which defines the module’s </span><span class="in">`namespace.`</span><span class="at"> This id has two requirements. </span></span>
-<span id="cb4-72"><a href="#cb4-72"></a><span class="at">&gt; </span></span>
-<span id="cb4-73"><a href="#cb4-73"></a><span class="at">&gt; - First, it must be **_unique_** in a single scope, and can’t be duplicated in a given application or module definition. If you need to generate many instances of a single module, it is often a good idea to store their ids in a list, and use </span><span class="in">`list comprehension`</span><span class="at"> to generate the UI and server instances. </span></span>
-<span id="cb4-74"><a href="#cb4-74"></a><span class="at">&gt; </span></span>
-<span id="cb4-75"><a href="#cb4-75"></a><span class="at">&gt; - Second, the UI and server ids must match. This ensures that the UI and server instances exist in the same namespace, and if the ids don’t match, the UI and server modules will not be able to interact.</span></span>
-<span id="cb4-76"><a href="#cb4-76"></a></span>
-<span id="cb4-77"><a href="#cb4-77"></a></span>
-<span id="cb4-78"><a href="#cb4-78"></a><span class="in">```{shinylive-python}</span></span>
-<span id="cb4-79"><a href="#cb4-79"></a><span class="in">#| standalone: true</span></span>
-<span id="cb4-80"><a href="#cb4-80"></a><span class="in">#| components: [editor, viewer]</span></span>
-<span id="cb4-81"><a href="#cb4-81"></a></span>
-<span id="cb4-82"><a href="#cb4-82"></a><span class="in">from shiny import App, module, render, ui</span></span>
-<span id="cb4-83"><a href="#cb4-83"></a></span>
-<span id="cb4-84"><a href="#cb4-84"></a><span class="in">@module.ui</span></span>
-<span id="cb4-85"><a href="#cb4-85"></a><span class="in">def row_ui():</span></span>
-<span id="cb4-86"><a href="#cb4-86"></a><span class="in">    return ui.layout_columns(</span></span>
-<span id="cb4-87"><a href="#cb4-87"></a><span class="in">        ui.card(ui.input_text(&quot;text_in&quot;, &quot;Enter text&quot;)),</span></span>
-<span id="cb4-88"><a href="#cb4-88"></a><span class="in">        ui.card(ui.output_text(&quot;text_out&quot;)),</span></span>
-<span id="cb4-89"><a href="#cb4-89"></a><span class="in">    )</span></span>
-<span id="cb4-90"><a href="#cb4-90"></a></span>
-<span id="cb4-91"><a href="#cb4-91"></a><span class="in">@module.server</span></span>
-<span id="cb4-92"><a href="#cb4-92"></a><span class="in">def row_server(input, output, session):</span></span>
-<span id="cb4-93"><a href="#cb4-93"></a><span class="in">    @output</span></span>
-<span id="cb4-94"><a href="#cb4-94"></a><span class="in">    @render.text</span></span>
-<span id="cb4-95"><a href="#cb4-95"></a><span class="in">    def text_out():</span></span>
-<span id="cb4-96"><a href="#cb4-96"></a><span class="in">        return f&#39;You entered &quot;{input.text_in()}&quot;&#39;</span></span>
-<span id="cb4-97"><a href="#cb4-97"></a></span>
-<span id="cb4-98"><a href="#cb4-98"></a><span class="in">extra_ids = [&quot;row_3&quot;, &quot;row_4&quot;, &quot;row_5&quot;]</span></span>
-<span id="cb4-99"><a href="#cb4-99"></a></span>
-<span id="cb4-100"><a href="#cb4-100"></a><span class="in">app_ui = ui.page_fluid(</span></span>
-<span id="cb4-101"><a href="#cb4-101"></a><span class="in">    row_ui(&quot;row_1&quot;),</span></span>
-<span id="cb4-102"><a href="#cb4-102"></a><span class="in">    row_ui(&quot;row_2&quot;),</span></span>
-<span id="cb4-103"><a href="#cb4-103"></a><span class="in">    [row_ui(x) for x in extra_ids]</span></span>
-<span id="cb4-104"><a href="#cb4-104"></a><span class="in">)</span></span>
-<span id="cb4-105"><a href="#cb4-105"></a></span>
-<span id="cb4-106"><a href="#cb4-106"></a><span class="in">def server(input, output, session):</span></span>
-<span id="cb4-107"><a href="#cb4-107"></a><span class="in">    row_server(&quot;row_1&quot;)</span></span>
-<span id="cb4-108"><a href="#cb4-108"></a><span class="in">    row_server(&quot;row_2&quot;)</span></span>
-<span id="cb4-109"><a href="#cb4-109"></a><span class="in">    [row_server(x) for x in extra_ids]</span></span>
-<span id="cb4-110"><a href="#cb4-110"></a></span>
-<span id="cb4-111"><a href="#cb4-111"></a><span class="in">app = App(app_ui, server)</span></span>
-<span id="cb4-112"><a href="#cb4-112"></a><span class="in">```</span></span>
-<span id="cb4-113"><a href="#cb4-113"></a></span></code></pre></div>
-</div>
+
 </section>
 </section>
 
-</main> <!-- /main -->
-<script id = "quarto-html-after-body" type="application/javascript">
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1296,18 +1453,395 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a  href="/pages/shiny/add_logo.html" class="pagination-link" aria-label="Add Logo">
+      <a href="../../pages/shiny/add_logo.html" class="pagination-link" aria-label="Add Logo">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Add Logo</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a  href="/pages/threejs/add_3js_code_blk.html" class="pagination-link" aria-label="Add three.js code block">
+      <a href="../../pages/threejs/add_3js_code_blk.html" class="pagination-link" aria-label="Add three.js code block">
         <span class="nav-page-text">Add three.js code block</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb11" data-shortcodes="false" data-code-line-numbers=""><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="an">title:</span><span class="co"> "Shiny Modules"</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="an">filters:</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="co">    - line-highlight</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="co">    - shinylive</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="co">---</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a></span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="fu"># Intro</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a></span>
+<span id="cb11-10"><a href="#cb11-10"></a>:::{.column-margin}</span>
+<span id="cb11-11"><a href="#cb11-11"></a>Source: <span class="co">[</span><span class="ot">Shiny Modules</span><span class="co">](https://shiny.posit.co/py/docs/modules.html)</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a>:::</span>
+<span id="cb11-13"><a href="#cb11-13"></a></span>
+<span id="cb11-14"><a href="#cb11-14"></a><span class="at">&gt; Writing modules in Shiny is the best strategy for organizing a large Shiny code base. </span></span>
+<span id="cb11-15"><a href="#cb11-15"></a><span class="at">&gt;</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a><span class="at">&gt; With modules, you can break your application into small pieces that can be reasoned about separately and composed to build larger applications. </span></span>
+<span id="cb11-17"><a href="#cb11-17"></a><span class="at">&gt; </span></span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="at">&gt; This article explains the basics of why we need modules and how to use them, and the next article explains how to communicate between modules.</span></span>
+<span id="cb11-19"><a href="#cb11-19"></a></span>
+<span id="cb11-20"><a href="#cb11-20"></a></span>
+<span id="cb11-21"><a href="#cb11-21"></a><span class="fu"># Why do we need modules</span></span>
+<span id="cb11-22"><a href="#cb11-22"></a></span>
+<span id="cb11-23"><a href="#cb11-23"></a><span class="at">&gt; Modules solve these problems by **_encapsulating_** both the </span><span class="in">`UI`</span><span class="at"> and </span><span class="in">`server`</span><span class="at"> logic in their own </span><span class="in">`namespace`</span><span class="at">. </span></span>
+<span id="cb11-24"><a href="#cb11-24"></a><span class="at">&gt; </span></span>
+<span id="cb11-25"><a href="#cb11-25"></a><span class="at">&gt; A </span><span class="in">`module namespace`</span><span class="at"> can be thought of as a **_container_** for a module’s code, and helps to keep the module’s </span><span class="in">`variables`</span><span class="at">, </span><span class="in">`functions`</span><span class="at">, and </span><span class="in">`classes`</span><span class="at"> separate from those in other modules. </span></span>
+<span id="cb11-26"><a href="#cb11-26"></a><span class="at">&gt; </span></span>
+<span id="cb11-27"><a href="#cb11-27"></a><span class="at">&gt; This separation prevents naming conflicts and makes the code easier to understand and manage. </span></span>
+<span id="cb11-28"><a href="#cb11-28"></a><span class="at">&gt; </span></span>
+<span id="cb11-29"><a href="#cb11-29"></a><span class="at">&gt; A </span><span class="in">`namespace`</span><span class="at"> is a unique **_identifier_** that Shiny assigns to each instance of a module to keep its </span><span class="in">`input`</span><span class="at"> and </span><span class="in">`output`</span><span class="at"> IDs separate from the IDs of other instances and from the rest of the Shiny application.</span></span>
+<span id="cb11-30"><a href="#cb11-30"></a></span>
+<span id="cb11-31"><a href="#cb11-31"></a></span>
+<span id="cb11-32"><a href="#cb11-32"></a><span class="fu"># How to use modules</span></span>
+<span id="cb11-33"><a href="#cb11-33"></a></span>
+<span id="cb11-34"><a href="#cb11-34"></a><span class="fu">## Create modules</span></span>
+<span id="cb11-35"><a href="#cb11-35"></a></span>
+<span id="cb11-36"><a href="#cb11-36"></a><span class="at">&gt; At their core, </span><span class="in">`modules`</span><span class="at"> are just </span><span class="in">`functions`</span><span class="at"> and so anything you can do with a function you can also do with a module. </span></span>
+<span id="cb11-37"><a href="#cb11-37"></a><span class="at">&gt; </span></span>
+<span id="cb11-38"><a href="#cb11-38"></a><span class="at">&gt; Modules can take any </span><span class="in">`argument`</span><span class="at">, and can </span><span class="in">`return`</span><span class="at"> any value to the caller. </span></span>
+<span id="cb11-39"><a href="#cb11-39"></a><span class="at">&gt; </span></span>
+<span id="cb11-40"><a href="#cb11-40"></a><span class="at">&gt; Modules usually include both </span><span class="in">`UI`</span><span class="at"> and </span><span class="in">`server`</span><span class="at"> elements which work together to encapsulate a part of your application, and the module UI and server work exactly the same way they do in a regular Shiny application.</span></span>
+<span id="cb11-41"><a href="#cb11-41"></a></span>
+<span id="cb11-42"><a href="#cb11-42"></a><span class="at">&gt; The UI part of the module is a function which returns UI elements, and is decorated with the </span><span class="in">`@module.ui`</span><span class="at"> decorator. </span></span>
+<span id="cb11-43"><a href="#cb11-43"></a><span class="at">&gt; </span></span>
+<span id="cb11-44"><a href="#cb11-44"></a><span class="at">&gt; This decorator sets a default </span><span class="in">`module namespace`</span><span class="at">, so each component created by the function has a prefix implicitly added to its ID.</span></span>
+<span id="cb11-45"><a href="#cb11-45"></a></span>
+<span id="cb11-46"><a href="#cb11-46"></a><span class="in">```{.python}</span></span>
+<span id="cb11-47"><a href="#cb11-47"></a><span class="in">@module.ui</span></span>
+<span id="cb11-48"><a href="#cb11-48"></a><span class="in">def row_ui():</span></span>
+<span id="cb11-49"><a href="#cb11-49"></a><span class="in">    return ui.layout_columns(</span></span>
+<span id="cb11-50"><a href="#cb11-50"></a><span class="in">        ui.card(ui.input_text("text_in", "Enter text")),</span></span>
+<span id="cb11-51"><a href="#cb11-51"></a><span class="in">        ui.card(ui.output_text("text_out")),</span></span>
+<span id="cb11-52"><a href="#cb11-52"></a><span class="in">    )</span></span>
+<span id="cb11-53"><a href="#cb11-53"></a><span class="in">```</span></span>
+<span id="cb11-54"><a href="#cb11-54"></a></span>
+<span id="cb11-55"><a href="#cb11-55"></a><span class="at">&gt; The module server function looks just like a Shiny app server function, except it’s decorated with the </span><span class="in">`@module.server`</span><span class="at"> decorator.</span></span>
+<span id="cb11-56"><a href="#cb11-56"></a></span>
+<span id="cb11-57"><a href="#cb11-57"></a><span class="in">```{.python}</span></span>
+<span id="cb11-58"><a href="#cb11-58"></a><span class="in">@module.server</span></span>
+<span id="cb11-59"><a href="#cb11-59"></a><span class="in">def row_server(input, output, session):</span></span>
+<span id="cb11-60"><a href="#cb11-60"></a><span class="in">    @output</span></span>
+<span id="cb11-61"><a href="#cb11-61"></a><span class="in">    @render.text</span></span>
+<span id="cb11-62"><a href="#cb11-62"></a><span class="in">    def text_out():</span></span>
+<span id="cb11-63"><a href="#cb11-63"></a><span class="in">        return f'You entered "{input.text_in()}"'</span></span>
+<span id="cb11-64"><a href="#cb11-64"></a><span class="in">```</span></span>
+<span id="cb11-65"><a href="#cb11-65"></a></span>
+<span id="cb11-66"><a href="#cb11-66"></a></span>
+<span id="cb11-67"><a href="#cb11-67"></a><span class="fu">## Use modules</span></span>
+<span id="cb11-68"><a href="#cb11-68"></a></span>
+<span id="cb11-69"><a href="#cb11-69"></a><span class="at">&gt; To use this module in an application, you call the module UI and server functions inside of the application UI and server functions. </span></span>
+<span id="cb11-70"><a href="#cb11-70"></a><span class="at">&gt; </span></span>
+<span id="cb11-71"><a href="#cb11-71"></a><span class="at">&gt; Every module call includes an id argument which defines the module’s </span><span class="in">`namespace.`</span><span class="at"> This id has two requirements. </span></span>
+<span id="cb11-72"><a href="#cb11-72"></a><span class="at">&gt; </span></span>
+<span id="cb11-73"><a href="#cb11-73"></a><span class="at">&gt; - First, it must be **_unique_** in a single scope, and can’t be duplicated in a given application or module definition. If you need to generate many instances of a single module, it is often a good idea to store their ids in a list, and use </span><span class="in">`list comprehension`</span><span class="at"> to generate the UI and server instances. </span></span>
+<span id="cb11-74"><a href="#cb11-74"></a><span class="at">&gt; </span></span>
+<span id="cb11-75"><a href="#cb11-75"></a><span class="at">&gt; - Second, the UI and server ids must match. This ensures that the UI and server instances exist in the same namespace, and if the ids don’t match, the UI and server modules will not be able to interact.</span></span>
+<span id="cb11-76"><a href="#cb11-76"></a></span>
+<span id="cb11-77"><a href="#cb11-77"></a></span>
+<span id="cb11-78"><a href="#cb11-78"></a><span class="in">```{shinylive-python}</span></span>
+<span id="cb11-79"><a href="#cb11-79"></a><span class="in">#| standalone: true</span></span>
+<span id="cb11-80"><a href="#cb11-80"></a><span class="in">#| components: [editor, viewer]</span></span>
+<span id="cb11-81"><a href="#cb11-81"></a></span>
+<span id="cb11-82"><a href="#cb11-82"></a><span class="in">from shiny import App, module, render, ui</span></span>
+<span id="cb11-83"><a href="#cb11-83"></a></span>
+<span id="cb11-84"><a href="#cb11-84"></a><span class="in">@module.ui</span></span>
+<span id="cb11-85"><a href="#cb11-85"></a><span class="in">def row_ui():</span></span>
+<span id="cb11-86"><a href="#cb11-86"></a><span class="in">    return ui.layout_columns(</span></span>
+<span id="cb11-87"><a href="#cb11-87"></a><span class="in">        ui.card(ui.input_text("text_in", "Enter text")),</span></span>
+<span id="cb11-88"><a href="#cb11-88"></a><span class="in">        ui.card(ui.output_text("text_out")),</span></span>
+<span id="cb11-89"><a href="#cb11-89"></a><span class="in">    )</span></span>
+<span id="cb11-90"><a href="#cb11-90"></a></span>
+<span id="cb11-91"><a href="#cb11-91"></a><span class="in">@module.server</span></span>
+<span id="cb11-92"><a href="#cb11-92"></a><span class="in">def row_server(input, output, session):</span></span>
+<span id="cb11-93"><a href="#cb11-93"></a><span class="in">    @output</span></span>
+<span id="cb11-94"><a href="#cb11-94"></a><span class="in">    @render.text</span></span>
+<span id="cb11-95"><a href="#cb11-95"></a><span class="in">    def text_out():</span></span>
+<span id="cb11-96"><a href="#cb11-96"></a><span class="in">        return f'You entered "{input.text_in()}"'</span></span>
+<span id="cb11-97"><a href="#cb11-97"></a></span>
+<span id="cb11-98"><a href="#cb11-98"></a><span class="in">extra_ids = ["row_3", "row_4", "row_5"]</span></span>
+<span id="cb11-99"><a href="#cb11-99"></a></span>
+<span id="cb11-100"><a href="#cb11-100"></a><span class="in">app_ui = ui.page_fluid(</span></span>
+<span id="cb11-101"><a href="#cb11-101"></a><span class="in">    row_ui("row_1"),</span></span>
+<span id="cb11-102"><a href="#cb11-102"></a><span class="in">    row_ui("row_2"),</span></span>
+<span id="cb11-103"><a href="#cb11-103"></a><span class="in">    [row_ui(x) for x in extra_ids]</span></span>
+<span id="cb11-104"><a href="#cb11-104"></a><span class="in">)</span></span>
+<span id="cb11-105"><a href="#cb11-105"></a></span>
+<span id="cb11-106"><a href="#cb11-106"></a><span class="in">def server(input, output, session):</span></span>
+<span id="cb11-107"><a href="#cb11-107"></a><span class="in">    row_server("row_1")</span></span>
+<span id="cb11-108"><a href="#cb11-108"></a><span class="in">    row_server("row_2")</span></span>
+<span id="cb11-109"><a href="#cb11-109"></a><span class="in">    [row_server(x) for x in extra_ids]</span></span>
+<span id="cb11-110"><a href="#cb11-110"></a></span>
+<span id="cb11-111"><a href="#cb11-111"></a><span class="in">app = App(app_ui, server)</span></span>
+<span id="cb11-112"><a href="#cb11-112"></a><span class="in">```</span></span>
+<span id="cb11-113"><a href="#cb11-113"></a></span>
+<span id="cb11-114"><a href="#cb11-114"></a></span>
+<span id="cb11-115"><a href="#cb11-115"></a><span class="fu"># Module communication</span></span>
+<span id="cb11-116"><a href="#cb11-116"></a></span>
+<span id="cb11-117"><a href="#cb11-117"></a></span>
+<span id="cb11-118"><a href="#cb11-118"></a><span class="at">&gt; There are four main patterns you should be aware of when building Shiny modules:</span></span>
+<span id="cb11-119"><a href="#cb11-119"></a><span class="at">&gt; </span></span>
+<span id="cb11-120"><a href="#cb11-120"></a><span class="at">&gt; Modules that take non-reactive arguments</span></span>
+<span id="cb11-121"><a href="#cb11-121"></a><span class="at">&gt; Passing callbacks to modules</span></span>
+<span id="cb11-122"><a href="#cb11-122"></a><span class="at">&gt; Modules that take reactive arguments</span></span>
+<span id="cb11-123"><a href="#cb11-123"></a><span class="at">&gt; Modules that return reactive arguments</span></span>
+<span id="cb11-124"><a href="#cb11-124"></a></span>
+<span id="cb11-125"><a href="#cb11-125"></a></span>
+<span id="cb11-126"><a href="#cb11-126"></a><span class="fu">## Non-reactive arguments</span></span>
+<span id="cb11-127"><a href="#cb11-127"></a></span>
+<span id="cb11-128"><a href="#cb11-128"></a>Add arg to the <span class="in">`module UI`</span> function.</span>
+<span id="cb11-129"><a href="#cb11-129"></a></span>
+<span id="cb11-130"><a href="#cb11-130"></a><span class="in">```{.python source-line-numbers='4,6,7'}</span></span>
+<span id="cb11-131"><a href="#cb11-131"></a><span class="in">from shiny import module, ui, render, reactive, event, App</span></span>
+<span id="cb11-132"><a href="#cb11-132"></a></span>
+<span id="cb11-133"><a href="#cb11-133"></a><span class="in">@module.ui</span></span>
+<span id="cb11-134"><a href="#cb11-134"></a><span class="in">def counter_ui(custom_label: str = "Increment counter"):</span></span>
+<span id="cb11-135"><a href="#cb11-135"></a><span class="in">    return ui.card(</span></span>
+<span id="cb11-136"><a href="#cb11-136"></a><span class="in">        ui.h2("This is ", custom_label),</span></span>
+<span id="cb11-137"><a href="#cb11-137"></a><span class="in">        ui.input_action_button(id="button", label=custom_label),</span></span>
+<span id="cb11-138"><a href="#cb11-138"></a><span class="in">        ui.output_code(id="out"),</span></span>
+<span id="cb11-139"><a href="#cb11-139"></a><span class="in">    )</span></span>
+<span id="cb11-140"><a href="#cb11-140"></a><span class="in">```</span></span>
+<span id="cb11-141"><a href="#cb11-141"></a></span>
+<span id="cb11-142"><a href="#cb11-142"></a>Add arg to the <span class="in">`module server`</span> function.</span>
+<span id="cb11-143"><a href="#cb11-143"></a></span>
+<span id="cb11-144"><a href="#cb11-144"></a><span class="in">```{.python source-line-numbers='3,4'}</span></span>
+<span id="cb11-145"><a href="#cb11-145"></a><span class="in">@module.server</span></span>
+<span id="cb11-146"><a href="#cb11-146"></a></span>
+<span id="cb11-147"><a href="#cb11-147"></a><span class="in">def counter_server(input, output, session, starting_value: int = 0):</span></span>
+<span id="cb11-148"><a href="#cb11-148"></a><span class="in">    count =  reactive.value(starting_value)</span></span>
+<span id="cb11-149"><a href="#cb11-149"></a></span>
+<span id="cb11-150"><a href="#cb11-150"></a><span class="in">    @reactive.effect</span></span>
+<span id="cb11-151"><a href="#cb11-151"></a><span class="in">    @reactive.event(input.button)</span></span>
+<span id="cb11-152"><a href="#cb11-152"></a><span class="in">    def _():</span></span>
+<span id="cb11-153"><a href="#cb11-153"></a><span class="in">        count.set(count() + 1)</span></span>
+<span id="cb11-154"><a href="#cb11-154"></a></span>
+<span id="cb11-155"><a href="#cb11-155"></a><span class="in">    @render.code</span></span>
+<span id="cb11-156"><a href="#cb11-156"></a><span class="in">    def out():</span></span>
+<span id="cb11-157"><a href="#cb11-157"></a><span class="in">        return f"Click count is {count()}"</span></span>
+<span id="cb11-158"><a href="#cb11-158"></a><span class="in">```</span></span>
+<span id="cb11-159"><a href="#cb11-159"></a></span>
+<span id="cb11-160"><a href="#cb11-160"></a></span>
+<span id="cb11-161"><a href="#cb11-161"></a><span class="at">&gt; You can then pass in values when you call the module in your app. </span></span>
+<span id="cb11-162"><a href="#cb11-162"></a><span class="at">&gt;</span></span>
+<span id="cb11-163"><a href="#cb11-163"></a><span class="at">&gt; Note that you always need to provide an </span><span class="in">`id`</span><span class="at"> to the module function to define its namespace. </span></span>
+<span id="cb11-164"><a href="#cb11-164"></a><span class="at">&gt;</span></span>
+<span id="cb11-165"><a href="#cb11-165"></a><span class="at">&gt; Using arguments like this makes your modules much more flexible and allows you to encapsulate some of the logic while maintaining the flexibility that your application needs.</span></span>
+<span id="cb11-166"><a href="#cb11-166"></a></span>
+<span id="cb11-167"><a href="#cb11-167"></a>:::{.column-screen-inset}</span>
+<span id="cb11-168"><a href="#cb11-168"></a><span class="in">```{shinylive-python}</span></span>
+<span id="cb11-169"><a href="#cb11-169"></a><span class="in">#| standalone: true</span></span>
+<span id="cb11-170"><a href="#cb11-170"></a><span class="in">#| components: [editor, viewer]</span></span>
+<span id="cb11-171"><a href="#cb11-171"></a></span>
+<span id="cb11-172"><a href="#cb11-172"></a><span class="in">## file: app.py</span></span>
+<span id="cb11-173"><a href="#cb11-173"></a><span class="in">from shiny import App, ui</span></span>
+<span id="cb11-174"><a href="#cb11-174"></a><span class="in"># Note: In a normal Shiny Core app, use an absolute import, as in:</span></span>
+<span id="cb11-175"><a href="#cb11-175"></a><span class="in"># `from counter import ...`</span></span>
+<span id="cb11-176"><a href="#cb11-176"></a><span class="in">from .counter import counter_ui, counter_server</span></span>
+<span id="cb11-177"><a href="#cb11-177"></a></span>
+<span id="cb11-178"><a href="#cb11-178"></a><span class="in">app_ui = ui.page_fluid(</span></span>
+<span id="cb11-179"><a href="#cb11-179"></a><span class="in">    counter_ui("counter1", "Counter 1"),</span></span>
+<span id="cb11-180"><a href="#cb11-180"></a><span class="in">    counter_ui("counter2", "Counter 2"),</span></span>
+<span id="cb11-181"><a href="#cb11-181"></a><span class="in">)</span></span>
+<span id="cb11-182"><a href="#cb11-182"></a></span>
+<span id="cb11-183"><a href="#cb11-183"></a><span class="in">def server(input, output, session):</span></span>
+<span id="cb11-184"><a href="#cb11-184"></a><span class="in">    counter_server("counter1", starting_value=5)</span></span>
+<span id="cb11-185"><a href="#cb11-185"></a><span class="in">    counter_server("counter2", starting_value=3)</span></span>
+<span id="cb11-186"><a href="#cb11-186"></a></span>
+<span id="cb11-187"><a href="#cb11-187"></a><span class="in">app = App(app_ui, server)</span></span>
+<span id="cb11-188"><a href="#cb11-188"></a></span>
+<span id="cb11-189"><a href="#cb11-189"></a></span>
+<span id="cb11-190"><a href="#cb11-190"></a><span class="in">## file: counter.py</span></span>
+<span id="cb11-191"><a href="#cb11-191"></a><span class="in">from shiny import module, ui, render, reactive, event</span></span>
+<span id="cb11-192"><a href="#cb11-192"></a></span>
+<span id="cb11-193"><a href="#cb11-193"></a><span class="in">@module.ui</span></span>
+<span id="cb11-194"><a href="#cb11-194"></a><span class="in">def counter_ui(label: str = "Increment counter"):</span></span>
+<span id="cb11-195"><a href="#cb11-195"></a><span class="in">    return ui.card(</span></span>
+<span id="cb11-196"><a href="#cb11-196"></a><span class="in">        ui.card_header("This is " + label),</span></span>
+<span id="cb11-197"><a href="#cb11-197"></a><span class="in">        ui.input_action_button(id="button", label=label),</span></span>
+<span id="cb11-198"><a href="#cb11-198"></a><span class="in">        ui.output_code(id="out"),</span></span>
+<span id="cb11-199"><a href="#cb11-199"></a><span class="in">    )</span></span>
+<span id="cb11-200"><a href="#cb11-200"></a></span>
+<span id="cb11-201"><a href="#cb11-201"></a><span class="in">@module.server</span></span>
+<span id="cb11-202"><a href="#cb11-202"></a><span class="in">def counter_server(input, output, session, starting_value: int = 0):</span></span>
+<span id="cb11-203"><a href="#cb11-203"></a><span class="in">    count =  reactive.value(starting_value)</span></span>
+<span id="cb11-204"><a href="#cb11-204"></a></span>
+<span id="cb11-205"><a href="#cb11-205"></a><span class="in">    @reactive.effect</span></span>
+<span id="cb11-206"><a href="#cb11-206"></a><span class="in">    @reactive.event(input.button)</span></span>
+<span id="cb11-207"><a href="#cb11-207"></a><span class="in">    def _():</span></span>
+<span id="cb11-208"><a href="#cb11-208"></a><span class="in">        count.set(count() + 1)</span></span>
+<span id="cb11-209"><a href="#cb11-209"></a></span>
+<span id="cb11-210"><a href="#cb11-210"></a><span class="in">    @render.code</span></span>
+<span id="cb11-211"><a href="#cb11-211"></a><span class="in">    def out():</span></span>
+<span id="cb11-212"><a href="#cb11-212"></a><span class="in">        return f"Click count is {count()}"</span></span>
+<span id="cb11-213"><a href="#cb11-213"></a><span class="in">```</span></span>
+<span id="cb11-214"><a href="#cb11-214"></a>:::</span>
+<span id="cb11-215"><a href="#cb11-215"></a></span>
+<span id="cb11-216"><a href="#cb11-216"></a>:::{.callout-note}</span>
+<span id="cb11-217"><a href="#cb11-217"></a>Note that in the example above we used the relative import <span class="in">`from .counter import ...`</span> instead of the absolute import <span class="in">`from counter import ...`</span>. </span>
+<span id="cb11-218"><a href="#cb11-218"></a></span>
+<span id="cb11-219"><a href="#cb11-219"></a>This is necessary when running multiple Shinylive applications on one web page as we do here, so that different apps do not cause conflicts when importing their own counter modules. </span>
+<span id="cb11-220"><a href="#cb11-220"></a></span>
+<span id="cb11-221"><a href="#cb11-221"></a>In normal Shiny Core applications, you **MUST** use the **absolute import** (relative imports will generally not work with Shiny Core applications).</span>
+<span id="cb11-222"><a href="#cb11-222"></a>:::</span>
+<span id="cb11-223"><a href="#cb11-223"></a></span>
+<span id="cb11-224"><a href="#cb11-224"></a></span>
+<span id="cb11-225"><a href="#cb11-225"></a><span class="fu">## Passihng multiple UI elements to modules</span></span>
+<span id="cb11-226"><a href="#cb11-226"></a></span>
+<span id="cb11-227"><a href="#cb11-227"></a><span class="at">&gt; There are two main ways to pass multiple UI elements to a module. First, you can have the module take a **_list_** as one of the arguments and pass that list to another container function.</span></span>
+<span id="cb11-228"><a href="#cb11-228"></a><span class="at">&gt; </span></span>
+<span id="cb11-229"><a href="#cb11-229"></a><span class="at">&gt; This is convenient because it lets the parent context pass in any number of elements to the module, but requires that you wrap the elements in a list before passing them to the module.</span></span>
+<span id="cb11-230"><a href="#cb11-230"></a></span>
+<span id="cb11-231"><a href="#cb11-231"></a><span class="in">```{.python}</span></span>
+<span id="cb11-232"><a href="#cb11-232"></a><span class="in">@module.ui</span></span>
+<span id="cb11-233"><a href="#cb11-233"></a><span class="in">def mod_ui(elements):</span></span>
+<span id="cb11-234"><a href="#cb11-234"></a><span class="in">    return ui.div(elements)</span></span>
+<span id="cb11-235"><a href="#cb11-235"></a></span>
+<span id="cb11-236"><a href="#cb11-236"></a><span class="in">ui = ui.page_fluid(mod_ui([ui.h1("heading"), ui.p("paragraph")]))</span></span>
+<span id="cb11-237"><a href="#cb11-237"></a><span class="in">```</span></span>
+<span id="cb11-238"><a href="#cb11-238"></a></span>
+<span id="cb11-239"><a href="#cb11-239"></a></span>
+<span id="cb11-240"><a href="#cb11-240"></a><span class="at">&gt; The second method is to have your module take **non keyword argument** with </span><span class="in">`*args`</span><span class="at">. This is how Shiny’s container functions are designed, and using this pattern lets you to call the module UI just like you would any Shiny function.</span></span>
+<span id="cb11-241"><a href="#cb11-241"></a></span>
+<span id="cb11-242"><a href="#cb11-242"></a><span class="in">```{.python}</span></span>
+<span id="cb11-243"><a href="#cb11-243"></a><span class="in">@module.ui</span></span>
+<span id="cb11-244"><a href="#cb11-244"></a><span class="in">def mod_ui(*args):</span></span>
+<span id="cb11-245"><a href="#cb11-245"></a><span class="in">    return ui.div(*args)</span></span>
+<span id="cb11-246"><a href="#cb11-246"></a></span>
+<span id="cb11-247"><a href="#cb11-247"></a><span class="in">ui = ui.page_fluid(mod_ui(ui.h1("heading"), ui.p("paragraph")))</span></span>
+<span id="cb11-248"><a href="#cb11-248"></a><span class="in">```</span></span>
+<span id="cb11-249"><a href="#cb11-249"></a></span>
+<span id="cb11-250"><a href="#cb11-250"></a><span class="at">&gt; For example, let’s say we wanted to display two cards, one which displayed a standard table, and the other displaying an arbitrary set of elements. </span></span>
+<span id="cb11-251"><a href="#cb11-251"></a><span class="at">&gt;</span></span>
+<span id="cb11-252"><a href="#cb11-252"></a><span class="at">&gt; One way we could do this is by writing a module which rendered a table in one card and passed *args to a second card.</span></span>
+<span id="cb11-253"><a href="#cb11-253"></a></span>
+<span id="cb11-254"><a href="#cb11-254"></a>:::{.column-screen-inset}</span>
+<span id="cb11-255"><a href="#cb11-255"></a><span class="in">```{.shinylive-python}</span></span>
+<span id="cb11-256"><a href="#cb11-256"></a><span class="in">#| standalone: true</span></span>
+<span id="cb11-257"><a href="#cb11-257"></a><span class="in">#| components: [editor, viewer]</span></span>
+<span id="cb11-258"><a href="#cb11-258"></a></span>
+<span id="cb11-259"><a href="#cb11-259"></a><span class="in">## file: app.py</span></span>
+<span id="cb11-260"><a href="#cb11-260"></a><span class="in">import matplotlib.pyplot as plt</span></span>
+<span id="cb11-261"><a href="#cb11-261"></a><span class="in">import numpy as np</span></span>
+<span id="cb11-262"><a href="#cb11-262"></a><span class="in">from .modules import table_cards_server, table_cards_ui</span></span>
+<span id="cb11-263"><a href="#cb11-263"></a><span class="in">from shiny import App, render, ui</span></span>
+<span id="cb11-264"><a href="#cb11-264"></a></span>
+<span id="cb11-265"><a href="#cb11-265"></a><span class="in">text_tags = [ui.h1("A heading"), ui.p("Some paragraph text")]</span></span>
+<span id="cb11-266"><a href="#cb11-266"></a><span class="in">reactive_tags = [</span></span>
+<span id="cb11-267"><a href="#cb11-267"></a><span class="in">    ui.input_numeric("dots", "Number of points", value=25), ui.output_plot("dot_plot")</span></span>
+<span id="cb11-268"><a href="#cb11-268"></a><span class="in">]</span></span>
+<span id="cb11-269"><a href="#cb11-269"></a></span>
+<span id="cb11-270"><a href="#cb11-270"></a><span class="in">app_ui = ui.page_fluid(</span></span>
+<span id="cb11-271"><a href="#cb11-271"></a><span class="in">    table_cards_ui("output_example", reactive_tags),</span></span>
+<span id="cb11-272"><a href="#cb11-272"></a><span class="in">    table_cards_ui("heading_example", text_tags),</span></span>
+<span id="cb11-273"><a href="#cb11-273"></a><span class="in">)</span></span>
+<span id="cb11-274"><a href="#cb11-274"></a></span>
+<span id="cb11-275"><a href="#cb11-275"></a><span class="in">def server(input, output, session):</span></span>
+<span id="cb11-276"><a href="#cb11-276"></a><span class="in">    @render.plot</span></span>
+<span id="cb11-277"><a href="#cb11-277"></a><span class="in">    def dot_plot():</span></span>
+<span id="cb11-278"><a href="#cb11-278"></a><span class="in">        x = np.random.rand(input.dots())</span></span>
+<span id="cb11-279"><a href="#cb11-279"></a><span class="in">        y = np.random.rand(input.dots())</span></span>
+<span id="cb11-280"><a href="#cb11-280"></a><span class="in">        fig, ax = plt.subplots()</span></span>
+<span id="cb11-281"><a href="#cb11-281"></a><span class="in">        ax.scatter(x, y)</span></span>
+<span id="cb11-282"><a href="#cb11-282"></a><span class="in">        return fig</span></span>
+<span id="cb11-283"><a href="#cb11-283"></a></span>
+<span id="cb11-284"><a href="#cb11-284"></a><span class="in">    table_cards_server("heading_example")</span></span>
+<span id="cb11-285"><a href="#cb11-285"></a><span class="in">    table_cards_server("output_example")</span></span>
+<span id="cb11-286"><a href="#cb11-286"></a></span>
+<span id="cb11-287"><a href="#cb11-287"></a><span class="in">app = App(app_ui, server)</span></span>
+<span id="cb11-288"><a href="#cb11-288"></a></span>
+<span id="cb11-289"><a href="#cb11-289"></a><span class="in">## file: modules.py</span></span>
+<span id="cb11-290"><a href="#cb11-290"></a><span class="in">import pandas as pd</span></span>
+<span id="cb11-291"><a href="#cb11-291"></a><span class="in">from shiny import module, render, ui</span></span>
+<span id="cb11-292"><a href="#cb11-292"></a></span>
+<span id="cb11-293"><a href="#cb11-293"></a><span class="in">@module.ui</span></span>
+<span id="cb11-294"><a href="#cb11-294"></a><span class="in">def table_cards_ui(*args):</span></span>
+<span id="cb11-295"><a href="#cb11-295"></a><span class="in">    return ui.row(</span></span>
+<span id="cb11-296"><a href="#cb11-296"></a><span class="in">        ui.layout_column_wrap(</span></span>
+<span id="cb11-297"><a href="#cb11-297"></a><span class="in">            ui.card(</span></span>
+<span id="cb11-298"><a href="#cb11-298"></a><span class="in">                ui.card_header("Standard table"), ui.output_table("module_table")</span></span>
+<span id="cb11-299"><a href="#cb11-299"></a><span class="in">            ),</span></span>
+<span id="cb11-300"><a href="#cb11-300"></a><span class="in">            ui.card(ui.card_header("New elements"), *args),</span></span>
+<span id="cb11-301"><a href="#cb11-301"></a><span class="in">            width = 1 / 2,</span></span>
+<span id="cb11-302"><a href="#cb11-302"></a><span class="in">        ),</span></span>
+<span id="cb11-303"><a href="#cb11-303"></a><span class="in">    )</span></span>
+<span id="cb11-304"><a href="#cb11-304"></a></span>
+<span id="cb11-305"><a href="#cb11-305"></a><span class="in">@module.server</span></span>
+<span id="cb11-306"><a href="#cb11-306"></a><span class="in">def table_cards_server(input, output, session):</span></span>
+<span id="cb11-307"><a href="#cb11-307"></a><span class="in">    @render.table</span></span>
+<span id="cb11-308"><a href="#cb11-308"></a><span class="in">    def module_table():</span></span>
+<span id="cb11-309"><a href="#cb11-309"></a><span class="in">        df = pd.DataFrame({"col1": range(4), "col2": range(4)})</span></span>
+<span id="cb11-310"><a href="#cb11-310"></a><span class="in">        return df</span></span>
+<span id="cb11-311"><a href="#cb11-311"></a><span class="in">```</span></span>
+<span id="cb11-312"><a href="#cb11-312"></a>:::</span>
+<span id="cb11-313"><a href="#cb11-313"></a></span>
+<span id="cb11-314"><a href="#cb11-314"></a></span>
+<span id="cb11-315"><a href="#cb11-315"></a><span class="fu">## Passing reactives to modules</span></span>
+<span id="cb11-316"><a href="#cb11-316"></a></span>
+<span id="cb11-317"><a href="#cb11-317"></a>:::{.callout-important}</span>
+<span id="cb11-318"><a href="#cb11-318"></a>It is important to distinguish between calls to reactive objects like <span class="in">`input.n()`</span> and the reactive object itself, <span class="in">`input.n`</span>. While <span class="in">`input.n`</span> is reactive object, calling <span class="in">`input.n()`</span> returns the current value that object.</span>
+<span id="cb11-319"><a href="#cb11-319"></a>:::</span>
+<span id="cb11-320"><a href="#cb11-320"></a></span>
+<span id="cb11-321"><a href="#cb11-321"></a></span>
+<span id="cb11-322"><a href="#cb11-322"></a>:::{.column-screen-inset}</span>
+<span id="cb11-323"><a href="#cb11-323"></a><span class="in">```{.shinylive-python}</span></span>
+<span id="cb11-324"><a href="#cb11-324"></a><span class="in">#| standalone: true</span></span>
+<span id="cb11-325"><a href="#cb11-325"></a><span class="in">#| components: [editor, viewer]</span></span>
+<span id="cb11-326"><a href="#cb11-326"></a></span>
+<span id="cb11-327"><a href="#cb11-327"></a><span class="in">## file: app.py</span></span>
+<span id="cb11-328"><a href="#cb11-328"></a><span class="in">from shiny import App, module, reactive, render, ui</span></span>
+<span id="cb11-329"><a href="#cb11-329"></a><span class="in">from .modules import counter_ui, counter_server</span></span>
+<span id="cb11-330"><a href="#cb11-330"></a></span>
+<span id="cb11-331"><a href="#cb11-331"></a><span class="in">app_ui = ui.page_fluid(</span></span>
+<span id="cb11-332"><a href="#cb11-332"></a><span class="in">    ui.input_action_button("clear", "Clear counters"),</span></span>
+<span id="cb11-333"><a href="#cb11-333"></a><span class="in">    counter_ui("counter1", "Counter 1"),</span></span>
+<span id="cb11-334"><a href="#cb11-334"></a><span class="in">    counter_ui("counter2", "Counter 2"),</span></span>
+<span id="cb11-335"><a href="#cb11-335"></a><span class="in">)</span></span>
+<span id="cb11-336"><a href="#cb11-336"></a></span>
+<span id="cb11-337"><a href="#cb11-337"></a><span class="in">def server(input, output, session):</span></span>
+<span id="cb11-338"><a href="#cb11-338"></a><span class="in">    counter_server("counter1", starting_value=5, global_clear=input.clear)</span></span>
+<span id="cb11-339"><a href="#cb11-339"></a><span class="in">    counter_server("counter2", starting_value=3, global_clear=input.clear)</span></span>
+<span id="cb11-340"><a href="#cb11-340"></a></span>
+<span id="cb11-341"><a href="#cb11-341"></a><span class="in">app = App(app_ui, server)</span></span>
+<span id="cb11-342"><a href="#cb11-342"></a></span>
+<span id="cb11-343"><a href="#cb11-343"></a><span class="in">## file: modules.py</span></span>
+<span id="cb11-344"><a href="#cb11-344"></a><span class="in">from shiny import App, module, reactive, render, ui</span></span>
+<span id="cb11-345"><a href="#cb11-345"></a></span>
+<span id="cb11-346"><a href="#cb11-346"></a><span class="in">@module.ui</span></span>
+<span id="cb11-347"><a href="#cb11-347"></a><span class="in">def counter_ui(label: str = "Increment counter"):</span></span>
+<span id="cb11-348"><a href="#cb11-348"></a><span class="in">    return ui.card(</span></span>
+<span id="cb11-349"><a href="#cb11-349"></a><span class="in">        ui.card_header("This is " + label),</span></span>
+<span id="cb11-350"><a href="#cb11-350"></a><span class="in">        ui.input_action_button(id="button", label=label),</span></span>
+<span id="cb11-351"><a href="#cb11-351"></a><span class="in">        ui.output_code(id="out"),</span></span>
+<span id="cb11-352"><a href="#cb11-352"></a><span class="in">    )</span></span>
+<span id="cb11-353"><a href="#cb11-353"></a></span>
+<span id="cb11-354"><a href="#cb11-354"></a><span class="in">@module.server</span></span>
+<span id="cb11-355"><a href="#cb11-355"></a><span class="in">def counter_server(input, output, session, global_clear, starting_value=0):</span></span>
+<span id="cb11-356"><a href="#cb11-356"></a><span class="in">    rv_count = reactive.value(starting_value)</span></span>
+<span id="cb11-357"><a href="#cb11-357"></a></span>
+<span id="cb11-358"><a href="#cb11-358"></a><span class="in">    @reactive.effect</span></span>
+<span id="cb11-359"><a href="#cb11-359"></a><span class="in">    @reactive.event(global_clear)</span></span>
+<span id="cb11-360"><a href="#cb11-360"></a><span class="in">    def clear_all():</span></span>
+<span id="cb11-361"><a href="#cb11-361"></a><span class="in">        rv_count.set(0)</span></span>
+<span id="cb11-362"><a href="#cb11-362"></a></span>
+<span id="cb11-363"><a href="#cb11-363"></a><span class="in">    @reactive.effect</span></span>
+<span id="cb11-364"><a href="#cb11-364"></a><span class="in">    @reactive.event(input.button)</span></span>
+<span id="cb11-365"><a href="#cb11-365"></a><span class="in">    def increment_counter():</span></span>
+<span id="cb11-366"><a href="#cb11-366"></a><span class="in">        rv_count.set(rv_count() + 1)</span></span>
+<span id="cb11-367"><a href="#cb11-367"></a></span>
+<span id="cb11-368"><a href="#cb11-368"></a><span class="in">    @render.code</span></span>
+<span id="cb11-369"><a href="#cb11-369"></a><span class="in">    def out():</span></span>
+<span id="cb11-370"><a href="#cb11-370"></a><span class="in">        return f"Click count is {rv_count()}"</span></span>
+<span id="cb11-371"><a href="#cb11-371"></a><span class="in">```</span></span>
+<span id="cb11-372"><a href="#cb11-372"></a>:::</span>
+<span id="cb11-373"><a href="#cb11-373"></a></span>
+<span id="cb11-374"><a href="#cb11-374"></a></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
-</body>
 
-</html>
+
+
+<script src="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.js" defer="true"></script>
+</body></html>

@@ -660,5 +660,41 @@
       "shiny",
       "Shiny Modules"
     ]
+  },
+  {
+    "objectID": "pages/shiny/shiny_modules.html#non-reactive-arguments",
+    "href": "pages/shiny/shiny_modules.html#non-reactive-arguments",
+    "title": "Shiny Modules",
+    "section": "4.1 Non-reactive arguments",
+    "text": "4.1 Non-reactive arguments\nAdd arg to the module UI function.\nfrom shiny import module, ui, render, reactive, event, App\n\n@module.ui\ndef counter_ui(custom_label: str = \"Increment counter\"):\n    return ui.card(\n        ui.h2(\"This is \", custom_label),\n        ui.input_action_button(id=\"button\", label=custom_label),\n        ui.output_code(id=\"out\"),\n    )\nAdd arg to the module server function.\n@module.server\n\ndef counter_server(input, output, session, starting_value: int = 0):\n    count =  reactive.value(starting_value)\n\n    @reactive.effect\n    @reactive.event(input.button)\n    def _():\n        count.set(count() + 1)\n\n    @render.code\n    def out():\n        return f\"Click count is {count()}\"\n\nYou can then pass in values when you call the module in your app.\nNote that you always need to provide an id to the module function to define its namespace.\nUsing arguments like this makes your modules much more flexible and allows you to encapsulate some of the logic while maintaining the flexibility that your application needs.\n\n\n#| '!! shinylive warning !!': |\n#|   shinylive does not work in self-contained HTML documents.\n#|   Please set `embed-resources: false` in your metadata.\n#| standalone: true\n#| components: [editor, viewer]\n\n## file: app.py\nfrom shiny import App, ui\n# Note: In a normal Shiny Core app, use an absolute import, as in:\n# `from counter import ...`\nfrom .counter import counter_ui, counter_server\n\napp_ui = ui.page_fluid(\n    counter_ui(\"counter1\", \"Counter 1\"),\n    counter_ui(\"counter2\", \"Counter 2\"),\n)\n\ndef server(input, output, session):\n    counter_server(\"counter1\", starting_value=5)\n    counter_server(\"counter2\", starting_value=3)\n\napp = App(app_ui, server)\n\n\n## file: counter.py\nfrom shiny import module, ui, render, reactive, event\n\n@module.ui\ndef counter_ui(label: str = \"Increment counter\"):\n    return ui.card(\n        ui.card_header(\"This is \" + label),\n        ui.input_action_button(id=\"button\", label=label),\n        ui.output_code(id=\"out\"),\n    )\n\n@module.server\ndef counter_server(input, output, session, starting_value: int = 0):\n    count =  reactive.value(starting_value)\n\n    @reactive.effect\n    @reactive.event(input.button)\n    def _():\n        count.set(count() + 1)\n\n    @render.code\n    def out():\n        return f\"Click count is {count()}\"\n\n\n\n\n\n\n\nNote\n\n\n\nNote that in the example above we used the relative import from .counter import ... instead of the absolute import from counter import ....\nThis is necessary when running multiple Shinylive applications on one web page as we do here, so that different apps do not cause conflicts when importing their own counter modules.\nIn normal Shiny Core applications, you MUST use the absolute import (relative imports will generally not work with Shiny Core applications).",
+    "crumbs": [
+      "Home",
+      "shiny",
+      "Shiny Modules"
+    ]
+  },
+  {
+    "objectID": "pages/shiny/shiny_modules.html#passihng-multiple-ui-elements-to-modules",
+    "href": "pages/shiny/shiny_modules.html#passihng-multiple-ui-elements-to-modules",
+    "title": "Shiny Modules",
+    "section": "4.2 Passihng multiple UI elements to modules",
+    "text": "4.2 Passihng multiple UI elements to modules\n\nThere are two main ways to pass multiple UI elements to a module. First, you can have the module take a list as one of the arguments and pass that list to another container function.\nThis is convenient because it lets the parent context pass in any number of elements to the module, but requires that you wrap the elements in a list before passing them to the module.\n\n@module.ui\ndef mod_ui(elements):\n    return ui.div(elements)\n\nui = ui.page_fluid(mod_ui([ui.h1(\"heading\"), ui.p(\"paragraph\")]))\n\nThe second method is to have your module take non keyword argument with *args. This is how Shiny’s container functions are designed, and using this pattern lets you to call the module UI just like you would any Shiny function.\n\n@module.ui\ndef mod_ui(*args):\n    return ui.div(*args)\n\nui = ui.page_fluid(mod_ui(ui.h1(\"heading\"), ui.p(\"paragraph\")))\n\nFor example, let’s say we wanted to display two cards, one which displayed a standard table, and the other displaying an arbitrary set of elements.\nOne way we could do this is by writing a module which rendered a table in one card and passed *args to a second card.\n\n\n#| standalone: true\n#| components: [editor, viewer]\n\n## file: app.py\nimport matplotlib.pyplot as plt\nimport numpy as np\nfrom .modules import table_cards_server, table_cards_ui\nfrom shiny import App, render, ui\n\ntext_tags = [ui.h1(\"A heading\"), ui.p(\"Some paragraph text\")]\nreactive_tags = [\n    ui.input_numeric(\"dots\", \"Number of points\", value=25), ui.output_plot(\"dot_plot\")\n]\n\napp_ui = ui.page_fluid(\n    table_cards_ui(\"output_example\", reactive_tags),\n    table_cards_ui(\"heading_example\", text_tags),\n)\n\ndef server(input, output, session):\n    @render.plot\n    def dot_plot():\n        x = np.random.rand(input.dots())\n        y = np.random.rand(input.dots())\n        fig, ax = plt.subplots()\n        ax.scatter(x, y)\n        return fig\n\n    table_cards_server(\"heading_example\")\n    table_cards_server(\"output_example\")\n\napp = App(app_ui, server)\n\n## file: modules.py\nimport pandas as pd\nfrom shiny import module, render, ui\n\n@module.ui\ndef table_cards_ui(*args):\n    return ui.row(\n        ui.layout_column_wrap(\n            ui.card(\n                ui.card_header(\"Standard table\"), ui.output_table(\"module_table\")\n            ),\n            ui.card(ui.card_header(\"New elements\"), *args),\n            width = 1 / 2,\n        ),\n    )\n\n@module.server\ndef table_cards_server(input, output, session):\n    @render.table\n    def module_table():\n        df = pd.DataFrame({\"col1\": range(4), \"col2\": range(4)})\n        return df",
+    "crumbs": [
+      "Home",
+      "shiny",
+      "Shiny Modules"
+    ]
+  },
+  {
+    "objectID": "pages/shiny/shiny_modules.html#passing-reactives-to-modules",
+    "href": "pages/shiny/shiny_modules.html#passing-reactives-to-modules",
+    "title": "Shiny Modules",
+    "section": "4.3 Passing reactives to modules",
+    "text": "4.3 Passing reactives to modules\n\n\n\n\n\n\nImportant\n\n\n\nIt is important to distinguish between calls to reactive objects like input.n() and the reactive object itself, input.n. While input.n is reactive object, calling input.n() returns the current value that object.\n\n\n\n#| standalone: true\n#| components: [editor, viewer]\n\n## file: app.py\nfrom shiny import App, module, reactive, render, ui\nfrom .modules import counter_ui, counter_server\n\napp_ui = ui.page_fluid(\n    ui.input_action_button(\"clear\", \"Clear counters\"),\n    counter_ui(\"counter1\", \"Counter 1\"),\n    counter_ui(\"counter2\", \"Counter 2\"),\n)\n\ndef server(input, output, session):\n    counter_server(\"counter1\", starting_value=5, global_clear=input.clear)\n    counter_server(\"counter2\", starting_value=3, global_clear=input.clear)\n\napp = App(app_ui, server)\n\n## file: modules.py\nfrom shiny import App, module, reactive, render, ui\n\n@module.ui\ndef counter_ui(label: str = \"Increment counter\"):\n    return ui.card(\n        ui.card_header(\"This is \" + label),\n        ui.input_action_button(id=\"button\", label=label),\n        ui.output_code(id=\"out\"),\n    )\n\n@module.server\ndef counter_server(input, output, session, global_clear, starting_value=0):\n    rv_count = reactive.value(starting_value)\n\n    @reactive.effect\n    @reactive.event(global_clear)\n    def clear_all():\n        rv_count.set(0)\n\n    @reactive.effect\n    @reactive.event(input.button)\n    def increment_counter():\n        rv_count.set(rv_count() + 1)\n\n    @render.code\n    def out():\n        return f\"Click count is {rv_count()}\"",
+    "crumbs": [
+      "Home",
+      "shiny",
+      "Shiny Modules"
+    ]
   }
 ]
