@@ -1,12 +1,11 @@
 ---
-title: "Shiny Dashboard"
+title: "Penguin Bills"
 format: dashboard
 ---
 
 ```{python}
-import plotly.express as px
-from shiny.express import input, ui
-from shinywidgets import render_plotly
+import seaborn as sns
+penguins = sns.load_dataset("penguins")
 ```
 
 ## {.sidebar}
@@ -27,6 +26,4 @@ def displot():
     sns.displot(
         data=penguins, hue="species", multiple="stack",
         x=input.x(), rug=input.rug(), kind=input.dist())
-
 ```
-

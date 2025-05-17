@@ -6,12 +6,10 @@ website:
   title: "OatNotes"
   navbar:
     logo: ./resource/episode_logo_v03_color.png
-    left:
+    right:
       - href: index.qmd
         text: Home
       - about.qmd
-      - dashboard.qmd
-      - dashboard_shiny.qmd
 
   sidebar:
     # title: "Contents"
