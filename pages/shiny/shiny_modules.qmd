@@ -371,5 +371,99 @@ def counter_server(input, output, session, global_clear, starting_value=0):
 ```
 :::
 
+> While this app may look it’s doing something quite different, it’s actually following the same reactive rules as any other app. 
+>
+> When we pass `input.clear` to each module as the `global_clear` parameter, we can use it inside the module just like we would use any other reactive object. 
+>
+> You could retrieve its value with `global_clear()` or use it with `@reactive.event(global_clear)` to trigger a `side effect`. 
+>
+> Since all of the module instances are receiving the same reactive object, when that object is `invalidated`, it will cause elements within those modules to `invalidate` and `re-execute`.
+
+
+## Passing callbacks to modules
+
+> Another common problem with modules is to change some piece of `application state` from within the module. 
+>
+> One intuitive way to do this is to define a `state-modifying` function at the application level, and pass that function down to the module. 
+>
+> When the function is called within the module code, it will update the global application state.
+
+> For example, let’s add a text output that adds up the total number of button clicks for a session. 
+>
+> To do this we create a `reactive.value` and a function which increments that value by one. 
+>
+> We then pass this function down to the module and call it whenever the module button is clicked. 
+>
+> This updates the `reactive.value` at the application level.
+
+:::{.column-screen-inset}
+```{.shinylive-python}
+#| standalone: true
+#| components: [editor, viewer]
+
+## file: app.py
+from shiny import App, module, reactive, render, ui
+from .modules import counter_ui, counter_server
+
+app_ui = ui.page_fluid(
+    ui.output_text("total_counts"),
+    ui.br(),
+    counter_ui("counter1", "Counter 1"),
+    counter_ui("counter2", "Counter 2"),
+)
+
+def server(input, output, session):
+    global_tally =  reactive.value(0)
+
+    def increment_counter():
+        global_tally.set(global_tally() + 1)
+
+    @render.text
+    def total_counts():
+        return f"Total counts: {global_tally()}"
+
+    counter_server("counter1", _on_click=increment_counter)
+    counter_server("counter2", _on_click=increment_counter)
+
+app = App(app_ui, server)
+
+## file: modules.py
+from shiny import App, module, reactive, render, ui
+
+@module.ui
+def counter_ui(label: str = "Increment counter"):
+    return ui.card(
+        ui.card_header("This is " + label),
+        ui.input_action_button(id="button", label=label),
+        ui.output_code(id="out"),
+    )
+
+@module.server
+def counter_server(input, output, session, _on_click, starting_value=0):
+    count =  reactive.value(starting_value)
+
+    @reactive.effect
+    @reactive.event(input.button)
+    def increment_button():
+        _on_click()
+        count.set(count() + 1)
+
+    @render.code
+    def out():
+        return f"Click count is {count()}"
+```
+:::
+
+> We could accomplish the same thing by passing the reactive value itself down to the module, and while this works, it’s not a great idea. 
+>
+> Passing the reactive value creates a tight coupling between the module and the particular context in which it was called. 
+>
+> The module would be expecting a particular type of reactive value and wouldn’t work for anything else. 
+>
+> Additionally the update logic would be split between the application context and the module which makes it harder to reason about. 
+>
+> Passing a callback is more flexible because the module can be used to do a variety of things. 
+>
+> For example, by passing a different callback you could use the same module in another application which did something else when the button was clicked.
 
 
