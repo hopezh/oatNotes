@@ -26,9 +26,10 @@ website:
           - ./pages/observable/observable_js.qmd
       - section: "Plotly"
         contents:
+          - ./pages/plotly/multiline_annotation.qmd
           - ./pages/plotly/plotly_data_structure.qmd
           - ./pages/plotly/transparent_fig_bgcolor.qmd
-          - ./pages/plotly/multiline_annotation.qmd
+          - ./pages/plotly/shape_3d.qmd
       - section: "Polars"
         contents:
           - ./pages/polars/merge_csvs.qmd
