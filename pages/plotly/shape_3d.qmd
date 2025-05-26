@@ -1,0 +1,41 @@
+---
+title: "Shape in 3D Scattter Plot"
+filters:
+    - line-highlight
+---
+
+
+```{python}
+import plotly.graph_objects as go
+
+# fmt: off
+fig = go.Figure(
+    go.Scatter3d(
+        x=[0, 1, 3, 2, 0],
+        y=[0, 2, 2, 0, 0],
+        z=[0, 1, 1, 0, 0]
+    )
+)
+
+fig.update_traces(
+    surfacecolor="blue",
+    surfaceaxis=2,
+)
+
+fig.show()
+# fmt: on
+```
+
+
+:::: {.column-margin}
+::: {.callout-tip title="3D Scatter Plots & Shapes" collapse="true"}
+
+[`3D scatter plot`](https://plotly.com/python/3d-scatter-plots/)
+
+[`Shapes`](https://plotly.com/python/shapes/)
+
+[API: `scatter3d` traces](https://plotly.com/python/reference/scatter3d/)
+
+:::
+::::
+
