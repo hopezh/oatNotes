@@ -55,6 +55,7 @@ website:
       - section: "three.js"
         contents: 
           - ./pages/threejs/add_3js_code_blk.qmd
+          - ./pages/threejs/embed_codesandbox.qmd
 
   back-to-top-navigation: true      
   page-navigation: true
