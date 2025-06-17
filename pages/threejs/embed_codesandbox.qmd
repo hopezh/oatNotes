@@ -1,0 +1,62 @@
+---
+title: "Embed CodeSandbox Project"
+format: html
+---
+
+# Embed a `CodeSandbox` project
+
+An example of: 
+
+- embedding a `CodeSandbox` project in a `quarto` document, using the `<iframe>` tag, and 
+
+- encapsulating it in a `:::{.column-screen}` tag to make it spans the full width of the page with no margin (full bleed).
+
+:::{ .column-screen}
+
+<iframe src="https://codesandbox.io/embed/ntwk4p?view=editor+%2B+preview&module=%2Fsrc%2Findex.html"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="sky_sun_shader"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
+:::
+
+# Steps
+
+**1. Get the embed code**
+
+Go to your CodeSandbox project, click the `Share` button, and select `Copy embed code`. This will generate an `<iframe>` tag with the necessary information.
+
+::::{.column-margin}
+::: {.callout-tip title="CodeSandbox Embedding" collapse="true"}
+
+[Generate an Embed URL](https://codesandbox.io/docs/learn/browser-sandboxes/embedding)
+
+:::
+::::
+
+**2. Paste it into the `quarto` document**
+
+Open your `.qmd` file and paste the copied `<iframe>` code directly into the document where you want the `CodeSandbox` to appear.
+
+**3. Render the `quarto` document**
+
+Use the `Quarto CLI` to render your document (e.g., `quarto render my_document.qmd`). The embedded `CodeSandbox` should appear in the output.
+
+**4. Customize `<iframe>` code**
+
+You can customize the `<iframe>` by modifying the width, height, and other attributes to fit your layout. For example, you can adjust the fontsize, hidenavigation, and theme within the src URL, or change the width and height attributes directly.
+
+**5. Example `<iframe>` code**
+
+```{.html}
+<iframe src="https://codesandbox.io/embed/ntwk4p?view=editor+%2B+preview&module=%2Fsrc%2Findex.html"
+     style="width:100%; height: 500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="sky_sun_shader"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+```
+
+
