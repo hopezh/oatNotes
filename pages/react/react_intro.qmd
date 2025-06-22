@@ -1,0 +1,84 @@
+---
+title: "React Intro"
+format: html
+filters:
+    - line-highlight
+code-annotations: hover
+---
+
+> Source: [React新手指南](https://www.youtube.com/playlist?list=PLtKLDYAuxSmNll1mERscxZWvenYtYbwqo)
+
+# L09
+
+## Each component must `return` a `root` element
+
+### usa a `<div></div>`
+
+```{.jsx filename='MyComp01.jsx'}
+export default function MyComp01() {
+  return (
+    <div> # <1>
+      <h1>Hello, this is oat!</h1>
+    </div>
+  );
+}
+```
+1. use `<div>`
+
+### use an empty element `<></>`
+
+```{.jsx filename='MyComp01.jsx'}
+export default function MyComp01() {
+  return (
+    <> # <1>
+      <h1>Hello, this is oat!</h1>
+    </>
+  );
+}
+```
+1. use `<>`
+
+...which is the same as using `<Fragment>`
+
+```{.jsx filename='MyComp01.jsx'}
+import {Fragment} from 'react';
+
+export default function MyComp01() {
+  return (
+    <Fragment> # <1>
+      <h1>Hello, this is oat!</h1>
+    <Fragment/>
+  );
+}
+```
+1. use `<Fragement>`
+
+
+# Expression
+
+- Value of a variable can called in both the 1) ***contents***, and 2) ***properties*** of an element as an `expression`, i.e., enclosed in `{}`
+
+- `expression` carries dynamic `data` , especially those passing to the component from outside.
+
+```{.jsx filename='MyComp01.jsx'}
+let a = 10;
+const button_name = "b1";
+
+export default function MyComp01() {
+  return (
+    <div>
+      <h1>Hello, value of a is {a}</h1> # <1>
+      <button id={button_name}> # <2>
+        click me: {button_name === "b1" ? "b1" : "wrong!"} # <3>
+      </button>
+    </div>
+  );
+}
+```
+1. used in content
+2. used in property
+3. conditional expression used in content
+
+# Naming conventions
+
+
