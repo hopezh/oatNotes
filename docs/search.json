@@ -744,5 +744,65 @@
       "three.js",
       "Embed CodeSandbox Project"
     ]
+  },
+  {
+    "objectID": "pages/react/react_intro.html#expression",
+    "href": "pages/react/react_intro.html#expression",
+    "title": "React Intro",
+    "section": "1.2 Expression",
+    "text": "1.2 Expression\n\nValue of a variable can called in both the 1) contents, and 2) properties of an element as an expression, i.e., enclosed in {}\nexpression carries dynamic data , especially those passing to the component from outside.\n\n\n\nMyComp01.jsx\n\nlet a = 10;\nconst button_name = \"b1\";\n\nexport default function MyComp01() {\n  return (\n    &lt;div&gt;\n1      &lt;h1&gt;Hello, value of a is {a}&lt;/h1&gt;\n2      &lt;button id={button_name}&gt;\n3        click me: {button_name === \"b1\" ? \"b1\" : \"wrong!\"}\n      &lt;/button&gt;\n    &lt;/div&gt;\n  );\n}\n\n\n1\n\nused in content\n\n2\n\nused in property\n\n3\n\nconditional expression used in content",
+    "crumbs": [
+      "Home",
+      "React",
+      "React Intro"
+    ]
+  },
+  {
+    "objectID": "pages/react/react_intro.html#naming-conventions-of-properties",
+    "href": "pages/react/react_intro.html#naming-conventions-of-properties",
+    "title": "React Intro",
+    "section": "1.3 Naming conventions of properties",
+    "text": "1.3 Naming conventions of properties\n\nclass -&gt; className\nfor -&gt; htmlFor\nstyle must be specified as objects, as shown below:\n\n\n\n\n\n\n\n\n\nhtml\n\n&lt;h1 style=\"height: 100px; color: blue; font-size: 20px\"&gt;&lt;/h1&gt;\n\n\n\n\n\njsx\n\nexport default function MyComp01() {\n  return (\n    &lt;div&gt;\n    &lt;h1 style={{\n        height: '100px',\n        color: 'blue',\n        fontSize: '20px',\n    }}&gt;\n        Hello\n    &lt;/h1&gt;\n    &lt;/div&gt;\n  );\n}",
+    "crumbs": [
+      "Home",
+      "React",
+      "React Intro"
+    ]
+  },
+  {
+    "objectID": "pages/react/react_intro.html#render-by-expression",
+    "href": "pages/react/react_intro.html#render-by-expression",
+    "title": "React Intro",
+    "section": "1.4 render by expression",
+    "text": "1.4 render by expression\nlet a = 10;\n\nexport default function MyComp01() {\n  return (\n    &lt;div&gt;\n    { a === 10 ? &lt;h1&gt;a is 10&lt;/h1&gt; : &lt;button&gt;a is not 10&lt;/button&gt; } \n    &lt;/div&gt;\n  );\n}",
+    "crumbs": [
+      "Home",
+      "React",
+      "React Intro"
+    ]
+  },
+  {
+    "objectID": "pages/react/react_intro.html#render-by-an-array",
+    "href": "pages/react/react_intro.html#render-by-an-array",
+    "title": "React Intro",
+    "section": "1.5 render by an array",
+    "text": "1.5 render by an array\n\n\n\n\n\n\nNote\n\n\n\nA unique key must be provided to each element in the array.\n\n\nconst arr = [\n    &lt;h1 key={1}&gt;aaa&lt;/h1&gt;\n    &lt;h1 key={2}&gt;bbb&lt;/h1&gt;\n    &lt;h1 key={3}&gt;ccc&lt;/h1&gt;\n]\n\nexport default function MyComp01() {\n  return (\n    &lt;div&gt; { arr } &lt;/div&gt;\n  );\n}",
+    "crumbs": [
+      "Home",
+      "React",
+      "React Intro"
+    ]
+  },
+  {
+    "objectID": "pages/react/react_intro.html#event-binding",
+    "href": "pages/react/react_intro.html#event-binding",
+    "title": "React Intro",
+    "section": "1.6 event binding",
+    "text": "1.6 event binding\nexport default function MyComp01() {\n  return (\n    &lt;div&gt;\n        &lt;button onClick={ () =&gt; alert('warning!') }&gt;click me!&lt;/button&gt;\n    &lt;/div&gt;\n  );\n}",
+    "crumbs": [
+      "Home",
+      "React",
+      "React Intro"
+    ]
   }
 ]

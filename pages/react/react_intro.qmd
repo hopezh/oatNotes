@@ -54,7 +54,7 @@ export default function MyComp01() {
 1. use `<Fragement>`
 
 
-# Expression
+## Expression
 
 - Value of a variable can called in both the 1) ***contents***, and 2) ***properties*** of an element as an `expression`, i.e., enclosed in `{}`
 
@@ -79,6 +79,85 @@ export default function MyComp01() {
 2. used in property
 3. conditional expression used in content
 
-# Naming conventions
+
+## Naming conventions of `properties`
+
+- `class` -> `className`
+
+- `for` -> `htmlFor`
+
+- `style` must be specified as `objects`, as shown below:
+
+::::{.columns .column-page layout-ncol="2"}
+::: column
+```{.html filename="html"}
+<h1 style="height: 100px; color: blue; font-size: 20px"></h1>
+```
+:::
+::: column
+```{.jsx filename="jsx"}
+export default function MyComp01() {
+  return (
+    <div>
+    <h1 style={{
+        height: '100px',
+        color: 'blue',
+        fontSize: '20px',
+    }}>
+        Hello
+    </h1>
+    </div>
+  );
+}
+```
+:::
+::::
 
 
+## render by `expression`
+
+```{.jsx}
+let a = 10;
+
+export default function MyComp01() {
+  return (
+    <div>
+    { a === 10 ? <h1>a is 10</h1> : <button>a is not 10</button> } 
+    </div>
+  );
+}
+```
+
+
+## render by an `array`
+
+:::{.callout-note}
+A unique `key` must be provided to each element in the array.
+:::
+
+```{.jsx}
+const arr = [
+    <h1 key={1}>aaa</h1>
+    <h1 key={2}>bbb</h1>
+    <h1 key={3}>ccc</h1>
+]
+
+export default function MyComp01() {
+  return (
+    <div> { arr } </div>
+  );
+}
+```
+
+
+## event binding
+
+```{.jsx}
+export default function MyComp01() {
+  return (
+    <div>
+        <button onClick={ () => alert('warning!') }>click me!</button>
+    </div>
+  );
+}
+```
