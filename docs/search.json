@@ -12,6 +12,30 @@
     ]
   },
   {
+    "objectID": "pages/react/react_intro.html",
+    "href": "pages/react/react_intro.html",
+    "title": "React Intro",
+    "section": "",
+    "text": "Source: React新手指南",
+    "crumbs": [
+      "Home",
+      "React",
+      "React Intro"
+    ]
+  },
+  {
+    "objectID": "pages/react/react_intro.html#each-component-must-return-a-root-element",
+    "href": "pages/react/react_intro.html#each-component-must-return-a-root-element",
+    "title": "React Intro",
+    "section": "1.1 Each component must return a root element",
+    "text": "1.1 Each component must return a root element\n\n1.1.1 usa a &lt;div&gt;&lt;/div&gt;\n\n\nMyComp01.jsx\n\nexport default function MyComp01() {\n  return (\n1    &lt;div&gt;\n      &lt;h1&gt;Hello, this is oat!&lt;/h1&gt;\n    &lt;/div&gt;\n  );\n}\n\n\n1\n\nuse &lt;div&gt;\n\n\n\n\n1.1.2 use an empty element &lt;&gt;&lt;/&gt;\n\n\nMyComp01.jsx\n\nexport default function MyComp01() {\n  return (\n1    &lt;&gt;\n      &lt;h1&gt;Hello, this is oat!&lt;/h1&gt;\n    &lt;/&gt;\n  );\n}\n\n\n1\n\nuse &lt;&gt;\n\n\n…which is the same as using &lt;Fragment&gt;\n\n\nMyComp01.jsx\n\nimport {Fragment} from 'react';\n\nexport default function MyComp01() {\n  return (\n1    &lt;Fragment&gt;\n      &lt;h1&gt;Hello, this is oat!&lt;/h1&gt;\n    &lt;Fragment/&gt;\n  );\n}\n\n\n1\n\nuse &lt;Fragement&gt;",
+    "crumbs": [
+      "Home",
+      "React",
+      "React Intro"
+    ]
+  },
+  {
     "objectID": "pages/quarto/side_by_side_codeblock.html",
     "href": "pages/quarto/side_by_side_codeblock.html",
     "title": "side by side codeblocks and outputs",
@@ -719,30 +743,6 @@
       "Home",
       "three.js",
       "Embed CodeSandbox Project"
-    ]
-  },
-  {
-    "objectID": "pages/react/react_intro.html",
-    "href": "pages/react/react_intro.html",
-    "title": "React Intro",
-    "section": "",
-    "text": "Source: React新手指南",
-    "crumbs": [
-      "Home",
-      "React",
-      "React Intro"
-    ]
-  },
-  {
-    "objectID": "pages/react/react_intro.html#each-component-must-return-a-root-element",
-    "href": "pages/react/react_intro.html#each-component-must-return-a-root-element",
-    "title": "React Intro",
-    "section": "1.1 Each component must return a root element",
-    "text": "1.1 Each component must return a root element\n\n1.1.1 usa a &lt;div&gt;&lt;/div&gt;\n\n\nMyComp01.jsx\n\nexport default function MyComp01() {\n  return (\n1    &lt;div&gt;\n      &lt;h1&gt;Hello, this is oat!&lt;/h1&gt;\n    &lt;/div&gt;\n  );\n}\n\n\n1\n\nuse &lt;div&gt;\n\n\n\n\n1.1.2 use an empty element &lt;&gt;&lt;/&gt;\n\n\nMyComp01.jsx\n\nexport default function MyComp01() {\n  return (\n1    &lt;&gt;\n      &lt;h1&gt;Hello, this is oat!&lt;/h1&gt;\n    &lt;/&gt;\n  );\n}\n\n\n1\n\nuse &lt;&gt;\n\n\n…which is the same as using &lt;Fragment&gt;\n\n\nMyComp01.jsx\n\nimport {Fragment} from 'react';\n\nexport default function MyComp01() {\n  return (\n1    &lt;Fragment&gt;\n      &lt;h1&gt;Hello, this is oat!&lt;/h1&gt;\n    &lt;Fragment/&gt;\n  );\n}\n\n\n1\n\nuse &lt;Fragement&gt;",
-    "crumbs": [
-      "Home",
-      "React",
-      "React Intro"
     ]
   }
 ]
