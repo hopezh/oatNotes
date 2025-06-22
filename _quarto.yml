@@ -42,6 +42,9 @@ website:
           - ./pages/quarto/quarto_tabset.qmd
           - ./pages/quarto/expand_codeblock_width.qmd
           - ./pages/quarto/side_by_side_codeblock.qmd
+      - section: "React"
+        contents:
+          - ./pages/react/react_intro.qmd
       - section: "rhino3dm"
         contents: 
           - ./pages/rhino3dm/test_rhino3dm.qmd
