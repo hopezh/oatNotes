@@ -14,44 +14,41 @@ code-annotations: hover
 
 ### usa a `<div></div>`
 
-```{.jsx filename='MyComp01.jsx'}
+```{.jsx filename="MyComp01.jsx" source-line-numbers="3-5"}
 export default function MyComp01() {
   return (
-    <div> # <1>
+    <div>
       <h1>Hello, this is oat!</h1>
     </div>
   );
 }
 ```
-1. use `<div>`
 
 ### use an empty element `<></>`
 
-```{.jsx filename='MyComp01.jsx'}
+```{.jsx filename="MyComp01.jsx" source-line-numbers="3-5"}
 export default function MyComp01() {
   return (
-    <> # <1>
+    <>
       <h1>Hello, this is oat!</h1>
     </>
   );
 }
 ```
-1. use `<>`
 
 ...which is the same as using `<Fragment>`
 
-```{.jsx filename='MyComp01.jsx'}
+```{.jsx filename="MyComp01.jsx" source-line-numbers="1,5-7"}
 import {Fragment} from 'react';
 
 export default function MyComp01() {
   return (
-    <Fragment> # <1>
+    <Fragment> 
       <h1>Hello, this is oat!</h1>
     <Fragment/>
   );
 }
 ```
-1. use `<Fragement>`
 
 
 ## Expression

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,12 +71,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ce80fb680f754bdddd2e33f428b7c2fe.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-a77d94411ef28645364aa138da2dc249.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-14abb8284ba5d94560a5fbf30c1a4bef.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5c3888f27347c78fd849423dde8c1586.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-75104ac61829f003e5966952de19cbc0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-3403c89977baa4be1786ac358af99b8e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-a273c90c8522dc803ae86948ec6334df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-b41131c42eba059ea8d242841632ed40.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -458,19 +458,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="import-polars" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> import polars</h1>
-<div id="7a236379" class="cell" data-execution_count="1">
+<div id="7b97101a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a><span class="bu">print</span>(<span class="st">'polars ver:'</span>, pl.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>polars ver: 1.7.1</code></pre>
+<pre data-code-line-numbers=""><code>polars ver: 1.22.0</code></pre>
 </div>
 </div>
 </section>
 <section id="read-data" class="level1 page-columns page-full" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> read data</h1>
 <p>Create dummy df.</p>
-<div id="46d63b19" class="cell" data-execution_count="2">
+<div id="4256317a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>df <span class="op">=</span> pl.DataFrame({</span>
 <span id="cb3-2"><a href="#cb3-2"></a>    <span class="st">'nums'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>],</span>
 <span id="cb3-3"><a href="#cb3-3"></a>    <span class="st">'letters'</span>: [<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>, <span class="st">'e'</span>]</span>
@@ -524,7 +524,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Read <code>CSV</code> file.</p>
-<div id="8d02d1aa" class="cell page-columns page-full" data-execution_count="3">
+<div id="a9b4b54f" class="cell page-columns page-full" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a>df_csv <span class="op">=</span> pl.read_csv(<span class="st">'./data/titanic.csv'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>df_csv.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -617,7 +617,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Get df info</p>
-<div id="fa30796c" class="cell" data-execution_count="4">
+<div id="462073b8" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>df_csv.schema</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre data-code-line-numbers=""><code>Schema([('Survived', Int64),
@@ -630,7 +630,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         ('Fare', Float64)])</code></pre>
 </div>
 </div>
-<div id="1bb27e56" class="cell" data-execution_count="5">
+<div id="47678c11" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a>df_csv.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre data-code-line-numbers=""><code>['Survived',
@@ -643,13 +643,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  'Fare']</code></pre>
 </div>
 </div>
-<div id="737d5c13" class="cell" data-execution_count="6">
+<div id="438ebf17" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a>df_csv.dtypes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre data-code-line-numbers=""><code>[Int64, Int64, String, String, Float64, Int64, Int64, Float64]</code></pre>
 </div>
 </div>
-<div id="8cfdca64" class="cell" data-execution_count="7">
+<div id="c5a752d8" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="bu">print</span>(<span class="st">'df shape:'</span>, df_csv.shape)</span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="bu">print</span>(<span class="st">'df width:'</span>, df_csv.width)</span>
 <span id="cb11-3"><a href="#cb11-3"></a><span class="bu">print</span>(<span class="st">'df height:'</span>, df_csv.height)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -659,7 +659,7 @@ df width: 8
 df height: 887</code></pre>
 </div>
 </div>
-<div id="c119c086" class="cell" data-execution_count="8">
+<div id="83cf7eef" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a>df_csv.flags</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre data-code-line-numbers=""><code>{'Survived': {'SORTED_ASC': False, 'SORTED_DESC': False},
@@ -673,7 +673,7 @@ df height: 887</code></pre>
 </div>
 </div>
 <p>Create df with schema</p>
-<div id="9b4c7d2b" class="cell" data-execution_count="9">
+<div id="4af8cf40" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb15-2"><a href="#cb15-2"></a></span>
 <span id="cb15-3"><a href="#cb15-3"></a>numpy_arr <span class="op">=</span> np.array([[<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>], [<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>]])</span>
