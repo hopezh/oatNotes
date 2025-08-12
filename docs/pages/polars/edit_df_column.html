@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,8 +71,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b1a009cd478e574395e6b462a577de8f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-197bbad5089936ec81d920701ba89875.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ce80fb680f754bdddd2e33f428b7c2fe.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-a77d94411ef28645364aa138da2dc249.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-9b55ff4088a9c726f773a336a01a061c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -219,7 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Plotly</span></a>
+ <span class="menu-text">Plotly_Dash</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -227,26 +227,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/multiline_annotation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly_dash/multiline_annotation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add Multiline Annotation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly_dash/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">show data strucure of a plotly figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly_dash/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparent bgcolor for figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/shape_3d.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly_dash/shape_3d.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shape in 3D Scattter Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/plotly_dash/zt_dash_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash App Test</span></a>
   </div>
 </li>
       </ul>
@@ -471,7 +477,7 @@ Note
 </div>
 <section id="add-dummy-dataframe" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> add dummy dataframe</h1>
-<div id="1c22a0d9" class="cell" data-execution_count="1">
+<div id="db6a9016" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -540,7 +546,7 @@ Note
 </section>
 <section id="use-lambda-func-to-edit-a-string-column" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> use lambda func to edit a string column</h1>
-<div id="be630975" class="cell" data-execution_count="2">
+<div id="714d102f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>lambda_add_str <span class="op">=</span> <span class="kw">lambda</span> <span class="bu">str</span>: <span class="bu">str</span> <span class="op">+</span> <span class="st">"+"</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> df.with_columns(</span>
@@ -551,7 +557,7 @@ Note
 <span id="cb2-8"><a href="#cb2-8"></a></span>
 <span id="cb2-9"><a href="#cb2-9"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>/var/folders/3y/h7wbnqln179cb54qswjq7g880000gn/T/ipykernel_84382/3168615590.py:5: PolarsInefficientMapWarning:
+<pre data-code-line-numbers=""><code>/var/folders/7g/c9hb4wgd0mz62mwd00xdd4q40000gn/T/ipykernel_8594/3168615590.py:5: PolarsInefficientMapWarning:
 
 
 Expr.map_elements is significantly slower than the native expressions API.
@@ -616,7 +622,7 @@ with this one instead:
 </div>
 </div>
 </div>
-<div id="c8e48f95" class="cell" data-execution_count="3">
+<div id="67e03618" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># alternativly...</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>df <span class="op">=</span> df.with_columns(</span>

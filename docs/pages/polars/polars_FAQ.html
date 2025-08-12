@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,8 +71,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b1a009cd478e574395e6b462a577de8f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-197bbad5089936ec81d920701ba89875.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ce80fb680f754bdddd2e33f428b7c2fe.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-a77d94411ef28645364aa138da2dc249.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap-9b55ff4088a9c726f773a336a01a061c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
@@ -216,7 +216,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Plotly</span></a>
+ <span class="menu-text">Plotly_Dash</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -224,26 +224,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/multiline_annotation.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly_dash/multiline_annotation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Add Multiline Annotation</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly_dash/plotly_data_structure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">show data strucure of a plotly figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly_dash/transparent_fig_bgcolor.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Transparent bgcolor for figure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../pages/plotly/shape_3d.html" class="sidebar-item-text sidebar-link">
+  <a href="../../pages/plotly_dash/shape_3d.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Shape in 3D Scattter Plot</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../pages/plotly_dash/zt_dash_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Dash App Test</span></a>
   </div>
 </li>
       </ul>
@@ -452,16 +458,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="8c39c67e" class="cell" data-execution_count="1">
+<div id="9adf4f9a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="bu">print</span>(<span class="st">'polars:'</span>, pl.__version__)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre data-code-line-numbers=""><code>polars: 1.7.1</code></pre>
+<pre data-code-line-numbers=""><code>polars: 1.31.0</code></pre>
 </div>
 </div>
 <section id="get-the-minmax-of-a-column" class="level1 page-columns page-full" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Get the <code>min/max</code> of a column</h1>
-<div id="4e3df7d7" class="cell" data-execution_count="2">
+<div id="62cfb6cf" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># sample dataframe</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a>data <span class="op">=</span> {</span>
 <span id="cb3-3"><a href="#cb3-3"></a>    <span class="st">'A'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="va">None</span>, <span class="dv">4</span>],</span>
@@ -497,7 +503,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 └──────┴──────┴───────────┴─────────────────┘</code></pre>
 </div>
 </div>
-<div id="97cec55f" class="cell" data-execution_count="3">
+<div id="de09296e" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>col_name <span class="op">=</span> <span class="st">'A'</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a>min_val <span class="op">=</span> df.select(pl.<span class="bu">min</span>(col_name)).item()</span>
 <span id="cb5-3"><a href="#cb5-3"></a>max_val <span class="op">=</span> df.select(pl.<span class="bu">max</span>(col_name)).item()</span>
