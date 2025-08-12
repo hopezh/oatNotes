@@ -24,12 +24,13 @@ website:
       - section: "Observable.js"
         contents:
           - ./pages/observable/observable_js.qmd
-      - section: "Plotly"
+      - section: "Plotly_Dash"
         contents:
-          - ./pages/plotly/multiline_annotation.qmd
-          - ./pages/plotly/plotly_data_structure.qmd
-          - ./pages/plotly/transparent_fig_bgcolor.qmd
-          - ./pages/plotly/shape_3d.qmd
+          - ./pages/plotly_dash/multiline_annotation.qmd
+          - ./pages/plotly_dash/plotly_data_structure.qmd
+          - ./pages/plotly_dash/transparent_fig_bgcolor.qmd
+          - ./pages/plotly_dash/shape_3d.qmd
+          - ./pages/plotly_dash/zt_dash_app.qmd
       - section: "Polars"
         contents:
           - ./pages/polars/merge_csvs.qmd

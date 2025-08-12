@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,12 +71,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-14abb8284ba5d94560a5fbf30c1a4bef.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-5c3888f27347c78fd849423dde8c1586.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-b1a009cd478e574395e6b462a577de8f.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-197bbad5089936ec81d920701ba89875.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a273c90c8522dc803ae86948ec6334df.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-b41131c42eba059ea8d242841632ed40.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-9b55ff4088a9c726f773a336a01a061c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-d4c27850fecd9fdc0434d36cc57e1668.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <link href="../../site_libs/quarto-contrib/line-highlight-1.0.0/line-highlight.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
@@ -471,7 +471,7 @@ Note
 </div>
 <section id="add-dummy-dataframe" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> add dummy dataframe</h1>
-<div id="038ee71a" class="cell" data-execution_count="1">
+<div id="1c22a0d9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
@@ -540,7 +540,7 @@ Note
 </section>
 <section id="use-lambda-func-to-edit-a-string-column" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> use lambda func to edit a string column</h1>
-<div id="6517abf4" class="cell" data-execution_count="2">
+<div id="be630975" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a>lambda_add_str <span class="op">=</span> <span class="kw">lambda</span> <span class="bu">str</span>: <span class="bu">str</span> <span class="op">+</span> <span class="st">"+"</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a></span>
 <span id="cb2-3"><a href="#cb2-3"></a>df <span class="op">=</span> df.with_columns(</span>
@@ -551,7 +551,7 @@ Note
 <span id="cb2-8"><a href="#cb2-8"></a></span>
 <span id="cb2-9"><a href="#cb2-9"></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre data-code-line-numbers=""><code>C:\Users\ZHANG_JI\AppData\Local\Temp\ipykernel_8444\3168615590.py:5: PolarsInefficientMapWarning:
+<pre data-code-line-numbers=""><code>/var/folders/3y/h7wbnqln179cb54qswjq7g880000gn/T/ipykernel_84382/3168615590.py:5: PolarsInefficientMapWarning:
 
 
 Expr.map_elements is significantly slower than the native expressions API.
@@ -616,7 +616,7 @@ with this one instead:
 </div>
 </div>
 </div>
-<div id="ed5553ca" class="cell" data-execution_count="3">
+<div id="c8e48f95" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" data-source-line-numbers="nil" data-code-line-numbers="nil"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="co"># alternativly...</span></span>
 <span id="cb4-2"><a href="#cb4-2"></a></span>
 <span id="cb4-3"><a href="#cb4-3"></a>df <span class="op">=</span> df.with_columns(</span>
